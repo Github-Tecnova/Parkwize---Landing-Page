@@ -666,7 +666,7 @@ function SolutionSection() {
 
           {/* Main Dashboard Card */}
           <Link
-            href={"/more"}
+            href={"/dashboard"}
             className={
               "relative mb-6 flex aspect-square w-full flex-col overflow-hidden border p-5"
             }
@@ -694,7 +694,7 @@ function SolutionSection() {
           <div className={"flex flex-col gap-4"}>
             {/* Parkwize AI */}
             <Link
-              href={"/more"}
+              href={"/ai"}
               className={
                 "relative flex aspect-video min-w-[280px] flex-col overflow-hidden border p-5"
               }
@@ -716,7 +716,7 @@ function SolutionSection() {
 
             {/* Parkwize Digital Signage Solution */}
             <Link
-              href={"/more"}
+              href={"/display"}
               className={
                 "relative flex aspect-video min-w-[280px] flex-col overflow-hidden border p-5"
               }
@@ -742,7 +742,7 @@ function SolutionSection() {
 
             {/* Reservation */}
             <Link
-              href={"/more"}
+              href={"/booking"}
               className={
                 "relative flex aspect-video min-w-[280px] flex-col overflow-hidden border"
               }
@@ -764,7 +764,7 @@ function SolutionSection() {
 
             {/* Process Hardware */}
             <Link
-              href={"/more"}
+              href={"/process"}
               className={
                 "relative flex aspect-video min-w-[280px] flex-col overflow-hidden border p-5"
               }
