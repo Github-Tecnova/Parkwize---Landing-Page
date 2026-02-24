@@ -20,6 +20,15 @@ export function Navbar() {
   const pathname = usePathname();
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+
+  const productLinks = [
+    { href: `/${lang}/dashboard`, label: "Dashboard" },
+    { href: `/${lang}/display`, label: "Display" },
+    { href: `/${lang}/booking`, label: "Booking" },
+    { href: `/${lang}/ai`, label: "AI" },
+    { href: `/${lang}/process`, label: "Process" },
+  ];
 
   const isHome =
     pathname.endsWith("/fr") || pathname.endsWith("/en") || pathname === "/";
@@ -105,34 +114,27 @@ export function Navbar() {
                       animate={{ y: 0, opacity: 1, transition: { delay: 0.2 } }}
                       exit={{ y: 20, opacity: 0 }}
                     >
-                      <Link href={""} className={"text-2xl text-white"}>
-                        Our Work
-                      </Link>
+                      <p
+                        className={
+                          "mb-2 text-xs uppercase tracking-widest text-neutral-400"
+                        }
+                      >
+                        {lang === "fr" ? "Produits" : "Products"}
+                      </p>
+                      <div className={"flex flex-col gap-y-2"}>
+                        {productLinks.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className={"text-2xl text-white"}
+                            onClick={() => setMenuOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
                     </motion.div>
                   )}
-                </AnimatePresence>
-                <AnimatePresence mode={"sync"}>
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1, transition: { delay: 0.3 } }}
-                    exit={{ y: 20, opacity: 0 }}
-                  >
-                    <Link href={""} className={"text-2xl text-white"}>
-                      How it Works
-                    </Link>
-                  </motion.div>
-                </AnimatePresence>
-
-                <AnimatePresence mode={"sync"}>
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1, transition: { delay: 0.4 } }}
-                    exit={{ y: 20, opacity: 0 }}
-                  >
-                    <Link href={""} className={"text-2xl text-white"}>
-                      FAQ
-                    </Link>
-                  </motion.div>
                 </AnimatePresence>
 
                 <motion.div
@@ -140,13 +142,33 @@ export function Navbar() {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: 20, opacity: 0 }}
                   transition={{ delay: 0.4 }}
-                  className={"mt-4 flex items-center gap-x-2"}
+                  className={"mt-6 flex items-start gap-3 justify-between"}
                 >
                   <Link
                     href={"/sign-in"}
-                    className={cn(buttonVariants({ variant: "primary" }))}
+                    className={cn(
+                      buttonVariants({
+                        variant: "primary",
+                        className:
+                          "h-10 rounded-none bg-parkwize_blue px-8 hover:bg-blue-700",
+                      }),
+                    )}
+                    onClick={() => setMenuOpen(false)}
                   >
-                    Sign in
+                    {lang === "fr" ? "Se connecter" : "Sign-in"}
+                  </Link>
+                  <Link
+                    href={"https://demo.parkwizeinc.ai"}
+                    className={cn(
+                      buttonVariants({
+                        variant: "primary",
+                        className:
+                          "h-10 rounded-none bg-parkwize_blue px-8 hover:bg-blue-700",
+                      }),
+                    )}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {lang === "fr" ? "Démo" : "Demo"}
                   </Link>
                 </motion.div>
               </div>
@@ -154,7 +176,58 @@ export function Navbar() {
           )}
         </AnimatePresence>
         <div className={"hidden items-center gap-x-12 lg:flex"}>
-          <Link
+          <div
+            className={"relative"}
+            onMouseEnter={() => setProductsOpen(true)}
+            onMouseLeave={() => setProductsOpen(false)}
+          >
+            <button
+              type={"button"}
+              onClick={() => setProductsOpen((prev) => !prev)}
+              className={cn(
+                isHome
+                  ? "text-neutral-600 hover:text-text"
+                  : "text-neutral-800 hover:text-black",
+                "flex items-center gap-x-1 text-sm font-light",
+              )}
+            >
+              {lang === "fr" ? "Produits" : "Products"}
+              <LucideChevronDown
+                className={cn(
+                  "!size-4 transition-transform",
+                  productsOpen && "rotate-180",
+                )}
+              />
+            </button>
+            <AnimatePresence>
+              {productsOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 6 }}
+                  className={
+                    "absolute left-0 top-full z-[9999] mt-3 min-w-56 border border-border bg-white p-2 shadow-lg"
+                  }
+                >
+                  <div className={"flex flex-col"}>
+                    {productLinks.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={
+                          "px-3 py-2 text-sm text-neutral-800 hover:bg-neutral-100"
+                        }
+                        onClick={() => setProductsOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          {/* <Link
             href={"/#work"}
             className={cn(
               isHome
@@ -165,7 +238,7 @@ export function Navbar() {
           >
             {lang === "fr" ? "Produits" : "Products"}
             <LucideChevronDown className={"!size-4"} />
-          </Link>
+          </Link> */}
           {/* <Link
             href={"/#work"}
             className={cn(

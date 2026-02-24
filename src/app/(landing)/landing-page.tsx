@@ -529,7 +529,7 @@ function SolutionSection() {
                 transition={{ delay: 0.25 }}
               >
                 <Link
-                  href={`/${lang}/bookings`}
+                  href={`/ai`}
                   className={
                     "relative flex aspect-video w-full flex-col overflow-hidden border transition-all duration-300 hover:shadow-lg"
                   }
@@ -560,7 +560,7 @@ function SolutionSection() {
                 transition={{ delay: 0.25 }}
               >
                 <Link
-                  href={"/demo/display-management-ov"}
+                  href={`/display`}
                   className={
                     "relative flex aspect-video w-full flex-col overflow-hidden border p-5 transition-all duration-300 hover:shadow-lg"
                   }
@@ -592,7 +592,7 @@ function SolutionSection() {
                 transition={{ delay: 0.25 }}
               >
                 <Link
-                  href={`/${lang}/bookings`}
+                  href={`/booking`}
                   className={
                     "relative flex aspect-video w-full flex-col overflow-hidden border transition-all duration-300 hover:shadow-lg"
                   }
@@ -623,7 +623,7 @@ function SolutionSection() {
                 transition={{ delay: 0.25 }}
               >
                 <Link
-                  href={`/${lang}/process`}
+                  href={`/process`}
                   className={
                     "relative flex aspect-video w-full flex-col border p-5 transition-all duration-300 hover:shadow-lg"
                   }
@@ -1655,12 +1655,8 @@ function OptimizeParkingSection() {
 
 function ModernizeParkingSection() {
   return (
-    <div className={"px-5 pb-32 pt-16"}>
-      <div
-        className={
-          "mx-auto max-w-screen-lg space-y-6 bg-parkwize_blue p-16 text-white"
-        }
-      >
+    <div className={"px-5 pb-16 pt-16 bg-parkwize_blue "}>
+      <div className={"mx-auto space-y-6  p-16 text-white"}>
         <p className={"text-center lg:text-4xl text-3xl font-medium"}>
           Ready to modernize your parking?
         </p>

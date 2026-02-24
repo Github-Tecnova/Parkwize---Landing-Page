@@ -114,7 +114,7 @@ const ProductPageLayout = (props: ProductPageProps) => (
               transition={{ duration: 0.7, delay: 0.4 }}
               className="max-w-5xl mx-auto mt-16"
             >
-              <div className=" overflow-hidden shadow-2xl shadow-parkwize_blue/10 border border-border">
+              <div className=" overflow-hidden ">
                 {props.heroVideo ? (
                   <video
                     src={props.heroVideo}
@@ -179,16 +179,16 @@ const ProductPageLayout = (props: ProductPageProps) => (
       </section>
 
       {/* Product Core */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-[#14181f]">
         <div className="max-w-4xl mx-auto">
           <motion.div {...anim} className="text-center mb-12">
             <p className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-3">
               The Solution
             </p>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-white">
               {props.coreTitle}
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg text-[#a1a2a5] leading-relaxed max-w-3xl mx-auto">
               {props.coreDesc}
             </p>
           </motion.div>
@@ -207,7 +207,7 @@ const ProductPageLayout = (props: ProductPageProps) => (
                 className="flex gap-4 items-start"
               >
                 <span className="w-2 h-2 rounded-full bg-parkwize_blue mt-2 shrink-0" />
-                <p className="text-muted-foreground leading-relaxed">{point}</p>
+                <p className="text-[#a1a2a5] leading-relaxed">{point}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -215,13 +215,13 @@ const ProductPageLayout = (props: ProductPageProps) => (
       </section>
 
       {/* Feature Grid */}
-      <section className="py-16 px-6 bg-secondary/50">
+      <section className="py-16 px-6 bg-[#14181f]">
         <div className="max-w-7xl mx-auto">
           <motion.div {...anim} className="text-center mb-16">
             <p className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-3">
               Features
             </p>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
               What&apos;s Inside
             </h2>
           </motion.div>
@@ -233,13 +233,13 @@ const ProductPageLayout = (props: ProductPageProps) => (
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className=" border border-border bg-card p-8 hover:shadow-lg hover:shadow-parkwize_blue/5 transition-all duration-300"
+                className=" border border-[#ffffff1a] bg-[#ffffff0d] p-8 hover:shadow-lg hover:shadow-parkwize_blue/5 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-parkwize_blue/10 flex items-center justify-center mb-5">
+                <div className="w-12 h-12 bg-[#2463eb33] flex items-center justify-center mb-5">
                   <f.icon className="w-6 h-6 text-parkwize_blue" />
                 </div>
-                <h3 className="text-lg font-bold mb-2">{f.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h3 className="text-lg font-bold mb-2 text-white">{f.title}</h3>
+                <p className="text-sm leading-relaxed text-[#a1a2a5]">
                   {f.desc}
                 </p>
               </motion.div>
