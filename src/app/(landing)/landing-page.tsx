@@ -89,7 +89,6 @@ import {
   PromptInputTools,
 } from "@/components/ai-elements/prompt-input";
 /* import MultiChart from "@/components/charts/multi-chart"; */
-import { mockRevenueChart, mockTrafficChart } from "@/lib/_data/constants";
 import { subDays } from "date-fns";
 
 const stats = [
