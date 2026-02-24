@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -19,7 +20,11 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import hardwareImg from "@/assets/hardware-process.jpg";
+import ProcessLogo from "@/assets/Logo_Process.png";
+import ProcessKiosk from "@/assets/Borne_process.png";
+import ProcessMiniKiosk from "@/assets/mini_borne_process.png";
 import Image from "next/image";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const anim = {
   initial: { opacity: 0, y: 24 },
@@ -151,6 +156,367 @@ const iotFeatures = [
     desc: "Push firmware and configuration changes remotely without site visits.",
   },
 ];
+
+const PROCESS_BRANDING_FEATURES = [
+  "Entry & Exit Terminals",
+  "Payment Kiosks",
+  "License Plate Recognition",
+  "Access Control",
+  "Real-time Reporting",
+  "Revenue Optimization",
+];
+
+const PROCESS_BRANDING_FEATURE_POSITIONS = [
+  { top: "18%", left: "8%" },
+  { top: "25%", right: "10%" },
+  { top: "45%", left: "5%" },
+  { top: "55%", right: "6%" },
+  { top: "72%", left: "12%" },
+  { top: "68%", right: "12%" },
+];
+
+const PROCESS_BRANDING_ROLES = [
+  "Parking Facility Manager",
+  "Property Developer",
+  "Municipal Authority",
+  "Airport / Transit Operator",
+  "Hospital / University",
+  "Consultant",
+  "Other",
+];
+
+type ProcessBrandingFormState = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  company: string;
+  role: string;
+  roleOther: string;
+  phone: string;
+  consent: boolean;
+};
+
+const processBrandingFormDefault: ProcessBrandingFormState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  company: "",
+  role: "",
+  roleOther: "",
+  phone: "",
+  consent: false,
+};
+
+function ProcessBrandingSection() {
+  const [open, setOpen] = useState(false);
+  const [activeFeature, setActiveFeature] = useState(0);
+  const [form, setForm] = useState<ProcessBrandingFormState>(
+    processBrandingFormDefault,
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveFeature(
+        (previous) => (previous + 1) % PROCESS_BRANDING_FEATURES.length,
+      );
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const onSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (!form.firstName || !form.email) {
+      return;
+    }
+
+    setOpen(false);
+    setForm(processBrandingFormDefault);
+  };
+
+  return (
+    <section className="relative flex h-[88svh] flex-col overflow-hidden bg-background text-foreground">
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div
+          className="absolute right-[-10%] top-[-20%] h-[350px] w-[350px] rounded-full md:h-[500px] md:w-[500px] lg:h-[700px] lg:w-[700px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(7,88,246,0.08) 0%, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute bottom-[-15%] left-[-10%] h-[300px] w-[300px] rounded-full md:h-[450px] md:w-[450px] lg:h-[600px] lg:w-[600px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(7,88,246,0.05) 0%, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute left-[30%] top-[40%] h-[250px] w-[250px] rounded-full md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(7,88,246,0.04) 0%, transparent 70%)",
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 flex min-h-0 flex-1 flex-col">
+        <div className="relative z-20 flex flex-col items-center justify-center pt-6 md:pt-8 lg:pt-10">
+          <Image
+            src={ProcessLogo}
+            alt="Process Systèmes & Technologies"
+            width={280}
+            height={96}
+            className="h-14 w-auto md:h-20 lg:h-24"
+          />
+        </div>
+
+        <div className="relative -mt-6 flex min-h-0 flex-1 flex-col items-center justify-evenly px-4 md:-mt-14 md:justify-center md:px-6">
+          <div className="relative z-20 mb-6 hidden translate-y-4 flex-col items-center md:flex lg:translate-y-6">
+            <button
+              onClick={() => setOpen(true)}
+              className="group relative rounded-full border border-foreground/20 bg-foreground/5 px-10 py-4 text-sm font-medium uppercase tracking-[0.2em] backdrop-blur-sm transition-all duration-300 hover:border-parkwize_blue hover:bg-parkwize_blue/10 hover:shadow-[0_0_40px_rgba(7,88,246,0.15)] lg:px-12 lg:py-5 lg:text-base lg:tracking-[0.25em]"
+            >
+              Discover Our Systems
+            </button>
+            <p className="mt-3 text-center text-sm tracking-wide text-muted-foreground">
+              Advanced Parking Revenue Control Systems — Request a Consultation
+            </p>
+          </div>
+
+          <div className="mb-3 flex justify-center px-4 md:hidden">
+            <span className="min-w-[250px] rounded-full border border-foreground/20 bg-foreground/5 px-6 py-2.5 text-center text-[11px] font-light uppercase tracking-[0.2em] text-muted-foreground/60">
+              {PROCESS_BRANDING_FEATURES[activeFeature]}
+            </span>
+          </div>
+
+          <div className="pointer-events-none absolute inset-x-0 -top-10 bottom-0 hidden items-end justify-center -gap-4 lg:-space-x-4 md:flex">
+            <Image
+              src={ProcessKiosk}
+              alt=""
+              width={640}
+              height={1100}
+              className="h-[90%] max-h-[650px] w-auto object-contain opacity-15 lg:opacity-20"
+              style={{
+                maskImage:
+                  "radial-gradient(ellipse 90% 90% at 50% 60%, black 40%, transparent 80%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 90% 90% at 50% 60%, black 40%, transparent 80%)",
+              }}
+            />
+            <Image
+              src={ProcessMiniKiosk}
+              alt=""
+              width={560}
+              height={1000}
+              className="h-[90%] max-h-[650px] w-auto object-contain opacity-15 lg:opacity-20"
+              style={{
+                maskImage:
+                  "radial-gradient(ellipse 90% 90% at 50% 60%, black 40%, transparent 80%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 90% 90% at 50% 60%, black 40%, transparent 80%)",
+              }}
+            />
+          </div>
+
+          <div className="my-3 flex items-end justify-center gap-2 pointer-events-none md:hidden">
+            <Image
+              src={ProcessKiosk}
+              alt=""
+              width={300}
+              height={560}
+              className="h-[35vh] max-h-[300px] w-auto object-contain opacity-20"
+              style={{
+                maskImage:
+                  "radial-gradient(ellipse 85% 85% at 50% 50%, black 45%, transparent 75%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 85% 85% at 50% 50%, black 45%, transparent 75%)",
+              }}
+            />
+            <Image
+              src={ProcessMiniKiosk}
+              alt=""
+              width={240}
+              height={460}
+              className="h-[28vh] max-h-[240px] w-auto object-contain opacity-20"
+              style={{
+                maskImage:
+                  "radial-gradient(ellipse 85% 85% at 50% 50%, black 45%, transparent 75%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 85% 85% at 50% 50%, black 45%, transparent 75%)",
+              }}
+            />
+          </div>
+
+          <div className="absolute inset-0 hidden md:block">
+            {PROCESS_BRANDING_FEATURES.map((feature, index) => (
+              <motion.span
+                key={feature}
+                className="absolute cursor-default text-xs font-light uppercase tracking-widest text-muted-foreground/70 transition-colors duration-300 hover:text-foreground/90 lg:text-sm"
+                style={PROCESS_BRANDING_FEATURE_POSITIONS[index]}
+                animate={{ y: [0, -10, 0, 10, 0], x: [0, 3, 0, -3, 0] }}
+                transition={{
+                  duration: 6 + index,
+                  delay: index * 0.35,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                {feature}
+              </motion.span>
+            ))}
+          </div>
+
+          <div className="flex flex-col items-center md:hidden">
+            <button
+              onClick={() => setOpen(true)}
+              className="group relative rounded-full border border-foreground/20 bg-foreground/5 px-8 py-4 text-xs font-medium uppercase tracking-[0.15em] backdrop-blur-sm transition-all duration-300 hover:border-parkwize_blue hover:bg-parkwize_blue/10 hover:shadow-[0_0_40px_rgba(7,88,246,0.15)]"
+            >
+              Discover Our Systems
+            </button>
+            <p className="mt-2 whitespace-nowrap text-center text-[9px] tracking-wide text-muted-foreground">
+              Advanced Parking Revenue Control Systems — Request a Consultation
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="max-w-md rounded-2xl border border-foreground/10 bg-white p-8 shadow-[0_0_60px_rgba(0,0,0,0.1)] backdrop-blur-2xl">
+          <DialogTitle className="sr-only">Request a Demo</DialogTitle>
+          <div className="mb-6 flex justify-center">
+            <Image
+              src={ProcessLogo}
+              alt="Process Systèmes & Technologies"
+              width={180}
+              height={48}
+              className="h-12 w-auto"
+            />
+          </div>
+
+          <form onSubmit={onSubmit} className="space-y-4 md:space-y-6">
+            <div className="grid grid-cols-2 gap-4">
+              <input
+                type="text"
+                placeholder="First Name"
+                value={form.firstName}
+                onChange={(event) =>
+                  setForm({ ...form, firstName: event.target.value })
+                }
+                className="border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Last Name"
+                value={form.lastName}
+                onChange={(event) =>
+                  setForm({ ...form, lastName: event.target.value })
+                }
+                className="border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+              />
+            </div>
+
+            <input
+              type="email"
+              placeholder="Email Address"
+              value={form.email}
+              onChange={(event) =>
+                setForm({ ...form, email: event.target.value })
+              }
+              className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+              required
+            />
+
+            <input
+              type="text"
+              placeholder="Company Name"
+              value={form.company}
+              onChange={(event) =>
+                setForm({ ...form, company: event.target.value })
+              }
+              className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+            />
+
+            <select
+              value={form.role}
+              onChange={(event) =>
+                setForm({
+                  ...form,
+                  role: event.target.value,
+                  roleOther:
+                    event.target.value !== "Other" ? "" : form.roleOther,
+                })
+              }
+              className={`w-full border-b border-foreground/20 bg-transparent pb-3 text-base transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm ${form.role ? "text-foreground" : "text-muted-foreground/50"}`}
+            >
+              <option
+                value=""
+                disabled
+                className="bg-background text-foreground"
+              >
+                Your Role
+              </option>
+              {PROCESS_BRANDING_ROLES.map((role) => (
+                <option
+                  key={role}
+                  value={role}
+                  className="bg-background text-foreground"
+                >
+                  {role}
+                </option>
+              ))}
+            </select>
+
+            {form.role === "Other" && (
+              <input
+                type="text"
+                placeholder="Please specify your role"
+                value={form.roleOther}
+                onChange={(event) =>
+                  setForm({ ...form, roleOther: event.target.value })
+                }
+                className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+              />
+            )}
+
+            <input
+              type="tel"
+              placeholder="Phone (optional)"
+              value={form.phone}
+              onChange={(event) =>
+                setForm({ ...form, phone: event.target.value })
+              }
+              className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+            />
+
+            <button
+              type="submit"
+              className="mt-2 w-full rounded-full border border-foreground/20 bg-foreground/5 py-4 text-sm font-medium uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-foreground/10 md:py-3"
+            >
+              Submit My Infos
+            </button>
+
+            <label className="flex cursor-pointer items-start gap-3">
+              <input
+                type="checkbox"
+                checked={form.consent}
+                onChange={(event) =>
+                  setForm({ ...form, consent: event.target.checked })
+                }
+                className="mt-1 accent-parkwize_blue"
+              />
+              <span className="text-[11px] leading-relaxed text-muted-foreground/60">
+                I agree to receive marketing communications from Process
+                Systèmes & Technologies. You can unsubscribe at any time.
+              </span>
+            </label>
+          </form>
+        </DialogContent>
+      </Dialog>
+    </section>
+  );
+}
 
 /* --- Page --- */
 
@@ -534,6 +900,8 @@ const Hardware = () => {
             </div>
           </motion.div>
         </section>
+
+        <ProcessBrandingSection />
       </div>
     </div>
   );

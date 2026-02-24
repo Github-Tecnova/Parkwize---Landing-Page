@@ -8,7 +8,7 @@
  * Copyright (c) 2025. Tecnova
  */
 
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { DictionaryType } from "@/content/dictionary";
 import Image from "next/image";
 import { cn, formatCAD, formatNumber } from "@/lib/utils";
@@ -87,6 +87,10 @@ import {
   PromptInputTextarea,
   PromptInputTools,
 } from "@/components/ai-elements/prompt-input";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import LogoParkwize from "@/assets/Logo_Parkwize.svg";
+import IconLogoParkwize from "@/assets/Iconlogo_Parkwize.png";
+import MacBookProM4 from "@/assets/MacBook_Pro_M4.png";
 /* import MultiChart from "@/components/charts/multi-chart"; */
 import { subDays } from "date-fns";
 
@@ -212,6 +216,44 @@ const services = [
   },
 ];
 
+const EARLY_ACCESS_FEATURES = [
+  "Dynamic Pricing",
+  "Display Management",
+  "IoT Integration",
+  "Online Reservation",
+  "Real-time Analytics",
+  "Forecasting & Automation",
+];
+
+const EARLY_ACCESS_FEATURE_POSITIONS = [
+  { top: "18%", left: "8%" },
+  { top: "25%", right: "10%" },
+  { top: "45%", left: "5%" },
+  { top: "55%", right: "6%" },
+  { top: "72%", left: "12%" },
+  { top: "68%", right: "12%" },
+];
+
+const EARLY_ACCESS_ROLES = [
+  "Parking Owner",
+  "Parking Operator",
+  "Parking Management Company",
+  "Real Estate Owner",
+  "Investor",
+  "Asset Manager (Real Estate / Infrastructure)",
+  "Public & Institutional Organization",
+  "Other",
+];
+
+const generateEarlyAccessStars = (count: number) =>
+  Array.from({ length: count }, (_, index) => ({
+    id: index,
+    left: `${(index * 17.3 + 5) % 100}%`,
+    top: `${(index * 23.7 + 3) % 100}%`,
+    size: 1 + (index % 3),
+    delay: `${(index * 0.7) % 5}s`,
+  }));
+
 // TODO: Split homepage in section components to easily manage and maintain
 
 export default function LandingPage({ dict }: { dict: DictionaryType }) {
@@ -241,7 +283,326 @@ export default function LandingPage({ dict }: { dict: DictionaryType }) {
       {/*<DetailedStatsSection />*/}
 
       <ModernizeParkingSection />
+
+      <EarlyAccessMainSection />
     </div>
+  );
+}
+
+type EarlyAccessFormState = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  company: string;
+  role: string;
+  roleOther: string;
+  phone: string;
+  consent: boolean;
+};
+
+const defaultEarlyAccessForm: EarlyAccessFormState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  company: "",
+  role: "",
+  roleOther: "",
+  phone: "",
+  consent: false,
+};
+
+function EarlyAccessMainSection() {
+  const [open, setOpen] = useState(false);
+  const [activeFeature, setActiveFeature] = useState(0);
+  const [form, setForm] = useState<EarlyAccessFormState>(
+    defaultEarlyAccessForm,
+  );
+  const stars = useMemo(() => generateEarlyAccessStars(60), []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveFeature(
+        (previous) => (previous + 1) % EARLY_ACCESS_FEATURES.length,
+      );
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const onSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (!form.firstName || !form.email) {
+      return;
+    }
+
+    setOpen(false);
+    setForm(defaultEarlyAccessForm);
+  };
+
+  return (
+    <section className="relative h-[85svh] overflow-hidden bg-black text-white">
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div
+          className="absolute right-[-10%] top-[-20%] h-[350px] w-[350px] rounded-full md:h-[500px] md:w-[500px] lg:h-[700px] lg:w-[700px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(7,88,246,0.12) 0%, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute bottom-[-15%] left-[-10%] h-[300px] w-[300px] rounded-full md:h-[450px] md:w-[450px] lg:h-[600px] lg:w-[600px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(7,88,246,0.08) 0%, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute left-[30%] top-[40%] h-[250px] w-[250px] rounded-full md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(7,88,246,0.06) 0%, transparent 70%)",
+          }}
+        />
+      </div>
+
+      <div className="pointer-events-none absolute inset-0 z-0">
+        {stars.map((star) => (
+          <div
+            key={star.id}
+            className="absolute rounded-full bg-white/40 animate-pulse"
+            style={{
+              left: star.left,
+              top: star.top,
+              width: star.size,
+              height: star.size,
+              animationDelay: star.delay,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="relative z-10 flex h-full flex-col items-center px-4 md:px-6">
+        <header className="flex flex-1 items-center justify-center py-0">
+          <Image
+            src={LogoParkwize}
+            alt="Parkwize"
+            width={180}
+            height={48}
+            className="h-7 w-auto brightness-0 invert md:h-10 lg:h-12"
+          />
+        </header>
+
+        <main className="relative flex w-full max-w-6xl flex-[4] flex-col items-center justify-evenly md:flex-[2] md:justify-center">
+          <div className="mb-4 flex justify-center px-4 md:hidden">
+            <span className="min-w-[250px] rounded-full border border-foreground/20 bg-foreground/5 px-6 py-2.5 text-center text-[11px] font-light uppercase tracking-[0.2em] text-muted-foreground/70">
+              {EARLY_ACCESS_FEATURES[activeFeature]}
+            </span>
+          </div>
+
+          <div className="pointer-events-none hidden absolute inset-0 items-center justify-center md:flex">
+            <Image
+              src={MacBookProM4}
+              alt=""
+              width={1400}
+              height={900}
+              className="w-[70vw] max-w-[900px] opacity-15 lg:w-[55vw] lg:opacity-20"
+              style={{
+                maskImage:
+                  "radial-gradient(ellipse 90% 90% at 50% 50%, black 50%, transparent 80%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 90% 90% at 50% 50%, black 50%, transparent 80%)",
+              }}
+            />
+          </div>
+
+          <div className="my-3 flex items-center justify-center pointer-events-none md:hidden">
+            <Image
+              src={MacBookProM4}
+              alt=""
+              width={900}
+              height={600}
+              className="w-[95vw] max-w-[450px] opacity-20"
+              style={{
+                maskImage:
+                  "radial-gradient(ellipse 90% 90% at 50% 50%, black 50%, transparent 80%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 90% 90% at 50% 50%, black 50%, transparent 80%)",
+              }}
+            />
+          </div>
+
+          <div className="pointer-events-none hidden absolute inset-0 md:block">
+            {EARLY_ACCESS_FEATURES.map((feature, index) => (
+              <motion.span
+                key={feature}
+                className="absolute cursor-default text-xs font-light uppercase tracking-widest text-muted-foreground/70 transition-colors duration-300 hover:text-foreground/90 lg:text-sm"
+                style={EARLY_ACCESS_FEATURE_POSITIONS[index]}
+                animate={{ y: [0, -10, 0, 10, 0], x: [0, 3, 0, -3, 0] }}
+                transition={{
+                  duration: 6 + index,
+                  delay: index * 0.35,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                {feature}
+              </motion.span>
+            ))}
+          </div>
+
+          <div className="flex flex-col items-center">
+            <button
+              onClick={() => setOpen(true)}
+              className="group relative rounded-full border border-foreground/20 bg-foreground/5 px-8 py-4 text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 hover:border-parkwize_blue hover:bg-parkwize_blue/10 hover:shadow-[0_0_40px_rgba(7,88,246,0.15)] md:px-10 md:text-sm md:tracking-[0.2em] lg:px-12 lg:py-5 lg:text-base lg:tracking-[0.25em]"
+            >
+              Reserve Your Spot
+            </button>
+            <p className="mt-2 text-center text-[9px] tracking-wide text-muted-foreground md:mt-3 md:text-sm">
+              AI-Powered Parking Management — Sign Up for Early Access
+            </p>
+          </div>
+        </main>
+      </div>
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="max-w-md rounded-2xl border border-foreground/10 bg-background/60 p-8 shadow-[0_0_60px_rgba(0,0,0,0.5)] backdrop-blur-2xl">
+          <DialogTitle className="sr-only">
+            Sign Up for Early Access
+          </DialogTitle>
+          <div className="mb-6 flex justify-center">
+            <Image
+              src={IconLogoParkwize}
+              alt="Parkwize"
+              width={48}
+              height={48}
+              className="h-12 w-auto"
+            />
+          </div>
+
+          <form onSubmit={onSubmit} className="space-y-4 md:space-y-6">
+            <div className="grid grid-cols-2 gap-4">
+              <input
+                type="text"
+                placeholder="First Name"
+                value={form.firstName}
+                onChange={(event) =>
+                  setForm({ ...form, firstName: event.target.value })
+                }
+                className="border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Last Name"
+                value={form.lastName}
+                onChange={(event) =>
+                  setForm({ ...form, lastName: event.target.value })
+                }
+                className="border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+              />
+            </div>
+
+            <input
+              type="email"
+              placeholder="Email Address"
+              value={form.email}
+              onChange={(event) =>
+                setForm({ ...form, email: event.target.value })
+              }
+              className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+              required
+            />
+
+            <input
+              type="text"
+              placeholder="Company Name"
+              value={form.company}
+              onChange={(event) =>
+                setForm({ ...form, company: event.target.value })
+              }
+              className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+            />
+
+            <select
+              value={form.role}
+              onChange={(event) =>
+                setForm({
+                  ...form,
+                  role: event.target.value,
+                  roleOther:
+                    event.target.value !== "Other" ? "" : form.roleOther,
+                })
+              }
+              className={cn(
+                "w-full border-b border-foreground/20 bg-transparent pb-3 text-base transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm",
+                form.role ? "text-foreground" : "text-muted-foreground/50",
+              )}
+            >
+              <option
+                value=""
+                disabled
+                className="bg-background text-foreground"
+              >
+                Your Role
+              </option>
+              {EARLY_ACCESS_ROLES.map((role) => (
+                <option
+                  key={role}
+                  value={role}
+                  className="bg-background text-foreground"
+                >
+                  {role}
+                </option>
+              ))}
+            </select>
+
+            {form.role === "Other" && (
+              <input
+                type="text"
+                placeholder="Please specify your role"
+                value={form.roleOther}
+                onChange={(event) =>
+                  setForm({ ...form, roleOther: event.target.value })
+                }
+                className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+              />
+            )}
+
+            <input
+              type="tel"
+              placeholder="Phone (optional)"
+              value={form.phone}
+              onChange={(event) =>
+                setForm({ ...form, phone: event.target.value })
+              }
+              className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+            />
+
+            <button
+              type="submit"
+              className="mt-2 w-full rounded-full border border-foreground/20 bg-foreground/5 py-4 text-sm font-medium uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-foreground/10 md:py-3"
+            >
+              Sign Up
+            </button>
+
+            <label className="flex cursor-pointer items-start gap-3">
+              <input
+                type="checkbox"
+                checked={form.consent}
+                onChange={(event) =>
+                  setForm({ ...form, consent: event.target.checked })
+                }
+                className="mt-1 accent-parkwize_blue"
+              />
+              <span className="text-[11px] leading-relaxed text-muted-foreground/60">
+                I agree to receive marketing communications from Parkwize. You
+                can unsubscribe at any time.
+              </span>
+            </label>
+          </form>
+        </DialogContent>
+      </Dialog>
+    </section>
   );
 }
 
