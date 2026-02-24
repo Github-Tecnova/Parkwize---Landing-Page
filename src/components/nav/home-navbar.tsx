@@ -166,7 +166,7 @@ export function Navbar() {
             {lang === "fr" ? "Produits" : "Products"}
             <LucideChevronDown className={"!size-4"} />
           </Link>
-          <Link
+          {/* <Link
             href={"/#work"}
             className={cn(
               isHome
@@ -176,7 +176,7 @@ export function Navbar() {
             )}
           >
             {lang === "fr" ? "Notre travail" : "Docs"}
-          </Link>
+          </Link> */}
           {/*<Link*/}
           {/*  href={"/#how-it-works"}*/}
           {/*  className={cn(*/}
@@ -233,7 +233,7 @@ export function Navbar() {
                 }),
               )}
             >
-              {lang === "fr" ? "Se connecter" : "Demo"}
+              {lang === "fr" ? "Démo" : "Demo"}
             </Link>
           </div>
         </div>

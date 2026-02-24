@@ -48,8 +48,7 @@ import {
   LucideUpload,
   LucideUsers,
 } from "lucide-react";
-import Link from "next/link";
-import HomeFooter from "@/components/nav/home-footer";
+import Link from "@/components/custom-ui/link";
 import { Label } from "@/components/ui/label";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
@@ -242,8 +241,6 @@ export default function LandingPage({ dict }: { dict: DictionaryType }) {
       {/*<DetailedStatsSection />*/}
 
       <ModernizeParkingSection />
-
-      <Footer />
     </div>
   );
 }
@@ -294,7 +291,7 @@ function Header() {
           {/*</p>*/}
           <div className={"flex items-center justify-center gap-x-4 pt-4"}>
             <Link
-              href={"/demo/overview"}
+              href={"/dashboard"}
               className={cn(
                 buttonVariants({ variant: "primary" }),
                 "h-11 w-40 rounded-none bg-parkwize_blue font-light hover:bg-blue-700",
@@ -494,7 +491,7 @@ function SolutionSection() {
           <div className="flex grow gap-x-4">
             <div className={"sticky top-10 h-fit w-1/2"}>
               <Link
-                href={"/demo/overview"}
+                href={"/dashboard"}
                 className={
                   "relative flex aspect-square flex-1 scale-100 flex-col overflow-hidden border p-5 transition-all duration-300 hover:scale-[1.01] hover:shadow-lg"
                 }
@@ -1072,12 +1069,6 @@ function DetailedStatsSection() {
   );
 }
 
-function Footer() {
-  const { lang } = useTranslation();
-
-  return <HomeFooter lang={lang} />;
-}
-
 const aiCards = [
   {
     Icon: LucideBrain,
@@ -1640,7 +1631,7 @@ function OptimizeParkingSection() {
         </div>
         <div className={"flex items-center justify-center gap-x-2"}>
           <Link
-            href={"/demo/overview"}
+            href={"/dashboard"}
             className={cn(
               buttonVariants({ variant: "default" }),
               "rounded-none bg-blue-700 font-medium text-white hover:bg-blue-600",

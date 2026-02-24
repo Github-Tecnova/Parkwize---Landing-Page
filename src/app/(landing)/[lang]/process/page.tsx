@@ -18,9 +18,7 @@ import {
   Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import HomeFooter from "@/components/nav/home-footer";
 import hardwareImg from "@/assets/hardware-process.jpg";
-import { useParams } from "next/navigation";
 import Image from "next/image";
 
 const anim = {
@@ -157,9 +155,6 @@ const iotFeatures = [
 /* --- Page --- */
 
 const Hardware = () => {
-  const params = useParams<{ lang: string }>();
-  const lang = params?.lang === "fr" ? "fr" : "en";
-
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Background blurs */}
@@ -189,7 +184,9 @@ const Hardware = () => {
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
                   Industrial-Grade Hardware,{" "}
-                  <span className="text-gradient">Intelligent by Design.</span>
+                  <span className="text-parkwize_blue">
+                    Intelligent by Design.
+                  </span>
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-lg">
                   Parkwize integrates natively with Process Technology —
@@ -362,7 +359,7 @@ const Hardware = () => {
               </p>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
                 Every Device,{" "}
-                <span className="text-gradient">Always Connected</span>
+                <span className="text-parkwize_blue">Always Connected</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Process Technology hardware is IoT-native — streaming telemetry,
@@ -401,7 +398,8 @@ const Hardware = () => {
                 Our Equipment
               </p>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                Hardware <span className="text-gradient">Product Line</span>
+                Hardware{" "}
+                <span className="text-parkwize_blue">Product Line</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Industrial-grade equipment engineered for reliability. Some
@@ -536,8 +534,6 @@ const Hardware = () => {
             </div>
           </motion.div>
         </section>
-
-        <HomeFooter lang={lang} />
       </div>
     </div>
   );
