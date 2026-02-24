@@ -1,0 +1,921 @@
+{
+  "demo": {
+    "overview": {
+      "header": {
+        "tag": "Prochaine génération de gestion de stationnement",
+        "title": "Tableau de bord de stationnement",
+        "description": "Transformez vos opérations de stationnement grâce à une gestion intelligente, des analyses en temps réel et une expérience client harmonieuse.",
+        "buttons": {
+          "explore": "Explorer la démo en direct",
+          "learnMore": "En savoir plus"
+        }
+      },
+      "stats": {
+        "01": {
+          "label": "Stationnements gérés",
+          "value": "20+"
+        },
+        "02": {
+          "label": "Données quotidiennes – Événements en direct",
+          "value": "50k+"
+        },
+        "03": {
+          "label": "Utilisateurs actifs",
+          "value": "?k+"
+        },
+        "04": {
+          "label": "Revenus traités",
+          "value": "$2M+"
+        }
+      },
+      "section1": {
+        "title": "Fonctionnalités puissantes",
+        "description": "Tout ce dont vous avez besoin pour gérer efficacement et de manière rentable des opérations de stationnement modernes.",
+        "features": {
+          "01": {
+            "title": "Analytique en temps réel",
+            "description": "Surveillez l’utilisation des stationnements, les revenus et les flux de circulation grâce à la visualisation de données en direct.",
+            "color": "bg-blue-500"
+          },
+          "02": {
+            "title": "Gestion intelligente des stationnements",
+            "description": "Gérez plusieurs stationnements, bornes et systèmes de paiement à partir d’un seul tableau de bord.",
+            "color": "bg-green-500"
+          },
+          "03": {
+            "title": "Optimisation des revenus",
+            "description": "Suivez les paiements, optimisez les tarifs et maximisez les revenus sur l’ensemble de vos emplacements.",
+            "color": "bg-yellow-500"
+          },
+          "04": {
+            "title": "Gestion de la clientèle",
+            "description": "Gérez facilement les réservations, les abonnements et les comptes clients.",
+            "color": "bg-purple-500"
+          },
+          "05": {
+            "title": "Gestion de l’affichage",
+            "description": "Contrôlez les écrans numériques et la signalisation dans vos installations de stationnement.",
+            "color": "bg-cyan-500"
+          },
+          "06": {
+            "title": "Sécurité pour les entreprises",
+            "description": "Contrôle d'accès basé sur les rôles et les attributs, avec des pistes d’audit complètes.",
+            "color": "bg-red-500"
+          },
+          "07": {
+            "title": "Recommandations par IA",
+            "description": "**Fournit des recommandations en temps réel pour améliorer l'utilisation des stationnements, réduire la congestion et optimiser le flux de clientèle grâce aux analyses d'apprentissage automatique IA.",
+            "color": "bg-purple-500"
+          },
+          "08": {
+            "title": "Tarification dynamique par IA",
+            "description": "Tarifs ajustés automatiquement en fonction de la demande, du moment et des habitudes d’utilisation, afin de maximiser les revenus et le taux d’occupation des stationnements.",
+            "color": "bg-sky-500"
+          },
+          "09": {
+            "title": "Alertes système en direct",
+            "description": "Recevez des alertes instantanées en cas de panne système, de dysfonctionnement ou de comportement anormal, afin de permettre une résolution rapide des problèmes et d’assurer un temps d’arrêt minimal.",
+            "color": "bg-red-500"
+          },
+          "10": {
+            "title": "Alertes de maintenance et de support",
+            "description": "Recevez des notifications de maintenance préventive et gérez facilement les tickets d'incidents avec une hiérarchisation et un suivi de résolution automatisés.",
+            "color": "bg-yellow-500"
+          },
+          "11": {
+            "title": "Centre de support semi-automatisé",
+            "description": "Simplifier le service à la clientèle avec un module de support assisté par IA qui aide à résoudre rapidement les problèmes et redirige les cas complexes vers votre équipe.",
+            "color": "bg-sky-500"
+          },
+          "12": {
+            "title": "Détection de fraude",
+            "description": "Détectez et prévenez les comportements suspects grâce à un système de surveillance intelligent, capable d’analyser les accès, les anomalies de paiement et les tentatives de falsification des dispositifs.",
+            "color": "bg-blue-500"
+          }
+        }
+      },
+      "section2": {
+        "title": "Pourquoi choisir notre plateforme ?",
+        "description": "Rejoignez des milliers d’entreprises qui ont transformé la gestion de leurs stationnements.",
+        "benefits": [
+          "Augmentez vos revenus jusqu’à 35% grâce à une tarification intelligente",
+          "Réduisez les coûts opérationnels avec une gestion automatisée",
+          "Améliorez la satisfaction client grâce à une expérience fluide",
+          "Déployez efficacement vos opérations sur plusieurs sites",
+          "Prenez des décisions éclairées grâce à des analyses complètes",
+          "Assurez votre conformité grâce à des rapports détaillés"
+        ],
+        "scale": {
+          "title1": "Portée mondiale",
+          "description1": "Adoptée par des opérateurs de stationnement du monde entier, allant des petites entreprises aux grandes organisations gérant des centaines de sites.",
+          "title2": "L’innovation avant tout",
+          "description2": "Une évolution continue, guidée par les dernières tendances technologiques, incluant des analyses propulsées par l’IA et des intégrations IoT."
+        }
+      },
+      "footer": {
+        "title": "Prêt à transformer vos opérations de stationnement ?",
+        "description": "Découvrez tout le potentiel d’une gestion intelligente des stationnements. Essayez notre démo interactive et voyez comment nous pouvons révolutionner votre entreprise.",
+        "cto": "Lancer la démo interactive"
+      }
+    },
+    "displayManagementOv": {
+      "pageTitle": "TV Displays",
+      "currentPageName": "Vue D'ensemble",
+      "badge": "Affichage numérique intelligent",
+      "title2": "Afficheurs pour Stationnements",
+      "viewDemo": "Voir la démo",
+      "section01": {
+        "title": "Solution complète clé en main",
+        "description": "Offrez une expérience moderne et connectée dès l&apos;entrée de vos stationnements.",
+        "coreFeatures": [
+          "Écran extérieur/intérieur professionnel haute résistance",
+          "Plateforme de gestion cloud intuitive",
+          "Installation et configuration complète",
+          "Support technique 24/7",
+          "Plateforme de gestion des affichages cloud complet"
+        ],
+        "viewExample": "Voir l'exemple"
+      },
+      "section02": {
+        "title": "Technologie robuste et performante",
+        "description": "Nos écrans extérieurs professionnels sont conçus pour fonctionner année après année.",
+        "specifications": [
+          {
+            "label": "Luminosité",
+            "value": "5000+ nits",
+            "detail": "Lisible en plein soleil"
+          },
+          {
+            "label": "Résistance",
+            "value": "IP65/IK10",
+            "detail": "Eau, poussière, impacts"
+          },
+          {
+            "label": "Température",
+            "value": "-30°C à +50°C",
+            "detail": "Fonctionnement garanti"
+          },
+          {
+            "label": "Disponibilité",
+            "value": "24h/24, 7j/7",
+            "detail": "Conçu pour durer"
+          }
+        ]
+      },
+      "section03": {
+        "title": "Affichage polyvalent et intelligent",
+        "description": "Gérez votre contenu en temps réel, entièrement personnalisable selon vos besoins.",
+        "displayCapabilities": [
+          "Tarification en temps réel (horaire, forfaitaire)",
+          "Promotions et tarifs de soirée automatiques",
+          "Statut du stationnement (complet, disponible, réservé)",
+          "Alertes météo et opérations neige",
+          "Messages d'urgence et consignes temporaires",
+          "Publicités partenaires programmables"
+        ]
+      },
+      "section04": {
+        "title": "Gestion à distance simplifiée",
+        "description": "Contrôlez tous vos écrans depuis une interface unique, où que vous soyez.",
+        "managementFeatures": [
+          "Modification instantanée des tarifs",
+          "Planification par heure/jour/saison",
+          "Gestion multi-sites centralisée",
+          "Templates personnalisables",
+          "Historique des modifications",
+          "Alertes automatiques de maintenance"
+        ],
+        "cloudPlatform": "Plateforme cloud",
+        "display": "écrans",
+        "active": "actifs",
+        "uptime": "uptime"
+      },
+      "section05": {
+        "title": "Intégration complète avec vos systèmes",
+        "description": "Connectez-vous facilement avec votre infrastructure existante et personnaliser votre expérience client.",
+        "integrations": [
+          "Bornes de paiement existantes",
+          "Caméras LPR et reconnaissance",
+          "Barrières automatiques",
+          "Systèmes sans contact (NFC, QR)",
+          "APIs de gestion de stationnement",
+          "Capteurs d'occupation en temps réel"
+        ]
+      },
+      "footer": {
+        "title": "Passez à l'affichage nouvelle génération",
+        "description": "Fini les affiches papier et les interventions manuelles. Découvrez une solution moderne, fiable et rentable.",
+        "viewDemo": "Voir la démo interactive",
+        "consultation": "Demander une consultation",
+        "installation": "Installation incluse",
+        "support": "Support 24/7"
+      }
+    }
+  },
+  "homepage": {
+    "ctu": "Contactez-nous",
+    "cto": "Planifier une rencontre",
+    "header": {
+      "tag": "ATTENTION AUX OPÉRATEURS DE STATIONNEMENT ET GESTIONNAIRES IMMOBILIERS :",
+      "title": "Générez 15% à 40% de revenus supplémentaires avec vos stationnements en 60 jours",
+      "trust": "Ils nous font confiance",
+      "cards": [
+        {
+          "title": "Équipements\nProcess",
+          "description": "Entreprise de technologie et matériel de stationnement , bornes et  barrières,camera etc..",
+          "href": "#"
+        },
+        {
+          "title": "Parkwize\nGestionnaire\nde Tableau de Bord",
+          "description": "Une plateforme analytique complète pour la gestion du stationnement",
+          "href": "/demo/overview"
+        },
+        {
+          "title": "Solution d'Affichage Numérique Parkwize",
+          "description": "Mise en place d'affichage dynamique pour les stationnements",
+          "href": "/demo/display-management-ov"
+        },
+        {
+          "title": "Réservation en Ligne Parkwize",
+          "description": "Déploiement de plateformes puissantes de réservation en ligne",
+          "href": "/fr/online-reservations"
+        }
+      ],
+      "addons": [
+        "Données exploitables en temps réel",
+        "Intégration transparente avec votre infrastructure existante",
+        "Approuvé par les plus grands opérateurs et gestionnaires immobiliers"
+      ],
+      "stats": {
+        "01": {
+          "value": "27%",
+          "text": "Increase in Revenue per Available Space"
+        },
+        "02": {
+          "value": "$4.8M",
+          "text": "Revenue Optimized Across Our Clients Lots"
+        },
+        "03": {
+          "value": "2X",
+          "value2": "Faster",
+          "text": "Turnaround Time on Occupancy Decisions"
+        },
+        "04": {
+          "value": "88%",
+          "text": "Improvement in Underutilized Space Identification"
+        }
+      }
+    },
+    "section01": {
+      "tag": "Nos offres",
+      "title": "Notre système PRO est conçu pour maximiser le revenue de vos stationnements",
+      "cards": {
+        "dashboard": "Parkwize\nTableau de Bord\nGestionnaire",
+        "process": "Équipements\nProcess",
+        "signage": "Solution d'Affichage\nNumérique Parkwize",
+        "reservation": "Réservation\nen Ligne Parkwize",
+        "ai": "Parkwize IA",
+        "more": "Plus"
+      }
+    },
+    "section02": {
+      "tag": "Nos technologies",
+      "title": "Le Tableau de Bord Parkwize",
+      "stats": {
+        "01": "temps de réponse",
+        "02": "stationnements font\nconfiance à Parkwize",
+        "03": "revenus générés\navec notre solution",
+        "04": "disponibilité du support"
+      }
+    },
+    "section03": {
+      "tag": "Système PRO",
+      "title01": "Notre système",
+      "title02": "PRO",
+      "title03": "est conçu pour maximiser les revenus de vos stationnements",
+      "description": "Notre système propriétaire PRO aide les opérateurs à découvrir des revenus cachés, optimiser l’espace et prendre de meilleures décisions grâce aux données en temps réel. Voici comment on transforme vos données de stationnement en moteur de performance :",
+      "cards": [
+        {
+          "imageSrc": "",
+          "days": "(Jours 1 - 7)",
+          "title": "PLANIFIER les bases de votre intelligence du stationnement",
+          "description": "We lay the groundwork through deep discovery and strategic mapping:",
+          "features": [
+            "Audit complet de l’utilisation actuelle",
+            "Identification des zones sous-utilisées et des pertes de revenus",
+            "Analyse des tendances saisonnières, comportements utilisateurs et modèles de tarification",
+            "Création de votre plan d’optimisation des 60 prochains jours"
+          ]
+        },
+        {
+          "imageSrc": "",
+          "days": "(Jours 7 - 30)",
+          "title": "AFFINER votre moteur de données",
+          "description": "We structure your analytics and tracking systems to unlock full performance:",
+          "features": [
+            "Suivi en temps réel de l’espace et cartes thermiques selon l’heure",
+            "Tableaux de bord personnalisés selon vos objectifs d’affaires",
+            "Alertes intelligentes sur la surcharge ou les zones lentes",
+            "Rapports hebdomadaires sur les gains d’occupation et de revenus"
+          ]
+        },
+        {
+          "imageSrc": "",
+          "days": "(Jours 30+)",
+          "title": "OPTIMISER pour un rendement maximal",
+          "description": "We structure your analytics and tracking systems to unlock full performance:",
+          "features": [
+            "Recommandations de prix dynamiques selon la demande",
+            "Ajustements automatiques en fonction des tendances",
+            "Planification stratégique (événements, météo, vacances, etc.)",
+            "Rapports transparents prouvant le ROI"
+          ]
+        }
+      ]
+    },
+    "section04": {
+      "title": "Quelques statistiques que\nvous ne connaissiez probablement pas",
+      "stats": [
+        {
+          "title": "19% Plus\nRentable",
+          "description": "Les organisations axées sur les données sont 23x plus susceptibles d'acquérir des clients, 6x plus susceptibles de les fidéliser et 19x plus susceptibles d'être rentables. (Source : McKinsey)"
+        },
+        {
+          "title": "Croissance\n2x Plus Rapide",
+          "description": "Les entreprises utilisant des outils de visualisation de données croissent 2x plus rapidement que celles qui ne les utilisent pas. (Source : Tableau/IDC)"
+        },
+        {
+          "title": "Productivité\n6x Plus Élevée",
+          "description": "Les entreprises qui s'appuient fortement sur les données voient une productivité et une rentabilité supérieures de 5 à 6%. (Source : MIT Sloan Management Review)"
+        },
+        {
+          "title": "20%\nDe Temps en Plus",
+          "description": "Les gestionnaires passent 20% moins de temps à analyser les données lorsqu'ils utilisent des tableaux de bord et des graphiques clairs. (Source : Aberdeen Group)"
+        }
+      ]
+    },
+    "section05": {
+      "tag": "Concentrez-vous sur ce qui compte vraiment",
+      "title": "Nous gérons tous les aspects de vos analyses de stationnement",
+      "description": "Arrêtez de perdre du temps avec le suivi manuel et les approximations. La plateforme Parkwize vous donne un accès instantané aux données en temps réel, aux insights automatisés et aux tableaux de bord de performance — une solution complète conçue pour augmenter l'occupation, rationaliser les opérations et générer plus de revenus de vos actifs de stationnement.",
+      "features": [
+        {
+          "title": "Suivi d'occupation en temps réel",
+          "description": "Surveillez l'utilisation des espaces en direct pour identifier les zones à fort trafic et les capacités inutilisées."
+        },
+        {
+          "title": "Segmentation intelligente des espaces",
+          "description": "Catégorisez et analysez les zones de stationnement par type d'utilisateur, durée ou rentabilité."
+        },
+        {
+          "title": "Alertes et notifications automatisées",
+          "description": "Recevez des alertes instantanées en cas de surcapacité, de séjours prolongés ou de modèles inhabituels."
+        },
+        {
+          "title": "Suggestions de tarification dynamique",
+          "description": "Utilisez les insights basés sur la demande pour optimiser la tarification selon les zones et les créneaux horaires."
+        },
+        {
+          "title": "Tableaux de bord de performance",
+          "description": "Visualisez les revenus, le taux de rotation et l'efficacité des espaces en un seul clic."
+        },
+        {
+          "title": "Support d'intégration transparente",
+          "description": "Connectez Parkwize avec vos systèmes de contrôle d'accès, de billetterie ou de paiement sans effort."
+        }
+      ]
+    },
+    "section06": {
+      "tag": "LA SOLUTION DONT VOUS AVEZ BESOIN",
+      "title": "Pourquoi choisir Parkwize"
+    },
+    "section07": {
+      "tag": "FAQ",
+      "title": "Vous avez des\nquestions ?",
+      "faq": [
+        {
+          "question": "Qu'est-ce qui est inclus dans votre plateforme d'analyse de stationnement ?",
+          "answer": "Accès aux tableaux de bord en temps réel, cartes thermiques d'utilisation des espaces, outils de tarification dynamique, alertes automatisées et options d'intégration."
+        },
+        {
+          "question": "Comment fonctionne le processus d'optimisation ?",
+          "answer": "Nous commençons par un audit complet de vos données de stationnement, puis implémentons le suivi en temps réel, identifions les inefficacités et fournissons des insights exploitables dans les 30 jours."
+        },
+        {
+          "question": "Dans combien de temps pouvons-nous commencer ?",
+          "answer": "La mise en place prend moins de 10 jours pour la plupart des installations de stationnement (selon le package sélectionné). Notre équipe gère l'intégration, la synchronisation des données, la formation et plus encore."
+        },
+        {
+          "question": "Dois-je utiliser du matériel ou des systèmes spécifiques ?",
+          "answer": "Non. Parkwize s'intègre avec la plupart des principaux systèmes de contrôle d'accès, de paiement et de billetterie — mais nous recommandons fortement d'associer nos solutions avec la technologie et le matériel Process."
+        },
+        {
+          "question": "Quel type de ROI puis-je espérer ?",
+          "answer": "La plupart des clients voient une augmentation de revenus de 15 à 40 % grâce à l'optimisation des espaces et à un meilleur taux de rotation. Nous le garantissons avec un suivi de performance transparent."
+        },
+        {
+          "question": "Comment mesurez-vous le succès ?",
+          "answer": "Nous suivons des métriques clés comme les revenus par espace, le taux d'occupation, la durée moyenne et la sous-utilisation — tout visualisé dans votre tableau de bord."
+        }
+      ]
+    },
+    "section08": {
+      "tag": "AGISSEZ MAINTENANT",
+      "title": "Prêt à transformer vos données de stationnement en machine à revenus prévisibles ?",
+      "description01": "Rejoignez le nombre croissant d'opérateurs et de gestionnaires immobiliers utilisant Parkwize pour maximiser les revenus et l'efficacité avec des analyses de stationnement en temps réel. Plus d'approximations. Plus d'espaces sous-utilisés. Seulement des décisions basées sur les données qui génèrent des retours constants mois après mois.",
+      "description02": "Ne laissez pas passer un autre jour de revenus manqués inaperçu. Planifiez votre appel d'optimisation de stationnement dès aujourd'hui."
+    },
+    "section09": {
+      "tag": "LA SOLUTION DONT VOUS AVEZ BESOIN",
+      "title": "Pourquoi Choisir Parkwize",
+      "whyRows": [
+        {
+          "reason": "Impact sur les Revenus",
+          "description": "Jusqu'à 40% d'augmentation mensuelle des revenus grâce à l'optimisation"
+        },
+        {
+          "reason": "Modèle de Service",
+          "description": "Plateforme SaaS entièrement gérée pour l'analyse de stationnement en temps réel"
+        },
+        {
+          "reason": "Visualisation des Données",
+          "description": "Tableaux de bord en direct, cartes thermiques et rapports de tendances d'occupation"
+        },
+        {
+          "reason": "Configuration Technique",
+          "description": "Intégration facile avec vos systèmes existants"
+        },
+        {
+          "reason": "Rapidité du Support",
+          "description": "Support dédié avec des temps de réponse rapides"
+        },
+        {
+          "reason": "Spécialisation",
+          "description": "Conçu spécifiquement pour les opérateurs de stationnement et gestionnaires d'actifs"
+        },
+        {
+          "reason": "Tarification Dynamique",
+          "description": "Suggestions de tarification intelligentes basées sur les modèles d'utilisation"
+        },
+        {
+          "reason": "Suivi des Performances",
+          "description": "Tableaux de bord ROI avec KPI personnalisés et alertes"
+        }
+      ]
+    },
+    "section10": {
+      "tag": "Concentrez-vous sur ce qui compte vraiment",
+      "title": "Nous gérons tous les aspects de vos analyses de stationnement",
+      "description": "Arrêtez de perdre du temps avec le suivi manuel et les approximations. La plateforme Parkwize vous donne un accès instantané aux données en temps réel, aux insights automatisés et aux tableaux de bord de performance — une solution complète conçue pour augmenter l'occupation, rationaliser les opérations et générer plus de revenus de vos actifs de stationnement."
+    },
+    "howitworks": {
+      "title": "How it\nworks",
+      "description": "Manage your experience from start to finish, from integrations to registration and from interactive stage elements to post-event data, it’s all here.",
+      "lrm": "Learn more",
+      "steps": [
+        {
+          "image": "",
+          "title": "Plan",
+          "description": "Welcome Studio gives you all the tools you need to create and host virtual experiences that look awesome and put your brand centerstage."
+        },
+        {
+          "image": "",
+          "title": "Implement",
+          "description": "Welcome Studio gives you all the tools you need to create and host virtual experiences that look awesome and put your brand centerstage."
+        },
+        {
+          "image": "",
+          "title": "Scale",
+          "description": "Welcome Studio gives you all the tools you need to create and host virtual experiences that look awesome and put your brand centerstage."
+        }
+      ]
+    }
+  },
+  "onlineReservationPage": {
+    "header": {
+      "tag": "Plateforme de Réservation de Stationnement en Ligne",
+      "title": "Offrez une expérience moderne, simple et rapide à vos clients pour réserver leurs stationnements en ligne, sous votre propre marque",
+      "description": "Notre solution vous permet de digitaliser et rentabiliser vos espaces de stationnement grâce à une plateforme sur mesure, adaptée à votre image. Elle s’intègre parfaitement à votre site web ou à une page dédiée, avec votre logo, vos couleurs vos conditions et vos fonctionnalités"
+    },
+    "section01": {
+      "tag": "SOLUTION ENTIÈREMENT GÉRÉE",
+      "title": "Nous Construisons, Déployons et Gérons Votre Plateforme de Réservation Complète",
+      "description": "De la conception personnalisée au support continu, nous gérons tous les aspects de votre système de réservation en ligne. Vous vous concentrez sur votre entreprise pendant que nous nous assurons que votre plateforme fonctionne parfaitement et génère un maximum de revenus.",
+      "subtitle": "Fonctionnalités principales",
+      "functionalities": [
+        {
+          "title": "Réservation en ligne 24/7",
+          "details": "Vos clients peuvent réserver leur espace de stationnement à tout moment, depuis leur téléphone ou ordinateur."
+        },
+        {
+          "title": "Interface personnalisée à votre image",
+          "details": "Une plateforme entièrement à votre image, alignée à votre branding – logo, couleurs, textes, messages, etc."
+        },
+        {
+          "title": "Types de billets et fonctionnalités multiples ",
+          "details": "Offrez la flexibilité : stationnement à l’heure, à la journée, au mois ou accès multi-entrées et bien plus encore"
+        },
+        {
+          "title": "Paiement intégré et sécurisé",
+          "details": "Paiement instantané par carte avec facture automatique. Intégration possible avec Stripe, Square, Moneris et plus."
+        },
+        {
+          "title": "Tableau de bord de gestion",
+          "details": "Visualisez les réservations en temps réel, gérez les accès et exportez vos rapports comptables ou connectés s’y directement votre quickbook "
+        }
+      ]
+    },
+    "section02": {
+      "tag": "Solution Entièrement Gérée",
+      "title": "Accès intelligent\net sécurisé",
+      "description": "Après chaque réservation, l’utilisateur reçoit automatiquement les instructions d’accès, incluant deux options technologiques :",
+      "realTimeBooking": "Réservation et Disponibilité en Temps Réel",
+      "securePayment": "Traitement Sécurisé des Paiements",
+      "automatedCustomerManagement": "Gestion Automatisée de la Clientèle"
+    },
+    "section03": {
+      "increaseBookings": "Augmentation des Réservations en Ligne",
+      "revenueGrowth": "Croissance des Revenus des Réservations Anticipées",
+      "reduction": "Réduction des Non-Présentations",
+      "less": "Moins",
+      "automatedRevenue": "Génération Automatisée de Revenus"
+    },
+    "section04": {
+      "tag": "Histoires de Succès",
+      "title": "Résultats Prouvés\nDans Tous les Secteurs"
+    },
+    "section05": {
+      "tag": "Le Système de Réservation",
+      "title": "Notre Plateforme de Réservation en Ligne Personnalisée est Conçue pour un Maximum de Conversions",
+      "description": "Notre système de réservation combine un design convivial avec de puissantes fonctionnalités backend pour créer des expériences de réservation fluides qui augmentent la satisfaction des clients et vos revenus.",
+      "steps": [
+        {
+          "image": "/step_img01.png",
+          "days": {
+            "start": 1,
+            "end": 7
+          },
+          "title": "CONCEVOIR Votre Expérience de Réservation Personnalisée",
+          "description": "Nous créons une interface de réservation sur mesure qui correspond à votre marque et aux besoins de vos clients :",
+          "list": [
+            "Conception UI/UX personnalisée alignée sur votre marque",
+            "Approche de conception réactive axée sur le mobile",
+            "Optimisation du parcours utilisateur pour un maximum de conversions",
+            "Intégration avec votre site web et vos systèmes existants"
+          ]
+        },
+        {
+          "image": "/step_img01.png",
+          "days": {
+            "start": 7,
+            "end": 14
+          },
+          "title": "DÉVELOPPER les Fonctionnalités Clés de la Réservation",
+          "description": "Nous construisons et intégrons toutes les fonctionnalités essentielles de la réservation :",
+          "list": [
+            "Moteur de disponibilité et de réservation en temps réel",
+            "Traitement sécurisé des paiements et conformité PCI",
+            "Gestion des comptes et profils clients",
+            "Notifications automatisées par e-mail et SMS"
+          ]
+        },
+        {
+          "image": "/step_img01.png",
+          "days": {
+            "start": 14
+          },
+          "title": "DÉPLOYER & Optimiser la Performance",
+          "description": "Nous lançons votre plateforme et l'optimisons en continu pour de meilleurs résultats :",
+          "list": [
+            "Déploiement cloud avec une infrastructure à mise à l'échelle automatique",
+            "Surveillance et optimisation des performances",
+            "Tests A/B pour l'amélioration des conversions",
+            "Mises à jour continues des fonctionnalités et support"
+          ]
+        }
+      ]
+    },
+    "section06": {
+      "title": "Utilisez-vous Encore des Méthodes de Réservation Obsolètes ?",
+      "oldWay": {
+        "tag": "L'Ancienne Méthode :",
+        "title": "La Plupart des Opérateurs de Stationnement Dépendent Encore des Appels Téléphoniques et des Visites Spontanées, Perdant Ainsi des Revenus...",
+        "list": [
+          "Les clients ne peuvent pas réserver à l'avance, ce qui crée de l'incertitude",
+          "Perte de temps du personnel avec les réservations par téléphone et les processus manuels",
+          "Aucune garantie de paiement, entraînant des non-présentations et des pertes de revenus",
+          "Horaires d'ouverture limités restreignant les opportunités de réservation"
+        ]
+      },
+      "parkwizeWay": {
+        "tag": "LA MÉTHODE PARKWIZE :",
+        "title": "Transformez Votre Entreprise de Stationnement avec une Plateforme de Réservation en Ligne Moderne...",
+        "list": [
+          "Réservation en ligne 24/7 avec confirmation instantanée",
+          "Traitement automatisé des paiements et revenus garantis",
+          "Tarification intelligente qui s'adapte à la demande et maximise les revenus",
+          "Gestion complète de la clientèle et programmes de fidélité"
+        ]
+      }
+    },
+    "section07": {
+      "tag": "SOLUTION ENTIÈREMENT GÉRÉE",
+      "title": "Nous Construisons, Déployons et Gérons Votre Plateforme de Réservation Complète",
+      "description": "De la conception personnalisée au support continu, nous gérons tous les aspects de votre système de réservation en ligne. Vous vous concentrez sur votre entreprise pendant que nous nous assurons que votre plateforme fonctionne parfaitement et génère un maximum de revenus.",
+      "solutions": [
+        {
+          "title": "Réservation en ligne 24/7",
+          "description": "Vos clients peuvent réserver leur espace de stationnement à tout moment, depuis leur téléphone ou ordinateur."
+        },
+        {
+          "title": "Interface personnalisée à votre image",
+          "description": "Une plateforme entièrement à votre image, alignée à votre branding – logo, couleurs, textes, messages, etc."
+        },
+        {
+          "title": "Types de billets et fonctionnalités multiples",
+          "description": "Offrez la flexibilité : stationnement à l’heure, à la journée, au mois ou accès multi-entrées et bien plus encore"
+        },
+        {
+          "title": "Paiement intégré et sécurisé",
+          "description": "Paiement instantané par carte avec facture automatique. Intégration possible avec Stripe, Square, Moneris et plus."
+        },
+        {
+          "title": "Tableau de bord de gestion",
+          "description": "Visualisez les réservations en temps réel, gérez les accès et exportez vos rapports comptables ou connectés s’y directement votre quickbook"
+        }
+      ]
+    },
+    "section08": {
+      "tag": "COMPARAISON DE PLATEFORMES",
+      "title": "Pourquoi Choisir les Réservations Parkwize",
+      "reasons": [
+        {
+          "reason": "Conception Personnalisée",
+          "description": "Plateforme de réservation entièrement personnalisée et adaptée aux mobiles"
+        },
+        {
+          "reason": "Vitesse de Réservation",
+          "description": "Processus de réservation en 30 secondes avec confirmation instantanée"
+        },
+        {
+          "reason": "Intégration des Paiements",
+          "description": "Traitement des paiements sécurisé et multi-passerelles"
+        },
+        {
+          "reason": "Tarification Dynamique",
+          "description": "Optimisation des prix basée sur l'IA pour un revenu maximal"
+        },
+        {
+          "reason": "Portail Client",
+          "description": "Gestion complète des comptes et fonctionnalités de fidélisation"
+        },
+        {
+          "reason": "Notifications",
+          "description": "Système de communication automatisé par SMS et e-mail"
+        },
+        {
+          "reason": "Analytique",
+          "description": "Tableau de bord d'analyse des réservations et des revenus en temps réel"
+        },
+        {
+          "reason": "Support & Maintenance",
+          "description": "Support technique 24/7 et gestion de la plateforme"
+        }
+      ]
+    },
+    "section09": {
+      "tag": "FAQ",
+      "title": "Questions Fréquentes sur les Réservations en Ligne",
+      "questions": [
+        {
+          "question": "En combien de temps les clients peuvent-ils effectuer une réservation ?",
+          "answer": "Notre processus de réservation simplifié permet aux clients de finaliser une réservation en moins de 30 secondes, avec une disponibilité en temps réel et une confirmation instantanée."
+        },
+        {
+          "question": "Quels modes de paiement acceptez-vous ?",
+          "answer": "Nous acceptons toutes les principales cartes de crédit, les portefeuilles numériques (Apple Pay, Google Pay) et pouvons nous intégrer à vos processeurs de paiement existants."
+        },
+        {
+          "question": "Les clients peuvent-ils modifier ou annuler leurs réservations ?",
+          "answer": "Oui, les clients peuvent facilement modifier ou annuler leurs réservations via leur portail de compte, avec un traitement automatisé des remboursements basé sur vos politiques d'annulation."
+        },
+        {
+          "question": "Comment fonctionne la tarification dynamique ?",
+          "answer": "Notre système ajuste automatiquement les prix en fonction de la demande, de l'heure de la journée, des événements et d'autres facteurs que vous définissez, contribuant à maximiser les revenus pendant les périodes de pointe."
+        },
+        {
+          "question": "Fournissez-vous des fonctionnalités de support client ?",
+          "description": "Oui, nous incluons des outils de support client intégrés, une intégration automatisée du service d'assistance et un support technique 24/7 pour votre plateforme de réservation."
+        },
+        {
+          "question": "Le système peut-il gérer un grand volume de réservations ?",
+          "description": "Absolument. Notre infrastructure cloud s'adapte automatiquement pour gérer des milliers de réservations simultanées, garantissant un fonctionnement fluide pendant les pics de demande."
+        }
+      ]
+    },
+    "section10": {
+      "tag": "COMMENCEZ À GÉNÉRER PLUS DE REVENUS",
+      "title": "Prêt à Lancer Votre Plateforme de Réservation en Ligne Personnalisée ?",
+      "description1": "Rejoignez le nombre croissant d'opérateurs de stationnement qui ont transformé leur activité avec nos plateformes de réservation personnalisées. De la conception au déploiement, nous nous occupons de tout pour que vous puissiez commencer à générer plus de revenus dès le premier jour.",
+      "description2": "Ne laissez pas un autre client repartir parce qu'il n'a pas pu réserver à l'avance. Obtenez votre plateforme de réservation dès aujourd'hui."
+    }
+  },
+  "processPage": {
+    "hero": {
+      "title": "Des solutions intelligentes, simples et évolutives – pour rentabiliser chaque espace et améliorer l’expérience usager."
+    },
+    "about": {
+      "title": "À propos de nous",
+      "subtitle": "Une expertise depuis plus de 25 ans",
+      "description": "Basée au Québec, notre entreprise combine le meilleur des technologies SaaS et IoT pour transformer la gestion des stationnements.",
+      "milestonesTitle": "Nos jalons :",
+      "milestones": [
+        {
+          "year": "2002",
+          "text": "Implémentation de solutions pour 55 sites de la SPAQ"
+        },
+        {
+          "year": "2016",
+          "text": "Développement d’une plateforme 100 % cloud"
+        },
+        {
+          "year": "2023",
+          "text": "Distribution officielle par GardaWorld pour des clients comme YQB, Beneva et Fairmont"
+        }
+      ],
+      "whyTitle": "Pourquoi nous choisir ?",
+      "whyPoints": [
+        "Fiabilité éprouvée",
+        "Écosystème complet (logiciel + bornes + support)",
+        "Support local et service rapide"
+      ]
+    },
+    "solutions": {
+      "title": "Nos solutions",
+      "platformTitle": "Plateforme de gestion intelligente",
+      "description": "Une interface centralisée pour gérer, analyser et optimiser l’ensemble de vos sites, en temps réel.",
+      "featuresTitle": "Ce que vous pouvez faire avec notre plateforme :",
+      "badge": "Hébergement sécurisé au Canada",
+      "features": [
+        {
+          "title": "Automatisez votre facturation",
+          "description": "Gagnez du temps, réduisez les erreurs et simplifiez vos opérations comptables."
+        },
+        {
+          "title": "Récupérez automatiquement toutes vos données, en temps réel",
+          "description": "Obtenez des rapports dynamiques et des statistiques claires pour améliorer la performance de vos stationnements."
+        },
+        {
+          "title": "Gérez plusieurs sites à partir d’un seul tableau de bord",
+          "description": "Supervisez facilement toutes vos bornes et équipements, peu importe leur emplacement."
+        },
+        {
+          "title": "Offrez la réservation et l’abonnement en ligne",
+          "description": "Facilitez l’accès pour vos usagers réguliers grâce à un système intuitif et rapide."
+        },
+        {
+          "title": "Profitez de paiements sécurisés",
+          "description": "Notre système est compatible avec les principales passerelles de paiement, pour une intégration fluide et fiable."
+        },
+        {
+          "title": "Installez votre système en moins de 24 heures",
+          "description": "Notre technologie prête à l’emploi permet un déploiement rapide, sans perturber vos opérations en cours."
+        }
+      ]
+    },
+    "iot": {
+      "title": "Écosystème IoT – Connecté, réactif, efficace",
+      "description": "Des équipements robustes connectés à Internet pour une gestion proactive :",
+      "benefitsTitle": "Avantages concrets :",
+      "features": [
+        {
+          "title": "Alertes intelligentes (SMS, e-mail)",
+          "description": "intervention rapide en cas d’anomalie"
+        },
+        {
+          "title": "Réduction des pannes et des coûts",
+          "description": "grâce au diagnostic à distance"
+        },
+        {
+          "title": "Composantes industrielles",
+          "description": "fiables pour une durabilité maximale"
+        },
+        {
+          "title": "Contrôle par caméra LPR",
+          "description": "accès sans contact, rapide et sécurisé"
+        },
+        {
+          "title": "Accès abonnés, réservations et billets horaires ou forfaitaires",
+          "description": "— tout est automatisé"
+        }
+      ]
+    },
+    "equipment": {
+      "title": "Nos équipements",
+      "benefitsLabel": "Bénéfices :",
+      "cards": [
+        {
+          "title": "Bornes d’entrée et de sortie",
+          "models": [
+            "K10P (accès horaire & abonnés)",
+            "K40T (abonnés uniquement)"
+          ],
+          "benefits": [
+            "Accès fluide",
+            "Expérience sans friction",
+            "Réduction du besoin de personnel sur place"
+          ]
+        },
+        {
+          "title": "Bornes de paiement \"Payez sur place\"",
+          "models": [
+            "K35P – Paiement carte débit/crédit",
+            "K30P / K31P – Paiement carte + argent comptant"
+          ],
+          "benefits": [
+            "Flexibilité pour les utilisateurs",
+            "Options multiples de paiement",
+            "Moins de files d’attente"
+          ]
+        },
+        {
+          "title": "Barrières et accessoires",
+          "models": [
+            "Contrôle d’accès RFID / lecteurs optiques",
+            "Bornes entièrement personnalisables",
+            "Impression de billets adaptés à votre image"
+          ],
+          "benefits": [
+            "Un système à votre image",
+            "Flexible et adapté à toutes les réalités terrain"
+          ]
+        }
+      ]
+    },
+    "trust": {
+      "title": "Ils nous font confiance",
+      "description": "Plus de 63 sites déjà gérés avec notre technologie.",
+      "stats": [
+        "7 millions d’entrées / an",
+        "3 millions de paiements électroniques / an"
+      ],
+      "partnersTitle": "Parmi nos partenaires :",
+      "partners": [
+        "PARKEO",
+        "SAFEWAY",
+        "Beneva",
+        "Groupe Mach",
+        "Groupe Petra",
+        "GESPARC",
+        "YQB (Aéroport international Jean-Lesage)",
+        "FAIRMONT"
+      ],
+      "testimonials": [
+        {
+          "company": "YQB",
+          "text": "Plus de 7 millions d’entrées par an gérées efficacement"
+        },
+        {
+          "company": "Beneva",
+          "text": "1 million de paiements électroniques traités annuellement"
+        },
+        {
+          "company": "FAIRMONT",
+          "text": "Solution fiable et support réactif 24/7"
+        }
+      ]
+    },
+    "support": {
+      "title": "Support 24/7 et centre d’appel",
+      "cards": [
+        "PBX infonuagique intégré",
+        "Surveillance à distance",
+        "Assistance rapide et personnalisée"
+      ],
+      "benefitsTitle": "Bénéfices :",
+      "benefitsDescription": "Moins d’interruptions, plus de satisfaction client."
+    },
+    "contact": {
+      "tag": "Passez à l’action",
+      "title": "Prêt à transformer vos opérations de stationnement ?",
+      "description1": "Nous vous accompagnons de l’analyse à la mise en place complète de votre solution.",
+      "description2": "Planifiez une démonstration personnalisée et découvrez le potentiel de votre parc de stationnement."
+    },
+    "cta": {
+      "bookDemo": "→ Planifiez une démo gratuite"
+    },
+    "footer": {
+      "brandTag": "Le futur de l’intelligence parking",
+      "menuTitle": "Site web",
+      "links": {
+        "home": "Accueil",
+        "process": "Process",
+        "demo": "Explorer la démo"
+      },
+      "legalTitle": "Légal",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d’utilisation",
+      "rights": "Tous droits réservés."
+    }
+  }
+}

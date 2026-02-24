@@ -1,0 +1,937 @@
+{
+  "demo": {
+    "overview": {
+      "header": {
+        "tag": "Next-Generation Parking Management",
+        "title": "Parking Dashboard",
+        "description": "Transform your parking operations with intelligent management, real-time analytics, and seamless customer experiences.",
+        "buttons": {
+          "explore": "Explore Live Demo",
+          "learnMore": "Learn More"
+        }
+      },
+      "stats": {
+        "01": {
+          "label": "Parking Lots Managed",
+          "value": "20+"
+        },
+        "02": {
+          "label": "Daily Data Live Events",
+          "value": "50k+"
+        },
+        "03": {
+          "label": "Active Users",
+          "value": "?k+"
+        },
+        "04": {
+          "label": "Revenue Processed",
+          "value": "$2M+"
+        }
+      },
+      "section1": {
+        "title": "Powerful Features",
+        "description": "Everything you need to manage modern parking operations efficiently and profitably.",
+        "features": {
+          "01": {
+            "title": "Real-time Analytics",
+            "description": "Monitor parking usage, revenue, and traffic patterns with live data visualization",
+            "color": "bg-blue-500"
+          },
+          "02": {
+            "title": "Smart Parking Management",
+            "description": "Manage multiple parking lots, kiosks, and payment systems from one dashboard",
+            "color": "bg-green-500"
+          },
+          "03": {
+            "title": "Revenue Optimization",
+            "description": "Track payments, optimize pricing, and maximize revenue across all locations",
+            "color": "bg-yellow-500"
+          },
+          "04": {
+            "title": "Customer Management",
+            "description": "Handle reservations, subscriptions, and customer accounts seamlessly",
+            "color": "bg-purple-500"
+          },
+          "05": {
+            "title": "Display Management",
+            "description": "Control digital displays and signage across your parking facilities",
+            "color": "bg-blue-500"
+          },
+          "06": {
+            "title": "Enterprise Security",
+            "description": "Role & Attribute-based access control and comprehensive audit trails",
+            "color": "bg-red-500"
+          },
+          "07": {
+            "title": "AI Recommendations",
+            "description": "Deliver real-time recommendations to improve lot usage, reduce congestion, and enhance customer flow using machine learning insights.",
+            "color": "bg-purple-500"
+          },
+          "08": {
+            "title": "Dynamic Pricing by AI",
+            "description": "Automatically adjust pricing based on demand, time, and usage patterns to maximize revenue and lot occupancy.",
+            "color": "bg-orange-500"
+          },
+          "09": {
+            "title": "Live Systems Alerts",
+            "description": "Get instant alerts for system failures hardware malfunctions, or unusual behavior - ensuring rapid issue resolution and minimal downtime.",
+            "color": "bg-red-500"
+          },
+          "10": {
+            "title": "Maintenance & Support Alerts",
+            "description": "Receive predictive maintenance notifications and manage issue tickets effortlessly with automatic escalation and resolution tracking.",
+            "color": "bg-yellow-500"
+          },
+          "11": {
+            "title": "Semi-Automated Support Center",
+            "description": "Streamline customer service with an AI-assisted support module that helps resolve user issues quickly and routes complex tickets to your team.",
+            "color": "bg-amber-500"
+          },
+          "12": {
+            "title": "Fraud Detection",
+            "description": "Identify and prevent suspicious behavior with AI-powered monitoring of access patterns, payment anomalies, and device tampering attempts.",
+            "color": "bg-blue-500"
+          }
+        }
+      },
+      "section2": {
+        "title": "Why Choose Our Platform?",
+        "description": "Join thousands of businesses that have transformed their parking operations.",
+        "benefits": [
+          "Increase revenue by up to 35% with smart pricing",
+          "Reduce operational costs with automated management",
+          "Improve customer satisfaction with seamless experiences",
+          "Scale efficiently across multiple locations",
+          "Make data-driven decisions with comprehensive analytics",
+          "Ensure compliance with detailed reporting"
+        ],
+        "scale": {
+          "title1": "Global Scale",
+          "description1": "Trusted by parking operators worldwide, from small businesses to enterprise-level operations managing hundreds of locations.",
+          "title2": "Innovation First",
+          "description2": "Continuously evolving with the latest technology trends, including AI-powered analytics and IoT integrations."
+        }
+      },
+      "footer": {
+        "title": "Ready to Transform Your Parking Operations?",
+        "description": "Experience the power of intelligent parking management. Try our interactive demo and see how we can revolutionize your business.",
+        "cto": "Start Interactive Demo"
+      }
+    },
+    "displayManagementOv": {
+      "pageTitle": "TV Displays",
+      "currentPageName": "Overview",
+      "badge": "Smart digital signage",
+      "title2": "Parking Displays",
+      "viewDemo": "View demo",
+      "section01": {
+        "title": "Complete turnkey solution",
+        "description": "Deliver a modern and connected experience right from your parking entrance.",
+        "coreFeatures": [
+          "Professional high-resistance outdoor/indoor screen",
+          "Intuitive cloud management platform",
+          "Complete installation and configuration",
+          "24/7 technical support",
+          "Complete cloud display management platform"
+        ],
+        "viewExample": "View example"
+      },
+      "section02": {
+        "title": "Robust and high-performance technology",
+        "description": "Our professional outdoor screens are designed to operate year after year.",
+        "specifications": [
+          {
+            "label": "Brightness",
+            "value": "5000+ nits",
+            "detail": "Readable in direct sunlight"
+          },
+          {
+            "label": "Resistance",
+            "value": "IP65/IK10",
+            "detail": "Water, dust, impact"
+          },
+          {
+            "label": "Temperature",
+            "value": "-30°C to +50°C",
+            "detail": "Guaranteed operation"
+          },
+          {
+            "label": "Availability",
+            "value": "24/7",
+            "detail": "Built to last"
+          }
+        ]
+      },
+      "section03": {
+        "title": "Versatile and intelligent display",
+        "description": "Manage your content in real-time, fully customizable according to your needs.",
+        "displayCapabilities": [
+          "Real-time pricing (hourly, flat rate)",
+          "Automatic promotions and evening rates",
+          "Parking status (full, available, reserved)",
+          "Weather alerts and snow operations",
+          "Emergency messages and temporary instructions",
+          "Programmable partner advertisements"
+        ]
+      },
+      "section04": {
+        "title": "Simplified remote management",
+        "description": "Control all your screens from a single interface, wherever you are.",
+        "managementFeatures": [
+          "Instant rate modifications",
+          "Scheduling by hour/day/season",
+          "Centralized multi-site management",
+          "Customizable templates",
+          "Modification history",
+          "Automatic maintenance alerts"
+        ],
+        "cloudPlatform": "Cloud platform",
+        "display": "displays",
+        "active": "active",
+        "uptime": "uptime"
+      },
+      "section05": {
+        "title": "Complete integration with your systems",
+        "description": "Easily connect with your existing infrastructure and customize your customer experience.",
+        "integrations": [
+          "Existing payment kiosks",
+          "LPR cameras and recognition",
+          "Automatic barriers",
+          "Contactless systems (NFC, QR)",
+          "Parking management APIs",
+          "Real-time occupancy sensors"
+        ]
+      },
+      "footer": {
+        "title": "Upgrade to next-generation display",
+        "description": "No more paper signs and manual interventions. Discover a modern, reliable and profitable solution.",
+        "viewDemo": "View interactive demo",
+        "consultation": "Request consultation",
+        "installation": "Installation included",
+        "support": "24/7 support"
+      }
+    }
+  },
+  "homepage": {
+    "ctu": "Get in Touch",
+    "cto": "Something",
+    "header": {
+      "tag": "All-in-One AI-Driven Parking Intelligence Platform",
+      "title": "Unlock 15%–40% More Revenue|from Your Parking",
+      "trust": "They trust us",
+      "cards": [
+        {
+          "title": "Process\nHardware",
+          "description": "Provide parking hardware like kiosks and gates",
+          "href": "#"
+        },
+        {
+          "title": "Parkwize\nDashboard\nManager",
+          "description": "A comprehensive platform for parking management",
+          "href": "/demo/overview"
+        },
+        {
+          "title": "Parkwize Digital Signage Solution",
+          "description": "Implement dynamic signage systems for parking",
+          "href": "/demo/display-management-ov"
+        },
+        {
+          "title": "Parkwize Online Reservation",
+          "description": "Deploy powerful online booking platforms",
+          "href": "/fr/online-reservations"
+        }
+      ],
+      "addons": [
+        "Actionable Insights in Real-Time",
+        "Seamless integration With Your Existing Infrastructure",
+        "Trusted by Leading Property Operators & Parking Managers"
+      ],
+      "stats": {
+        "01": {
+          "value": "27%",
+          "text": "Increase in Revenue per Available Space"
+        },
+        "02": {
+          "value": "$4.8M",
+          "text": "Revenue Optimized Across Our Clients Lots"
+        },
+        "03": {
+          "value": "2X",
+          "value2": "Faster",
+          "text": "Turnaround Time on Occupancy Decisions"
+        },
+        "04": {
+          "value": "88%",
+          "text": "Improvement in Underutilized Space Identification"
+        }
+      }
+    },
+    "section01": {
+      "tag": "The Parkwize Ecosystem",
+      "title": "Four products. One intelligent platform.",
+      "cards": {
+        "dashboard": "Parkwize\nDashboard\nManager",
+        "process": "Process\nHardware",
+        "signage": "Parkwize Digital\nSignage Solution",
+        "reservation": "Parkwize Online\nReservation",
+        "ai": "Parkwize AI",
+        "more": "More"
+      }
+    },
+    "section02": {
+      "tag": "Our Technologies",
+      "title": "The Parkwize Dashboard",
+      "stats": {
+        "01": "response time",
+        "02": "parking lots rely on\nParkwize",
+        "03": "generated revenue\nwith our solution",
+        "04": "support availability"
+      }
+    },
+    "section03": {
+      "tag": "The Pro System",
+      "title01": "Our",
+      "title02": "PRO",
+      "title03": "System is Designed to\nMaximize Your Parking Revenue",
+      "description": "Our proprietary PRO System helps parking operators unlock hidden revenue, improve space usage, and make smarter decisions based on real-time data. Here's how we turn your parking data into a predictable performance engine:",
+      "cards": [
+        {
+          "imageSrc": "",
+          "days": "(Days 1 - 7)",
+          "title": "PLAN Your Parking Intelligence Foundation",
+          "description": "We lay the groundwork through deep discovery and strategic mapping:",
+          "features": [
+            "Complete audit of your current parking usage data",
+            "Identification of underutilized zones and revenue gaps",
+            "Analysis of seasonal trends, user behavior, and pricing models",
+            "Setup of your Parking Optimization Roadmap for the next 60 days"
+          ]
+        },
+        {
+          "imageSrc": "",
+          "days": "(Days 7 - 30)",
+          "title": "REFINE Your Data Engine",
+          "description": "We structure your analytics and tracking systems to unlock full performance:",
+          "features": [
+            "Real-time space tracking and heatmaps by time of day",
+            "Custom reporting dashboards aligned with business goals",
+            "Smart alerts for overcapacity, bottlenecks, and low-turnover zones",
+            "Weekly reports showing gains in occupancy and revenue"
+          ]
+        },
+        {
+          "imageSrc": "",
+          "days": "(Days 30+)",
+          "title": "OPTIMIZE for Maximum Yield",
+          "description": "We fine-tune the system to maximize every available space:",
+          "features": [
+            "Dynamic pricing recommendations based on demand",
+            "Automated adjustment suggestions based on usage patterns",
+            "Strategic scenario planning (events, weather, holidays, etc.)",
+            "Transparent performance reports proving ROI"
+          ]
+        }
+      ]
+    },
+    "section04": {
+      "title": "Some statistics you\nprobably didn't know",
+      "stats": [
+        {
+          "title": "+30%",
+          "description": "revenue lift from\ndynamic pricing"
+        },
+        {
+          "title": "+60%",
+          "description": "operators planning digital transformation"
+        },
+        {
+          "title": "+25-35%",
+          "description": "potential\nrevenue increase"
+        },
+        {
+          "title": "+70%",
+          "description": "drivers prefer\ndigital payment"
+        },
+        {
+          "title": "-40%",
+          "description": "less congestion with\nsmart guidance systems"
+        },
+        {
+          "title": "-30%",
+          "description": "faster entry/exit with\nlicense plate recognition"
+        },
+        {
+          "title": "+30%",
+          "description": "higher occupancy\nwith real-time data"
+        },
+        {
+          "title": "-60%",
+          "description": "reduction in manual\noperational workload"
+        }
+      ]
+    },
+    "section05": {
+      "tag": "Stay focused on what truly matters",
+      "title": "We Handle Every Aspect of Your Parking Analytics",
+      "description": "Stop wasting time with manual tracking and guesswork. The Parkwize platform gives you instant access to real-time data, automated insights, and performance dashboards — a complete solution built to increase occupancy, streamline operations, and drive more revenue from your parking assets.",
+      "features": [
+        {
+          "title": "Real-Time Occupancy Tracking",
+          "description": "Monitor space usage live to identify high-traffic zones and idle capacity."
+        },
+        {
+          "title": "Smart Space Segmentation",
+          "description": "Categorize and analyse parking zones by user type, duration, or profitability."
+        },
+        {
+          "title": "Automated Alerts & Notifications",
+          "description": "Get instant alerts for overcapacity, long stays, or unusual patterns."
+        },
+        {
+          "title": "Dynamic Pricing Suggestions",
+          "description": "Use demand-driven insights to optimize pricing across zones and time slots."
+        },
+        {
+          "title": "Performance Dashboards",
+          "description": "Visualize revenue, turnover rate, and space efficiency in a single click."
+        },
+        {
+          "title": "Seamless Integration Support",
+          "description": "Connect Parkwize with your access control, ticketing, or payment systems effortlessly."
+        }
+      ]
+    },
+    "section06": {
+      "tag": "THE SOLUTION YOU NEED",
+      "title": "Why Choose Parkwize"
+    },
+    "section07": {
+      "tag": "FAQ",
+      "title": "Got Some\nQuestions?",
+      "faq": [
+        {
+          "question": "What's included in your parking analytics platform?",
+          "answer": "Access to real-time dashboards, space usage heatmaps, dynamic pricing tools, automated alerts, and integration options."
+        },
+        {
+          "question": "How does the optimization process work?",
+          "answer": "We begin with a full audit of your parking data, then implement real-time tracking, identify inefficiencies, and provide actionable insights within 30 days."
+        },
+        {
+          "question": "How quickly can we get started?",
+          "answer": "Setup takes less than 10 days for most parking facilities (depending on the selected package). Our team handles onboarding, data sync, training, and more."
+        },
+        {
+          "question": "Do I need to use specific hardware or systems?",
+          "answer": "No. Parkwize integrates with most major access control, payment, and ticketing systems — but we highly recommend matching our solutions with Process technology and hardware."
+        },
+        {
+          "question": "What kind of ROI can I expect?",
+          "answer": "Most clients see a 15–40% revenue increase from space optimization and better turnover. We back it with transparent performance tracking."
+        },
+        {
+          "question": "How do you measure success?",
+          "answer": "We track key metrics like revenue per space, occupancy rate, average duration, and underutilization — all visualized in your dashboard."
+        }
+      ]
+    },
+    "section08": {
+      "tag": "TAKE ACTION NOW",
+      "title": "Ready to Optimize Your Parking Using Powerful Solutions and Data-Driven Ecosystem?",
+      "description01": "Join the growing number of operators and property managers using Parkwize to maximize revenue and efficiency with real-time parking analytics. No more guesswork. No more underused spaces. Just data-backed decisions that drive consistent returns month after month.",
+      "description02": "Don’t let another day of missed revenue go unnoticed. Schedule your Parking Optimization Call today."
+    },
+    "section09": {
+      "tag": "THE SOLUTION YOU NEED",
+      "title": "Why Choose Parkwize",
+      "whyRows": [
+        {
+          "reason": "Revenue Impact",
+          "description": "Up to 40% monthly revenue lift through optimization"
+        },
+        {
+          "reason": "Service Model",
+          "description": "Fully-managed SaaS platform for real-time parking analytics"
+        },
+        {
+          "reason": "Data Visualization",
+          "description": "Live dashboards, heatmaps, and occupancy trend reports"
+        },
+        {
+          "reason": "Technical Setup",
+          "description": "Easy onboarding, with integration to your existing systems"
+        },
+        {
+          "reason": "Support Speed",
+          "description": "Dedicated support with rapid response times"
+        },
+        {
+          "reason": "Specialization",
+          "description": "Built specifically for parking operators and asset managers"
+        },
+        {
+          "reason": "Dynamic Pricing",
+          "description": "Smart pricing suggestions based on usage patterns"
+        },
+        {
+          "reason": "Performance Tracking",
+          "description": "ROI dashboards with custom KPIs and alerts"
+        }
+      ]
+    },
+    "section10": {
+      "tag": "Stay focused on what truly matters",
+      "title": "We Handle Every Aspect of Your Parking Analytics",
+      "description": "Stop wasting time with manual tracking and guesswork. The Parkwize platform gives you instant access to real-time data, automated insights, and performance dashboards — a complete solution built to increase occupancy, streamline operations, and drive more revenue from your parking assets."
+    },
+    "howitworks": {
+      "title": "How it\nworks",
+      "description": "Manage your experience from start to finish, from integrations to registration and from interactive stage elements to post-event data, it’s all here.",
+      "lrm": "Learn more",
+      "steps": [
+        {
+          "image": "",
+          "title": "Plan",
+          "description": "Welcome Studio gives you all the tools you need to create and host virtual experiences that look awesome and put your brand centerstage."
+        },
+        {
+          "image": "",
+          "title": "Implement",
+          "description": "Welcome Studio gives you all the tools you need to create and host virtual experiences that look awesome and put your brand centerstage."
+        },
+        {
+          "image": "",
+          "title": "Scale",
+          "description": "Welcome Studio gives you all the tools you need to create and host virtual experiences that look awesome and put your brand centerstage."
+        }
+      ]
+    }
+  },
+  "onlineReservationPage": {
+    "header": {
+      "tag": "Online Parking Reservation Platform",
+      "title": "Offer your customers a modern, simple, and fast experience to book their parking online, under your own brand",
+      "description": "Our solution allows you to digitize and monetize your parking spaces with a custom platform, tailored to your image. It integrates perfectly with your website or a dedicated page, with your logo, colors, conditions, and features."
+    },
+    "section01": {
+      "tag": "FULLY MANAGED SOLUTION",
+      "title": "We Build, Deploy, and Manage Your Complete Reservation Platform",
+      "description": "From custom design to ongoing support, we handle all aspects of your online reservation system. You focus on your business while we ensure your platform runs perfectly and generates maximum revenue.",
+      "subtitle": "Main Features",
+      "functionalities": [
+        {
+          "title": "24/7 Online Booking",
+          "details": "Your customers can book their parking space at any time, from their phone or computer."
+        },
+        {
+          "title": "Customized Interface to Your Brand",
+          "details": "A platform entirely tailored to your brand, aligned with your branding – logo, colors, texts, messages, etc."
+        },
+        {
+          "title": "Multiple Ticket Types and Features",
+          "details": "Offer flexibility: hourly, daily, monthly parking, multi-entry access, and much more."
+        },
+        {
+          "title": "Integrated and Secure Payment",
+          "details": "Instant card payment with automatic invoicing. Integration possible with Stripe, Square, Moneris, and more."
+        },
+        {
+          "title": "Management Dashboard",
+          "details": "View real-time reservations, manage access, and export your accounting reports or connect directly to your QuickBooks."
+        }
+      ]
+    },
+    "section02": {
+      "tag": "Fully Managed Solution",
+      "title": "Smart and Secure Access",
+      "description": "After each reservation, the user automatically receives access instructions, including two technological options:",
+      "realTimeBooking": "Real-Time Booking & Availability",
+      "securePayment": "Secure Payment Processing",
+      "automatedCustomerManagement": "Automated Customer Management"
+    },
+    "section03": {
+      "increaseBookings": "Increase in Online Bookings",
+      "revenueGrowth": "Revenue Growth from Advance Bookings",
+      "reduction": "Reduction in No-Shows",
+      "less": "Less",
+      "automatedRevenue": "Automated Revenue Generation"
+    },
+    "section04": {
+      "tag": "Success Stories",
+      "title": "Proven Results\nAcross Industries"
+    },
+    "section05": {
+      "tag": "The Reservation System",
+      "title": "Our Custom Online Reservation Platform Is Built for Maximum Conversions",
+      "description": "Our reservation system combines user-friendly design with powerful backend features to create seamless booking experiences that drive customer satisfaction and increase your revenue.",
+      "steps": [
+        {
+          "image": "/step_img01.png",
+          "days": {
+            "start": 1,
+            "end": 7
+          },
+          "title": "DESIGN Your Custom Booking Experience",
+          "description": "We create a tailored reservation interface that matches your brand and customer needs:",
+          "list": [
+            "Custom UI/UX design aligned with your brand",
+            "Mobile-first responsive design approach",
+            "User journey optimization for maximum conversions",
+            "Integration with your existing website and systems"
+          ]
+        },
+        {
+          "image": "/step_img01.png",
+          "days": {
+            "start": 7,
+            "end": 14
+          },
+          "title": "DEVELOP Core Booking Features",
+          "description": "We build and integrate all essential reservation functionality:",
+          "list": [
+            "Real-time availability and booking engine",
+            "Secure payment processing and PCI compliance",
+            "Customer account management and profiles",
+            "Automated email and SMS notifications"
+          ]
+        },
+        {
+          "image": "/step_img01.png",
+          "days": {
+            "start": 14
+          },
+          "title": "DEPLOY & Optimize Performance",
+          "description": "We launch your platform and continuously optimize for better results:",
+          "list": [
+            "Cloud deployment with auto-scaling infrastructure",
+            "Performance monitoring and optimization",
+            "A/B testing for conversion improvements",
+            "Ongoing feature updates and support"
+          ]
+        }
+      ]
+    },
+    "section06": {
+      "title": "Still Using Outdated Booking Methods?",
+      "oldWay": {
+        "tag": "The Old Way:",
+        "title": "Most Parking Operators Still Rely on Phone Calls and Walk-Ins, Missing Out on Revenue...",
+        "list": [
+          "Customers can't book in advance, leading to uncertainty",
+          "Staff time wasted on phone bookings and manual processes",
+          "No payment guarantee leading to no-shows and lost revenue",
+          "Limited operating hours restricting booking opportunities"
+        ]
+      },
+      "parkwizeWay": {
+        "tag": "THE PARKWIZE WAY:",
+        "title": "Transform Your Parking Business with a Modern Online Reservation Platform...",
+        "list": [
+          "24/7 online booking with instant confirmation",
+          "Automated payment processing and guaranteed revenue",
+          "Smart pricing that adapts to demand and maximizes revenue",
+          "Complete customer management and loyalty programs"
+        ]
+      }
+    },
+    "section07": {
+      "tag": "FULLY MANAGED SOLUTION",
+      "title": "We Build, Deploy, and Manage Your Entire Reservation Platform",
+      "description": "From custom design to ongoing support, we handle every aspect of your online reservation system. You focus on your business while we ensure your platform runs smoothly and generates maximum revenue.",
+      "solutions": [
+        {
+          "title": "24/7 Online Booking",
+          "description": "Your customers can book their parking space at any time, from their phone or computer."
+        },
+        {
+          "title": "Customized Interface to Your Brand",
+          "description": "A platform entirely tailored to your brand, aligned with your branding – logo, colors, texts, messages, etc."
+        },
+        {
+          "title": "Multiple Ticket Types and Features",
+          "description": "Offer flexibility: hourly, daily, monthly parking, multi-entry access, and much more."
+        },
+        {
+          "title": "Integrated and Secure Payment",
+          "description": "Instant card payment with automatic invoicing. Integration possible with Stripe, Square, Moneris, and more."
+        },
+        {
+          "title": "Management Dashboard",
+          "description": "View real-time reservations, manage access, and export your accounting reports or connect directly to your QuickBooks."
+        }
+      ]
+    },
+    "section08": {
+      "tag": "PLATFORM COMPARISON",
+      "title": "Why Choose Parkwize Reservations",
+      "reasons": [
+        {
+          "reason": "Custom Design",
+          "description": "Fully branded, mobile-responsive booking platform"
+        },
+        {
+          "reason": "Booking Speed",
+          "description": "30-second reservation process with instant confirmation"
+        },
+        {
+          "reason": "Payment Integration",
+          "description": "Secure, multi-gateway payment processing"
+        },
+        {
+          "reason": "Dynamic Pricing",
+          "description": "AI-powered pricing optimization for maximum revenue"
+        },
+        {
+          "reason": "Customer Portal",
+          "description": "Complete account management and loyalty features"
+        },
+        {
+          "reason": "Notifications",
+          "description": "Automated SMS and email communication system"
+        },
+        {
+          "reason": "Analytics",
+          "description": "Real-time booking and revenue analytics dashboard"
+        },
+        {
+          "reason": "Support & Maintenance",
+          "description": "24/7 technical support and platform management"
+        }
+      ]
+    },
+    "section09": {
+      "tag": "FAQS",
+      "title": "Common Questions About Online Reservations",
+      "questions": [
+        {
+          "question": "How quickly can customers make a reservation?",
+          "answer": "Our streamlined booking process allows customers to complete a reservation in under 30 seconds, with real-time availability and instant confirmation."
+        },
+        {
+          "question": "What payment methods do you support?",
+          "answer": "We support all major credit cards, digital wallets (Apple Pay, Google Pay), and can integrate with your existing payment processors."
+        },
+        {
+          "question": "Can customers modify or cancel their reservations?",
+          "answer": "Yes, customers can easily modify or cancel reservations through their account portal, with automated refund processing based on your cancellation policies."
+        },
+        {
+          "question": "How does dynamic pricing work?",
+          "answer": "Our system automatically adjusts pricing based on demand, time of day, events, and other factors you define, helping maximize revenue during peak periods."
+        },
+        {
+          "question": "Do you provide customer support features?",
+          "description": "Yes, we include built-in customer support tools, automated help desk integration, and 24/7 technical support for your reservation platform."
+        },
+        {
+          "question": "Can the system handle high-volume bookings?",
+          "description": "Absolutely. Our cloud infrastructure scales automatically to handle thousands of concurrent bookings, ensuring smooth operation during peak demand."
+        }
+      ]
+    },
+    "section10": {
+      "tag": "START BOOKING MORE REVENUE",
+      "title": "Ready to Launch Your Custom Online Reservation Platform?",
+      "description1": "Join the growing number of parking operators who've transformed their business with our custom reservation platforms. From design to deployment, we handle everything so you can start generating more revenue from day one.",
+      "description2": "Don't let another customer drive away because they couldn't book in advance. Get your reservation platform today."
+    }
+  },
+  "processPage": {
+    "hero": {
+      "title": "Smart, simple, and scalable hardware solutions — to maximize every space and improve the user experience."
+    },
+    "about": {
+      "title": "About us",
+      "subtitle": "Over 25 years of expertise",
+      "description": "Based in Quebec, our company combines the best of SaaS and IoT technologies to transform parking management.",
+      "milestonesTitle": "Our milestones:",
+      "milestones": [
+        {
+          "year": "2002",
+          "text": "Deployment of solutions for 55 SPAQ sites"
+        },
+        {
+          "year": "2016",
+          "text": "Development of a 100% cloud platform"
+        },
+        {
+          "year": "2023",
+          "text": "Official distribution by GardaWorld for clients such as YQB, Beneva, and Fairmont"
+        }
+      ],
+      "whyTitle": "Why choose us?",
+      "whyPoints": [
+        "Proven reliability",
+        "Complete ecosystem (software + kiosks + support)",
+        "Local support and fast service"
+      ]
+    },
+    "solutions": {
+      "title": "Our solutions",
+      "platformTitle": "Intelligent management platform",
+      "description": "A centralized interface to manage, analyze, and optimize all your sites in real time.",
+      "featuresTitle": "What you can do with our platform:",
+      "badge": "Secure hosting in Canada",
+      "features": [
+        {
+          "title": "Automate your billing",
+          "description": "Save time, reduce errors, and simplify your accounting operations."
+        },
+        {
+          "title": "Automatically collect all your data in real time",
+          "description": "Get dynamic reports and clear statistics to improve parking performance."
+        },
+        {
+          "title": "Manage multiple sites from a single dashboard",
+          "description": "Easily monitor all your kiosks and equipment, no matter their location."
+        },
+        {
+          "title": "Offer online reservations and subscriptions",
+          "description": "Make access easier for regular users with a fast and intuitive system."
+        },
+        {
+          "title": "Benefit from secure payments",
+          "description": "Our system supports major payment gateways for smooth and reliable integration."
+        },
+        {
+          "title": "Deploy your system in less than 24 hours",
+          "description": "Our ready-to-use technology enables fast rollout without disrupting ongoing operations."
+        }
+      ]
+    },
+    "iot": {
+      "title": "IoT Ecosystem — Connected, responsive, efficient",
+      "description": "Robust internet-connected equipment for proactive management:",
+      "benefitsTitle": "Key benefits:",
+      "features": [
+        {
+          "title": "Smart alerts (SMS, email)",
+          "description": "rapid intervention when anomalies occur"
+        },
+        {
+          "title": "Reduced failures and costs",
+          "description": "thanks to remote diagnostics"
+        },
+        {
+          "title": "Industrial-grade components",
+          "description": "reliable for maximum durability"
+        },
+        {
+          "title": "LPR camera-based control",
+          "description": "contactless, fast, and secure access"
+        },
+        {
+          "title": "Subscriber access, reservations, and hourly/flat-rate tickets",
+          "description": "— fully automated"
+        }
+      ]
+    },
+    "equipment": {
+      "title": "Our equipment",
+      "benefitsLabel": "Benefits:",
+      "cards": [
+        {
+          "title": "Entry and exit kiosks",
+          "models": [
+            "K10P (hourly & subscriber access)",
+            "K40T (subscriber-only access)"
+          ],
+          "benefits": [
+            "Smooth access",
+            "Frictionless user experience",
+            "Reduced need for on-site staff"
+          ]
+        },
+        {
+          "title": "On-site payment kiosks",
+          "models": [
+            "K35P – Debit/Credit card payment",
+            "K30P / K31P – Card + cash payment"
+          ],
+          "benefits": [
+            "User flexibility",
+            "Multiple payment options",
+            "Shorter queues"
+          ]
+        },
+        {
+          "title": "Barriers and accessories",
+          "models": [
+            "RFID access control / optical readers",
+            "Fully customizable kiosks",
+            "Ticket printing tailored to your brand"
+          ],
+          "benefits": [
+            "A system aligned with your brand",
+            "Flexible and adapted to all operational realities"
+          ]
+        }
+      ]
+    },
+    "trust": {
+      "title": "They trust us",
+      "description": "Over 63 sites already managed with our technology.",
+      "stats": [
+        "7 million entries / year",
+        "3 million electronic payments / year"
+      ],
+      "partnersTitle": "Among our partners:",
+      "partners": [
+        "PARKEO",
+        "SAFEWAY",
+        "Beneva",
+        "Groupe Mach",
+        "Groupe Petra",
+        "GESPARC",
+        "YQB (Québec City Jean Lesage International Airport)",
+        "FAIRMONT"
+      ],
+      "testimonials": [
+        {
+          "company": "YQB",
+          "text": "Over 7 million yearly entries managed efficiently"
+        },
+        {
+          "company": "Beneva",
+          "text": "1 million electronic payments processed annually"
+        },
+        {
+          "company": "FAIRMONT",
+          "text": "Reliable solution and responsive 24/7 support"
+        }
+      ]
+    },
+    "support": {
+      "title": "24/7 support and call center",
+      "cards": [
+        "Integrated cloud PBX",
+        "Remote monitoring",
+        "Fast and personalized assistance"
+      ],
+      "benefitsTitle": "Benefits:",
+      "benefitsDescription": "Fewer interruptions, higher customer satisfaction."
+    },
+    "contact": {
+      "tag": "Take action",
+      "title": "Ready to transform your parking operations?",
+      "description1": "We support you from analysis to full deployment of your solution.",
+      "description2": "Book a personalized demo and discover your parking network’s potential."
+    },
+    "cta": {
+      "bookDemo": "→ Schedule a free demo"
+    },
+    "footer": {
+      "brandTag": "The Future of Parking Intelligence",
+      "menuTitle": "Website",
+      "links": {
+        "home": "Home",
+        "process": "Process",
+        "demo": "Explore demo"
+      },
+      "legalTitle": "Legal",
+      "privacy": "Privacy policy",
+      "terms": "Terms of use",
+      "rights": "All rights reserved."
+    }
+  }
+}

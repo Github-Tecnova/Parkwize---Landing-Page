@@ -1,0 +1,290 @@
+/*
+ * Copyright (c) 2025-2026. Tecnova
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+*::-webkit-scrollbar {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  border-radius: 0 !important;
+  border: 3px solid transparent !important;
+  border-left: 5px solid transparent !important;
+  background-clip: padding-box !important;
+  transition: background-color 0.2s ease !important;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.35) !important;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+@layer base {
+  :root {
+    --bg-dark: hsl(255, 0%, 93%);
+    --bg: hsl(255, 0%, 96%);
+    --bg-light: hsl(255, 0%, 100%);
+
+    --text: hsl(0, 0%, 5%);
+    --text-muted: hsl(0, 0%, 30%);
+
+    --border: hsl(0, 0%, 85%);
+    --border-light: hsl(0, 0%, 90%);
+
+    --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+    --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+
+    --highlight: hsl(0, 0%, 100%);
+
+    --border-card: var(--bg);
+
+    --shadow:
+      0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 3px 3px hsla(0, 0%, 0%, 0.15);
+
+    --shadow-s:
+      inset 0 1px 2px #ffffff30, 0 1px 2px #00000030, 0 2px 4px #00000015;
+    --shadow-m:
+      inset 0 1px 2px #ffffff50, 0 2px 4px #00000030, 0 4px 8px #00000015;
+    --shadow-l:
+      inset 0 1px 2px #ffffff70, 0 4px 6px #00000030, 0 6px 10px #00000015;
+
+    --shadow-inner-s:
+      inset 0 1px 3px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-inner-m:
+      inset 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(0, 0, 0, 0.08);
+    --shadow-inner-l:
+      inset 0 4px 8px rgba(0, 0, 0, 0.12), inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-inner-xl: inset 0 64px 232px rgba(0, 0, 0, 0.4);
+
+    --title-1: #7171a6;
+    --title-2: #33334f;
+    --sidebar: #fff;
+    --background: #f5f5f7;
+    --foreground: #0a0908;
+    --muted: #f4f4f5;
+    --muted-foreground: #737171;
+    --popover: #ffffff;
+    --popover-foreground: #0a0908;
+    --card: #ffffff;
+    --card-foreground: #0a0908;
+    --input: #e6e5e5;
+    --primary: #1c1917;
+    --primary-foreground: #f8f8f8;
+    --secondary: #f4f4f5;
+    --secondary-foreground: #1c1917;
+    --accent: #f4f4f5;
+    --accent-foreground: #1c1917;
+    --destructive: #e74c4c;
+    --destructive-foreground: #f8f8f8;
+    --ring: #0a0908;
+    --chart-1: #5486ff;
+    --chart-2: #f4f4f5;
+    --chart-3: #f4f4f5;
+    --chart-4: #fcfcfc;
+    --chart-5: #1c1917;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /*--bg-dark: oklch(0.1 0 264);
+    --bg: oklch(0.2 0 264);
+    --bg-light: oklch(0.3 0 264);*/
+
+    --bg-dark: hsl(220, 0%, 0%);
+    --bg: hsl(220, 0%, 5%);
+    --bg-light: hsl(220, 0%, 10%);
+
+    --text: hsl(0, 0%, 95%);
+    --text-muted: hsl(0, 0%, 70%);
+
+    --border: oklch(0.35 0 264);
+
+    --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+    --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+
+    --highlight: hsl(0, 0%, 60%);
+
+    --border-card: var(--border);
+
+    --shadow-s:
+      inset 0 1px 2px #ffffff30, 0 1px 2px #00000030, 0 2px 4px #00000015;
+    --shadow-m:
+      inset 0 1px 2px #ffffff50, 0 2px 4px #00000030, 0 4px 8px #00000015;
+    --shadow-l:
+      inset 0 1px 2px #ffffff70, 0 4px 6px #00000030, 0 6px 10px #00000015;
+
+    --shadow-inner-s:
+      inset 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-inner-m:
+      inset 0 2px 4px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(0, 0, 0, 0.25);
+    --shadow-inner-l:
+      inset 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(0, 0, 0, 0.3);
+
+    --title-1: #a3a3a3;
+    --title-2: #f8f8f8;
+    --sidebar: #171717;
+    --background: #0a0a0a;
+    --foreground: #f8f8f8;
+    --muted: #262424;
+    --muted-foreground: #a3a3a3;
+    --popover: #0a0908;
+    --popover-foreground: #f8f8f8;
+    --card: #171717;
+    --card-foreground: #f8f8f8;
+    --input: #262424;
+    --primary: #f8f8f8;
+    --primary-foreground: #1c1917;
+    --secondary: #262424;
+    --secondary-foreground: #f8f8f8;
+    --accent: #262424;
+    --accent-foreground: #f8f8f8;
+    --destructive: #7c1d1d;
+    --destructive-foreground: #f8f8f8;
+    --ring: #d4d4d4;
+    --chart-1: #5486ff;
+    --chart-2: #262424;
+    --chart-3: #262424;
+    --chart-4: #2e2e2e;
+    --chart-5: #f8f8f8;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+#chart {
+  overflow: visible !important;
+}
+
+.recharts-wrapper {
+  height: auto !important;
+}
+
+.recharts-surface {
+  overflow: visible !important;
+}
+
+.scroller {
+  --animation-duration: 30s;
+  --animation-direction: forwards;
+}
+
+.scroller-inner.animate {
+  animation: scroll var(--animation-duration) linear infinite;
+  animation-direction: var(--animation-direction);
+  will-change: transform;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .scroller-inner.animate {
+    animation-duration: 120s;
+  }
+}
+
+/* Mobile landscape optimizations */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+  .recharts-wrapper {
+    overflow: hidden !important;
+  }
+
+  .recharts-surface {
+    overflow: hidden !important;
+  }
+
+  /* Ensure cards don't exceed viewport */
+  [data-recharts-chart] {
+    max-height: 120px !important;
+  }
+}
+
+/* Prevent chart overflow on all mobile devices */
+@media screen and (max-width: 768px) {
+  .recharts-responsive-container {
+    overflow: hidden !important;
+  }
+  * {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none !important; /* Firefox */
+  }
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 8px !important;
+    height: 8px !important;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--bg-light) !important;
+    border-radius: 0 !important;
+    border: 0;
+    transition: background-color 0.2s ease !important;
+  }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .recharts-wrapper {
+    transform: translateZ(0);
+  }
+}
+
+.react-flow__panel.react-flow__attribution {
+  display: none !important;
+}
+
+.react-flow__controls-button {
+  width: 30px !important;
+  height: 30px !important;
+  border: 1px solid #c8c8c8 !important;
+  border-radius: 5px;
+}
+
+.header-bg {
+  background-size: cover;
+}
+
+.section-bg {
+  background-size: cover;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
