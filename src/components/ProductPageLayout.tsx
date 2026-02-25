@@ -5,6 +5,7 @@ import { ArrowRight, type LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image, { type StaticImageData } from "next/image";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 interface Feature {
   icon: LucideIcon;
@@ -83,9 +84,13 @@ const getEcosystemProductImage = (href: string, title: string) => {
 const ProductPageLayout = (props: ProductPageProps) => {
   const pathname = usePathname();
   const isFr = pathname.startsWith("/fr");
+  const landingFormHref = isFr
+    ? "/fr#early-access-form"
+    : "/en#early-access-form";
 
   const labels = isFr
     ? {
+        getInTouch: "Contactez-nous",
         requestDemo: "Demander une démo privée",
         bookMeeting: "Planifier une rencontre à Amsterdam",
         problem: "Le Problème",
@@ -103,6 +108,7 @@ const ProductPageLayout = (props: ProductPageProps) => {
         joinLaunch: "Rejoindre le lancement privé à Amsterdam",
       }
     : {
+        getInTouch: "Get in touch",
         requestDemo: "Request Private Demo",
         bookMeeting: "Book Meeting in Amsterdam",
         problem: "The Problem",
@@ -168,14 +174,7 @@ const ProductPageLayout = (props: ProductPageProps) => {
                 size="lg"
                 className="text-base px-8 bg-parkwize_blue text-white hover:bg-parkwize_blue/90 rounded-none"
               >
-                {labels.requestDemo} <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-base px-8 rounded-none"
-              >
-                {labels.bookMeeting}
+                {labels.getInTouch} <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </motion.div>
             {(props.heroVideo || props.heroImage) && (
@@ -417,15 +416,15 @@ const ProductPageLayout = (props: ProductPageProps) => {
               {labels.finalDescription}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="text-base px-8">
-                {labels.requestDemo} <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="text-base px-8 border-white/30 text-parkwize_blue hover:!bg-white/10 hover:text-white"
+                variant="secondary"
+                className="text-base px-8 hover:bg-parkwize_blue hover:text-white hover:border-white hover:border"
+                asChild
               >
-                {labels.joinLaunch}
+                <Link href={landingFormHref}>
+                  {labels.requestDemo} <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
               </Button>
             </div>
           </motion.div>

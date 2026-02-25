@@ -877,6 +877,7 @@ function SolutionSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ delay: 0.25 }}
+                className="overflow-hidden"
               >
                 <Link
                   href={`/ai`}
@@ -908,6 +909,7 @@ function SolutionSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ delay: 0.25 }}
+                className="overflow-hidden"
               >
                 <Link
                   href={`/display`}
@@ -940,6 +942,7 @@ function SolutionSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ delay: 0.25 }}
+                className="overflow-hidden"
               >
                 <Link
                   href={`/booking`}
@@ -971,6 +974,7 @@ function SolutionSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ delay: 0.25 }}
+                className="overflow-hidden"
               >
                 <Link
                   href={`/process`}
@@ -980,8 +984,8 @@ function SolutionSection() {
                 >
                   <div className={"flex-1"}>
                     <Image
-                      src={"/landing-borne.png"}
-                      alt={"Landing Borne"}
+                      src={"/Borne_process.png"}
+                      alt={"Landing Borne Process"}
                       className={"translate-x-28 object-contain"}
                       fill
                     />

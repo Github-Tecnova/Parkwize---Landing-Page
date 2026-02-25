@@ -2,6 +2,7 @@
 
 import { Monitor, Wifi, MapPin, AlertCircle, Eye, Zap } from "lucide-react";
 import ProductPageLayout from "../../../../components/ProductPageLayout";
+import displayImage from "@/assets/landing-tvs.png";
 import { usePathname } from "next/navigation";
 
 const ProductDisplay = () => {
@@ -239,6 +240,7 @@ const ProductDisplay = () => {
       badge={content.badge}
       headline={content.headline}
       headlineAccent={content.headlineAccent}
+      heroImage={displayImage}
       subheadline={content.subheadline}
       problemTitle={content.problemTitle}
       problemDesc={content.problemDesc}
