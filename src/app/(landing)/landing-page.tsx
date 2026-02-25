@@ -91,79 +91,9 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import LogoParkwize from "@/assets/parkwize_logo_tr.png";
 import IconLogoParkwize from "@/assets/Iconlogo_Parkwize.png";
 import MacBookProM4 from "@/assets/MacBook_Pro_M4.png";
+import dashboardProductImg from "@/assets/dashboard-hero.png";
 /* import MultiChart from "@/components/charts/multi-chart"; */
 import { subDays } from "date-fns";
-
-const stats = [
-  {
-    id: 0,
-    Icon: LucideActivity,
-    val: "90+",
-    text: "Live KPIs",
-  },
-  {
-    id: 1,
-    Icon: LucideBarChart3,
-    val: "20+",
-    text: "Parking Lots Managed",
-  },
-  {
-    id: 2,
-    Icon: LucideUsers,
-    val: "50k+",
-    text: "Daily Data Events",
-  },
-  {
-    id: 3,
-    Icon: LucideDollarSign,
-    val: "$15M+",
-    text: "Revenue Processed",
-  },
-];
-
-const visions = [
-  {
-    id: 0,
-    title: "+35%|Revenue Growth",
-    description: "Average revenue uplift with AI-driven dynamic pricing",
-  },
-  {
-    id: 1,
-    title: "10x|Operational Speed",
-    description: "Faster decision-making through real-time automation",
-  },
-  {
-    id: 2,
-    title: "∞|Multi-Site Scale",
-    description: "Unified control across unlimited parking locations",
-  },
-  {
-    id: 3,
-    title: "1|Full Stack",
-    description: "Single platform replacing 5+ fragmented tools",
-  },
-];
-
-const problems = [
-  {
-    id: 0,
-    title: "No Real-Time Visibility",
-    description:
-      "Operators can't see what's happening across their parking assets in real time.",
-  },
-  {
-    id: 1,
-    title: "Static Pricing",
-    description:
-      "Revenue is left on the table with fixed pricing that ignores demand signals.",
-  },
-  {
-    id: 2,
-    title: "Fragmented Systems",
-    description:
-      "Hardware, software, and data live in disconnected silos with no integration.",
-  },
-];
 
 const services = [
   {
@@ -216,15 +146,6 @@ const services = [
   },
 ];
 
-const EARLY_ACCESS_FEATURES = [
-  "Dynamic Pricing",
-  "Display Management",
-  "IoT Integration",
-  "Online Reservation",
-  "Real-time Analytics",
-  "Forecasting & Automation",
-];
-
 const EARLY_ACCESS_FEATURE_POSITIONS = [
   { top: "18%", left: "8%" },
   { top: "25%", right: "10%" },
@@ -232,17 +153,6 @@ const EARLY_ACCESS_FEATURE_POSITIONS = [
   { top: "55%", right: "6%" },
   { top: "72%", left: "12%" },
   { top: "68%", right: "12%" },
-];
-
-const EARLY_ACCESS_ROLES = [
-  "Parking Owner",
-  "Parking Operator",
-  "Parking Management Company",
-  "Real Estate Owner",
-  "Investor",
-  "Asset Manager (Real Estate / Infrastructure)",
-  "Public & Institutional Organization",
-  "Other",
 ];
 
 const generateEarlyAccessStars = (count: number) =>
@@ -312,6 +222,11 @@ const defaultEarlyAccessForm: EarlyAccessFormState = {
 };
 
 function EarlyAccessMainSection() {
+  const { dict } = useTranslation();
+  const landingDict = dict.homepage.landing;
+  const earlyAccessDict = landingDict.earlyAccess;
+  const earlyAccessFeatures = earlyAccessDict.features;
+
   const [open, setOpen] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
   const [form, setForm] = useState<EarlyAccessFormState>(
@@ -322,12 +237,12 @@ function EarlyAccessMainSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveFeature(
-        (previous) => (previous + 1) % EARLY_ACCESS_FEATURES.length,
+        (previous) => (previous + 1) % earlyAccessFeatures.length,
       );
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [earlyAccessFeatures.length]);
 
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -340,7 +255,10 @@ function EarlyAccessMainSection() {
   };
 
   return (
-    <section className="relative h-[85svh] overflow-hidden border border-parkwize_blue/40 bg-white text-foreground">
+    <section
+      id="early-access-form"
+      className="relative h-[85svh] overflow-hidden border bg-white text-foreground"
+    >
       <div className="pointer-events-none absolute inset-0 z-0">
         <div
           className="absolute right-[-10%] top-[-20%] h-[350px] w-[350px] rounded-full md:h-[500px] md:w-[500px] lg:h-[700px] lg:w-[700px]"
@@ -395,7 +313,7 @@ function EarlyAccessMainSection() {
         <main className="relative flex w-full max-w-6xl flex-[4] flex-col items-center justify-evenly md:flex-[2] md:justify-center">
           <div className="mb-4 flex justify-center px-4 md:hidden">
             <span className="min-w-[250px] rounded-full border border-parkwize_blue/30 bg-white/90 px-6 py-2.5 text-center text-[11px] font-light uppercase tracking-[0.2em] text-foreground/80">
-              {EARLY_ACCESS_FEATURES[activeFeature]}
+              {earlyAccessFeatures[activeFeature]}
             </span>
           </div>
 
@@ -432,7 +350,7 @@ function EarlyAccessMainSection() {
           </div>
 
           <div className="pointer-events-none hidden absolute inset-0 md:block">
-            {EARLY_ACCESS_FEATURES.map((feature, index) => (
+            {earlyAccessFeatures.map((feature, index) => (
               <motion.span
                 key={feature}
                 className="absolute cursor-default text-xs font-light uppercase tracking-widest text-parkwize_blue/75 transition-colors duration-300 hover:text-parkwize_blue lg:text-sm"
@@ -455,10 +373,10 @@ function EarlyAccessMainSection() {
               onClick={() => setOpen(true)}
               className="group relative rounded-full border border-foreground/20 bg-foreground/5 px-8 py-4 text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 hover:border-parkwize_blue hover:bg-parkwize_blue/10 hover:shadow-[0_0_40px_rgba(7,88,246,0.15)] md:px-10 md:text-sm md:tracking-[0.2em] lg:px-12 lg:py-5 lg:text-base lg:tracking-[0.25em]"
             >
-              Reserve Your Spot
+              {earlyAccessDict.reserveButton}
             </button>
             <p className="mt-2 text-center text-[9px] tracking-wide text-foreground/70 md:mt-3 md:text-sm">
-              AI-Powered Parking Management — Sign Up for Early Access
+              {earlyAccessDict.subtitle}
             </p>
           </div>
         </main>
@@ -467,7 +385,7 @@ function EarlyAccessMainSection() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-md rounded-2xl border-2 border-parkwize_blue/30 bg-white p-8 shadow-[0_0_60px_rgba(7,88,246,0.25)]">
           <DialogTitle className="sr-only">
-            Sign Up for Early Access
+            {earlyAccessDict.dialogTitle}
           </DialogTitle>
           <div className="mb-6 flex justify-center">
             <Image
@@ -483,7 +401,7 @@ function EarlyAccessMainSection() {
             <div className="grid grid-cols-2 gap-4">
               <input
                 type="text"
-                placeholder="First Name"
+                placeholder={earlyAccessDict.firstName}
                 value={form.firstName}
                 onChange={(event) =>
                   setForm({ ...form, firstName: event.target.value })
@@ -493,7 +411,7 @@ function EarlyAccessMainSection() {
               />
               <input
                 type="text"
-                placeholder="Last Name"
+                placeholder={earlyAccessDict.lastName}
                 value={form.lastName}
                 onChange={(event) =>
                   setForm({ ...form, lastName: event.target.value })
@@ -504,7 +422,7 @@ function EarlyAccessMainSection() {
 
             <input
               type="email"
-              placeholder="Email Address"
+              placeholder={earlyAccessDict.email}
               value={form.email}
               onChange={(event) =>
                 setForm({ ...form, email: event.target.value })
@@ -515,7 +433,7 @@ function EarlyAccessMainSection() {
 
             <input
               type="text"
-              placeholder="Company Name"
+              placeholder={earlyAccessDict.company}
               value={form.company}
               onChange={(event) =>
                 setForm({ ...form, company: event.target.value })
@@ -543,9 +461,9 @@ function EarlyAccessMainSection() {
                 disabled
                 className="bg-background text-foreground"
               >
-                Your Role
+                {earlyAccessDict.yourRole}
               </option>
-              {EARLY_ACCESS_ROLES.map((role) => (
+              {earlyAccessDict.roles.map((role) => (
                 <option
                   key={role}
                   value={role}
@@ -559,7 +477,7 @@ function EarlyAccessMainSection() {
             {form.role === "Other" && (
               <input
                 type="text"
-                placeholder="Please specify your role"
+                placeholder={earlyAccessDict.otherRole}
                 value={form.roleOther}
                 onChange={(event) =>
                   setForm({ ...form, roleOther: event.target.value })
@@ -570,7 +488,7 @@ function EarlyAccessMainSection() {
 
             <input
               type="tel"
-              placeholder="Phone (optional)"
+              placeholder={earlyAccessDict.phone}
               value={form.phone}
               onChange={(event) =>
                 setForm({ ...form, phone: event.target.value })
@@ -582,7 +500,7 @@ function EarlyAccessMainSection() {
               type="submit"
               className="mt-2 w-full rounded-full border-2 border-parkwize_blue bg-parkwize_blue py-4 text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-parkwize_blue/90 md:py-3"
             >
-              Sign Up
+              {earlyAccessDict.signUp}
             </button>
 
             <label className="flex cursor-pointer items-start gap-3">
@@ -595,8 +513,7 @@ function EarlyAccessMainSection() {
                 className="mt-1 accent-parkwize_blue"
               />
               <span className="text-[11px] leading-relaxed text-muted-foreground/60">
-                I agree to receive marketing communications from Parkwize. You
-                can unsubscribe at any time.
+                {earlyAccessDict.consent}
               </span>
             </label>
           </form>
@@ -608,6 +525,7 @@ function EarlyAccessMainSection() {
 
 function Header() {
   const { dict } = useTranslation();
+  const landingDict = dict.homepage.landing;
   return (
     <div className={"relative pt-8"}>
       <div
@@ -636,9 +554,7 @@ function Header() {
               className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 text-center"
               style={{ opacity: 1, transform: "none" }}
             >
-              The first fully AI-powered parking intelligence ecosystem.
-              Modernize operations, pricing, displays, booking, and more — from
-              one platform.
+              {landingDict.header.description}
             </p>
           </div>
           {/*<p*/}
@@ -652,7 +568,7 @@ function Header() {
           {/*</p>*/}
           <div className={"flex items-center justify-center gap-x-4 pt-4"}>
             <Link
-              href={"/dashboard"}
+              href={"#early-access-form"}
               className={cn(
                 buttonVariants({ variant: "primary" }),
                 "h-11 w-40 rounded-none bg-parkwize_blue font-light hover:bg-blue-700",
@@ -668,13 +584,13 @@ function Header() {
                   "!h-11 w-40 rounded-none border-2 border-parkwize_blue bg-white !text-parkwize_blue hover:!border-blue-700 hover:!bg-blue-700 hover:!text-white",
               })}
             >
-              Explore Demo
+              {landingDict.header.exploreDemo}
             </Link>
           </div>
         </div>
         <div className={"aspect-[3/2] h-full w-full max-w-screen-lg px-5"}>
           <Image
-            src={"/landing/MacBook.png"}
+            src={dashboardProductImg}
             alt={"Mac"}
             width={1280}
             height={1280}
@@ -686,14 +602,44 @@ function Header() {
 }
 
 function QuickStatsSection() {
+  const { dict } = useTranslation();
+  const quickStats = dict.homepage.landing.quickStats;
+
+  const localizedStats = [
+    {
+      id: 0,
+      Icon: LucideActivity,
+      val: "90+",
+      text: quickStats.liveKpis,
+    },
+    {
+      id: 1,
+      Icon: LucideBarChart3,
+      val: "20+",
+      text: quickStats.parkingLotsManaged,
+    },
+    {
+      id: 2,
+      Icon: LucideUsers,
+      val: "50k+",
+      text: quickStats.dailyDataEvents,
+    },
+    {
+      id: 3,
+      Icon: LucideDollarSign,
+      val: "$15M+",
+      text: quickStats.revenueProcessed,
+    },
+  ];
+
   return (
-    <div className={"mb-16 border-y border-border-light py-12 bg-[#F9F9FA]"}>
+    <div className={" border-y border-border-light py-12 bg-[#F9F9FA]"}>
       <div
         className={
           "mx-auto grid max-w-screen-xl grid-cols-2 gap-y-10 lg:grid-cols-4 items-center justify-center gap-x-8"
         }
       >
-        {stats.map((stat) => (
+        {localizedStats.map((stat) => (
           <div key={stat.id} className={`mx-auto w-fit space-y-2 text-center`}>
             <stat.Icon className={"mx-auto text-parkwize_blue w-6 h-6"} />
             <div>
@@ -708,22 +654,46 @@ function QuickStatsSection() {
 }
 
 function TheVisionSection() {
+  const { dict } = useTranslation();
+  const visionDict = dict.homepage.landing.vision;
+
+  const localizedVisions = [
+    {
+      id: 0,
+      title: visionDict.items.revenueGrowth.title,
+      description: visionDict.items.revenueGrowth.description,
+    },
+    {
+      id: 1,
+      title: visionDict.items.operationalSpeed.title,
+      description: visionDict.items.operationalSpeed.description,
+    },
+    {
+      id: 2,
+      title: visionDict.items.multiSiteScale.title,
+      description: visionDict.items.multiSiteScale.description,
+    },
+    {
+      id: 3,
+      title: visionDict.items.fullStack.title,
+      description: visionDict.items.fullStack.description,
+    },
+  ];
+
   return (
-    <div className={"py-16"}>
+    <div id="vision" className={"py-16"}>
       <div className={"mx-auto max-w-screen-xl space-y-6 px-5 text-center"}>
-        <TagP>The Vision</TagP>
+        <TagP>{visionDict.tag}</TagP>
         <p
           className={
             "mx-auto max-w-screen-md text-3xl lg:text-5xl font-semibold text-text"
           }
         >
-          Reengineering the Parking Industry{" "}
-          <span className={"text-parkwize_blue"}>from Scratch.</span>
+          {visionDict.title}{" "}
+          <span className={"text-parkwize_blue"}>{visionDict.titleAccent}</span>
         </p>
         <p className={"mx-auto max-w-screen-md text-lg text-text-muted"}>
-          A new generation has built the intelligent infrastructure that unifies
-          data, operations, pricing, displays, booking, automation, and AI —
-          into one cohesive ecosystem.
+          {visionDict.description}
         </p>
       </div>
       <div
@@ -731,7 +701,7 @@ function TheVisionSection() {
           "mx-auto flex w-fit gap-x-8 py-8 flex-col lg:flex-row gap-y-4 lg:gap-y-0"
         }
       >
-        {visions.map((problem) => (
+        {localizedVisions.map((problem) => (
           <Tooltip delayDuration={300} key={`vision-${problem.id}`}>
             <TooltipTrigger asChild>
               <div
@@ -762,7 +732,7 @@ function TheVisionSection() {
             className: " !bg-parkwize_blue rounded-none",
           })}
         >
-          Try Demo <LucideArrowRight />
+          {visionDict.tryDemo} <LucideArrowRight />
         </Link>
       </div>
     </div>
@@ -770,24 +740,42 @@ function TheVisionSection() {
 }
 
 function ProblemsSection() {
+  const { dict } = useTranslation();
+  const problemDict = dict.homepage.landing.problem;
+
+  const localizedProblems = [
+    {
+      id: 0,
+      title: problemDict.items.noVisibility.title,
+      description: problemDict.items.noVisibility.description,
+    },
+    {
+      id: 1,
+      title: problemDict.items.staticPricing.title,
+      description: problemDict.items.staticPricing.description,
+    },
+    {
+      id: 2,
+      title: problemDict.items.fragmentedSystems.title,
+      description: problemDict.items.fragmentedSystems.description,
+    },
+  ];
+
   return (
     <div className={"py-16"}>
       <div className={"mx-auto max-w-screen-xl space-y-6 px-5 text-center"}>
         <p className={"font-semibold uppercase text-parkwize_blue"}>
-          The Problem
+          {problemDict.tag}
         </p>
         <p className={"lg:text-5xl text-3xl font-semibold text-text"}>
-          Parking has been frozen for 20 years.
+          {problemDict.title}
         </p>
         <p className={"mx-auto max-w-screen-md text-lg text-text-muted"}>
-          Most operators still rely on outdated systems, fragmented data, manual
-          processes, and static pricing. Nothing communicates together. The
-          industry stayed profitable despite inefficiency — which is exactly why
-          innovation stalled.
+          {problemDict.description}
         </p>
       </div>
       <div className={"mx-auto w-fit space-y-6 py-12 px-5"}>
-        {problems.map((problem) => (
+        {localizedProblems.map((problem) => (
           <div key={problem.id} className={"flex items-start gap-x-4"}>
             <div
               className={
@@ -803,14 +791,14 @@ function ProblemsSection() {
       </div>
       <div className={"mx-auto w-fit"}>
         <Link
-          href={"#"}
+          href={"#early-access-form"}
           className={buttonVariants({
             variant: "primary",
             size: "lg",
             className: "rounded-none !bg-parkwize_blue",
           })}
         >
-          Get in Touch <LucideArrowRight />
+          {dict.homepage.ctu} <LucideArrowRight />
         </Link>
       </div>
     </div>
@@ -821,7 +809,8 @@ function SolutionSection() {
   const { dict, lang } = useTranslation();
 
   return (
-    <div className={"py-16 bg-[#F9F9FA]"}>
+    <div id="ecosystem" className={"py-16 bg-[#F9F9FA]"}>
+      <span id="products" />
       <div className={"mx-auto w-full max-w-screen-2xl px-5"}>
         {/* Desktop Layout */}
         <motion.div
@@ -837,7 +826,7 @@ function SolutionSection() {
             )}
           >
             <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-2">
-              Our Solution
+              {dict.homepage.landing.solution.label}
             </p>
             <TagP>{dict.homepage.section01.tag}</TagP>
             <p
@@ -1012,7 +1001,10 @@ function SolutionSection() {
 
         {/* Mobile Layout */}
         <div className={"block px-5 pt-16 lg:hidden"}>
-          <div className={"mb-8"}>
+          <div className={"mb-8 text-center"}>
+            <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-2">
+              {dict.homepage.landing.solution.label}
+            </p>
             <Label
               className={
                 "text-base font-semibold uppercase text-primary_action"
@@ -1020,7 +1012,7 @@ function SolutionSection() {
             >
               {dict.homepage.section01.tag}
             </Label>
-            <p className={"text-3xl font-medium"}>
+            <p className={"text-3xl font-medium text-center"}>
               {dict.homepage.section01.title}
             </p>
           </div>
@@ -1430,103 +1422,99 @@ function DetailedStatsSection() {
   );
 }
 
-const aiCards = [
-  {
-    Icon: LucideBrain,
-    name: "Forecasting AI",
-    description:
-      "The first artificial intelligence model designed to predict all parking data — occupancy, revenue, traffic, demand — with unmatched accuracy.",
-  },
-  {
-    Icon: LucideTrendingUp,
-    name: "Dynamic Pricing AI",
-    description:
-      "Real-time price calculation and adjustment based on the simultaneous analysis of dozens of variables. Zero manual intervention, immediate results.",
-  },
-  {
-    Icon: LucideMessageCircle,
-    name: "Conversational AI Agent",
-    description:
-      "Talk to your parking. Ask questions, get recommendations, and receive actionable insights — all through a natural language interface powered by AI.",
-  },
-];
-
-const integratedDataSources = [
-  {
-    title: "Real-Time Weather",
-    description: "Temperature, precipitation, 7-day forecasts",
-    Icon: LucideCloudSun,
-  },
-  {
-    title: "Local Events",
-    description: "Concerts, sports, conferences, festivals",
-    Icon: LucideCalendar,
-  },
-  {
-    title: "Traffic Data",
-    description: "Google Maps data, congestion, route patterns",
-    Icon: LucideMapPin,
-  },
-  {
-    title: "Parking History",
-    description: "Demand cycles, seasonal patterns",
-    Icon: LucideChartColumn,
-  },
-  {
-    title: "Ticketing & Buildings",
-    description: "Traffic from nearby platforms and venues",
-    Icon: LucideClock,
-  },
-  {
-    title: "Revenue Patterns",
-    description: "Revenue trends, peaks and troughs",
-    Icon: LucideTrendingUp,
-  },
-];
-
 function ParkwizeAISection() {
+  const { dict } = useTranslation();
+  const aiDict = dict.homepage.landing.ai;
+  const localizedAiCards = [
+    {
+      Icon: LucideBrain,
+      name: aiDict.cards.forecasting.title,
+      description: aiDict.cards.forecasting.description,
+    },
+    {
+      Icon: LucideTrendingUp,
+      name: aiDict.cards.dynamicPricing.title,
+      description: aiDict.cards.dynamicPricing.description,
+    },
+    {
+      Icon: LucideMessageCircle,
+      name: aiDict.cards.conversational.title,
+      description: aiDict.cards.conversational.description,
+    },
+  ];
+
+  const localizedDataSources = [
+    {
+      title: aiDict.dataSources.weather.title,
+      description: aiDict.dataSources.weather.description,
+      Icon: LucideCloudSun,
+    },
+    {
+      title: aiDict.dataSources.events.title,
+      description: aiDict.dataSources.events.description,
+      Icon: LucideCalendar,
+    },
+    {
+      title: aiDict.dataSources.traffic.title,
+      description: aiDict.dataSources.traffic.description,
+      Icon: LucideMapPin,
+    },
+    {
+      title: aiDict.dataSources.history.title,
+      description: aiDict.dataSources.history.description,
+      Icon: LucideChartColumn,
+    },
+    {
+      title: aiDict.dataSources.ticketing.title,
+      description: aiDict.dataSources.ticketing.description,
+      Icon: LucideClock,
+    },
+    {
+      title: aiDict.dataSources.revenue.title,
+      description: aiDict.dataSources.revenue.description,
+      Icon: LucideTrendingUp,
+    },
+  ];
+
   return (
     <div className={"py-24 bg-[#14181f]"}>
       <div className={"mx-auto max-w-screen-2xl space-y-16 px-5"}>
         <div className={"mx-auto max-w-screen-sm space-y-6 text-center"}>
-          <TagP>Parkwize AI</TagP>
+          <TagP>{aiDict.tag}</TagP>
           <div>
             <p className={"lg:text-5xl text-3xl font-semibold text-white"}>
-              The first AI model
+              {aiDict.title}
             </p>
             <p
               className={
                 "lg:text-5xl text-3xl font-semibold text-parkwize_blue"
               }
             >
-              built for parking.
+              {aiDict.titleAccent}
             </p>
           </div>
 
           <p className={"text-[#a1a2a5] max-w-2xl mx-auto text-lg"}>
-            We are pioneers in artificial intelligence applied to parking. Our
-            models — trained on over 2 years of real-world parking data — learn
-            the unique behavior of each facility to predict and optimize in real
-            time.
+            {aiDict.description}
           </p>
         </div>
 
         <div className={"grid lg:grid-cols-3 gap-8 "}>
-          {aiCards.map((card, index) => (
+          {localizedAiCards.map((card, index) => (
             <div
               key={`ai-card-${index}`}
               className={
                 " border border-[#ffffff1a] p-8 md:p-10 bg-[#ffffff0d]"
               }
             >
-              <div
-                className={
-                  "w-14 h-14  bg-[#2463eb33] flex items-center justify-center mb-6"
-                }
-              >
-                <card.Icon className={"size-7 text-parkwize_blue"} />
+              <div className="flex justify-between items-center mb-6">
+                <p className={"text-xl font-semibold text-white"}>
+                  {card.name}
+                </p>
+                <div className={"w-7 h-7 flex items-center justify-center"}>
+                  <card.Icon className={"size-7 text-parkwize_blue"} />
+                </div>
               </div>
-              <p className={"text-xl font-semibold text-white"}>{card.name}</p>
               <p className={"flex-grow text-[#a1a2a5]"}>{card.description}</p>
               {/* <Link
                 href={""}
@@ -1546,21 +1534,20 @@ function ParkwizeAISection() {
           style={{ opacity: 1, transform: "none" }}
         >
           <h3 className={"text-2xl md:text-3xl font-bold mb-3 text-white"}>
-            Integrated Data Sources
+            {aiDict.dataSourcesTitle}
           </h3>
           <p className={"text-background/60 max-w-xl mx-auto text-[#a1a2a5]"}>
-            Our AI continuously ingests and cross-references dozens of data
-            sources to generate optimal forecasts and pricing.
+            {aiDict.dataSourcesDescription}
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {integratedDataSources.map((item) => (
+          {localizedDataSources.map((item) => (
             <div
               key={item.title}
               className="flex items-start gap-4 border border-[#ffffff1a] bg-[#ffffff0d] p-5"
             >
-              <div className="w-10 h-10 bg-[#2463eb33] flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 flex items-center justify-center shrink-0">
                 <item.Icon className="w-5 h-5 text-parkwize_blue" />
               </div>
               <div>
@@ -1578,17 +1565,19 @@ function ParkwizeAISection() {
           style={{ opacity: 1, transform: "none" }}
         >
           <p className=" text-sm uppercase tracking-widest font-semibold mb-3 text-parkwize_blue">
-            The Result
+            {aiDict.resultTag}
           </p>
           <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-2">
-            Higher Revenue. Higher Occupancy. Higher Efficiency.
+            {aiDict.resultTitle}
           </h3>
           <p className="text-[#a1a2a5] max-w-xl mx-auto mb-6">
-            Automatic and continuous optimization — with zero human
-            intervention.
+            {aiDict.resultDescription}
           </p>
-          <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground bg-parkwize_blue h-11 text-white border-none px-8">
-            Get in Touch
+          <Link
+            href={"#early-access-form"}
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-secondary-foreground bg-parkwize_blue h-11 text-white border-none px-8"
+          >
+            {dict.homepage.ctu}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -1604,7 +1593,7 @@ function ParkwizeAISection() {
               <path d="M5 12h14"></path>
               <path d="m12 5 7 7-7 7"></path>
             </svg>
-          </button>
+          </Link>
         </div>
 
         {/* <div className={"flex items-center justify-between text-left"}>
@@ -1629,58 +1618,58 @@ function ParkwizeAISection() {
   );
 }
 
-const processCards = [
-  {
-    Icon: LucideShield,
-    name: "Industrial Grade",
-    description: "Built for 24/7 outdoor operation in any climate",
-  },
-  {
-    Icon: LucideCpu,
-    name: "Smart Integration",
-    description: "Natively connected to the Parkwize software ecosystem",
-  },
-  {
-    Icon: LucideSettings2,
-    name: "Zero Friction",
-    description: "Seamless installation and remote maintenance",
-  },
-  {
-    Icon: LucideSparkle,
-    name: "Real-Time Sync",
-    description: "Hardware state synced live with our Analytics Dashboard",
-  },
-];
-
 function ProcessHardwareSection() {
+  const { dict } = useTranslation();
+  const processDict = dict.homepage.landing.process;
+  const localizedProcessCards = [
+    {
+      Icon: LucideShield,
+      name: processDict.cards.industrialGrade.title,
+      description: processDict.cards.industrialGrade.description,
+    },
+    {
+      Icon: LucideCpu,
+      name: processDict.cards.smartIntegration.title,
+      description: processDict.cards.smartIntegration.description,
+    },
+    {
+      Icon: LucideSettings2,
+      name: processDict.cards.zeroFriction.title,
+      description: processDict.cards.zeroFriction.description,
+    },
+    {
+      Icon: LucideSparkle,
+      name: processDict.cards.realTimeSync.title,
+      description: processDict.cards.realTimeSync.description,
+    },
+  ];
+
   return (
     <div className={"py-16"}>
       <div className={"mx-auto max-w-screen-2xl space-y-8 px-5"}>
         <div className={"mx-auto max-w-screen-md space-y-6 text-center "}>
           <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-[-10px]">
-            Hardware Partner
+            {processDict.partnerLabel}
           </p>
-          <TagP className={"text-xl"}>Process Technology</TagP>
+          <TagP className={"text-xl"}>{processDict.tag}</TagP>
           <div>
             <p className={"lg:text-5xl text-3xl font-semibold"}>
-              The Best Hardware to Fit with
+              {processDict.title}
             </p>
             <p
               className={
                 "lg:text-5xl text-3xl font-semibold text-parkwize_blue"
               }
             >
-              the Best Software.
+              {processDict.titleAccent}
             </p>
           </div>
           <p className={"mx-auto max-w-screen-sm text-text-muted"}>
-            Parkwize partners with Process Technology to deliver a fully
-            integrated hardware-software stack — barriers, terminals, sensors,
-            and access systems designed for the intelligent parking era.
+            {processDict.description}
           </p>
         </div>
         <div className={"grid lg:grid-cols-4 grid-cols-1 gap-8"}>
-          {processCards.map((card, index) => (
+          {localizedProcessCards.map((card, index) => (
             <div
               key={`process-card-${index}`}
               className={"flex flex-col items-start gap-y-4 border p-6"}
@@ -1711,7 +1700,7 @@ function ProcessHardwareSection() {
               className: "!h-fit !px-0 !py-0",
             })}
           >
-            Learn more <LucideArrowRight />
+            {processDict.learnMore} <LucideArrowRight />
           </Link>
         </div>
 
@@ -2015,13 +2004,14 @@ function OptimizeParkingSection() {
 }
 
 function ModernizeParkingSection() {
+  const { dict } = useTranslation();
   return (
     <div className={"px-5 pb-16 pt-16 bg-parkwize_blue "}>
-      <div className={"mx-auto space-y-6  p-16 text-white"}>
+      <div className={"mx-auto space-y-6 text-white"}>
         <p className={"text-center lg:text-4xl text-3xl font-medium"}>
-          Ready to modernize your parking?
+          {dict.homepage.landing.modernize.title}
         </p>
-        <p className={"mx-auto max-w-screen-sm text-center"}>
+        {/* <p className={"mx-auto max-w-screen-sm text-center"}>
           Join the next generation of parking operators. We&apos;re launching
           publicly at RAIL Amsterdam and inviting strategic partners to grow
           with us early.
@@ -2037,7 +2027,7 @@ function ModernizeParkingSection() {
           >
             Request a demo <LucideArrowRight />
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );

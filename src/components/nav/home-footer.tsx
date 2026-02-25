@@ -6,10 +6,12 @@ import type { DictionaryType, LangType } from "@/content/dictionary";
 
 interface HomeFooterProps {
   lang: LangType;
-  dict?: DictionaryType;
+  dict: DictionaryType;
 }
 
-export default function HomeFooter({ lang }: HomeFooterProps) {
+export default function HomeFooter({ lang, dict }: HomeFooterProps) {
+  const footerDict = dict.homepage.footer;
+
   return (
     <div className={"bg-neutral-100"}>
       <div>
@@ -32,7 +34,7 @@ export default function HomeFooter({ lang }: HomeFooterProps) {
                 />
               </Link>
               <p className={"text-sm font-light text-text-muted"}>
-                The Future of Parking Intelligence
+                {footerDict.tagline}
               </p>
               <div
                 className={
@@ -42,11 +44,11 @@ export default function HomeFooter({ lang }: HomeFooterProps) {
                 <p className={""}>&copy; {new Date().getFullYear()}</p>
                 <p>-</p>
                 <Link href={"/privacy-policy"} className={"hover:underline"}>
-                  Privacy policy
+                  {footerDict.privacyPolicy}
                 </Link>
                 <p>-</p>
                 <Link href={"/terms-of-use"} className={"hover:underline"}>
-                  Terms of use
+                  {footerDict.termsOfUse}
                 </Link>
               </div>
             </div>
@@ -77,71 +79,68 @@ export default function HomeFooter({ lang }: HomeFooterProps) {
               </Link>
               <div className={"flex items-center gap-x-1.5"}>
                 <div className={"size-1 rounded-full bg-green-500"} />
-                <p className={"text-xs text-green-600"}>Systems operational.</p>
+                <p className={"text-xs text-green-600"}>{footerDict.systemStatus}</p>
               </div>
             </div>
           </div>
 
           <div className={"space-y-2 text-center sm:text-left"}>
-            <p className={"font-medium text-text"}>Website</p>
+            <p className={"font-medium text-text uppercase"}>{footerDict.products.title}</p>
             <div
               className={"flex flex-col items-center font-light sm:items-start"}
             >
-              <Link href={"#"} className={"w-fit"}>
-                Our work
+              <Link href={`/${lang}/dashboard`} className={"w-fit"}>
+                {footerDict.products.dashboard}
               </Link>
-              <Link href={"#"} className={"w-fit"}>
-                How it works
+              <Link href={`/${lang}/display`} className={"w-fit"}>
+                {footerDict.products.signage}
               </Link>
-              <Link href={"#"} className={"w-fit"}>
-                Case study
+              <Link href={`/${lang}/booking`} className={"w-fit"}>
+                {footerDict.products.booking}
               </Link>
-              <Link href={"#"} className={"w-fit"}>
-                FAQ
+              <Link href={`/${lang}/ai`} className={"w-fit"}>
+                {footerDict.products.ai}
               </Link>
             </div>
           </div>
 
           <div className={"space-y-2 text-center sm:text-left"}>
-            <p className={"font-medium text-text"}>Actions</p>
+            <p className={"font-medium text-text uppercase"}>{footerDict.navigate.title}</p>
             <div
               className={"flex flex-col items-center font-light sm:items-start"}
             >
-              <Link href={"#"} className={"w-fit"}>
-                Book a call
+              <Link href={`/${lang}#ecosystem`} className={"w-fit"}>
+                {footerDict.navigate.ecosystem}
               </Link>
-              <Link href={"https://demo.parkwizeinc.ai"} className={"w-fit"}>
-                Explore demo
+              <Link href={`/${lang}#products`} className={"w-fit"}>
+                {footerDict.navigate.products}
               </Link>
-              <Link href={"#"} className={"w-fit"}>
-                Newsletter
+              <Link href={`/${lang}#vision`} className={"w-fit"}>
+                {footerDict.navigate.vision}
+              </Link>
+              <Link href={`/${lang}#early-access-form`} className={"w-fit"}>
+                {footerDict.navigate.getInTouch}
               </Link>
             </div>
           </div>
 
           <div className={"space-y-2 text-center sm:text-left"}>
-            <p className={"font-medium text-text"}>Help</p>
+            <p className={"font-medium text-text uppercase"}>{footerDict.actions.title}</p>
             <div
               className={"flex flex-col items-center font-light sm:items-start"}
             >
-              <Link href={"#"} className={"w-fit"}>
-                Contact us
+              <Link href={`/${lang}#early-access-form`} className={"w-fit"}>
+                {footerDict.actions.bookCall}
               </Link>
               <Link
-                href={"https://status.parkwizeinc.com/"}
+                href={"https://demo.parkwizeinc.ai"}
                 target={"_blank"}
                 className={"w-fit"}
               >
-                Status
+                {footerDict.actions.exploreDemo}
               </Link>
-              <Link href={"/docs/api"} className={"w-fit"}>
-                API
-              </Link>
-              <Link href={"/docs"} className={"w-fit"}>
-                Documentation
-              </Link>
-              <Link href={"/tutorials"} className={"w-fit"}>
-                Tutorials
+              <Link href={"/sign-in"} className={"w-fit"}>
+                {footerDict.actions.signIn}
               </Link>
             </div>
           </div>
@@ -158,7 +157,7 @@ export default function HomeFooter({ lang }: HomeFooterProps) {
                 />
               </Link>
               <p className={"text-sm font-light text-text-muted"}>
-                The Future of Parking Intelligence
+                {footerDict.tagline}
               </p>
               <div
                 className={
@@ -168,11 +167,11 @@ export default function HomeFooter({ lang }: HomeFooterProps) {
                 <p className={""}>&copy; {new Date().getFullYear()}</p>
                 <p>-</p>
                 <Link href={"/privacy-policy"} className={"hover:underline"}>
-                  Privacy policy
+                  {footerDict.privacyPolicy}
                 </Link>
                 <p>-</p>
                 <Link href={"/terms-of-use"} className={"hover:underline"}>
-                  Terms of use
+                  {footerDict.termsOfUse}
                 </Link>
               </div>
             </div>
@@ -203,7 +202,7 @@ export default function HomeFooter({ lang }: HomeFooterProps) {
               </Link>
               <div className={"flex items-center gap-x-1.5"}>
                 <div className={"size-1 rounded-full bg-green-500"} />
-                <p className={"text-xs text-green-600"}>Systems operational.</p>
+                <p className={"text-xs text-green-600"}>{footerDict.systemStatus}</p>
               </div>
             </div>
           </div>

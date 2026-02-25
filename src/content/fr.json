@@ -215,6 +215,203 @@
   "homepage": {
     "ctu": "Contactez-nous",
     "cto": "Planifier une rencontre",
+    "footer": {
+      "tagline": "Le futur de l'intelligence du stationnement",
+      "privacyPolicy": "Politique de confidentialité",
+      "termsOfUse": "Conditions d'utilisation",
+      "systemStatus": "Systèmes opérationnels.",
+      "products": {
+        "title": "Produits",
+        "dashboard": "Gestionnaire de tableau de bord",
+        "signage": "Solution d'affichage numérique",
+        "booking": "Réservation en ligne",
+        "ai": "Parkwize IA"
+      },
+      "navigate": {
+        "title": "Navigation",
+        "ecosystem": "Écosystème",
+        "products": "Produits",
+        "vision": "Vision",
+        "getInTouch": "Nous contacter"
+      },
+      "actions": {
+        "title": "Actions",
+        "bookCall": "Planifier un appel",
+        "exploreDemo": "Explorer la démo",
+        "signIn": "Se connecter"
+      }
+    },
+    "landing": {
+      "header": {
+        "description": "Le premier écosystème d’intelligence de stationnement entièrement propulsé par l’IA. Modernisez vos opérations, votre tarification, vos affichages, vos réservations et plus encore — depuis une seule plateforme.",
+        "exploreDemo": "Explorer la démo"
+      },
+      "quickStats": {
+        "liveKpis": "KPIs en direct",
+        "parkingLotsManaged": "Stationnements gérés",
+        "dailyDataEvents": "Événements de données quotidiens",
+        "revenueProcessed": "Revenus traités"
+      },
+      "vision": {
+        "tag": "La Vision",
+        "title": "Réinventer l'industrie du stationnement",
+        "titleAccent": "de zéro.",
+        "description": "Une nouvelle génération a bâti une infrastructure intelligente qui unifie les données, les opérations, la tarification, l’affichage, la réservation, l’automatisation et l’IA — dans un seul écosystème cohérent.",
+        "tryDemo": "Essayer la démo",
+        "items": {
+          "revenueGrowth": {
+            "title": "+35%|Croissance des revenus",
+            "description": "Hausse moyenne des revenus grâce à la tarification dynamique propulsée par l’IA"
+          },
+          "operationalSpeed": {
+            "title": "10x|Vitesse opérationnelle",
+            "description": "Prise de décision accélérée grâce à l’automatisation en temps réel"
+          },
+          "multiSiteScale": {
+            "title": "∞|Échelle multi-sites",
+            "description": "Contrôle unifié sur un nombre illimité de stationnements"
+          },
+          "fullStack": {
+            "title": "1|Suite complète",
+            "description": "Une plateforme unique remplaçant 5+ outils fragmentés"
+          }
+        }
+      },
+      "problem": {
+        "tag": "Le Problème",
+        "title": "Le stationnement est figé depuis 20 ans.",
+        "description": "La plupart des opérateurs s’appuient encore sur des systèmes dépassés, des données fragmentées, des processus manuels et une tarification statique. Rien ne communique ensemble. Le secteur est resté rentable malgré l’inefficacité — c’est précisément ce qui a freiné l’innovation.",
+        "items": {
+          "noVisibility": {
+            "title": "Aucune visibilité en temps réel",
+            "description": "Les opérateurs ne voient pas ce qui se passe sur leurs actifs de stationnement en temps réel."
+          },
+          "staticPricing": {
+            "title": "Tarification statique",
+            "description": "Des revenus sont perdus avec des prix fixes qui ignorent les signaux de demande."
+          },
+          "fragmentedSystems": {
+            "title": "Systèmes fragmentés",
+            "description": "Le matériel, les logiciels et les données vivent en silos déconnectés, sans intégration."
+          }
+        }
+      },
+      "solution": {
+        "label": "Notre solution"
+      },
+      "ai": {
+        "tag": "Parkwize IA",
+        "title": "Le premier modèle IA",
+        "titleAccent": "conçu pour le stationnement.",
+        "description": "Nous sommes des pionniers de l’intelligence artificielle appliquée au stationnement. Nos modèles — entraînés sur plus de 2 ans de données réelles — apprennent le comportement unique de chaque site pour prédire et optimiser en temps réel.",
+        "cards": {
+          "forecasting": {
+            "title": "IA de prévision",
+            "description": "Le premier modèle d’intelligence artificielle conçu pour prédire toutes les données de stationnement — occupation, revenus, trafic, demande — avec une précision inégalée."
+          },
+          "dynamicPricing": {
+            "title": "IA de tarification dynamique",
+            "description": "Calcul et ajustement des prix en temps réel grâce à l’analyse simultanée de dizaines de variables. Zéro intervention manuelle, résultats immédiats."
+          },
+          "conversational": {
+            "title": "Agent IA conversationnel",
+            "description": "Parlez à votre stationnement. Posez des questions, obtenez des recommandations et des actions concrètes — via une interface en langage naturel propulsée par l’IA."
+          }
+        },
+        "dataSourcesTitle": "Sources de données intégrées",
+        "dataSourcesDescription": "Notre IA ingère et croise continuellement des dizaines de sources de données pour générer des prévisions et des prix optimaux.",
+        "dataSources": {
+          "weather": {
+            "title": "Météo en temps réel",
+            "description": "Température, précipitations, prévisions sur 7 jours"
+          },
+          "events": {
+            "title": "Événements locaux",
+            "description": "Concerts, sports, conférences, festivals"
+          },
+          "traffic": {
+            "title": "Données de trafic",
+            "description": "Données Google Maps, congestion, itinéraires"
+          },
+          "history": {
+            "title": "Historique de stationnement",
+            "description": "Cycles de demande, tendances saisonnières"
+          },
+          "ticketing": {
+            "title": "Billetterie et bâtiments",
+            "description": "Trafic provenant des plateformes et lieux à proximité"
+          },
+          "revenue": {
+            "title": "Tendances de revenus",
+            "description": "Évolutions des revenus, pics et creux"
+          }
+        },
+        "resultTag": "Le Résultat",
+        "resultTitle": "Plus de revenus. Plus d'occupation. Plus d'efficacité.",
+        "resultDescription": "Une optimisation automatique et continue — sans intervention humaine."
+      },
+      "process": {
+        "partnerLabel": "Partenaire matériel",
+        "tag": "Technologie Process",
+        "title": "Le meilleur matériel pour s'intégrer",
+        "titleAccent": "au meilleur logiciel.",
+        "description": "Parkwize s’associe à Process Technology pour livrer une pile matériel-logiciel totalement intégrée — barrières, terminaux, capteurs et systèmes d’accès conçus pour l’ère du stationnement intelligent.",
+        "cards": {
+          "industrialGrade": {
+            "title": "Qualité industrielle",
+            "description": "Conçu pour une opération extérieure 24/7, peu importe le climat"
+          },
+          "smartIntegration": {
+            "title": "Intégration intelligente",
+            "description": "Connecté nativement à l’écosystème logiciel Parkwize"
+          },
+          "zeroFriction": {
+            "title": "Zéro friction",
+            "description": "Installation fluide et maintenance à distance"
+          },
+          "realTimeSync": {
+            "title": "Synchronisation temps réel",
+            "description": "État du matériel synchronisé en direct avec notre tableau de bord analytique"
+          }
+        },
+        "learnMore": "En savoir plus"
+      },
+      "modernize": {
+        "title": "Prêt à moderniser votre stationnement ?"
+      },
+      "earlyAccess": {
+        "features": [
+          "Tarification dynamique",
+          "Gestion d'affichage",
+          "Intégration IoT",
+          "Réservation en ligne",
+          "Analytique en temps réel",
+          "Prévision et automatisation"
+        ],
+        "roles": [
+          "Propriétaire de stationnement",
+          "Exploitant de stationnement",
+          "Société de gestion de stationnement",
+          "Propriétaire immobilier",
+          "Investisseur",
+          "Gestionnaire d'actifs (immobilier / infrastructures)",
+          "Organisation publique et institutionnelle",
+          "Autre"
+        ],
+        "reserveButton": "Réservez votre place",
+        "subtitle": "Gestion de stationnement propulsée par l’IA — inscrivez-vous à l’accès anticipé",
+        "dialogTitle": "Inscription à l’accès anticipé",
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "email": "Adresse e-mail",
+        "company": "Nom de l'entreprise",
+        "yourRole": "Votre rôle",
+        "otherRole": "Veuillez préciser votre rôle",
+        "phone": "Téléphone (optionnel)",
+        "signUp": "S'inscrire",
+        "consent": "J’accepte de recevoir des communications marketing de Parkwize. Vous pouvez vous désabonner à tout moment."
+      }
+    },
     "header": {
       "tag": "ATTENTION AUX OPÉRATEURS DE STATIONNEMENT ET GESTIONNAIRES IMMOBILIERS :",
       "title": "Générez 15% à 40% de revenus supplémentaires avec vos stationnements en 60 jours",

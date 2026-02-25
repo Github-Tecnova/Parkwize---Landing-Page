@@ -6,17 +6,11 @@ import {
   ArrowRight,
   Shield,
   Cpu,
-  Zap,
   Camera,
   Monitor,
-  Wrench,
   Settings,
   BellRing,
-  Headphones,
   Check,
-  KeyRound,
-  BarChart3,
-  Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import hardwareImg from "@/assets/hardware-process.jpg";
@@ -25,6 +19,7 @@ import ProcessKiosk from "@/assets/Borne_process.png";
 import ProcessMiniKiosk from "@/assets/mini_borne_process.png";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { usePathname } from "next/navigation";
 
 const anim = {
   initial: { opacity: 0, y: 24 },
@@ -122,41 +117,6 @@ const products = [
   },
 ];
 
-const supportCards = [
-  "Dedicated technical account manager for every deployment",
-  "24/7 remote monitoring and incident response",
-  "On-site intervention within 4 hours across the Netherlands",
-  "Quarterly hardware health reports and optimization reviews",
-];
-
-const iotFeatures = [
-  {
-    icon: BarChart3,
-    title: "Live Telemetry",
-    desc: "Every device streams operational data to the Parkwize Dashboard in real time.",
-  },
-  {
-    icon: KeyRound,
-    title: "Encrypted Comms",
-    desc: "End-to-end TLS encryption with role-based access control on all endpoints.",
-  },
-  {
-    icon: Users,
-    title: "Multi-Site Control",
-    desc: "Manage hundreds of devices across locations from a single pane of glass.",
-  },
-  {
-    icon: Zap,
-    title: "Edge Computing",
-    desc: "Local processing for instant decisions — no cloud latency for critical operations.",
-  },
-  {
-    icon: Wrench,
-    title: "OTA Updates",
-    desc: "Push firmware and configuration changes remotely without site visits.",
-  },
-];
-
 const PROCESS_BRANDING_FEATURES = [
   "Entry & Exit Terminals",
   "Payment Kiosks",
@@ -208,21 +168,79 @@ const processBrandingFormDefault: ProcessBrandingFormState = {
 };
 
 function ProcessBrandingSection() {
+  const pathname = usePathname();
+  const isFr = pathname.startsWith("/fr");
+  const brandingFeatures = isFr
+    ? [
+        "Terminaux d’entrée et sortie",
+        "Bornes de paiement",
+        "Reconnaissance de plaques",
+        "Contrôle d’accès",
+        "Rapports en temps réel",
+        "Optimisation des revenus",
+      ]
+    : PROCESS_BRANDING_FEATURES;
+
+  const brandingRoles = isFr
+    ? [
+        "Gestionnaire de stationnement",
+        "Promoteur immobilier",
+        "Autorité municipale",
+        "Opérateur aéroport / transport",
+        "Hôpital / Université",
+        "Consultant",
+        "Autre",
+      ]
+    : PROCESS_BRANDING_ROLES;
+
+  const ui = isFr
+    ? {
+        discover: "Découvrir nos systèmes",
+        subtitle:
+          "Systèmes avancés de contrôle des revenus parking — demander une consultation",
+        dialogTitle: "Demander une démo",
+        firstName: "Prénom",
+        lastName: "Nom",
+        email: "Adresse e-mail",
+        company: "Nom de l'entreprise",
+        role: "Votre rôle",
+        otherRole: "Veuillez préciser votre rôle",
+        phone: "Téléphone (optionnel)",
+        submit: "Envoyer mes informations",
+        consent:
+          "J’accepte de recevoir des communications marketing de Process Systèmes & Technologies. Vous pouvez vous désabonner à tout moment.",
+      }
+    : {
+        discover: "Discover Our Systems",
+        subtitle:
+          "Advanced Parking Revenue Control Systems — Request a Consultation",
+        dialogTitle: "Request a Demo",
+        firstName: "First Name",
+        lastName: "Last Name",
+        email: "Email Address",
+        company: "Company Name",
+        role: "Your Role",
+        otherRole: "Please specify your role",
+        phone: "Phone (optional)",
+        submit: "Submit My Infos",
+        consent:
+          "I agree to receive marketing communications from Process Systèmes & Technologies. You can unsubscribe at any time.",
+      };
+
   const [open, setOpen] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
   const [form, setForm] = useState<ProcessBrandingFormState>(
     processBrandingFormDefault,
   );
+  const isOtherRole = form.role === "Other" || form.role === "Autre";
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveFeature(
-        (previous) => (previous + 1) % PROCESS_BRANDING_FEATURES.length,
-      );
+      setActiveFeature((previous) => (previous + 1) % brandingFeatures.length);
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [brandingFeatures.length]);
 
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -277,16 +295,16 @@ function ProcessBrandingSection() {
               onClick={() => setOpen(true)}
               className="group relative rounded-full border border-foreground/20 bg-foreground/5 px-10 py-4 text-sm font-medium uppercase tracking-[0.2em] backdrop-blur-sm transition-all duration-300 hover:border-parkwize_blue hover:bg-parkwize_blue/10 hover:shadow-[0_0_40px_rgba(7,88,246,0.15)] lg:px-12 lg:py-5 lg:text-base lg:tracking-[0.25em]"
             >
-              Discover Our Systems
+              {ui.discover}
             </button>
             <p className="mt-3 text-center text-sm tracking-wide text-muted-foreground">
-              Advanced Parking Revenue Control Systems — Request a Consultation
+              {ui.subtitle}
             </p>
           </div>
 
           <div className="mb-3 flex justify-center px-4 md:hidden">
             <span className="min-w-[250px] rounded-full border border-foreground/20 bg-foreground/5 px-6 py-2.5 text-center text-[11px] font-light uppercase tracking-[0.2em] text-muted-foreground/60">
-              {PROCESS_BRANDING_FEATURES[activeFeature]}
+              {brandingFeatures[activeFeature]}
             </span>
           </div>
 
@@ -349,7 +367,7 @@ function ProcessBrandingSection() {
           </div>
 
           <div className="absolute inset-0 hidden md:block">
-            {PROCESS_BRANDING_FEATURES.map((feature, index) => (
+            {brandingFeatures.map((feature, index) => (
               <motion.span
                 key={feature}
                 className="absolute cursor-default text-xs font-light uppercase tracking-widest text-muted-foreground/70 transition-colors duration-300 hover:text-foreground/90 lg:text-sm"
@@ -372,10 +390,10 @@ function ProcessBrandingSection() {
               onClick={() => setOpen(true)}
               className="group relative rounded-full border border-foreground/20 bg-foreground/5 px-8 py-4 text-xs font-medium uppercase tracking-[0.15em] backdrop-blur-sm transition-all duration-300 hover:border-parkwize_blue hover:bg-parkwize_blue/10 hover:shadow-[0_0_40px_rgba(7,88,246,0.15)]"
             >
-              Discover Our Systems
+              {ui.discover}
             </button>
             <p className="mt-2 whitespace-nowrap text-center text-[9px] tracking-wide text-muted-foreground">
-              Advanced Parking Revenue Control Systems — Request a Consultation
+              {ui.subtitle}
             </p>
           </div>
         </div>
@@ -383,7 +401,7 @@ function ProcessBrandingSection() {
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-md rounded-2xl border border-foreground/10 bg-white p-8 shadow-[0_0_60px_rgba(0,0,0,0.1)] backdrop-blur-2xl">
-          <DialogTitle className="sr-only">Request a Demo</DialogTitle>
+          <DialogTitle className="sr-only">{ui.dialogTitle}</DialogTitle>
           <div className="mb-6 flex justify-center">
             <Image
               src={ProcessLogo}
@@ -398,7 +416,7 @@ function ProcessBrandingSection() {
             <div className="grid grid-cols-2 gap-4">
               <input
                 type="text"
-                placeholder="First Name"
+                placeholder={ui.firstName}
                 value={form.firstName}
                 onChange={(event) =>
                   setForm({ ...form, firstName: event.target.value })
@@ -408,7 +426,7 @@ function ProcessBrandingSection() {
               />
               <input
                 type="text"
-                placeholder="Last Name"
+                placeholder={ui.lastName}
                 value={form.lastName}
                 onChange={(event) =>
                   setForm({ ...form, lastName: event.target.value })
@@ -419,7 +437,7 @@ function ProcessBrandingSection() {
 
             <input
               type="email"
-              placeholder="Email Address"
+              placeholder={ui.email}
               value={form.email}
               onChange={(event) =>
                 setForm({ ...form, email: event.target.value })
@@ -430,7 +448,7 @@ function ProcessBrandingSection() {
 
             <input
               type="text"
-              placeholder="Company Name"
+              placeholder={ui.company}
               value={form.company}
               onChange={(event) =>
                 setForm({ ...form, company: event.target.value })
@@ -445,7 +463,10 @@ function ProcessBrandingSection() {
                   ...form,
                   role: event.target.value,
                   roleOther:
-                    event.target.value !== "Other" ? "" : form.roleOther,
+                    event.target.value !== "Other" &&
+                    event.target.value !== "Autre"
+                      ? ""
+                      : form.roleOther,
                 })
               }
               className={`w-full border-b border-foreground/20 bg-transparent pb-3 text-base transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm ${form.role ? "text-foreground" : "text-muted-foreground/50"}`}
@@ -455,9 +476,9 @@ function ProcessBrandingSection() {
                 disabled
                 className="bg-background text-foreground"
               >
-                Your Role
+                {ui.role}
               </option>
-              {PROCESS_BRANDING_ROLES.map((role) => (
+              {brandingRoles.map((role) => (
                 <option
                   key={role}
                   value={role}
@@ -468,10 +489,10 @@ function ProcessBrandingSection() {
               ))}
             </select>
 
-            {form.role === "Other" && (
+            {isOtherRole && (
               <input
                 type="text"
-                placeholder="Please specify your role"
+                placeholder={ui.otherRole}
                 value={form.roleOther}
                 onChange={(event) =>
                   setForm({ ...form, roleOther: event.target.value })
@@ -482,7 +503,7 @@ function ProcessBrandingSection() {
 
             <input
               type="tel"
-              placeholder="Phone (optional)"
+              placeholder={ui.phone}
               value={form.phone}
               onChange={(event) =>
                 setForm({ ...form, phone: event.target.value })
@@ -494,7 +515,7 @@ function ProcessBrandingSection() {
               type="submit"
               className="mt-2 w-full rounded-full border border-foreground/20 bg-foreground/5 py-4 text-sm font-medium uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-foreground/10 md:py-3"
             >
-              Submit My Infos
+              {ui.submit}
             </button>
 
             <label className="flex cursor-pointer items-start gap-3">
@@ -507,8 +528,7 @@ function ProcessBrandingSection() {
                 className="mt-1 accent-parkwize_blue"
               />
               <span className="text-[11px] leading-relaxed text-muted-foreground/60">
-                I agree to receive marketing communications from Process
-                Systèmes & Technologies. You can unsubscribe at any time.
+                {ui.consent}
               </span>
             </label>
           </form>
@@ -521,6 +541,185 @@ function ProcessBrandingSection() {
 /* --- Page --- */
 
 const Hardware = () => {
+  const pathname = usePathname();
+  const isFr = pathname.startsWith("/fr");
+
+  const localizedMilestones = isFr
+    ? [
+        {
+          year: "2005",
+          text: "Fondation de Process Technology — matériel de stationnement industriel",
+        },
+        {
+          year: "2015",
+          text: "Expansion vers l’accès intelligent et les terminaux IoT",
+        },
+        {
+          year: "2023",
+          text: "Partenariat stratégique avec Parkwize pour une intégration full-stack",
+        },
+        {
+          year: "2025",
+          text: "Nouvelle gamme matérielle co-conçue avec Parkwize IA",
+        },
+      ]
+    : milestones;
+
+  const localizedWhyPoints = isFr
+    ? [
+        "20+ ans d’expertise en matériel de stationnement industriel",
+        "Certifié IP65 — conçu pour conditions extrêmes et fort trafic",
+        "Intégration API native avec l’écosystème Parkwize",
+        "Design modulaire — de 1 lot à 100+ sites",
+      ]
+    : whyPoints;
+
+  const localizedSolutionFeatures = isFr
+    ? [
+        {
+          icon: Camera,
+          title: "Caméras LAPI",
+          desc: "Reconnaissance de plaques avec 99,5% de précision, quelles que soient les conditions lumineuses.",
+        },
+        {
+          icon: Shield,
+          title: "Contrôle d’accès",
+          desc: "Barrières, bornes et portails avec temps de réponse en millisecondes.",
+        },
+        {
+          icon: Monitor,
+          title: "Terminaux intelligents",
+          desc: "Terminaux de paiement tactiles avec support sans contact et QR.",
+        },
+        {
+          icon: Cpu,
+          title: "Capteurs IoT",
+          desc: "Détection d’occupation en temps réel par place avec connectivité LoRaWAN.",
+        },
+        {
+          icon: Settings,
+          title: "Gestion à distance",
+          desc: "Mises à jour firmware, diagnostics et redémarrages — depuis le Dashboard.",
+        },
+        {
+          icon: BellRing,
+          title: "Alertes instantanées",
+          desc: "Notifications de maintenance prédictive avant les pannes.",
+        },
+      ]
+    : solutionFeatures;
+
+  const localizedProducts = isFr
+    ? [
+        {
+          name: "PT-Barrier X1",
+          type: "3d" as const,
+          image: hardwareImg,
+          description:
+            "Barrière haute vitesse avec LAPI intégrée et signalisation LED. Ouverture en moins d’une seconde.",
+          specs: ["Vitesse : <1s", "IP65", "Opération 24/7", "Prêt pour LAPI"],
+        },
+        {
+          name: "PT-Terminal T3",
+          type: "image" as const,
+          image: hardwareImg,
+          description:
+            "Terminal de paiement tactile avec support sans contact, QR et NFC. Conçu pour l’extérieur.",
+          specs: [
+            'Écran 10"',
+            "NFC / QR",
+            "Paiement sans contact",
+            "Anti-vandale",
+          ],
+        },
+        {
+          name: "PT-Sensor S2",
+          type: "3d" as const,
+          image: hardwareImg,
+          description:
+            "Capteur ultrasonique avec connectivité LoRaWAN. Détection d’occupation en temps réel.",
+          specs: ["LoRaWAN", "99,8% précision", "Batterie 5 ans", "Sans fil"],
+        },
+        {
+          name: "PT-Gate G4",
+          type: "image" as const,
+          image: hardwareImg,
+          description:
+            "Portillon piéton avec biométrie et gestion d’identifiants mobiles.",
+          specs: ["Biométrie", "Accès mobile", "Conforme ADA", "Anti-tailgate"],
+        },
+      ]
+    : products;
+
+  const ui = isFr
+    ? {
+        partnerBadge: "Partenaire matériel — Process Technology",
+        heroTitle: "Matériel de grade industriel,",
+        heroTitleAccent: "intelligent par conception.",
+        heroDescription:
+          "Parkwize s’intègre nativement avec Process Technology — barrières, terminaux, capteurs et contrôle d’accès conçus pour la nouvelle génération du stationnement.",
+        requestDemo: "Demander une démo privée",
+        downloadSpecs: "Télécharger les spécifications",
+        aboutTag: "À propos de Process Technology",
+        aboutTitle: "20+ ans d’infrastructure parking",
+        aboutDescription:
+          "Process Technology conçoit des équipements de stationnement industriels depuis 2005. Aujourd’hui, l’entreprise équipe des milliers de sites en Europe avec un matériel fiable, scalable et connecté.",
+        milestonesTitle: "Étapes clés",
+        whyTitle: "Pourquoi Process Technology",
+        solutionsTag: "Nos solutions",
+        integratedPlatform: "Plateforme intégrée",
+        solutionsDescription:
+          "Un écosystème matériel complet qui se connecte parfaitement à chaque module logiciel Parkwize — du contrôle d’accès à l’analytique pilotée par IA.",
+        compatibility:
+          "✦ Compatible à 100% avec Parkwize Dashboard, Booking, Display et IA",
+        equipmentTag: "Nos équipements",
+        equipmentTitle: "Gamme de produits",
+        equipmentTitleAccent: "matériels",
+        equipmentDescription:
+          "Des équipements de grade industriel conçus pour la fiabilité. Certains produits proposent des modèles 3D interactifs, d’autres des visuels haute résolution.",
+        model3d: "Modèle 3D",
+        gallery: "Galerie",
+        finalTag: "Construisons ensemble",
+        finalTitle:
+          "Le meilleur matériel pour s’intégrer au meilleur logiciel.",
+        finalDescription:
+          "Découvrez comment Process Technology × Parkwize livrent une stack parking intelligente et intégrée — de la barrière au dashboard.",
+        downloadCatalog: "Télécharger le catalogue matériel",
+      }
+    : {
+        partnerBadge: "Hardware Partner — Process Technology",
+        heroTitle: "Industrial-Grade Hardware,",
+        heroTitleAccent: "Intelligent by Design.",
+        heroDescription:
+          "Parkwize integrates natively with Process Technology — barriers, terminals, sensors, and access control built for the next generation of parking.",
+        requestDemo: "Request Private Demo",
+        downloadSpecs: "Download Specs",
+        aboutTag: "About Process Technology",
+        aboutTitle: "20+ Years of Parking Infrastructure",
+        aboutDescription:
+          "Process Technology has been engineering industrial-grade parking equipment since 2005. Today, they power thousands of facilities across Europe with hardware designed for reliability, scalability, and smart connectivity.",
+        milestonesTitle: "Key Milestones",
+        whyTitle: "Why Process Technology",
+        solutionsTag: "Our Solutions",
+        integratedPlatform: "Integrated Platform",
+        solutionsDescription:
+          "A complete hardware ecosystem that connects seamlessly with every Parkwize software module — from access control to AI-powered analytics.",
+        compatibility:
+          "✦ Fully compatible with Parkwize Dashboard, Booking, Display & AI",
+        equipmentTag: "Our Equipment",
+        equipmentTitle: "Hardware",
+        equipmentTitleAccent: "Product Line",
+        equipmentDescription:
+          "Industrial-grade equipment engineered for reliability. Some products feature interactive 3D models — others showcase high-resolution imagery.",
+        model3d: "3D Model",
+        gallery: "Gallery",
+        finalTag: "Let's Build Together",
+        finalTitle: "The Best Hardware to Fit with the Best Software.",
+        finalDescription:
+          "Discover how Process Technology × Parkwize delivers a fully integrated, intelligent parking stack — from barrier to dashboard.",
+        downloadCatalog: "Download Hardware Catalog",
+      };
+
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Background blurs */}
@@ -538,7 +737,7 @@ const Hardware = () => {
               <motion.div {...anim}>
                 <div className="mb-6 flex flex-wrap items-center gap-3">
                   <span className="inline-block text-xs font-semibold uppercase tracking-widest text-parkwize_blue bg-parkwize_blue/10 px-3 py-1.5">
-                    Hardware Partner — Process Technology
+                    {ui.partnerBadge}
                   </span>
                   <Image
                     src="/processlogo.svg"
@@ -549,29 +748,27 @@ const Hardware = () => {
                   />
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
-                  Industrial-Grade Hardware,{" "}
+                  {ui.heroTitle}{" "}
                   <span className="text-parkwize_blue">
-                    Intelligent by Design.
+                    {ui.heroTitleAccent}
                   </span>
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-lg">
-                  Parkwize integrates natively with Process Technology —
-                  barriers, terminals, sensors, and access control built for the
-                  next generation of parking.
+                  {ui.heroDescription}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     size="lg"
                     className="text-base px-8 bg-parkwize_blue text-white hover:bg-parkwize_blue/90 rounded-none"
                   >
-                    Request Private Demo <ArrowRight className="ml-2 w-4 h-4" />
+                    {ui.requestDemo} <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                   <Button
                     size="lg"
                     variant="outline"
                     className="text-base px-8 rounded-none"
                   >
-                    Download Specs
+                    {ui.downloadSpecs}
                   </Button>
                 </div>
               </motion.div>
@@ -599,16 +796,13 @@ const Hardware = () => {
           <div className="max-w-6xl mx-auto">
             <motion.div {...anim} className="text-center mb-16">
               <p className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-3">
-                About Process Technology
+                {ui.aboutTag}
               </p>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
-                20+ Years of Parking Infrastructure
+                {ui.aboutTitle}
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Process Technology has been engineering industrial-grade parking
-                equipment since 2005. Today, they power thousands of facilities
-                across Europe with hardware designed for reliability,
-                scalability, and smart connectivity.
+                {ui.aboutDescription}
               </p>
             </motion.div>
 
@@ -617,10 +811,10 @@ const Hardware = () => {
               <motion.div {...anim} transition={{ delay: 0.1 }}>
                 <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
                   <span className="w-1.5 h-6 bg-parkwize_blue rounded-full" />
-                  Key Milestones
+                  {ui.milestonesTitle}
                 </h3>
                 <div className="space-y-4">
-                  {milestones.map((m, i) => (
+                  {localizedMilestones.map((m, i) => (
                     <motion.div
                       key={m.year}
                       initial={{ opacity: 0, x: -20 }}
@@ -642,10 +836,10 @@ const Hardware = () => {
               <motion.div {...anim} transition={{ delay: 0.2 }}>
                 <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
                   <span className="w-1.5 h-6 bg-parkwize_blue rounded-full" />
-                  Why Process Technology
+                  {ui.whyTitle}
                 </h3>
                 <div className="space-y-3">
-                  {whyPoints.map((point, i) => (
+                  {localizedWhyPoints.map((point, i) => (
                     <motion.div
                       key={i}
                       initial={{ opacity: 0, x: -20 }}
@@ -667,40 +861,40 @@ const Hardware = () => {
         </section>
 
         {/* ===== SOLUTIONS / FEATURES ===== */}
-        <section className="py-14 md:py-24 px-6">
+        <section className="py-14 md:py-24 px-6 bg-[#14181f]">
           <div className="max-w-7xl mx-auto">
             <motion.div {...anim} className="text-center mb-4">
               <p className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-3">
-                Our Solutions
+                {ui.solutionsTag}
               </p>
               <div className="flex items-center justify-center gap-3 mb-6">
                 <Cpu className="w-6 h-6 text-parkwize_blue" />
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-                  Integrated Platform
+                <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+                  {ui.integratedPlatform}
                 </h2>
               </div>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-16">
-                A complete hardware ecosystem that connects seamlessly with
-                every Parkwize software module — from access control to
-                AI-powered analytics.
+              <p className="text-lg text-[#a1a2a5] max-w-3xl mx-auto leading-relaxed mb-16 ">
+                {ui.solutionsDescription}
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {solutionFeatures.map((f, i) => (
+              {localizedSolutionFeatures.map((f, i) => (
                 <motion.div
                   key={f.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className=" border border-border bg-card p-8 hover:border-parkwize_blue/40 hover:shadow-lg hover:shadow-parkwize_blue/5 transition-all duration-300 group"
+                  className=" border  border-[#ffffff1a] bg-[#ffffff0d] p-8 hover:border-parkwize_blue/40 hover:shadow-lg hover:shadow-parkwize_blue/5 transition-all duration-300 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-parkwize_blue/10 flex items-center justify-center mb-5 group-hover:bg-parkwize_blue/20 transition-colors">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-colors">
                     <f.icon className="w-6 h-6 text-parkwize_blue" />
                   </div>
-                  <h3 className="text-lg font-bold mb-2">{f.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <h3 className="text-lg font-bold mb-2 text-white">
+                    {f.title}
+                  </h3>
+                  <p className="text-sm text-[#a1a2a5] leading-relaxed">
                     {f.desc}
                   </p>
                 </motion.div>
@@ -709,8 +903,7 @@ const Hardware = () => {
 
             <motion.div {...anim} className="text-center">
               <span className="inline-block text-sm font-medium text-parkwize_blue bg-parkwize_blue/10 px-4 py-2">
-                ✦ Fully compatible with Parkwize Dashboard, Booking, Display &
-                AI
+                {ui.compatibility}
               </span>
             </motion.div>
           </div>
@@ -761,21 +954,21 @@ const Hardware = () => {
           <div className="max-w-7xl mx-auto">
             <motion.div {...anim} className="text-center mb-16">
               <p className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-3">
-                Our Equipment
+                {ui.equipmentTag}
               </p>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                Hardware{" "}
-                <span className="text-parkwize_blue">Product Line</span>
+                {ui.equipmentTitle}{" "}
+                <span className="text-parkwize_blue">
+                  {ui.equipmentTitleAccent}
+                </span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Industrial-grade equipment engineered for reliability. Some
-                products feature interactive 3D models — others showcase
-                high-resolution imagery.
+                {ui.equipmentDescription}
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {products.map((product, i) => (
+              {localizedProducts.map((product, i) => (
                 <motion.div
                   key={product.name}
                   initial={{ opacity: 0, y: 40 }}
@@ -795,12 +988,12 @@ const Hardware = () => {
                     />
                     {product.type === "3d" && (
                       <div className="absolute top-4 right-4 bg-parkwize_blue/90 text-white text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm">
-                        3D Model
+                        {ui.model3d}
                       </div>
                     )}
                     {product.type === "image" && (
                       <div className="absolute top-4 right-4 bg-card/90 text-foreground text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm border border-border">
-                        Gallery
+                        {ui.gallery}
                       </div>
                     )}
                   </div>
@@ -877,25 +1070,24 @@ const Hardware = () => {
             className=" mx-auto text-center rounded-3xl  p-12 md:p-16 px-0 lg:px-12"
           >
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-white/70 mb-4">
-              Let&apos;s Build Together
+              {ui.finalTag}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
-              The Best Hardware to Fit with the Best Software.
+              {ui.finalTitle}
             </h2>
             <p className="text-white/80 mb-8 max-w-xl mx-auto">
-              Discover how Process Technology × Parkwize delivers a fully
-              integrated, intelligent parking stack — from barrier to dashboard.
+              {ui.finalDescription}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="text-base px-8">
-                Request Private Demo <ArrowRight className="ml-2 w-4 h-4" />
+                {ui.requestDemo} <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="text-base px-8 border-white/30 text-parkwize_blue hover:bg-white/10 hover:text-white"
               >
-                Download Hardware Catalog
+                {ui.downloadCatalog}
               </Button>
             </div>
           </motion.div>

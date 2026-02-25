@@ -215,6 +215,203 @@
   "homepage": {
     "ctu": "Get in Touch",
     "cto": "Something",
+    "footer": {
+      "tagline": "The Future of Parking Intelligence",
+      "privacyPolicy": "Privacy policy",
+      "termsOfUse": "Terms of use",
+      "systemStatus": "Systems operational.",
+      "products": {
+        "title": "Products",
+        "dashboard": "Dashboard Manager",
+        "signage": "Digital Signage Solution",
+        "booking": "Online Booking",
+        "ai": "Parkwize AI"
+      },
+      "navigate": {
+        "title": "Navigate",
+        "ecosystem": "Ecosystem",
+        "products": "Products",
+        "vision": "Vision",
+        "getInTouch": "Get in touch"
+      },
+      "actions": {
+        "title": "Actions",
+        "bookCall": "Book a call",
+        "exploreDemo": "Explore demo",
+        "signIn": "Sign-in"
+      }
+    },
+    "landing": {
+      "header": {
+        "description": "The first fully AI-powered parking intelligence ecosystem. Modernize operations, pricing, displays, booking, and more — from one platform.",
+        "exploreDemo": "Explore Demo"
+      },
+      "quickStats": {
+        "liveKpis": "Live KPIs",
+        "parkingLotsManaged": "Parking Lots Managed",
+        "dailyDataEvents": "Daily Data Events",
+        "revenueProcessed": "Revenue Processed"
+      },
+      "vision": {
+        "tag": "The Vision",
+        "title": "Reengineering the Parking Industry",
+        "titleAccent": "from Scratch.",
+        "description": "A new generation has built the intelligent infrastructure that unifies data, operations, pricing, displays, booking, automation, and AI — into one cohesive ecosystem.",
+        "tryDemo": "Try Demo",
+        "items": {
+          "revenueGrowth": {
+            "title": "+35%|Revenue Growth",
+            "description": "Average revenue uplift with AI-driven dynamic pricing"
+          },
+          "operationalSpeed": {
+            "title": "10x|Operational Speed",
+            "description": "Faster decision-making through real-time automation"
+          },
+          "multiSiteScale": {
+            "title": "∞|Multi-Site Scale",
+            "description": "Unified control across unlimited parking locations"
+          },
+          "fullStack": {
+            "title": "1|Full Stack",
+            "description": "Single platform replacing 5+ fragmented tools"
+          }
+        }
+      },
+      "problem": {
+        "tag": "The Problem",
+        "title": "Parking has been frozen for 20 years.",
+        "description": "Most operators still rely on outdated systems, fragmented data, manual processes, and static pricing. Nothing communicates together. The industry stayed profitable despite inefficiency — which is exactly why innovation stalled.",
+        "items": {
+          "noVisibility": {
+            "title": "No Real-Time Visibility",
+            "description": "Operators can't see what's happening across their parking assets in real time."
+          },
+          "staticPricing": {
+            "title": "Static Pricing",
+            "description": "Revenue is left on the table with fixed pricing that ignores demand signals."
+          },
+          "fragmentedSystems": {
+            "title": "Fragmented Systems",
+            "description": "Hardware, software, and data live in disconnected silos with no integration."
+          }
+        }
+      },
+      "solution": {
+        "label": "Our Solution"
+      },
+      "ai": {
+        "tag": "Parkwize AI",
+        "title": "The first AI model",
+        "titleAccent": "built for parking.",
+        "description": "We are pioneers in artificial intelligence applied to parking. Our models — trained on over 2 years of real-world parking data — learn the unique behavior of each facility to predict and optimize in real time.",
+        "cards": {
+          "forecasting": {
+            "title": "Forecasting AI",
+            "description": "The first artificial intelligence model designed to predict all parking data — occupancy, revenue, traffic, demand — with unmatched accuracy."
+          },
+          "dynamicPricing": {
+            "title": "Dynamic Pricing AI",
+            "description": "Real-time price calculation and adjustment based on the simultaneous analysis of dozens of variables. Zero manual intervention, immediate results."
+          },
+          "conversational": {
+            "title": "Conversational AI Agent",
+            "description": "Talk to your parking. Ask questions, get recommendations, and receive actionable insights — all through a natural language interface powered by AI."
+          }
+        },
+        "dataSourcesTitle": "Integrated Data Sources",
+        "dataSourcesDescription": "Our AI continuously ingests and cross-references dozens of data sources to generate optimal forecasts and pricing.",
+        "dataSources": {
+          "weather": {
+            "title": "Real-Time Weather",
+            "description": "Temperature, precipitation, 7-day forecasts"
+          },
+          "events": {
+            "title": "Local Events",
+            "description": "Concerts, sports, conferences, festivals"
+          },
+          "traffic": {
+            "title": "Traffic Data",
+            "description": "Google Maps data, congestion, route patterns"
+          },
+          "history": {
+            "title": "Parking History",
+            "description": "Demand cycles, seasonal patterns"
+          },
+          "ticketing": {
+            "title": "Ticketing & Buildings",
+            "description": "Traffic from nearby platforms and venues"
+          },
+          "revenue": {
+            "title": "Revenue Patterns",
+            "description": "Revenue trends, peaks and troughs"
+          }
+        },
+        "resultTag": "The Result",
+        "resultTitle": "Higher Revenue. Higher Occupancy. Higher Efficiency.",
+        "resultDescription": "Automatic and continuous optimization — with zero human intervention."
+      },
+      "process": {
+        "partnerLabel": "Hardware Partner",
+        "tag": "Process Technology",
+        "title": "The Best Hardware to Fit with",
+        "titleAccent": "the Best Software.",
+        "description": "Parkwize partners with Process Technology to deliver a fully integrated hardware-software stack — barriers, terminals, sensors, and access systems designed for the intelligent parking era.",
+        "cards": {
+          "industrialGrade": {
+            "title": "Industrial Grade",
+            "description": "Built for 24/7 outdoor operation in any climate"
+          },
+          "smartIntegration": {
+            "title": "Smart Integration",
+            "description": "Natively connected to the Parkwize software ecosystem"
+          },
+          "zeroFriction": {
+            "title": "Zero Friction",
+            "description": "Seamless installation and remote maintenance"
+          },
+          "realTimeSync": {
+            "title": "Real-Time Sync",
+            "description": "Hardware state synced live with our Analytics Dashboard"
+          }
+        },
+        "learnMore": "Learn more"
+      },
+      "modernize": {
+        "title": "Ready to modernize your parking?"
+      },
+      "earlyAccess": {
+        "features": [
+          "Dynamic Pricing",
+          "Display Management",
+          "IoT Integration",
+          "Online Reservation",
+          "Real-time Analytics",
+          "Forecasting & Automation"
+        ],
+        "roles": [
+          "Parking Owner",
+          "Parking Operator",
+          "Parking Management Company",
+          "Real Estate Owner",
+          "Investor",
+          "Asset Manager (Real Estate / Infrastructure)",
+          "Public & Institutional Organization",
+          "Other"
+        ],
+        "reserveButton": "Reserve Your Spot",
+        "subtitle": "AI-Powered Parking Management — Sign Up for Early Access",
+        "dialogTitle": "Sign Up for Early Access",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email Address",
+        "company": "Company Name",
+        "yourRole": "Your Role",
+        "otherRole": "Please specify your role",
+        "phone": "Phone (optional)",
+        "signUp": "Sign Up",
+        "consent": "I agree to receive marketing communications from Parkwize. You can unsubscribe at any time."
+      }
+    },
     "header": {
       "tag": "All-in-One AI-Driven Parking Intelligence Platform",
       "title": "Unlock 15%–40% More Revenue|from Your Parking",
