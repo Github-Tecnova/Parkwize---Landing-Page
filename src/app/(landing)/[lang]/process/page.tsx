@@ -20,6 +20,7 @@ import ProcessMiniKiosk from "@/assets/mini_borne_process.png";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const anim = {
   initial: { opacity: 0, y: 24 },
@@ -86,7 +87,7 @@ const products = [
   {
     name: "PT-Barrier X1",
     type: "3d" as const,
-    image: hardwareImg,
+    image: null,
     description:
       "High-speed barrier with integrated ANPR and LED signage. Opens in under 1 second.",
     specs: ["Speed: <1s", "IP65 rated", "24/7 operation", "ANPR ready"],
@@ -94,7 +95,7 @@ const products = [
   {
     name: "PT-Terminal T3",
     type: "image" as const,
-    image: hardwareImg,
+    image: null,
     description:
       "Touchscreen payment terminal with contactless, QR, and NFC support. Outdoor-rated.",
     specs: ['10" display', "NFC / QR", "Contactless pay", "Anti-vandal"],
@@ -102,7 +103,7 @@ const products = [
   {
     name: "PT-Sensor S2",
     type: "3d" as const,
-    image: hardwareImg,
+    image: null,
     description:
       "Ultrasonic bay sensor with LoRaWAN connectivity. Detects occupancy in real time.",
     specs: ["LoRaWAN", "99.8% accuracy", "5yr battery", "Wireless"],
@@ -110,7 +111,7 @@ const products = [
   {
     name: "PT-Gate G4",
     type: "image" as const,
-    image: hardwareImg,
+    image: null,
     description:
       "Pedestrian access gate with biometric and mobile credential support.",
     specs: ["Biometric", "Mobile access", "ADA compliant", "Anti-tailgate"],
@@ -253,7 +254,10 @@ function ProcessBrandingSection() {
   };
 
   return (
-    <section className="relative flex h-[88svh] flex-col overflow-hidden bg-background text-foreground">
+    <section
+      id="process-contact-form"
+      className="relative flex h-[88svh] flex-col overflow-hidden bg-background text-foreground"
+    >
       <div className="pointer-events-none absolute inset-0 z-0">
         <div
           className="absolute right-[-10%] top-[-20%] h-[350px] w-[350px] rounded-full md:h-[500px] md:w-[500px] lg:h-[700px] lg:w-[700px]"
@@ -614,7 +618,7 @@ const Hardware = () => {
         {
           name: "PT-Barrier X1",
           type: "3d" as const,
-          image: hardwareImg,
+          image: null,
           description:
             "Barrière haute vitesse avec LAPI intégrée et signalisation LED. Ouverture en moins d’une seconde.",
           specs: ["Vitesse : <1s", "IP65", "Opération 24/7", "Prêt pour LAPI"],
@@ -622,7 +626,7 @@ const Hardware = () => {
         {
           name: "PT-Terminal T3",
           type: "image" as const,
-          image: hardwareImg,
+          image: null,
           description:
             "Terminal de paiement tactile avec support sans contact, QR et NFC. Conçu pour l’extérieur.",
           specs: [
@@ -635,7 +639,7 @@ const Hardware = () => {
         {
           name: "PT-Sensor S2",
           type: "3d" as const,
-          image: hardwareImg,
+          image: null,
           description:
             "Capteur ultrasonique avec connectivité LoRaWAN. Détection d’occupation en temps réel.",
           specs: ["LoRaWAN", "99,8% précision", "Batterie 5 ans", "Sans fil"],
@@ -643,7 +647,7 @@ const Hardware = () => {
         {
           name: "PT-Gate G4",
           type: "image" as const,
-          image: hardwareImg,
+          image: null,
           description:
             "Portillon piéton avec biométrie et gestion d’identifiants mobiles.",
           specs: ["Biométrie", "Accès mobile", "Conforme ADA", "Anti-tailgate"],
@@ -684,7 +688,6 @@ const Hardware = () => {
           "Le meilleur matériel pour s’intégrer au meilleur logiciel.",
         finalDescription:
           "Découvrez comment Process Technology × Parkwize livrent une stack parking intelligente et intégrée — de la barrière au dashboard.",
-        downloadCatalog: "Télécharger le catalogue matériel",
       }
     : {
         partnerBadge: "Hardware Partner — Process Technology",
@@ -717,7 +720,6 @@ const Hardware = () => {
         finalTitle: "The Best Hardware to Fit with the Best Software.",
         finalDescription:
           "Discover how Process Technology × Parkwize delivers a fully integrated, intelligent parking stack — from barrier to dashboard.",
-        downloadCatalog: "Download Hardware Catalog",
       };
 
   return (
@@ -758,17 +760,13 @@ const Hardware = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
+                    asChild
                     size="lg"
                     className="text-base px-8 bg-parkwize_blue text-white hover:bg-parkwize_blue/90 rounded-none"
                   >
-                    {ui.requestDemo} <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-base px-8 rounded-none"
-                  >
-                    {ui.downloadSpecs}
+                    <Link href="#process-contact-form">
+                      {ui.requestDemo} <ArrowRight className="ml-2 w-4 h-4" />
+                    </Link>
                   </Button>
                 </div>
               </motion.div>
@@ -979,13 +977,17 @@ const Hardware = () => {
                 >
                   {/* Product visual */}
                   <div className="relative aspect-[4/3] bg-secondary/50 overflow-hidden">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                    {product.image ? (
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    ) : (
+                      <div className="h-full w-full bg-secondary" />
+                    )}
                     {product.type === "3d" && (
                       <div className="absolute top-4 right-4 bg-parkwize_blue/90 text-white text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm">
                         {ui.model3d}
@@ -1079,15 +1081,15 @@ const Hardware = () => {
               {ui.finalDescription}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="text-base px-8">
-                {ui.requestDemo} <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
               <Button
+                asChild
                 size="lg"
-                variant="outline"
-                className="text-base px-8 border-white/30 text-parkwize_blue hover:bg-white/10 hover:text-white"
+                variant="secondary"
+                className="text-base px-8"
               >
-                {ui.downloadCatalog}
+                <Link href="#process-contact-form">
+                  {ui.requestDemo} <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
               </Button>
             </div>
           </motion.div>
