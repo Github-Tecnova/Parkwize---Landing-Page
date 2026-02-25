@@ -88,7 +88,7 @@ import {
   PromptInputTools,
 } from "@/components/ai-elements/prompt-input";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import LogoParkwize from "@/assets/Logo_Parkwize.svg";
+import LogoParkwize from "@/assets/parkwize_logo_tr.png";
 import IconLogoParkwize from "@/assets/Iconlogo_Parkwize.png";
 import MacBookProM4 from "@/assets/MacBook_Pro_M4.png";
 /* import MultiChart from "@/components/charts/multi-chart"; */
@@ -340,7 +340,7 @@ function EarlyAccessMainSection() {
   };
 
   return (
-    <section className="relative h-[85svh] overflow-hidden bg-black text-white">
+    <section className="relative h-[85svh] overflow-hidden border border-parkwize_blue/40 bg-white text-foreground">
       <div className="pointer-events-none absolute inset-0 z-0">
         <div
           className="absolute right-[-10%] top-[-20%] h-[350px] w-[350px] rounded-full md:h-[500px] md:w-[500px] lg:h-[700px] lg:w-[700px]"
@@ -369,7 +369,7 @@ function EarlyAccessMainSection() {
         {stars.map((star) => (
           <div
             key={star.id}
-            className="absolute rounded-full bg-white/40 animate-pulse"
+            className="absolute rounded-full bg-parkwize_blue/45 animate-pulse"
             style={{
               left: star.left,
               top: star.top,
@@ -388,13 +388,13 @@ function EarlyAccessMainSection() {
             alt="Parkwize"
             width={180}
             height={48}
-            className="h-7 w-auto brightness-0 invert md:h-10 lg:h-12"
+            className="h-7 w-auto md:h-10 lg:h-12"
           />
         </header>
 
         <main className="relative flex w-full max-w-6xl flex-[4] flex-col items-center justify-evenly md:flex-[2] md:justify-center">
           <div className="mb-4 flex justify-center px-4 md:hidden">
-            <span className="min-w-[250px] rounded-full border border-foreground/20 bg-foreground/5 px-6 py-2.5 text-center text-[11px] font-light uppercase tracking-[0.2em] text-muted-foreground/70">
+            <span className="min-w-[250px] rounded-full border border-parkwize_blue/30 bg-white/90 px-6 py-2.5 text-center text-[11px] font-light uppercase tracking-[0.2em] text-foreground/80">
               {EARLY_ACCESS_FEATURES[activeFeature]}
             </span>
           </div>
@@ -435,7 +435,7 @@ function EarlyAccessMainSection() {
             {EARLY_ACCESS_FEATURES.map((feature, index) => (
               <motion.span
                 key={feature}
-                className="absolute cursor-default text-xs font-light uppercase tracking-widest text-muted-foreground/70 transition-colors duration-300 hover:text-foreground/90 lg:text-sm"
+                className="absolute cursor-default text-xs font-light uppercase tracking-widest text-parkwize_blue/75 transition-colors duration-300 hover:text-parkwize_blue lg:text-sm"
                 style={EARLY_ACCESS_FEATURE_POSITIONS[index]}
                 animate={{ y: [0, -10, 0, 10, 0], x: [0, 3, 0, -3, 0] }}
                 transition={{
@@ -457,7 +457,7 @@ function EarlyAccessMainSection() {
             >
               Reserve Your Spot
             </button>
-            <p className="mt-2 text-center text-[9px] tracking-wide text-muted-foreground md:mt-3 md:text-sm">
+            <p className="mt-2 text-center text-[9px] tracking-wide text-foreground/70 md:mt-3 md:text-sm">
               AI-Powered Parking Management — Sign Up for Early Access
             </p>
           </div>
@@ -465,17 +465,17 @@ function EarlyAccessMainSection() {
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-md rounded-2xl border border-foreground/10 bg-background/60 p-8 shadow-[0_0_60px_rgba(0,0,0,0.5)] backdrop-blur-2xl">
+        <DialogContent className="max-w-md rounded-2xl border-2 border-parkwize_blue/30 bg-white p-8 shadow-[0_0_60px_rgba(7,88,246,0.25)]">
           <DialogTitle className="sr-only">
             Sign Up for Early Access
           </DialogTitle>
           <div className="mb-6 flex justify-center">
             <Image
-              src={IconLogoParkwize}
+              src={LogoParkwize}
               alt="Parkwize"
-              width={48}
+              width={160}
               height={48}
-              className="h-12 w-auto"
+              className="h-10 w-auto"
             />
           </div>
 
@@ -488,7 +488,7 @@ function EarlyAccessMainSection() {
                 onChange={(event) =>
                   setForm({ ...form, firstName: event.target.value })
                 }
-                className="border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+                className="border-b-2 border-parkwize_blue/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-parkwize_blue focus:outline-none md:pb-2 md:text-sm"
                 required
               />
               <input
@@ -498,7 +498,7 @@ function EarlyAccessMainSection() {
                 onChange={(event) =>
                   setForm({ ...form, lastName: event.target.value })
                 }
-                className="border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+                className="border-b-2 border-parkwize_blue/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-parkwize_blue focus:outline-none md:pb-2 md:text-sm"
               />
             </div>
 
@@ -509,7 +509,7 @@ function EarlyAccessMainSection() {
               onChange={(event) =>
                 setForm({ ...form, email: event.target.value })
               }
-              className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+              className="w-full border-b-2 border-parkwize_blue/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-parkwize_blue focus:outline-none md:pb-2 md:text-sm"
               required
             />
 
@@ -520,7 +520,7 @@ function EarlyAccessMainSection() {
               onChange={(event) =>
                 setForm({ ...form, company: event.target.value })
               }
-              className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+              className="w-full border-b-2 border-parkwize_blue/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-parkwize_blue focus:outline-none md:pb-2 md:text-sm"
             />
 
             <select
@@ -534,7 +534,7 @@ function EarlyAccessMainSection() {
                 })
               }
               className={cn(
-                "w-full border-b border-foreground/20 bg-transparent pb-3 text-base transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm",
+                "w-full border-b-2 border-parkwize_blue/20 bg-transparent pb-3 text-base transition-colors focus:border-parkwize_blue focus:outline-none md:pb-2 md:text-sm",
                 form.role ? "text-foreground" : "text-muted-foreground/50",
               )}
             >
@@ -564,7 +564,7 @@ function EarlyAccessMainSection() {
                 onChange={(event) =>
                   setForm({ ...form, roleOther: event.target.value })
                 }
-                className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+                className="w-full border-b-2 border-parkwize_blue/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-parkwize_blue focus:outline-none md:pb-2 md:text-sm"
               />
             )}
 
@@ -575,12 +575,12 @@ function EarlyAccessMainSection() {
               onChange={(event) =>
                 setForm({ ...form, phone: event.target.value })
               }
-              className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+              className="w-full border-b-2 border-parkwize_blue/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-parkwize_blue focus:outline-none md:pb-2 md:text-sm"
             />
 
             <button
               type="submit"
-              className="mt-2 w-full rounded-full border border-foreground/20 bg-foreground/5 py-4 text-sm font-medium uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-foreground/10 md:py-3"
+              className="mt-2 w-full rounded-full border-2 border-parkwize_blue bg-parkwize_blue py-4 text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-parkwize_blue/90 md:py-3"
             >
               Sign Up
             </button>
