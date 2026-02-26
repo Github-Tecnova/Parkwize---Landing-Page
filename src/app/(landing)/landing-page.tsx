@@ -232,6 +232,8 @@ function EarlyAccessMainSection() {
   const [form, setForm] = useState<EarlyAccessFormState>(
     defaultEarlyAccessForm,
   );
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const stars = useMemo(() => generateEarlyAccessStars(60), []);
 
   useEffect(() => {
@@ -244,14 +246,40 @@ function EarlyAccessMainSection() {
     return () => clearInterval(interval);
   }, [earlyAccessFeatures.length]);
 
-  const onSubmit = (event: React.FormEvent) => {
+  const onSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    if (!form.firstName || !form.email) {
+    if (!form.firstName || !form.email || !form.consent) {
+      setSubmitError("Please complete required fields and consent.");
       return;
     }
 
-    setOpen(false);
-    setForm(defaultEarlyAccessForm);
+    try {
+      setIsSubmitting(true);
+      setSubmitError(null);
+
+      const response = await fetch("/api/early-access", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        const payload = (await response.json().catch(() => null)) as {
+          error?: string;
+        } | null;
+        setSubmitError(payload?.error ?? "Unable to send request right now.");
+        return;
+      }
+
+      setOpen(false);
+      setForm(defaultEarlyAccessForm);
+    } catch {
+      setSubmitError("Unable to send request right now.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -370,7 +398,10 @@ function EarlyAccessMainSection() {
 
           <div className="flex flex-col items-center">
             <button
-              onClick={() => setOpen(true)}
+              onClick={() => {
+                setSubmitError(null);
+                setOpen(true);
+              }}
               className="group relative rounded-full border border-foreground/20 bg-foreground/5 px-8 py-4 text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 hover:border-parkwize_blue hover:bg-parkwize_blue/10 hover:shadow-[0_0_40px_rgba(7,88,246,0.15)] md:px-10 md:text-sm md:tracking-[0.2em] lg:px-12 lg:py-5 lg:text-base lg:tracking-[0.25em]"
             >
               {earlyAccessDict.reserveButton}
@@ -382,7 +413,16 @@ function EarlyAccessMainSection() {
         </main>
       </div>
 
-      <Dialog open={open} onOpenChange={setOpen}>
+      <Dialog
+        open={open}
+        onOpenChange={(nextOpen) => {
+          setOpen(nextOpen);
+          if (!nextOpen) {
+            setSubmitError(null);
+            setIsSubmitting(false);
+          }
+        }}
+      >
         <DialogContent className="max-w-md rounded-2xl border-2 border-parkwize_blue/30 bg-white p-8 shadow-[0_0_60px_rgba(7,88,246,0.25)]">
           <DialogTitle className="sr-only">
             {earlyAccessDict.dialogTitle}
@@ -498,10 +538,17 @@ function EarlyAccessMainSection() {
 
             <button
               type="submit"
-              className="mt-2 w-full rounded-full border-2 border-parkwize_blue bg-parkwize_blue py-4 text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-parkwize_blue/90 md:py-3"
+              disabled={isSubmitting}
+              className="mt-2 w-full rounded-full border-2 border-parkwize_blue bg-parkwize_blue py-4 text-sm font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-parkwize_blue/90 disabled:cursor-not-allowed disabled:opacity-70 md:py-3"
             >
-              {earlyAccessDict.signUp}
+              {isSubmitting ? "Sending..." : earlyAccessDict.signUp}
             </button>
+
+            {submitError && (
+              <p className="text-xs text-red-500" role="alert">
+                {submitError}
+              </p>
+            )}
 
             <label className="flex cursor-pointer items-start gap-3">
               <input
@@ -510,6 +557,7 @@ function EarlyAccessMainSection() {
                 onChange={(event) =>
                   setForm({ ...form, consent: event.target.checked })
                 }
+                required
                 className="mt-1 accent-parkwize_blue"
               />
               <span className="text-[11px] leading-relaxed text-muted-foreground/60">
@@ -1128,7 +1176,7 @@ function SolutionSection() {
             >
               <div className={"flex-1"}>
                 <Image
-                  src={"/landing-borne.png"}
+                  src={"/Borne_process.png"}
                   alt={"Landing Borne"}
                   className={"translate-x-28 object-contain"}
                   fill

@@ -13,7 +13,7 @@ import {
   Check,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import hardwareImg from "@/assets/hardware-process.jpg";
+import hardwareImg from "@/assets/Borne_process.png";
 import ProcessLogo from "@/assets/Logo_Process.png";
 import ProcessKiosk from "@/assets/Borne_process.png";
 import ProcessMiniKiosk from "@/assets/mini_borne_process.png";
@@ -776,9 +776,9 @@ const Hardware = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
-                <div className="rounded-2xl overflow-hidden border border-border shadow-2xl shadow-parkwize_blue/10">
+                <div className="rounded-2xl overflow-hidden shadow-parkwize_blue/10">
                   <Image
-                    src={hardwareImg}
+                    src={ProcessMiniKiosk} //hardwareImg
                     alt="Process Technology hardware"
                     className="w-full h-auto"
                     priority
