@@ -158,7 +158,7 @@ export function Navbar() {
                     {lang === "fr" ? "Se connecter" : "Sign-in"}
                   </Link>
                   <Link
-                    href={"https://demo.parkwizeinc.ai"}
+                    href={"https://demo.parkwize.ai/app/dashboard"}
                     className={cn(
                       buttonVariants({
                         variant: "primary",
@@ -297,7 +297,7 @@ export function Navbar() {
               {lang === "fr" ? "Se connecter" : "Sign-in"}
             </Link>
             <Link
-              href={"https://demo.parkwizeinc.ai"}
+              href={"https://demo.parkwize.ai/app/dashboard"}
               className={cn(
                 buttonVariants({
                   variant: "primary",

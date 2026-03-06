@@ -402,7 +402,7 @@ function EarlyAccessMainSection() {
                 setSubmitError(null);
                 setOpen(true);
               }}
-              className="group relative rounded-full border border-foreground/20 bg-foreground/5 px-8 py-4 text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 hover:border-parkwize_blue hover:bg-parkwize_blue/10 hover:shadow-[0_0_40px_rgba(7,88,246,0.15)] md:px-10 md:text-sm md:tracking-[0.2em] lg:px-12 lg:py-5 lg:text-base lg:tracking-[0.25em]"
+              className="group relative rounded-full border border-foreground/20 bg-foreground/5 px-8 py-4 text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 border-parkwize_blue hover:bg-parkwize_blue/10 hover:shadow-[0_0_40px_rgba(7,88,246,0.15)] md:px-10 md:text-sm md:tracking-[0.2em] lg:px-12 lg:py-5 lg:text-base lg:tracking-[0.25em]"
             >
               {earlyAccessDict.reserveButton}
             </button>
@@ -625,7 +625,7 @@ function Header() {
               {dict.homepage.ctu}
             </Link>
             <Link
-              href={"https://demo.parkwize.ai"}
+              href={"https://demo.parkwize.ai/app/dashboard"}
               className={buttonVariants({
                 variant: "outline",
                 className:
@@ -773,7 +773,7 @@ function TheVisionSection() {
       </div>
       <div className={"mx-auto w-fit"}>
         <Link
-          href={"#"}
+          href={"https://demo.parkwize.ai/app/dashboard"}
           className={buttonVariants({
             variant: "primary",
             size: "lg",
@@ -2033,7 +2033,7 @@ function OptimizeParkingSection() {
         </div>
         <div className={"flex items-center justify-center gap-x-2"}>
           <Link
-            href={"/dashboard"}
+            href={"https://demo.parkwize.ai/app/dashboard"}
             className={cn(
               buttonVariants({ variant: "default" }),
               "rounded-none bg-blue-700 font-medium text-white hover:bg-blue-600",

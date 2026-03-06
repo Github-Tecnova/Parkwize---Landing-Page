@@ -36,6 +36,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Parkwize",
   description: "Parkwize developed by Tecnova",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default async function RootLayout({
