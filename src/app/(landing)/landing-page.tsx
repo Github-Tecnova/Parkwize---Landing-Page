@@ -1025,7 +1025,7 @@ function SolutionSection() {
                 className="overflow-hidden"
               >
                 <Link
-                  href={`/process`}
+                  href={`https://info.process.ca/`}
                   className={
                     "relative flex aspect-video w-full flex-col border p-5 transition-all duration-300 hover:shadow-lg"
                   }
