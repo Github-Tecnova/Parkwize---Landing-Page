@@ -12,6 +12,7 @@ import TranslationProvider from "@/hooks/translation-hook";
 import { getDictionary } from "@/content/dictionary";
 import { Suspense } from "react";
 import { FontsProvider } from "@/components/providers/fonts-provider";
+import {Analytics} from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -57,6 +58,7 @@ export default async function RootLayout({
           <body
             className={`${inter.className} max-h-screen min-h-screen antialiased`}
           >
+          <Analytics />
             <TranslationProvider initialDict={dict}>
               <ThemeProvider
                 storageKey={"parkwize-theme"}
