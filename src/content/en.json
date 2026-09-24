@@ -249,7 +249,7 @@
       "quickStats": {
         "liveKpis": "Live KPIs",
         "parkingLotsManaged": "Parking Lots Managed",
-        "dailyDataEvents": "Daily Data Events",
+        "dailyDataEvents": "Daily Data Events Analyzed",
         "revenueProcessed": "Revenue Processed"
       },
       "vision": {

@@ -663,19 +663,19 @@ function QuickStatsSection() {
     {
       id: 1,
       Icon: LucideBarChart3,
-      val: "20+",
+      val: "50+",
       text: quickStats.parkingLotsManaged,
     },
     {
       id: 2,
       Icon: LucideUsers,
-      val: "50k+",
+      val: "60K+",
       text: quickStats.dailyDataEvents,
     },
     {
       id: 3,
       Icon: LucideDollarSign,
-      val: "$15M+",
+      val: "$90M+",
       text: quickStats.revenueProcessed,
     },
   ];

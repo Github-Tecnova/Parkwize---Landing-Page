@@ -249,7 +249,7 @@
       "quickStats": {
         "liveKpis": "KPIs en direct",
         "parkingLotsManaged": "Stationnements gérés",
-        "dailyDataEvents": "Événements de données quotidiens",
+        "dailyDataEvents": "Événements de données analysés par jour",
         "revenueProcessed": "Revenus traités"
       },
       "vision": {
