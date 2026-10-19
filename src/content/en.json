@@ -1601,6 +1601,227 @@
           }
         ]
       }
+    },
+    "parkwizeAi": {
+      "meta": {
+        "title": "Parkwize AI | Parkwize",
+        "description": "Predictive intelligence that learns your parking's unique behavior and optimizes revenue automatically."
+      },
+      "hero": {
+        "logoAlt": "Parkwize AI",
+        "tagline": "The ultimate way to manage smart parking",
+        "laptopAlt": "Parkwize AI answering questions about parking data on a laptop"
+      },
+      "forecast": {
+        "eyebrow": "How the forecast is calculated",
+        "title": "From history to *adjusted forecast*, in 4 steps.",
+        "railLabel": "Forecast calculation steps",
+        "steps": [
+          {
+            "label": "History",
+            "title": "The model starts from each lot's own history"
+          },
+          {
+            "label": "Signals",
+            "title": "Every external signal gets an impact score"
+          },
+          {
+            "label": "Net impact",
+            "title": "Scores combine into a net impact, day by day"
+          },
+          {
+            "label": "Action",
+            "title": "Parkwize turns the forecast into action"
+          }
+        ],
+        "internalLabel": "The lot's internal data",
+        "internal": {
+          "occupancy": {
+            "title": "Historical occupancy",
+            "body": "By hour, by day"
+          },
+          "revenue": {
+            "title": "Revenue and rates",
+            "body": "Price and elasticity"
+          },
+          "cycles": {
+            "title": "Demand cycles",
+            "body": "Seasons and trends"
+          },
+          "turnover": {
+            "title": "Turnover and duration",
+            "body": "Average stay length"
+          },
+          "members": {
+            "title": "Members and bookings",
+            "body": "Waitlist, pre-sales"
+          }
+        },
+        "signalsLabel": "External signals and impact score",
+        "signals": {
+          "weather": {
+            "title": "Weather",
+            "body": "Rain expected Thursday",
+            "value": -8
+          },
+          "events": {
+            "title": "Local events",
+            "body": "Game Saturday night",
+            "value": 18
+          },
+          "traffic": {
+            "title": "Traffic",
+            "body": "Weekday peaks",
+            "value": 5
+          },
+          "roadworks": {
+            "title": "Roadworks",
+            "body": "Street closed Tuesday",
+            "value": -6
+          },
+          "holidays": {
+            "title": "Holidays",
+            "body": "Monday off, offices closed",
+            "value": -10
+          },
+          "transit": {
+            "title": "Public transit",
+            "body": "Metro disrupted Wednesday",
+            "value": 9
+          },
+          "prices": {
+            "title": "Nearby prices",
+            "body": "Neighbor rates +15% Fri & Sat",
+            "value": 3
+          },
+          "neighbors": {
+            "title": "Neighbor occupancy",
+            "body": "Neighbors full Friday night",
+            "value": 4
+          },
+          "tourism": {
+            "title": "Tourism and holidays",
+            "body": "Conference Wed & Thu",
+            "value": 7
+          }
+        },
+        "chartTitle": "Forecast occupancy, next 7 days",
+        "legendBase": "Base",
+        "legendAdjusted": "Adjusted",
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun"
+        ],
+        "formulaBase": "Base forecast",
+        "formulaNet": "(1 + net impact)",
+        "formulaResult": "Adjusted forecast",
+        "recommendation": "AI recommendation",
+        "facts": [
+          {
+            "label": "Day",
+            "value": "Saturday"
+          },
+          {
+            "label": "Lot",
+            "value": "Riverain Parking"
+          },
+          {
+            "label": "Expected occupancy",
+            "value": "90%"
+          },
+          {
+            "label": "Context",
+            "value": "Game nearby"
+          },
+          {
+            "label": "Suggestion",
+            "value": "Event rate +10%"
+          }
+        ],
+        "apply": "Apply recommendation",
+        "note": "Illustrative data.",
+        "percentSuffix": "%"
+      },
+      "solution": {
+        "eyebrow": "The solution",
+        "title": "Intelligence That *Learns* and *Optimizes.*",
+        "lead": "Parkwize AI is trained on over 8 years of real-world parking data. It learns the unique behavior of each facility by reading more than 90 internal and external KPIs, from demand cycles, revenue patterns and occupancy dynamics to local events, weather and traffic. Then it acts: it forecasts demand, finds the optimal rate and adjusts prices automatically, around the clock.",
+        "points": [
+          "Demand cycle analysis: understanding how each parking reacts to time, day, season, and external events.",
+          "Revenue pattern recognition: identifying optimal pricing strategies for maximum yield.",
+          "Occupancy dynamics modeling: predicting fill rates and turnover with high accuracy.",
+          "External data integration: weather, local events, Google Maps traffic, ticketing platforms, nearby building activity.",
+          "Real-time automatic price adjustment: zero manual input, immediate results.",
+          "Continuous learning: the AI improves with every data point, getting smarter over time."
+        ]
+      },
+      "features": {
+        "eyebrow": "Features",
+        "title": "What's *inside*.",
+        "mediaAlt": "A parking operations team reviewing forecasts together",
+        "mediaCaption": "Built on 8+ years of real parking data",
+        "items": [
+          {
+            "title": "Demand Forecasting",
+            "body": "Occupancy, traffic and revenue predicted hour by hour, for every facility, days ahead."
+          },
+          {
+            "title": "Revenue Optimization",
+            "body": "The optimal rate for every moment, balancing occupancy and yield across your portfolio."
+          },
+          {
+            "title": "Auto Price Adjustment",
+            "body": "Prices update by themselves on kiosks, displays and booking channels, with no manual input."
+          },
+          {
+            "title": "External Data Integration",
+            "body": "Weather, events, traffic, transit and nearby buildings feed every forecast in real time."
+          },
+          {
+            "title": "Event Awareness",
+            "body": "Games, concerts and conferences are detected early, so rates and capacity are ready."
+          },
+          {
+            "title": "Continuous Learning",
+            "body": "Every transaction makes the model sharper. Accuracy improves the longer it runs."
+          }
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Connected ecosystem",
+        "title": "The Intelligence *Layer.*"
+      },
+      "results": {
+        "eyebrow": "Results",
+        "title": "Measurable *Impact*",
+        "items": [
+          {
+            "value": "+35%",
+            "label": "Revenue Growth",
+            "body": "AI-optimized dynamic pricing"
+          },
+          {
+            "value": "95%",
+            "label": "Forecast Accuracy",
+            "body": "Demand prediction precision"
+          },
+          {
+            "value": "0",
+            "label": "Manual Input",
+            "body": "Fully autonomous optimization"
+          },
+          {
+            "value": "8yr+",
+            "label": "Training Data",
+            "body": "Real-world parking intelligence"
+          }
+        ]
+      }
     }
   }
 }

@@ -127,26 +127,26 @@ const ProductPageLayout = (props: ProductPageProps) => {
       };
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden bg-background">
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-parkwize_blue/5 blur-[120px]" />
-        <div className="absolute top-[40%] -right-60 w-[500px] h-[500px] rounded-full bg-parkwize_blue/4 blur-[140px]" />
-        <div className="absolute bottom-0 left-[10%] w-[400px] h-[400px] rounded-full bg-parkwize_blue/3 blur-[100px]" />
+        <div className="absolute -left-40 -top-40 h-[600px] w-[600px] rounded-full bg-parkwize_blue/5 blur-[120px]" />
+        <div className="bg-parkwize_blue/4 absolute -right-60 top-[40%] h-[500px] w-[500px] rounded-full blur-[140px]" />
+        <div className="bg-parkwize_blue/3 absolute bottom-0 left-[10%] h-[400px] w-[400px] rounded-full blur-[100px]" />
       </div>
       <div className="relative z-10">
         {/* Hero */}
-        <section className="pt-32 pb-20 px-6">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="px-6 pb-20 pt-32">
+          <div className="mx-auto max-w-4xl text-center">
             <motion.p
               {...anim}
-              className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-4"
+              className="mb-4 text-sm font-semibold uppercase tracking-widest text-parkwize_blue"
             >
               {props.badge}
             </motion.p>
             <motion.h1
               {...anim}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6"
+              className="mb-6 text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl"
             >
               {props.headline}
               {props.headlineAccent && (
@@ -161,20 +161,20 @@ const ProductPageLayout = (props: ProductPageProps) => {
             <motion.p
               {...anim}
               transition={{ delay: 0.2 }}
-              className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8"
+              className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground"
             >
               {props.subheadline}
             </motion.p>
             <motion.div
               {...anim}
               transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col justify-center gap-4 sm:flex-row"
             >
               <Button
                 size="lg"
-                className="text-base px-8 bg-parkwize_blue text-white hover:bg-parkwize_blue/90 rounded-none"
+                className="rounded-none bg-parkwize_blue px-8 text-base text-white hover:bg-parkwize_blue/90"
               >
-                {labels.getInTouch} <ArrowRight className="ml-2 w-4 h-4" />
+                {labels.getInTouch} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>
             {(props.heroVideo || props.heroImage) && (
@@ -182,13 +182,13 @@ const ProductPageLayout = (props: ProductPageProps) => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.4 }}
-                className="max-w-5xl mx-auto mt-16"
+                className="mx-auto mt-16 max-w-5xl"
               >
-                <div className=" overflow-hidden ">
+                <div className="overflow-hidden">
                   {props.heroVideo ? (
                     <video
                       src={props.heroVideo}
-                      className="w-full h-auto max-h-[65vh] object-contain"
+                      className="h-auto max-h-[65vh] w-full object-contain"
                       autoPlay
                       muted
                       loop
@@ -198,7 +198,7 @@ const ProductPageLayout = (props: ProductPageProps) => {
                     <Image
                       src={props.heroImage as string | StaticImageData}
                       alt={props.badge}
-                      className="w-full h-auto"
+                      className="h-auto w-full"
                     />
                   )}
                 </div>
@@ -208,23 +208,23 @@ const ProductPageLayout = (props: ProductPageProps) => {
         </section>
 
         {/* Problem */}
-        <section className="py-16 px-6 bg-secondary/50">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="bg-secondary/50 px-6 py-16">
+          <div className="mx-auto max-w-4xl text-center">
             <motion.div {...anim}>
-              <p className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-3">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-parkwize_blue">
                 {labels.problem}
               </p>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+              <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-5xl">
                 {props.problemTitle}
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              <p className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground">
                 {props.problemDesc}
               </p>
             </motion.div>
             <motion.div
               {...anim}
               transition={{ delay: 0.2 }}
-              className="mt-12 max-w-2xl mx-auto space-y-6 text-left"
+              className="mx-auto mt-12 max-w-2xl space-y-6 text-left"
             >
               {props.problems.map((item, i) => (
                 <motion.div
@@ -233,12 +233,12 @@ const ProductPageLayout = (props: ProductPageProps) => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex gap-4 items-start"
+                  className="flex items-start gap-4"
                 >
-                  <span className="w-2 h-2 rounded-full bg-parkwize_blue mt-2 shrink-0" />
+                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-parkwize_blue" />
                   <div>
                     <h3 className="font-bold text-foreground">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="mt-1 text-sm text-muted-foreground">
                       {item.desc}
                     </p>
                   </div>
@@ -249,23 +249,23 @@ const ProductPageLayout = (props: ProductPageProps) => {
         </section>
 
         {/* Product Core */}
-        <section className="py-16 px-6 bg-[#14181f]">
-          <div className="max-w-4xl mx-auto">
-            <motion.div {...anim} className="text-center mb-12">
-              <p className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-3">
+        <section className="bg-[#14181f] px-6 py-16">
+          <div className="mx-auto max-w-4xl">
+            <motion.div {...anim} className="mb-12 text-center">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-parkwize_blue">
                 {labels.solution}
               </p>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-white">
+              <h2 className="mb-6 text-3xl font-bold tracking-tight text-white md:text-5xl">
                 {props.coreTitle}
               </h2>
-              <p className="text-lg text-[#a1a2a5] leading-relaxed max-w-3xl mx-auto">
+              <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#a1a2a5]">
                 {props.coreDesc}
               </p>
             </motion.div>
             <motion.div
               {...anim}
               transition={{ delay: 0.2 }}
-              className="max-w-2xl mx-auto space-y-4"
+              className="mx-auto max-w-2xl space-y-4"
             >
               {props.corePoints.map((point, i) => (
                 <motion.div
@@ -274,10 +274,10 @@ const ProductPageLayout = (props: ProductPageProps) => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="flex gap-4 items-start"
+                  className="flex items-start gap-4"
                 >
-                  <span className="w-2 h-2 rounded-full bg-parkwize_blue mt-2 shrink-0" />
-                  <p className="text-[#a1a2a5] leading-relaxed">{point}</p>
+                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-parkwize_blue" />
+                  <p className="leading-relaxed text-[#a1a2a5]">{point}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -285,17 +285,17 @@ const ProductPageLayout = (props: ProductPageProps) => {
         </section>
 
         {/* Feature Grid */}
-        <section className="py-16 px-6 bg-[#14181f]">
-          <div className="max-w-7xl mx-auto">
-            <motion.div {...anim} className="text-center mb-16">
-              <p className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-3">
+        <section className="bg-[#14181f] px-6 py-16">
+          <div className="mx-auto max-w-7xl">
+            <motion.div {...anim} className="mb-16 text-center">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-parkwize_blue">
                 {labels.features}
               </p>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+              <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
                 {labels.whatsInside}
               </h2>
             </motion.div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {props.features.map((f, i) => (
                 <motion.div
                   key={f.title}
@@ -303,14 +303,14 @@ const ProductPageLayout = (props: ProductPageProps) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className=" border border-[#ffffff1a] bg-[#ffffff0d] p-8 hover:shadow-lg hover:shadow-parkwize_blue/5 transition-all duration-300"
+                  className="border border-[#ffffff1a] bg-[#ffffff0d] p-8 transition-all duration-300 hover:shadow-lg hover:shadow-parkwize_blue/5"
                 >
-                  <div className="flex justify-between items-center mb-6">
-                    <h3 className="text-lg font-bold mb-2 text-white">
+                  <div className="mb-6 flex items-center justify-between">
+                    <h3 className="mb-2 text-lg font-bold text-white">
                       {f.title}
                     </h3>
-                    <div className="w-6 h-6  flex items-center justify-center">
-                      <f.icon className="w-6 h-6 text-parkwize_blue" />
+                    <div className="flex h-6 w-6 items-center justify-center">
+                      <f.icon className="h-6 w-6 text-parkwize_blue" />
                     </div>
                   </div>
                   <p className="text-sm leading-relaxed text-[#a1a2a5]">
@@ -323,20 +323,20 @@ const ProductPageLayout = (props: ProductPageProps) => {
         </section>
 
         {/* Ecosystem Integration */}
-        <section className="py-16 px-6">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="px-6 py-16">
+          <div className="mx-auto max-w-4xl text-center">
             <motion.div {...anim}>
-              <p className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-3">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-parkwize_blue">
                 {labels.connectedEcosystem}
               </p>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+              <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl">
                 {props.ecosystemTitle}
               </h2>
-              <p className="text-lg text-muted-foreground mb-12">
+              <p className="mb-12 text-lg text-muted-foreground">
                 {props.ecosystemDesc}
               </p>
             </motion.div>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid gap-6 md:grid-cols-3">
               {props.ecosystemLinks.map((link, i) => (
                 <motion.a
                   key={link.title}
@@ -345,16 +345,16 @@ const ProductPageLayout = (props: ProductPageProps) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="relative overflow-hidden border border-border bg-card p-6 text-left hover:border-parkwize_blue/40 hover:shadow-lg hover:shadow-parkwize_blue/5 transition-all duration-300 group"
+                  className="group relative overflow-hidden border border-border bg-card p-6 text-left transition-all duration-300 hover:border-parkwize_blue/40 hover:shadow-lg hover:shadow-parkwize_blue/5"
                 >
-                  <h3 className="font-bold mb-2 group-hover:text-parkwize_blue transition-colors">
+                  <h3 className="mb-2 font-bold transition-colors group-hover:text-parkwize_blue">
                     {link.title}
                   </h3>
                   <p className="text-sm text-muted-foreground">{link.desc}</p>
-                  <span className="text-sm font-medium text-parkwize_blue inline-flex items-center gap-1 mt-3 group-hover:gap-2 transition-all">
-                    {labels.learnMore} <ArrowRight className="w-3.5 h-3.5" />
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-parkwize_blue transition-all group-hover:gap-2">
+                    {labels.learnMore} <ArrowRight className="h-3.5 w-3.5" />
                   </span>
-                  <div className="pointer-events-none absolute bottom-4 right-4 h-10 w-10 overflow-hidden rounded-sm border border-border/80 bg-background/70">
+                  <div className="border-border/80 bg-background/70 pointer-events-none absolute bottom-4 right-4 h-10 w-10 overflow-hidden rounded-sm border">
                     <Image
                       src={getEcosystemProductImage(link.href, link.title)}
                       alt={link.title}
@@ -370,17 +370,17 @@ const ProductPageLayout = (props: ProductPageProps) => {
         </section>
 
         {/* Impact */}
-        <section className="py-16 px-6 bg-secondary/50">
-          <div className="max-w-7xl mx-auto">
-            <motion.div {...anim} className="text-center mb-16">
-              <p className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-3">
+        <section className="bg-secondary/50 px-6 py-16">
+          <div className="mx-auto max-w-7xl">
+            <motion.div {...anim} className="mb-16 text-center">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-parkwize_blue">
                 {labels.results}
               </p>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+              <h2 className="text-3xl font-bold tracking-tight md:text-5xl">
                 {labels.measurableImpact}
               </h2>
             </motion.div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {props.impacts.map((imp, i) => (
                 <motion.div
                   key={imp.label}
@@ -390,10 +390,10 @@ const ProductPageLayout = (props: ProductPageProps) => {
                   transition={{ delay: i * 0.1 }}
                   className="border border-border bg-card p-6 text-center"
                 >
-                  <p className="text-4xl font-bold text-parkwize_blue mb-2">
+                  <p className="mb-2 text-4xl font-bold text-parkwize_blue">
                     {imp.stat}
                   </p>
-                  <h3 className="font-semibold text-foreground mb-1">
+                  <h3 className="mb-1 font-semibold text-foreground">
                     {imp.label}
                   </h3>
                   <p className="text-sm text-muted-foreground">{imp.desc}</p>
@@ -404,26 +404,26 @@ const ProductPageLayout = (props: ProductPageProps) => {
         </section>
 
         {/* Final CTA */}
-        <section className="py-12 px-6 bg-parkwize_blue">
+        <section className="bg-parkwize_blue px-6 py-12">
           <motion.div
             {...anim}
-            className="max-w-4xl mx-auto text-center  p-12 md:p-16"
+            className="mx-auto max-w-4xl p-12 text-center md:p-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
               {labels.finalTitle}
             </h2>
-            <p className="text-white/80 mb-8 max-w-xl mx-auto">
+            <p className="mx-auto mb-8 max-w-xl text-white/80">
               {labels.finalDescription}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button
                 size="lg"
                 variant="secondary"
-                className="text-base px-8 hover:bg-parkwize_blue hover:text-white hover:border-white hover:border"
+                className="px-8 text-base hover:border hover:border-white hover:bg-parkwize_blue hover:text-white"
                 asChild
               >
                 <Link href={landingFormHref}>
-                  {labels.requestDemo} <ArrowRight className="ml-2 w-4 h-4" />
+                  {labels.requestDemo} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>

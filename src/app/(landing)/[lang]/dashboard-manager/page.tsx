@@ -4,15 +4,16 @@
 
 import { Metadata } from "next";
 import { ClosingCta } from "@/components/sections/closing-cta";
-import { DashboardFeatures } from "@/components/sections/dashboard/dashboard-features";
 import { DashboardHero } from "@/components/sections/dashboard/dashboard-hero";
 import { DashboardShowcase } from "@/components/sections/dashboard/dashboard-showcase";
 import { DashboardSolution } from "@/components/sections/dashboard/dashboard-solution";
 import { MarqueeBand } from "@/components/sections/home/marquee-band";
 import { ProductEcosystem } from "@/components/sections/product/product-ecosystem";
+import { ProductFeatures } from "@/components/sections/product/product-features";
 import { ProductResults } from "@/components/sections/product/product-results";
 import { getDictionary } from "@/content/dictionary";
 import { resolveLocale } from "@/lib/i18n";
+import { MEDIA } from "@/lib/media";
 
 type DashboardPageProps = {
   params: Promise<{ lang: string }>;
@@ -41,7 +42,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
       <DashboardHero locale={locale} dict={page.hero} />
       <DashboardShowcase dict={page.showcase} summary={page.summary} />
       <DashboardSolution dict={page.solution} />
-      <DashboardFeatures dict={page.features} />
+      <ProductFeatures dict={page.features} media={MEDIA.places.gate} />
       <ProductEcosystem
         locale={locale}
         eyebrow={page.ecosystem.eyebrow}

@@ -33,6 +33,11 @@ export const MEDIA = {
     },
   },
   product: {
+    aiHeroLaptop: {
+      src: "/images/product/ai-hero-laptop-keyed.webp",
+      width: 1400,
+      height: 886,
+    },
     dashboardMockup: {
       src: "/images/product/dashboard-mockup.webp",
       width: 1716,

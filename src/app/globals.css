@@ -476,6 +476,24 @@
     );
   }
 
+  .badge-positive {
+    color: color-mix(in oklab, var(--success) 70%, black);
+    background-color: color-mix(in oklab, var(--success) 14%, transparent);
+  }
+
+  .badge-negative {
+    color: color-mix(in oklab, var(--destructive) 80%, black);
+    background-color: color-mix(in oklab, var(--destructive) 12%, transparent);
+  }
+
+  .ai-hero-glow {
+    background: radial-gradient(
+      50% 45% at 72% 55%,
+      color-mix(in oklab, var(--deck-bright) 22%, transparent),
+      transparent 70%
+    );
+  }
+
   .text-gradient-ink {
     color: var(--ink);
   }

@@ -40,10 +40,7 @@ export function SectionHeader({
     >
       {eyebrow && (
         <p
-          className={cn(
-            "kicker",
-            inverse ? "text-inverse-muted" : "text-deck",
-          )}
+          className={cn("kicker", inverse ? "text-inverse-muted" : "text-deck")}
         >
           {eyebrow}
         </p>
@@ -55,7 +52,10 @@ export function SectionHeader({
           inverse ? "text-inverse-foreground" : "text-ink",
         )}
       >
-        <AccentText text={title} />
+        <AccentText
+          text={title}
+          accentClassName={inverse ? "text-deck-bright" : undefined}
+        />
       </Heading>
       {lead && (
         <p

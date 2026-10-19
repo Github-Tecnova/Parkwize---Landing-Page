@@ -6,16 +6,20 @@ import Image from "next/image";
 import { Container } from "@/components/layout/section/container";
 import { SectionHeader } from "@/components/layout/section/section-header";
 import { Reveal } from "@/components/motion/reveal";
-import { DashboardDictionary } from "@/content/dictionary";
-import { MEDIA } from "@/lib/media";
+import { Media } from "@/lib/media";
 
-type DashboardFeaturesProps = {
-  dict: DashboardDictionary["features"];
+type ProductFeaturesProps = {
+  dict: {
+    eyebrow: string;
+    title: string;
+    mediaAlt: string;
+    mediaCaption: string;
+    items: { title: string; body: string }[];
+  };
+  media: Media;
 };
 
-export function DashboardFeatures({ dict }: DashboardFeaturesProps) {
-  const { gate } = MEDIA.places;
-
+export function ProductFeatures({ dict, media }: ProductFeaturesProps) {
   return (
     <section className="bg-surface py-14 sm:py-20">
       <Container>
@@ -25,9 +29,9 @@ export function DashboardFeatures({ dict }: DashboardFeaturesProps) {
         <div className="mt-10 grid items-start gap-9 lg:mt-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-16">
           <figure className="lg:sticky lg:top-[calc(var(--top-bar-offset)+2rem)]">
             <Image
-              src={gate.src}
-              width={gate.width}
-              height={gate.height}
+              src={media.src}
+              width={media.width}
+              height={media.height}
               alt={dict.mediaAlt}
               sizes="(min-width: 1024px) 460px, 92vw"
               className="aspect-[16/10] w-full rounded-2xl object-cover saturate-[0.85] lg:aspect-[4/5]"

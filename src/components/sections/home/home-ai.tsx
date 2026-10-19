@@ -26,6 +26,7 @@ import { cn } from "@/lib/utils";
 type HomeAiProps = {
   locale: Locale;
   dict: HomeDictionary["ai"];
+  showCta?: boolean;
 };
 
 type CapabilityKey = keyof HomeDictionary["ai"]["capabilities"];
@@ -47,7 +48,7 @@ const SOURCES: { key: SourceKey; Icon: LucideIcon }[] = [
   { key: "revenue", Icon: TrendingUp },
 ];
 
-export function HomeAi({ locale, dict }: HomeAiProps) {
+export function HomeAi({ locale, dict, showCta = true }: HomeAiProps) {
   const { operationsTeam } = MEDIA.people;
   const { deckAi } = MEDIA.product;
   const { parkwizeAiBlack, parkwizeAiWhite } = MEDIA.brand;
@@ -71,14 +72,16 @@ export function HomeAi({ locale, dict }: HomeAiProps) {
             <p className="mt-5 max-w-2xl text-pretty text-[1.0625rem] leading-relaxed text-copy">
               {dict.lead}
             </p>
-            <ButtonLink
-              href="/parkwize-ai"
-              locale={locale}
-              withArrow
-              className="mt-8"
-            >
-              {dict.cta}
-            </ButtonLink>
+            {showCta && (
+              <ButtonLink
+                href="/parkwize-ai"
+                locale={locale}
+                withArrow
+                className="mt-8"
+              >
+                {dict.cta}
+              </ButtonLink>
+            )}
           </Reveal>
           <Reveal delay={0.1} className="relative pb-[15%] sm:pb-[18%]">
             <Image

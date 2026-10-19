@@ -18,6 +18,8 @@ export type HomeDictionary = DictionaryType["home"];
 
 export type ProductCardsDictionary = DictionaryType["productCards"];
 
+export type AiPageDictionary = DictionaryType["products"]["parkwizeAi"];
+
 export type DashboardDictionary =
   DictionaryType["products"]["dashboardManager"];
 

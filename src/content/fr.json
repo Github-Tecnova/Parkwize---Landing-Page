@@ -1585,6 +1585,227 @@
           }
         ]
       }
+    },
+    "parkwizeAi": {
+      "meta": {
+        "title": "Parkwize IA | Parkwize",
+        "description": "Une intelligence prédictive qui apprend le comportement unique de votre stationnement et optimise vos revenus automatiquement."
+      },
+      "hero": {
+        "logoAlt": "Parkwize IA",
+        "tagline": "La façon ultime de gérer le stationnement intelligent",
+        "laptopAlt": "Parkwize IA répond à des questions sur les données de stationnement sur un ordinateur portable"
+      },
+      "forecast": {
+        "eyebrow": "Comment la prévision est calculée",
+        "title": "De l'historique à la *prévision ajustée*, en 4 étapes.",
+        "railLabel": "Étapes du calcul de la prévision",
+        "steps": [
+          {
+            "label": "Historique",
+            "title": "Le modèle part de l'historique de chaque stationnement"
+          },
+          {
+            "label": "Signaux",
+            "title": "Chaque signal externe reçoit un score d'impact"
+          },
+          {
+            "label": "Impact net",
+            "title": "Les scores se combinent en un impact net, jour par jour"
+          },
+          {
+            "label": "Action",
+            "title": "Parkwize transforme la prévision en action"
+          }
+        ],
+        "internalLabel": "Données internes du stationnement",
+        "internal": {
+          "occupancy": {
+            "title": "Occupation historique",
+            "body": "Par heure, par jour"
+          },
+          "revenue": {
+            "title": "Revenus et tarifs",
+            "body": "Prix et élasticité"
+          },
+          "cycles": {
+            "title": "Cycles de demande",
+            "body": "Saisons, tendances"
+          },
+          "turnover": {
+            "title": "Rotation et durée",
+            "body": "Durée moyenne des séjours"
+          },
+          "members": {
+            "title": "Abonnés et réservations",
+            "body": "Liste d'attente, préachats"
+          }
+        },
+        "signalsLabel": "Signaux externes et score d'impact",
+        "signals": {
+          "weather": {
+            "title": "Météo",
+            "body": "Pluie prévue jeudi",
+            "value": -8
+          },
+          "events": {
+            "title": "Événements locaux",
+            "body": "Match samedi soir",
+            "value": 18
+          },
+          "traffic": {
+            "title": "Circulation",
+            "body": "Pointe en semaine",
+            "value": 5
+          },
+          "roadworks": {
+            "title": "Travaux routiers",
+            "body": "Rue fermée mardi",
+            "value": -6
+          },
+          "holidays": {
+            "title": "Jours fériés",
+            "body": "Congé lundi, bureaux fermés",
+            "value": -10
+          },
+          "transit": {
+            "title": "Transport collectif",
+            "body": "Métro perturbé mercredi",
+            "value": 9
+          },
+          "prices": {
+            "title": "Prix à proximité",
+            "body": "Tarifs voisins +15 % ven. et sam.",
+            "value": 3
+          },
+          "neighbors": {
+            "title": "Occupation des voisins",
+            "body": "Voisins complets vendredi soir",
+            "value": 4
+          },
+          "tourism": {
+            "title": "Tourisme et congés",
+            "body": "Congrès mercredi et jeudi",
+            "value": 7
+          }
+        },
+        "chartTitle": "Occupation prévue, 7 prochains jours",
+        "legendBase": "Base",
+        "legendAdjusted": "Ajustée",
+        "days": [
+          "Lun",
+          "Mar",
+          "Mer",
+          "Jeu",
+          "Ven",
+          "Sam",
+          "Dim"
+        ],
+        "formulaBase": "Prévision de base",
+        "formulaNet": "(1 + impact net)",
+        "formulaResult": "Prévision ajustée",
+        "recommendation": "Recommandation IA",
+        "facts": [
+          {
+            "label": "Jour",
+            "value": "Samedi"
+          },
+          {
+            "label": "Stationnement",
+            "value": "Stationnement Riverain"
+          },
+          {
+            "label": "Occupation prévue",
+            "value": "90 %"
+          },
+          {
+            "label": "Contexte",
+            "value": "Match à proximité"
+          },
+          {
+            "label": "Suggestion",
+            "value": "Tarif événement +10 %"
+          }
+        ],
+        "apply": "Appliquer la recommandation",
+        "note": "Données fictives, à titre illustratif.",
+        "percentSuffix": " %"
+      },
+      "solution": {
+        "eyebrow": "La solution",
+        "title": "Une intelligence qui *apprend* et *optimise.*",
+        "lead": "Parkwize IA s'appuie sur plus de 8 ans de données de stationnement réelles. Il apprend le comportement propre à chaque site en analysant plus de 90 KPI internes et externes : cycles de demande, tendances de revenus, dynamique d'occupation, événements locaux, météo et trafic. Puis il agit : il prévoit la demande, détermine le tarif optimal et ajuste les prix automatiquement, en continu.",
+        "points": [
+          "Analyse des cycles de demande : comprendre comment chaque stationnement réagit à l'heure, au jour, à la saison et aux événements externes.",
+          "Reconnaissance des tendances de revenus : trouver les stratégies tarifaires qui maximisent le rendement.",
+          "Modélisation de l'occupation : prévoir le taux de remplissage et la rotation avec une grande précision.",
+          "Intégration de données externes : météo, événements locaux, trafic Google Maps, billetteries, activité des bâtiments voisins.",
+          "Ajustement automatique des prix en temps réel : aucune saisie manuelle, des résultats immédiats.",
+          "Apprentissage continu : l'IA s'améliore à chaque donnée et devient plus précise avec le temps."
+        ]
+      },
+      "features": {
+        "eyebrow": "Fonctionnalités",
+        "title": "Ce qu'il y a *dedans*.",
+        "mediaAlt": "Une équipe d'exploitation analyse des prévisions ensemble",
+        "mediaCaption": "Entraînée sur plus de 8 ans de données réelles",
+        "items": [
+          {
+            "title": "Prévision de la demande",
+            "body": "Occupation, trafic et revenus prévus heure par heure, pour chaque site, plusieurs jours à l'avance."
+          },
+          {
+            "title": "Optimisation des revenus",
+            "body": "Le tarif optimal à chaque instant, en équilibrant occupation et rendement sur tout votre portefeuille."
+          },
+          {
+            "title": "Ajustement automatique des prix",
+            "body": "Les prix se mettent à jour d'eux-mêmes sur les bornes, les écrans et les canaux de réservation, sans saisie manuelle."
+          },
+          {
+            "title": "Intégration de données externes",
+            "body": "Météo, événements, circulation, transport collectif et bâtiments voisins alimentent chaque prévision en temps réel."
+          },
+          {
+            "title": "Détection des événements",
+            "body": "Matchs, concerts et congrès sont repérés tôt, pour que tarifs et capacité soient prêts."
+          },
+          {
+            "title": "Apprentissage continu",
+            "body": "Chaque transaction affine le modèle. La précision s'améliore au fil du temps."
+          }
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Écosystème connecté",
+        "title": "La couche *d'intelligence.*"
+      },
+      "results": {
+        "eyebrow": "Résultats",
+        "title": "Un impact *mesurable*",
+        "items": [
+          {
+            "value": "+35 %",
+            "label": "Croissance des revenus",
+            "body": "Tarification dynamique optimisée par l'IA"
+          },
+          {
+            "value": "95 %",
+            "label": "Précision des prévisions",
+            "body": "Précision de la prédiction de la demande"
+          },
+          {
+            "value": "0",
+            "label": "Saisie manuelle",
+            "body": "Une optimisation entièrement autonome"
+          },
+          {
+            "value": "8 ans+",
+            "label": "Données d'entraînement",
+            "body": "Une intelligence issue du terrain"
+          }
+        ]
+      }
     }
   }
 }
