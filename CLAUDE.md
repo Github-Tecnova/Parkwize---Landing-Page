@@ -1,6 +1,6 @@
 # Parkwize Landing Page — Guidelines
 
-Marketing site for Parkwize (by Tecnova). Next.js 15 App Router, React 19, TypeScript (strict), Tailwind CSS 3, `motion`, `lucide-react`. Deployed on Vercel. Server code lives in `src/app/api`: `demo` and `contact` email leads through Resend, `early-access` is legacy.
+Marketing site for Parkwize (by Tecnova). Next.js 15 App Router, React 19, TypeScript (strict), Tailwind CSS 3, `motion`, `lucide-react`. Deployed on Vercel. Server code lives in `src/app/api`: `demo` and `contact` email leads through Resend.
 
 Every change follows these rules. When a rule and existing legacy code disagree, the rule wins; migrate legacy code when you touch it.
 
@@ -27,6 +27,7 @@ src/
     utils.ts                  cn() and small helpers
 ```
 
+- The root layout is `src/app/(landing)/[lang]/layout.tsx`: it renders `<html lang>` from the locale, fonts, top bar and footer. `/` and the old routes (`/dashboard`, `/ai`, `/display`, `/booking`, `/process`) redirect in `next.config.ts`.
 - Route files (`page.tsx`, `layout.tsx`) stay short: no large JSX trees. Build sections in `components/sections` and compose them.
 - New pages go under `src/app/(landing)/[lang]/<slug>/page.tsx`. Register the slug in `src/lib/navigation.ts`.
 - Pages listed in `navigation.ts` but not built yet are served by `src/app/(landing)/[lang]/[slug]/page.tsx` as a translated coming-soon page. A real page folder automatically takes precedence.
@@ -72,7 +73,7 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 - Small uppercase mono labels (column titles, eyebrows, meta text): the `eyebrow` class from `globals.css`.
 - Link lists: `FooterColumn` from `@/components/layout/footer/footer-column` handles internal (localized) and external links.
 - Site URLs and page lists (`SIGN_IN_URL`, `DEMO_URL`, `BOOK_CALL_HREF`, `PRODUCT_LINKS`, `LEGAL_LINKS`): `@/lib/navigation`. Never hardcode them in components.
-- Page sections: `Section` (surface `default | muted | inverse`, consistent vertical rhythm) and `Container` from `@/components/layout/section`. Headings: `SectionHeader` (eyebrow, title, lead, actions).
+- Page sections: a `<section>` with `bg-surface` and `py-14 sm:py-20`, wrapping a `Container` from `@/components/layout/section/container`. Headings: `SectionHeader` (eyebrow, title, lead, actions, `tone="inverse"` on dark).
 - Accented words in titles: wrap them in `*asterisks*` in the dictionary and render with `AccentText`. Never split titles into separate keys for styling.
 - CTAs as links: `ButtonLink` from `@/components/ui/button-link` (localized internal links, plain external links, optional arrow).
 - Scroll-in animation: `Reveal` from `@/components/motion/reveal`. Animated numbers: `CountUp`. Never animate whole pages with global scripts.
@@ -100,7 +101,7 @@ All visual values come from CSS variables in `src/app/globals.css`, exposed thro
 - Brand blue: `brand` (`--brand`). `parkwize_blue` and `primary_action` are legacy aliases; do not use them in new code.
 - Dark surfaces (footer, dark sections): the `inverse` palette (`bg-inverse`, `text-inverse-foreground`, `text-inverse-muted`, `border-inverse-border`, `hover:text-inverse-hover`).
 - Status colors: `success`.
-- Fonts: `font-sans` (Inter) for body text, `font-display` (Poppins) for headings and display text, `font-mono` (JetBrains Mono) only for small uppercase labels (prefer the `eyebrow` class). All come from `next/font` variables in `src/app/layout.tsx`. Never import fonts elsewhere.
+- Fonts: `font-sans` (Inter) for body text, `font-display` (Poppins) for headings and display text, `font-mono` (JetBrains Mono) only for small uppercase labels (prefer the `eyebrow` class). All come from `next/font` variables in `src/app/(landing)/[lang]/layout.tsx`. Never import fonts elsewhere.
 - Radius, shadows, blur: use the theme scale (`rounded-lg`, `shadow-glass`, ...). Arbitrary values are only acceptable for one-off geometry (e.g. a pill radius matching a fixed height).
 - Top bar spacing: `--top-bar-height` and `--top-bar-gap` let sections offset content below the floating bar.
 - Type scale: `text-display`, `text-h1`, `text-h2`, `text-h3`, `text-lead` (fluid, defined in `tailwind.config.ts` and registered in `cn()`). Use them instead of ad hoc font sizes.
@@ -140,7 +141,7 @@ Mobile-first: base classes target phones, then `sm`, `md`, `lg`, `xl`, `2xl` add
 
 ## 9. Motion
 
-- Use `motion/react` only. `framer-motion` is legacy; remove it from files you touch.
+- Use `motion/react` only.
 - Use the presets in `@/lib/motion` for durations, springs and easings; do not invent new timings per component.
 - Animate `transform` and `opacity` where possible. Keep animations short and purposeful.
 
