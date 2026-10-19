@@ -1806,6 +1806,781 @@
           }
         ]
       }
+    },
+    "digitalSignage": {
+      "meta": {
+        "title": "Affichage dynamique | Parkwize",
+        "description": "Transformez vos enseignes de stationnement statiques en affichages connectés : tarifs, disponibilités et mode complet mis à jour automatiquement."
+      },
+      "hero": {
+        "eyebrow": "Parkwize Display",
+        "title": "Vos données connectées au *monde physique.*",
+        "lead": "Transformez l'affichage statique de vos stationnements en systèmes de décision intelligents et dynamiques. Tarifs, disponibilités et messages se mettent à jour sur chaque écran dès que vos données changent.",
+        "cta": "Nous joindre",
+        "imageAlt": "Deux enseignes numériques Parkwize affichant les tarifs réguliers et un tarif événement"
+      },
+      "problem": {
+        "eyebrow": "Le problème",
+        "title": "Des enseignes statiques dans un *monde dynamique.*",
+        "lead": "L'affichage des stationnements n'a pas évolué depuis des décennies. Prix fixes, mises à jour manuelles, aucune connexion aux données en temps réel : des revenus et de l'efficacité perdus.",
+        "items": [
+          {
+            "title": "Information périmée",
+            "body": "Les enseignes statiques affichent des prix et des disponibilités vieux de plusieurs heures, voire de plusieurs jours."
+          },
+          {
+            "title": "Mises à jour manuelles",
+            "body": "Changer un prix ou un message oblige à envoyer quelqu'un sur place ou à appeler un fournisseur, à chaque fois."
+          },
+          {
+            "title": "Aucune réaction à la demande",
+            "body": "Les enseignes ne réagissent ni à l'occupation, ni aux événements, ni aux changements de prix."
+          },
+          {
+            "title": "Aucune intelligence",
+            "body": "L'affichage traditionnel n'a aucune logique : il ne peut ni rediriger le trafic, ni passer en mode complet, ni adapter son message."
+          }
+        ]
+      },
+      "demo": {
+        "eyebrow": "Voyez-le en direct",
+        "title": "Une enseigne *pilotée par vos données.*",
+        "lead": "Suivez une vraie soirée dans un stationnement du centre-ville. Chaque changement sur l'enseigne est déclenché automatiquement par Parkwize, sans personne sur place.",
+        "railLabel": "Étapes du scénario d'affichage",
+        "signLabel": "Simulation d'une enseigne de stationnement numérique Parkwize",
+        "lotName": "Centre-ville P2",
+        "live": "En direct",
+        "rateLabel": "Tarif horaire",
+        "spacesLabel": "Places libres",
+        "fullLabel": "Complet",
+        "occupancyLabel": "Occupation",
+        "triggerLabel": "Ce qui l'a déclenché",
+        "pushLabel": "Envoyé à 12 écrans",
+        "pushTime": "en 0,4 s",
+        "note": "Scénario simulé, données fictives.",
+        "steps": [
+          {
+            "label": "Normal",
+            "title": "Un après-midi tranquille",
+            "rate": "6 $",
+            "rateNote": "Tarif régulier",
+            "message": "Bienvenue. Entrée à votre droite",
+            "trigger": "Occupation en direct",
+            "detail": "38 % d'occupation, demande stable"
+          },
+          {
+            "label": "Événement",
+            "title": "Un match commence tout près",
+            "rate": "15 $",
+            "rateNote": "Tarif événement",
+            "message": "Match ce soir. Payez une fois, restez toute la soirée",
+            "trigger": "Événement détecté",
+            "detail": "Match de hockey à 19 h, à 600 m"
+          },
+          {
+            "label": "Pointe",
+            "title": "Le stationnement se remplit vite",
+            "rate": "18 $",
+            "rateNote": "Tarif de pointe fixé par Parkwize IA",
+            "message": "Plus que quelques places",
+            "trigger": "Ajustement de prix par l'IA",
+            "detail": "95 % d'occupation, demande au-dessus des prévisions"
+          },
+          {
+            "label": "Complet",
+            "title": "Mode complet, automatiquement",
+            "rate": "18 $",
+            "rateNote": "Tarif de pointe",
+            "message": "Complet. Rendez-vous au P3 Riverain, 240 places",
+            "trigger": "Seuil de capacité",
+            "detail": "100 % d'occupation, conducteurs redirigés"
+          }
+        ],
+        "percentSuffix": " %"
+      },
+      "solution": {
+        "eyebrow": "La solution",
+        "title": "Un affichage intelligent, *sans effort.*",
+        "lead": "Parkwize Display fait le pont entre l'intelligence numérique et l'infrastructure réelle. Tarifs, disponibilités et messages se mettent à jour automatiquement à partir de vos données en direct, sur tous vos écrans.",
+        "points": [
+          "Tarifs et disponibilités en direct sur les enseignes physiques, mis à jour automatiquement depuis le Dashboard Manager.",
+          "Mode complet automatique dès que l'occupation atteint votre seuil, sans aucune intervention.",
+          "Messages directionnels basés sur l'occupation, pour guider les conducteurs vers les places encore libres.",
+          "Mises à jour instantanées quand les données changent : ajustement de prix, fermeture, événement ou variation de la demande.",
+          "Une tarification dynamique sur l'infrastructure physique, sans processus manuel ni présence sur place."
+        ]
+      },
+      "features": {
+        "eyebrow": "Fonctionnalités",
+        "title": "Ce qu'il y a *dedans*.",
+        "mediaAlt": "Une gestionnaire de stationnement consulte une enseigne de disponibilités à l'entrée d'un garage",
+        "mediaCaption": "Tous vos écrans, gérés au même endroit",
+        "items": [
+          {
+            "title": "Affichage des tarifs dynamiques",
+            "body": "Le tarif affiché est toujours celui du système, y compris les tarifs événement et de pointe."
+          },
+          {
+            "title": "Mode complet automatique",
+            "body": "Quand le stationnement est plein, les enseignes passent en mode complet et redirigent les conducteurs."
+          },
+          {
+            "title": "Messages directionnels",
+            "body": "Flèches et messages suivent l'occupation en direct pour répartir le trafic entre niveaux et sites."
+          },
+          {
+            "title": "Synchronisation en temps réel",
+            "body": "Chaque changement dans le Dashboard Manager atteint tous les écrans connectés en moins d'une seconde."
+          },
+          {
+            "title": "Gestion à distance",
+            "body": "Modifiez la mise en page, les messages et les horaires de chaque écran sans quitter le bureau."
+          },
+          {
+            "title": "Mises à jour selon les événements",
+            "body": "Matchs, concerts et fermetures affichent le bon contenu au bon moment."
+          }
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Écosystème connecté",
+        "title": "Le pont entre le *numérique et le physique.*"
+      },
+      "results": {
+        "eyebrow": "Résultats",
+        "title": "Un impact *mesurable*",
+        "items": [
+          {
+            "value": "+25 %",
+            "label": "Hausse des revenus",
+            "body": "Tarification dynamique sur les enseignes physiques"
+          },
+          {
+            "value": "0",
+            "label": "Mise à jour manuelle",
+            "body": "Un affichage entièrement automatisé"
+          },
+          {
+            "value": "<1 s",
+            "label": "Vitesse de mise à jour",
+            "body": "Propagation des données en temps réel"
+          },
+          {
+            "value": "∞",
+            "label": "Évolutivité",
+            "body": "Écrans connectés illimités"
+          }
+        ]
+      }
+    },
+    "onlineReservation": {
+      "meta": {
+        "title": "Réservation en ligne | Parkwize",
+        "description": "Une plateforme moderne de réservation de stationnement, pensée pour le mobile : paiement en un geste, accès par code QR et tarifs synchronisés avec vos opérations."
+      },
+      "hero": {
+        "eyebrow": "Parkwize Booking",
+        "title": "Une plateforme de réservation moderne, *conçue pour convertir.*",
+        "lead": "Transformez la demande en réservations confirmées. Recherche pensée pour le mobile, paiement en un geste et disponibilités synchronisées avec vos tarifs en direct.",
+        "cta": "Nous joindre",
+        "imageAlt": "Quatre écrans de Parkwize Booking : formulaire de réservation, prix, minuterie de séjour et laissez-passer QR"
+      },
+      "problem": {
+        "eyebrow": "Le problème",
+        "title": "Des réservations *coincées en 2005.*",
+        "lead": "La plupart des systèmes de réservation sont lents, compliqués et mal adaptés au mobile. Ils perdent des clients à chaque étape, de la recherche au paiement.",
+        "items": [
+          {
+            "title": "Expérience mobile médiocre",
+            "body": "Des interfaces dépassées, mal adaptées au mobile, alors que plus de 70 % des recherches de stationnement s'y font."
+          },
+          {
+            "title": "Paiement trop long",
+            "body": "Formulaires à rallonge, création de compte obligatoire et aucun moyen de paiement moderne comme Apple Pay ou Google Pay."
+          },
+          {
+            "title": "Invisible sur Google",
+            "body": "La plupart des plateformes sont mal référencées : les exploitants perdent une demande qu'ils ne voient même pas."
+          },
+          {
+            "title": "Aucune synchronisation",
+            "body": "Les réservations vivent en silo, coupées des tarifs, de l'occupation et des outils d'exploitation."
+          }
+        ]
+      },
+      "demo": {
+        "eyebrow": "Voyez-le en direct",
+        "title": "De la recherche à *l'accès* en moins de 30 secondes.",
+        "lead": "Suivez un conducteur qui réserve sa place depuis son téléphone. Chaque étape est synchronisée avec vos opérations en temps réel.",
+        "railLabel": "Étapes de la réservation",
+        "phoneLabel": "Simulation des écrans de Parkwize Booking sur un téléphone",
+        "clockLabel": "Durée de la réservation",
+        "behindLabel": "En coulisses",
+        "note": "Réservation simulée, données fictives.",
+        "phone": {
+          "heading": "Réserver ma place",
+          "lot": "Jardin St-Roch",
+          "address": "450, rue du Parvis, Québec",
+          "arrivalLabel": "Arrivée",
+          "arrivalValue": "Aujourd'hui, 15 h 30",
+          "departureLabel": "Départ",
+          "departureValue": "Demain, 15 h 30",
+          "getPrice": "Obtenir un prix",
+          "price": "18,00 $",
+          "durationLabel": "Durée",
+          "durationValue": "24 h",
+          "validLabel": "Valide jusqu'à",
+          "validValue": "Demain, 15 h 30",
+          "continue": "Continuer",
+          "payTitle": "Paiement",
+          "totalLabel": "Total",
+          "applePay": "Apple Pay",
+          "googlePay": "Google Pay",
+          "card": "Carte de crédit",
+          "confirmed": "Réservation confirmée",
+          "ticketLabel": "Numéro de billet",
+          "ticketValue": "D7CSCDR",
+          "scanHint": "À scanner à l'entrée"
+        },
+        "steps": [
+          {
+            "label": "Recherche",
+            "title": "Le conducteur choisit un site et une heure",
+            "clock": "0:06",
+            "behind": "Disponibilités en direct",
+            "detail": "126 places libres, synchronisées avec le Dashboard Manager"
+          },
+          {
+            "label": "Prix",
+            "title": "Un prix en direct, instantanément",
+            "clock": "0:13",
+            "behind": "Prix fixé par Parkwize IA",
+            "detail": "Le même tarif que la borne et les enseignes, au même moment"
+          },
+          {
+            "label": "Paiement",
+            "title": "Un geste pour payer",
+            "clock": "0:21",
+            "behind": "Paiement confirmé",
+            "detail": "Apple Pay ou Google Pay, sans création de compte"
+          },
+          {
+            "label": "Accès",
+            "title": "Le laissez-passer est prêt",
+            "clock": "0:27",
+            "behind": "Code d'accès envoyé",
+            "detail": "Bornes, barrières et caméras reconnaissent le laissez-passer"
+          }
+        ]
+      },
+      "solution": {
+        "eyebrow": "La solution",
+        "title": "Conçue pour *convertir.*",
+        "lead": "Parkwize Booking est une plateforme de réservation moderne, pensée pour la rapidité, la conversion et une intégration fluide avec tout l'écosystème Parkwize.",
+        "points": [
+          "Un parcours de réservation ultrarapide, pensé pour le mobile et optimisé pour convertir à chaque étape.",
+          "Apple Pay et Google Pay pour un paiement en un seul geste.",
+          "Accès par code QR : pas de billet, aucune friction pour les conducteurs.",
+          "Entièrement personnalisable : chaque exploitant déploie sa propre expérience à son image.",
+          "Synchronisation en temps réel avec le Dashboard Manager pour des disponibilités et des prix exacts.",
+          "Conçue pour le référencement, afin de devancer la concurrence sur Google."
+        ]
+      },
+      "field": {
+        "eyebrow": "Sur le terrain",
+        "title": "Réservez en route. *Entrez directement.*",
+        "lead": "Les conducteurs réservent de partout, arrivent avec leur laissez-passer sur leur téléphone et n'attendent jamais à une borne.",
+        "videoLabel": "Une conductrice arrive au stationnement avec sa réservation prête sur son téléphone",
+        "moments": [
+          {
+            "title": "Réserver d'avance",
+            "body": "Depuis Google, le site de l'exploitant ou un code QR sur place."
+          },
+          {
+            "title": "Arriver et scanner",
+            "body": "Le laissez-passer ouvre la barrière ou est lu par les caméras."
+          },
+          {
+            "title": "Prolonger en un geste",
+            "body": "En retard ? Le conducteur ajoute du temps depuis la même page."
+          }
+        ]
+      },
+      "features": {
+        "eyebrow": "Fonctionnalités",
+        "title": "Ce qu'il y a *dedans*.",
+        "mediaAlt": "Un stationnement intérieur moderne et lumineux, éclairé par des DEL",
+        "mediaCaption": "Votre marque, vos sites, un seul moteur de réservation",
+        "items": [
+          {
+            "title": "Pensée pour le mobile",
+            "body": "Des écrans rapides et clairs, faits pour le pouce, de la recherche à la confirmation."
+          },
+          {
+            "title": "Apple Pay et Google Pay",
+            "body": "Un paiement en un geste avec les portefeuilles que les conducteurs utilisent déjà, en plus des cartes."
+          },
+          {
+            "title": "Accès par code QR",
+            "body": "Chaque réservation devient un laissez-passer lu par les bornes, les barrières et les caméras."
+          },
+          {
+            "title": "Entièrement personnalisable",
+            "body": "Votre logo, vos couleurs et votre domaine, pour une expérience à votre image."
+          },
+          {
+            "title": "Optimisée pour le référencement",
+            "body": "Des pages rapides et des données structurées, conçues pour bien se classer sur Google."
+          },
+          {
+            "title": "Synchronisation en temps réel",
+            "body": "Disponibilités et prix toujours identiques à ceux du Dashboard Manager."
+          }
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Écosystème connecté",
+        "title": "La porte d'entrée *numérique des revenus.*"
+      },
+      "results": {
+        "eyebrow": "Résultats",
+        "title": "Un impact *mesurable*",
+        "items": [
+          {
+            "value": "+40 %",
+            "label": "Taux de conversion",
+            "body": "Par rapport aux plateformes traditionnelles"
+          },
+          {
+            "value": "<30 s",
+            "label": "Durée de réservation",
+            "body": "De la recherche à la confirmation"
+          },
+          {
+            "value": "+60 %",
+            "label": "Réservations mobiles",
+            "body": "Le mobile capte plus de demande"
+          },
+          {
+            "value": "24/7",
+            "label": "Revenus captés",
+            "body": "Une porte d'entrée numérique toujours ouverte"
+          }
+        ]
+      }
+    },
+    "enforcement": {
+      "meta": {
+        "title": "Contrôle | Parkwize",
+        "description": "Le contrôle du stationnement sans billet ni barrière : lecture de plaques en temps réel, validation des sessions et des paiements, et infractions numériques dans une même vue."
+      },
+      "hero": {
+        "eyebrow": "Parkwize Enforcement",
+        "title": "Chaque session sous contrôle. *Sans barrière.*",
+        "lead": "Une solution connectée, sans billet, qui suit chaque véhicule, automatise la surveillance et donne aux exploitants une visibilité totale, sans ralentir les conducteurs.",
+        "cta": "Nous joindre",
+        "imageAlt": "Une agente de contrôle scanne la plaque d'un véhicule avec son téléphone"
+      },
+      "problem": {
+        "eyebrow": "Le problème",
+        "title": "Sans barrière ne veut pas dire *sans contrôle.*",
+        "lead": "Sans vue unifiée sur les véhicules, les sessions et les paiements, les équipes passent leur temps à rapprocher les données et à gérer les exceptions à la main.",
+        "items": [
+          {
+            "title": "Entrées difficiles à associer",
+            "body": "Les véhicules sont difficiles à relier aux sessions actives."
+          },
+          {
+            "title": "Paiements dispersés",
+            "body": "L'état des paiements est coupé de ce qui se passe sur place."
+          },
+          {
+            "title": "Surveillance manuelle",
+            "body": "Les équipes vérifient les véhicules et les dossiers dans plusieurs outils."
+          },
+          {
+            "title": "Suivi laborieux",
+            "body": "Les exceptions et les infractions sont difficiles à traiter sans historique numérique commun."
+          }
+        ]
+      },
+      "demo": {
+        "eyebrow": "Voyez-le en direct",
+        "title": "Une patrouille, *chaque véhicule vérifié.*",
+        "lead": "Suivez une agente dans un stationnement sans barrière. Les plaques sont lues, associées aux sessions et aux paiements, et les exceptions sont traitées sur place.",
+        "railLabel": "Étapes de la patrouille",
+        "deviceLabel": "Simulation de l'écran Parkwize Enforcement sur l'appareil d'une agente",
+        "statsLabel": "Cette patrouille",
+        "behindLabel": "En coulisses",
+        "note": "Patrouille simulée, données fictives.",
+        "stats": {
+          "checked": "Vérifiés",
+          "valid": "Valides",
+          "flagged": "Signalés"
+        },
+        "device": {
+          "title": "Patrouille",
+          "zone": "Stationnement P4, niveau 2",
+          "reading": "Lecture de la plaque",
+          "sessionLabel": "Session",
+          "paidUntil": "Payé jusqu'à 18 h 30",
+          "noSession": "Aucune session active",
+          "overstay": "Stationné depuis 18 min",
+          "valid": "Valide",
+          "flagged": "Signalé",
+          "violation": "Infraction émise",
+          "violationId": "PW-20418",
+          "photoLabel": "Photos",
+          "photoValue": "2 jointes",
+          "timeLabel": "Heure",
+          "timeValue": "17 h 42",
+          "placeLabel": "Lieu",
+          "placeValue": "P4, place 27",
+          "synced": "Synchronisé avec le Dashboard Manager"
+        },
+        "steps": [
+          {
+            "label": "Lecture",
+            "title": "La plaque est lue en moins de 2 secondes",
+            "behind": "Lecture de plaque",
+            "detail": "Lecture par la caméra du téléphone, aucun billet à vérifier"
+          },
+          {
+            "label": "Vérification",
+            "title": "Session et paiement confirmés",
+            "behind": "Session associée",
+            "detail": "Payé en ligne avec Parkwize Booking, valide jusqu'à 18 h 30"
+          },
+          {
+            "label": "Alerte",
+            "title": "Une exception ressort",
+            "behind": "Aucun paiement valide",
+            "detail": "Véhicule détecté il y a 18 minutes, sans session ni permis"
+          },
+          {
+            "label": "Traitement",
+            "title": "Une infraction numérique, sur place",
+            "behind": "Dossier créé",
+            "detail": "Photos, heure et lieu enregistrés et synchronisés aussitôt"
+          }
+        ]
+      },
+      "solution": {
+        "eyebrow": "La solution",
+        "title": "Une exploitation sans barrière, *entièrement connectée.*",
+        "lead": "Parkwize réunit la lecture de plaques, le suivi des sessions, la validation des paiements et la gestion des infractions dans une même vue numérique.",
+        "points": [
+          "Lecture des plaques en temps réel, au passage des véhicules.",
+          "Suivi des sessions et validation de chaque paiement.",
+          "Une surveillance rapide et entièrement numérique pour les équipes.",
+          "Gestion des exceptions et des infractions à partir de données connectées.",
+          "Des coûts d'exploitation réduits, sans billet ni barrière.",
+          "Une expérience adaptée à la marque et aux besoins de chaque site."
+        ]
+      },
+      "followUp": {
+        "eyebrow": "Suivi connecté",
+        "title": "Chaque étape, *au même endroit.*",
+        "lead": "De la lecture de plaques à la validation des paiements et au traitement des infractions, vos équipes disposent d'un historique numérique continu pour chaque véhicule.",
+        "cta": "Demander une démo",
+        "imageAlt": "Un agent de contrôle vérifie les sessions de stationnement sur sa tablette",
+        "timelineLabel": "Historique numérique d'un véhicule",
+        "events": [
+          {
+            "time": "17 h 24",
+            "title": "Entrée détectée",
+            "body": "Plaque GHT 915 lue par la caméra d'entrée"
+          },
+          {
+            "time": "17 h 24",
+            "title": "Aucune session",
+            "body": "Aucune réservation, aucun paiement ni permis trouvé"
+          },
+          {
+            "time": "17 h 42",
+            "title": "Infraction émise",
+            "body": "Photos, heure et lieu joints au dossier"
+          },
+          {
+            "time": "18 h 05",
+            "title": "Payé en ligne",
+            "body": "Réglé par le conducteur, dossier fermé"
+          }
+        ]
+      },
+      "features": {
+        "eyebrow": "Fonctionnalités",
+        "title": "Du véhicule *à la validation.*",
+        "mediaAlt": "Une agente de contrôle vérifie des véhicules stationnés avec un appareil portatif",
+        "mediaCaption": "Conçu pour les équipes sur le terrain",
+        "items": [
+          {
+            "title": "Lecture de plaques en temps réel",
+            "body": "Les plaques sont lues par les caméras ou le téléphone de l'agent, au passage des véhicules."
+          },
+          {
+            "title": "Suivi des sessions",
+            "body": "Chaque véhicule est associé automatiquement à sa réservation, son paiement ou son permis."
+          },
+          {
+            "title": "Validation des paiements",
+            "body": "Les agents voient aussitôt si une session est payée, expirée ou absente."
+          },
+          {
+            "title": "Surveillance numérique",
+            "body": "Des listes d'exceptions en direct remplacent les tournées papier et les tableurs."
+          },
+          {
+            "title": "Gestion des infractions",
+            "body": "Émettez, suivez et réglez les infractions à partir d'un même dossier connecté."
+          },
+          {
+            "title": "Expérience personnalisable",
+            "body": "Règles, délais de grâce et image de marque s'adaptent à chaque site et exploitant."
+          }
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Écosystème connecté",
+        "title": "Connecté à l'écosystème *Parkwize.*"
+      },
+      "results": {
+        "eyebrow": "Résultats",
+        "title": "Un impact *mesurable*",
+        "items": [
+          {
+            "value": "100 %",
+            "label": "Sans billet",
+            "body": "Ni papier, ni ticket au tableau de bord"
+          },
+          {
+            "value": "<2 s",
+            "label": "Par vérification",
+            "body": "De la lecture au verdict"
+          },
+          {
+            "value": "0",
+            "label": "Barrière requise",
+            "body": "Entrées et sorties fluides"
+          },
+          {
+            "value": "24/7",
+            "label": "Surveillance",
+            "body": "Chaque session, jour et nuit"
+          }
+        ]
+      }
+    },
+    "processKiosk": {
+      "meta": {
+        "title": "Process Kiosk | Parkwize",
+        "description": "Des bornes de stationnement en acier inoxydable de qualité industrielle signées Process, intégrées nativement à Parkwize : billetterie, lecture de plaques, paiement et contrôle des barrières."
+      },
+      "hero": {
+        "eyebrow": "Partenaire matériel",
+        "logoLabel": "Process Kiosk",
+        "title": "Du matériel industriel, *intelligent par nature.*",
+        "lead": "Parkwize s'intègre nativement à Process Kiosk : barrières, terminaux, capteurs et contrôle d'accès conçus pour la nouvelle génération du stationnement.",
+        "cta": "Demander une démo",
+        "imageAlt": "Une borne de paiement de stationnement Process en acier inoxydable"
+      },
+      "about": {
+        "eyebrow": "À propos de Process Kiosk",
+        "title": "*Plus de 20 ans* d'infrastructure de stationnement.",
+        "lead": "Process Kiosk conçoit des équipements de stationnement de qualité industrielle depuis plus de deux décennies. Ses bornes équipent aujourd'hui des centaines de sites partout au Canada, avec du matériel pensé pour la fiabilité, l'évolutivité et la connectivité intelligente.",
+        "milestonesLabel": "Grandes étapes",
+        "milestones": [
+          {
+            "year": "1998",
+            "body": "Fondation de Process Systèmes et Technologies"
+          },
+          {
+            "year": "2002",
+            "body": "Arrivée de Process dans l'industrie du stationnement"
+          },
+          {
+            "year": "2015",
+            "body": "Expansion vers l'accès intelligent et les terminaux connectés"
+          },
+          {
+            "year": "2023",
+            "body": "Partenariat stratégique avec Parkwize pour une intégration complète"
+          },
+          {
+            "year": "2025",
+            "body": "Nouvelle gamme de matériel co-conçue avec Parkwize IA"
+          }
+        ],
+        "whyTitle": "Pourquoi Process ?",
+        "why": [
+          "Plus de 20 ans d'expertise en matériel de stationnement industriel",
+          "Certifié IP65 : conçu pour les climats extrêmes et le fort achalandage",
+          "Intégration API native avec Parkwize",
+          "Équipement fiable et moins de temps d'arrêt",
+          "Conception modulaire, d'un site à plus de 100"
+        ]
+      },
+      "hardware": {
+        "eyebrow": "Le matériel",
+        "title": "Des bornes en *acier inoxydable.*",
+        "items": [
+          {
+            "title": "Bornes phares",
+            "body": "Émission de billets, lecture de plaques et contrôle des barrières, dans un boîtier robuste résistant aux intempéries, conçu pour fonctionner 24/7.",
+            "specs": [
+              "Billetterie",
+              "Lecture de plaques",
+              "Barrières"
+            ],
+            "imageAlt": "Deux bornes phares Process en acier inoxydable"
+          },
+          {
+            "title": "Borne de paiement compacte",
+            "body": "Peu encombrante, elle accepte tous les modes de paiement : sans contact, puce et paiement mobile. Idéale pour les plus petits sites.",
+            "specs": [
+              "Sans contact",
+              "Puce",
+              "Paiement mobile"
+            ],
+            "imageAlt": "Une borne de paiement compacte Process"
+          }
+        ]
+      },
+      "demo": {
+        "eyebrow": "Voyez-le en direct",
+        "title": "Un parcours clair, *en quatre écrans.*",
+        "lead": "Les écrans de la borne sont en HTML et s'adaptent à votre image : un parcours simple, de gros boutons et un reçu clair, connectés à Parkwize à chaque étape.",
+        "railLabel": "Étapes du paiement à la borne",
+        "kioskLabel": "Simulation des écrans de paiement d'une borne Process",
+        "behindLabel": "En coulisses",
+        "note": "Paiement simulé, données fictives.",
+        "kiosk": {
+          "lot": "Centre-ville P2",
+          "vehicleTitle": "Type de véhicule",
+          "vehicleQuestion": "Quel type de véhicule avez-vous stationné ?",
+          "car": "Auto",
+          "motorcycle": "Moto",
+          "entryTitle": "Votre séjour",
+          "plateLabel": "Plaque",
+          "entryLabel": "Entrée",
+          "entryValue": "Aujourd'hui, 9 h 12",
+          "durationLabel": "Durée",
+          "durationValue": "3 h 18 min",
+          "amountLabel": "Montant dû",
+          "amount": "14,50 $",
+          "payTitle": "Paiement",
+          "payHint": "Suivez les instructions du terminal de paiement",
+          "payMethods": "Touchez, insérez ou scannez",
+          "receiptTitle": "Reçu de paiement",
+          "receiptLabel": "Reçu",
+          "receiptValue": "R-20481",
+          "paidLabel": "Montant payé",
+          "exitHint": "Veuillez sortir d'ici 10 minutes",
+          "done": "Terminé"
+        },
+        "steps": [
+          {
+            "label": "Véhicule",
+            "title": "Le conducteur choisit son type de véhicule",
+            "behind": "Grille tarifaire choisie",
+            "detail": "Tarifs auto de ce site, définis dans le Dashboard Manager"
+          },
+          {
+            "label": "Séjour",
+            "title": "Le séjour s'affiche, sans billet",
+            "behind": "Plaque reconnue",
+            "detail": "Entrée à 9 h 12 retrouvée automatiquement par la caméra"
+          },
+          {
+            "label": "Paiement",
+            "title": "Le paiement au terminal",
+            "behind": "Paiement autorisé",
+            "detail": "Paiement sans contact approuvé et enregistré"
+          },
+          {
+            "label": "Reçu",
+            "title": "Un reçu avec code QR",
+            "behind": "Synchronisé partout",
+            "detail": "Revenus dans le Dashboard Manager, barrière de sortie avisée"
+          }
+        ]
+      },
+      "cloud": {
+        "eyebrow": "Gestion",
+        "title": "Une plateforme *infonuagique.*",
+        "lead": "Une plateforme de gestion entièrement web, organisée en modules :",
+        "imageAlt": "Le menu de gestion Process sur un téléphone : billets, abonnés, organisations, comptabilité et rapports",
+        "modules": [
+          "Gestion des abonnés",
+          "Surveillance des équipements",
+          "Services aux abonnés",
+          "Comptabilité"
+        ],
+        "highlightTitle": "Une comptabilité sans tracas.",
+        "highlightBody": "Des modules comptables entièrement automatisés, avec contrôle des factures et des défauts de paiement. Les abonnés mensuels peuvent même payer leur abonnement directement à l'entrée au besoin."
+      },
+      "features": {
+        "eyebrow": "Nos solutions",
+        "title": "Une plateforme *intégrée.*",
+        "mediaAlt": "Une conductrice paie son stationnement sur une borne à écran tactile dans un garage",
+        "mediaCaption": "Matériel et logiciel, un seul écosystème",
+        "items": [
+          {
+            "title": "Caméras de lecture de plaques",
+            "body": "Les plaques sont lues à l'entrée et à la sortie : plus besoin de billet."
+          },
+          {
+            "title": "Contrôle d'accès",
+            "body": "Barrières, portes et accès s'ouvrent pour les sessions valides, les permis et les abonnés."
+          },
+          {
+            "title": "Terminaux intelligents",
+            "body": "Des bornes qui affichent les prix en direct et acceptent tous les modes de paiement."
+          },
+          {
+            "title": "Capteurs IoT",
+            "body": "Les données d'occupation et d'équipement alimentent le Dashboard Manager en temps réel."
+          },
+          {
+            "title": "Gestion à distance",
+            "body": "Mettez à jour tarifs, écrans et réglages de chaque appareil depuis le bureau."
+          },
+          {
+            "title": "Alertes instantanées",
+            "body": "Bourrages, manque de papier et appareils hors ligne déclenchent une alerte avant que les conducteurs s'en aperçoivent."
+          }
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Écosystème connecté",
+        "title": "Connecté à l'écosystème *Parkwize.*"
+      },
+      "results": {
+        "eyebrow": "Conçu pour durer",
+        "title": "Du matériel *fiable*",
+        "items": [
+          {
+            "value": "20+",
+            "label": "Ans d'expertise",
+            "body": "En matériel de stationnement industriel"
+          },
+          {
+            "value": "IP65",
+            "label": "Certifié",
+            "body": "Conçu pour les climats extrêmes"
+          },
+          {
+            "value": "100+",
+            "label": "Sites par réseau",
+            "body": "Modulaire, dès un premier site"
+          },
+          {
+            "value": "24/7",
+            "label": "En service",
+            "body": "Pensé pour le fort achalandage"
+          }
+        ]
+      }
     }
   }
 }

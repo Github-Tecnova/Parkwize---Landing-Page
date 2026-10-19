@@ -1822,6 +1822,781 @@
           }
         ]
       }
+    },
+    "digitalSignage": {
+      "meta": {
+        "title": "Digital Signage Solution | Parkwize",
+        "description": "Turn static parking signs into live, data-driven displays: pricing, availability and sold-out mode updated automatically."
+      },
+      "hero": {
+        "eyebrow": "Parkwize Display",
+        "title": "Data connected to the *physical world.*",
+        "lead": "Transform static parking signage into intelligent, dynamic decision systems. Prices, availability and messages update on every screen the moment your data changes.",
+        "cta": "Get in touch",
+        "imageAlt": "Two Parkwize digital parking signs showing regular rates and an event rate"
+      },
+      "problem": {
+        "eyebrow": "The problem",
+        "title": "Static signs in a *dynamic world.*",
+        "lead": "Parking signage hasn't evolved in decades. Fixed prices, manual updates and no connection to real-time data leave revenue and efficiency on the table.",
+        "items": [
+          {
+            "title": "Outdated information",
+            "body": "Static signs show prices and availability that are hours or days old, misleading drivers and staff."
+          },
+          {
+            "title": "Manual updates required",
+            "body": "Changing a price or a message means sending someone on site or calling a vendor, every single time."
+          },
+          {
+            "title": "No demand response",
+            "body": "Signs can't react to occupancy, events or pricing changes. The physical world stays disconnected."
+          },
+          {
+            "title": "Zero intelligence",
+            "body": "Traditional signage has no logic. It can't redirect traffic, trigger sold-out mode or adapt its message."
+          }
+        ]
+      },
+      "demo": {
+        "eyebrow": "See it live",
+        "title": "One sign, *driven by your data.*",
+        "lead": "Follow a real evening at a downtown lot. Every change on the sign below is triggered automatically by Parkwize, with no one on site.",
+        "railLabel": "Sign scenario steps",
+        "signLabel": "Simulated Parkwize digital parking sign",
+        "lotName": "Downtown P2",
+        "live": "Live",
+        "rateLabel": "Hourly rate",
+        "spacesLabel": "Spaces available",
+        "fullLabel": "Full",
+        "occupancyLabel": "Occupancy",
+        "triggerLabel": "What triggered it",
+        "pushLabel": "Pushed to 12 displays",
+        "pushTime": "in 0.4 s",
+        "note": "Simulated scenario, illustrative data.",
+        "steps": [
+          {
+            "label": "Normal",
+            "title": "A quiet afternoon",
+            "rate": "$6",
+            "rateNote": "Regular rate",
+            "message": "Welcome. Entrance on your right",
+            "trigger": "Live occupancy",
+            "detail": "38% full, steady demand"
+          },
+          {
+            "label": "Event",
+            "title": "A game starts nearby",
+            "rate": "$15",
+            "rateNote": "Event rate",
+            "message": "Game tonight. Pay once, stay all evening",
+            "trigger": "Event detected",
+            "detail": "Hockey game at 7 PM, 600 m away"
+          },
+          {
+            "label": "Peak",
+            "title": "The lot fills up fast",
+            "rate": "$18",
+            "rateNote": "Peak rate set by Parkwize AI",
+            "message": "Only a few spaces left",
+            "trigger": "AI price adjustment",
+            "detail": "95% full, demand above forecast"
+          },
+          {
+            "label": "Sold out",
+            "title": "Sold-out mode, automatically",
+            "rate": "$18",
+            "rateNote": "Peak rate",
+            "message": "Lot full. Go to P3 Riverside, 240 spaces",
+            "trigger": "Capacity threshold",
+            "detail": "100% full, drivers redirected"
+          }
+        ],
+        "percentSuffix": "%"
+      },
+      "solution": {
+        "eyebrow": "The solution",
+        "title": "Intelligent signage, *zero effort.*",
+        "lead": "Parkwize Display bridges digital intelligence and real-world infrastructure. Pricing, availability and messaging update automatically from your live data, on every screen you own.",
+        "points": [
+          "Live pricing and availability on physical signs, updated automatically from the Dashboard Manager.",
+          "Automatic sold-out mode as soon as occupancy reaches your threshold, with no manual intervention.",
+          "Directional messaging based on occupancy, guiding drivers to the spaces that are still free.",
+          "Instant updates when data changes: price adjustments, closures, events or demand shifts.",
+          "Dynamic pricing on physical infrastructure without any manual process or on-site presence."
+        ]
+      },
+      "features": {
+        "eyebrow": "Features",
+        "title": "What's *inside*.",
+        "mediaAlt": "A parking operator checking a live availability sign at a garage entrance",
+        "mediaCaption": "Every screen, managed from one place",
+        "items": [
+          {
+            "title": "Dynamic Pricing Display",
+            "body": "The rate on the sign is always the rate in the system, including event and peak pricing."
+          },
+          {
+            "title": "Automatic Sold-Out Mode",
+            "body": "When the lot is full, signs switch to sold-out instantly and point drivers elsewhere."
+          },
+          {
+            "title": "Directional Messaging",
+            "body": "Arrows and messages follow live occupancy to spread traffic across levels and lots."
+          },
+          {
+            "title": "Real-Time Data Sync",
+            "body": "Changes in the Dashboard Manager reach every connected display in under a second."
+          },
+          {
+            "title": "Remote Management",
+            "body": "Edit layouts, messages and schedules for every screen without leaving the office."
+          },
+          {
+            "title": "Event-Triggered Updates",
+            "body": "Games, concerts and closures switch signs to the right content at the right time."
+          }
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Connected ecosystem",
+        "title": "The bridge between *digital and physical.*"
+      },
+      "results": {
+        "eyebrow": "Results",
+        "title": "Measurable *impact*",
+        "items": [
+          {
+            "value": "+25%",
+            "label": "Revenue Uplift",
+            "body": "Dynamic pricing on physical signs"
+          },
+          {
+            "value": "0",
+            "label": "Manual Updates",
+            "body": "Fully automated signage"
+          },
+          {
+            "value": "<1s",
+            "label": "Update Speed",
+            "body": "Real-time data propagation"
+          },
+          {
+            "value": "∞",
+            "label": "Scalability",
+            "body": "Unlimited connected displays"
+          }
+        ]
+      }
+    },
+    "onlineReservation": {
+      "meta": {
+        "title": "Online Reservation | Parkwize",
+        "description": "A modern, mobile-first parking reservation platform: one-tap checkout, QR access and live pricing synced with your operations."
+      },
+      "hero": {
+        "eyebrow": "Parkwize Booking",
+        "title": "A modern, *conversion-driven* parking reservation platform.",
+        "lead": "Turn demand into confirmed bookings. Mobile-first search, one-tap checkout, and availability that stays in sync with your live pricing.",
+        "cta": "Get in touch",
+        "imageAlt": "Four Parkwize Booking screens: reservation form, price, live session timer and QR access pass"
+      },
+      "problem": {
+        "eyebrow": "The problem",
+        "title": "Booking experiences *stuck in 2005.*",
+        "lead": "Most parking booking systems are slow, clunky and hostile on mobile. They lose customers at every step, from search to payment.",
+        "items": [
+          {
+            "title": "Poor mobile experience",
+            "body": "Outdated interfaces that aren't built for mobile, where more than 70% of parking searches happen."
+          },
+          {
+            "title": "Slow checkout",
+            "body": "Multi-step forms, mandatory accounts and no modern payment options like Apple Pay or Google Pay."
+          },
+          {
+            "title": "Invisible on Google",
+            "body": "Most booking platforms rank poorly in search, so operators lose demand they never even see."
+          },
+          {
+            "title": "No real-time sync",
+            "body": "Booking data lives in a silo, disconnected from pricing, occupancy and operations tools."
+          }
+        ]
+      },
+      "demo": {
+        "eyebrow": "See it live",
+        "title": "From search to *access* in under 30 seconds.",
+        "lead": "Follow a driver booking a spot from their phone. Every step is synced with your operations in real time.",
+        "railLabel": "Booking steps",
+        "phoneLabel": "Simulated Parkwize Booking screens on a phone",
+        "clockLabel": "Booking time",
+        "behindLabel": "Behind the scenes",
+        "note": "Simulated booking, illustrative data.",
+        "phone": {
+          "heading": "Book my parking spot",
+          "lot": "Jardin St-Roch",
+          "address": "450 Rue du Parvis, Québec",
+          "arrivalLabel": "Arrival",
+          "arrivalValue": "Today, 3:30 PM",
+          "departureLabel": "Departure",
+          "departureValue": "Tomorrow, 3:30 PM",
+          "getPrice": "Get a price",
+          "price": "$18.00",
+          "durationLabel": "Duration",
+          "durationValue": "24 h",
+          "validLabel": "Valid until",
+          "validValue": "Tomorrow, 3:30 PM",
+          "continue": "Continue",
+          "payTitle": "Payment",
+          "totalLabel": "Total",
+          "applePay": "Apple Pay",
+          "googlePay": "Google Pay",
+          "card": "Credit card",
+          "confirmed": "Booking confirmed",
+          "ticketLabel": "Ticket number",
+          "ticketValue": "D7CSCDR",
+          "scanHint": "Scan at the entrance"
+        },
+        "steps": [
+          {
+            "label": "Search",
+            "title": "The driver picks a lot and a time",
+            "clock": "0:06",
+            "behind": "Live availability",
+            "detail": "126 spaces free, synced with the Dashboard Manager"
+          },
+          {
+            "label": "Price",
+            "title": "A live price, instantly",
+            "clock": "0:13",
+            "behind": "Price from Parkwize AI",
+            "detail": "The same rate as the kiosk and the signs, right now"
+          },
+          {
+            "label": "Pay",
+            "title": "One tap to pay",
+            "clock": "0:21",
+            "behind": "Payment confirmed",
+            "detail": "Apple Pay or Google Pay, no account required"
+          },
+          {
+            "label": "Access",
+            "title": "The pass is ready",
+            "clock": "0:27",
+            "behind": "Access code sent",
+            "detail": "Kiosks, gates and gateless cameras recognize the pass"
+          }
+        ]
+      },
+      "solution": {
+        "eyebrow": "The solution",
+        "title": "Designed to *convert.*",
+        "lead": "Parkwize Booking is a modern reservation platform engineered for speed, conversion and seamless integration with the entire Parkwize ecosystem.",
+        "points": [
+          "A mobile-first, ultra-fast booking flow designed for maximum conversion at every step.",
+          "Apple Pay and Google Pay for frictionless one-tap checkout.",
+          "QR-based access codes: no tickets, no friction for drivers.",
+          "Fully brandable: operators deploy their own branded booking experience.",
+          "Real-time sync with the Dashboard Manager for accurate availability and pricing.",
+          "Built for SEO, to outrank competitors on Google search results."
+        ]
+      },
+      "field": {
+        "eyebrow": "In the field",
+        "title": "Book on the way. *Drive straight in.*",
+        "lead": "Drivers reserve from anywhere, arrive with a pass on their phone and never wait at a pay station.",
+        "videoLabel": "A driver arriving at a parking lot with a booking ready on her phone",
+        "moments": [
+          {
+            "title": "Reserve ahead",
+            "body": "From Google, the operator's website or a QR code on site."
+          },
+          {
+            "title": "Arrive and scan",
+            "body": "The pass opens the gate or is read by the cameras."
+          },
+          {
+            "title": "Extend in a tap",
+            "body": "Running late? Drivers add time from the same page."
+          }
+        ]
+      },
+      "features": {
+        "eyebrow": "Features",
+        "title": "What's *inside*.",
+        "mediaAlt": "A bright, modern parking garage with LED lighting",
+        "mediaCaption": "Your brand, your lots, one booking engine",
+        "items": [
+          {
+            "title": "Mobile-First UX",
+            "body": "Fast, clear screens built for thumbs, from search to confirmation."
+          },
+          {
+            "title": "Apple Pay & Google Pay",
+            "body": "One-tap checkout with wallets drivers already use, plus cards."
+          },
+          {
+            "title": "QR-Based Access",
+            "body": "Every booking becomes a pass read by kiosks, gates and cameras."
+          },
+          {
+            "title": "Fully Brandable",
+            "body": "Your logo, colors and domain, on a booking experience that feels like yours."
+          },
+          {
+            "title": "SEO Optimized",
+            "body": "Fast pages and structured data, built to rank on Google."
+          },
+          {
+            "title": "Real-Time Sync",
+            "body": "Availability and prices always match the Dashboard Manager."
+          }
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Connected ecosystem",
+        "title": "The digital *revenue gateway.*"
+      },
+      "results": {
+        "eyebrow": "Results",
+        "title": "Measurable *impact*",
+        "items": [
+          {
+            "value": "+40%",
+            "label": "Conversion Rate",
+            "body": "vs. legacy booking platforms"
+          },
+          {
+            "value": "<30s",
+            "label": "Booking Time",
+            "body": "From search to confirmed reservation"
+          },
+          {
+            "value": "+60%",
+            "label": "Mobile Bookings",
+            "body": "Mobile-first captures more demand"
+          },
+          {
+            "value": "24/7",
+            "label": "Revenue Capture",
+            "body": "An always-on digital booking gateway"
+          }
+        ]
+      }
+    },
+    "enforcement": {
+      "meta": {
+        "title": "Enforcement | Parkwize",
+        "description": "Ticket-free, gateless parking enforcement: real-time plate recognition, session and payment validation, and digital violations in one connected view."
+      },
+      "hero": {
+        "eyebrow": "Parkwize Enforcement",
+        "title": "Every session under control. *No barriers required.*",
+        "lead": "A connected, ticket-free solution that tracks every vehicle, automates monitoring and gives operators complete visibility without slowing drivers down.",
+        "cta": "Get in touch",
+        "imageAlt": "An enforcement officer scanning a vehicle's license plate with her phone"
+      },
+      "problem": {
+        "eyebrow": "The problem",
+        "title": "Parking without barriers *still needs control.*",
+        "lead": "Without a connected view of vehicles, sessions and payments, teams spend their time reconciling records and handling exceptions by hand.",
+        "items": [
+          {
+            "title": "Unmatched arrivals",
+            "body": "Vehicle entries are hard to match to active parking sessions."
+          },
+          {
+            "title": "Fragmented payments",
+            "body": "Payment status is disconnected from what happens on site."
+          },
+          {
+            "title": "Manual monitoring",
+            "body": "Teams check vehicles and records across separate tools."
+          },
+          {
+            "title": "Slow follow-up",
+            "body": "Exceptions and violations are hard to manage without a shared digital trail."
+          }
+        ]
+      },
+      "demo": {
+        "eyebrow": "See it live",
+        "title": "One patrol, *every vehicle checked.*",
+        "lead": "Follow an officer on a gateless lot. Plates are read, matched to sessions and payments, and exceptions are handled on the spot.",
+        "railLabel": "Patrol steps",
+        "deviceLabel": "Simulated Parkwize Enforcement screen on an officer's device",
+        "statsLabel": "This patrol",
+        "behindLabel": "Behind the scenes",
+        "note": "Simulated patrol, illustrative data.",
+        "stats": {
+          "checked": "Checked",
+          "valid": "Valid",
+          "flagged": "Flagged"
+        },
+        "device": {
+          "title": "Patrol",
+          "zone": "Lot P4, level 2",
+          "reading": "Reading plate",
+          "sessionLabel": "Session",
+          "paidUntil": "Paid until 6:30 PM",
+          "noSession": "No active session",
+          "overstay": "Parked for 18 min",
+          "valid": "Valid",
+          "flagged": "Flagged",
+          "violation": "Violation issued",
+          "violationId": "PW-20418",
+          "photoLabel": "Photo",
+          "photoValue": "2 attached",
+          "timeLabel": "Time",
+          "timeValue": "5:42 PM",
+          "placeLabel": "Location",
+          "placeValue": "Lot P4, space 27",
+          "synced": "Synced to the Dashboard Manager"
+        },
+        "steps": [
+          {
+            "label": "Scan",
+            "title": "The plate is read in under 2 seconds",
+            "behind": "Plate recognition",
+            "detail": "Camera read from the officer's phone, no ticket to check"
+          },
+          {
+            "label": "Check",
+            "title": "Session and payment confirmed",
+            "behind": "Session matched",
+            "detail": "Paid online through Parkwize Booking, valid until 6:30 PM"
+          },
+          {
+            "label": "Flag",
+            "title": "An exception stands out",
+            "behind": "No valid payment",
+            "detail": "Vehicle detected 18 minutes ago, no session or permit"
+          },
+          {
+            "label": "Resolve",
+            "title": "A digital violation, on the spot",
+            "behind": "Record created",
+            "detail": "Photos, time and location saved and synced instantly"
+          }
+        ]
+      },
+      "solution": {
+        "eyebrow": "The solution",
+        "title": "A fully connected *gateless operation.*",
+        "lead": "Parkwize brings license-plate recognition, session tracking, payment validation and enforcement workflows into one digital operating view.",
+        "points": [
+          "Read license plates in real time as vehicles move through the facility.",
+          "Track parking sessions and confirm whether each payment is valid.",
+          "Give teams a fast, fully digital way to monitor activity.",
+          "Manage exceptions and violations from connected records.",
+          "Reduce operating costs without adding tickets or barriers.",
+          "Adapt the experience to each operator's brand and site needs."
+        ]
+      },
+      "followUp": {
+        "eyebrow": "Connected follow-up",
+        "title": "Every step *in one place.*",
+        "lead": "From plate recognition to payment validation and violation management, your team gets one continuous digital record for every vehicle.",
+        "cta": "Request a demo",
+        "imageAlt": "An enforcement officer reviewing parking sessions on a tablet",
+        "timelineLabel": "Digital record of one vehicle",
+        "events": [
+          {
+            "time": "5:24 PM",
+            "title": "Entry read",
+            "body": "Plate GHT 915 detected at the entrance camera"
+          },
+          {
+            "time": "5:24 PM",
+            "title": "No session started",
+            "body": "No booking, payment or permit found"
+          },
+          {
+            "time": "5:42 PM",
+            "title": "Violation issued",
+            "body": "Photos, time and location attached"
+          },
+          {
+            "time": "6:05 PM",
+            "title": "Paid online",
+            "body": "Settled by the driver, record closed"
+          }
+        ]
+      },
+      "features": {
+        "eyebrow": "Features",
+        "title": "From vehicle *to validation.*",
+        "mediaAlt": "An enforcement officer checking parked vehicles with a handheld device",
+        "mediaCaption": "Built for teams on the ground",
+        "items": [
+          {
+            "title": "Real-Time Plate Recognition",
+            "body": "Plates are read by cameras or the officer's phone as vehicles move through the site."
+          },
+          {
+            "title": "Session Tracking",
+            "body": "Every vehicle is matched to its booking, payment or permit automatically."
+          },
+          {
+            "title": "Payment Validation",
+            "body": "Officers see instantly whether a session is paid, expired or missing."
+          },
+          {
+            "title": "Digital Monitoring",
+            "body": "Live lists of exceptions replace paper rounds and spreadsheets."
+          },
+          {
+            "title": "Violation Management",
+            "body": "Issue, track and settle violations from one connected record."
+          },
+          {
+            "title": "Customizable Experience",
+            "body": "Rules, grace periods and branding adapt to each site and operator."
+          }
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Connected ecosystem",
+        "title": "Connected to the *Parkwize ecosystem.*"
+      },
+      "results": {
+        "eyebrow": "Results",
+        "title": "Measurable *impact*",
+        "items": [
+          {
+            "value": "100%",
+            "label": "Ticket-Free",
+            "body": "No paper, no pay-and-display"
+          },
+          {
+            "value": "<2s",
+            "label": "Per Plate Check",
+            "body": "From scan to verdict"
+          },
+          {
+            "value": "0",
+            "label": "Barriers Needed",
+            "body": "Free-flowing entries and exits"
+          },
+          {
+            "value": "24/7",
+            "label": "Monitoring",
+            "body": "Every session, around the clock"
+          }
+        ]
+      }
+    },
+    "processKiosk": {
+      "meta": {
+        "title": "Process Kiosk | Parkwize",
+        "description": "Industrial-grade stainless-steel parking kiosks by Process, natively integrated with Parkwize: ticketing, LPR, payment and barrier control."
+      },
+      "hero": {
+        "eyebrow": "Hardware partner",
+        "logoLabel": "Process Kiosk",
+        "title": "Industrial-grade hardware, *intelligent by design.*",
+        "lead": "Parkwize integrates natively with Process Kiosk: barriers, terminals, sensors and access control built for the next generation of parking.",
+        "cta": "Request a demo",
+        "imageAlt": "A Process stainless-steel parking payment kiosk"
+      },
+      "about": {
+        "eyebrow": "About Process Kiosk",
+        "title": "*20+ years* of parking infrastructure.",
+        "lead": "Process Kiosk has engineered industrial-grade parking equipment for more than two decades. Today its kiosks power hundreds of facilities across Canada, with hardware designed for reliability, scalability and smart connectivity.",
+        "milestonesLabel": "Key milestones",
+        "milestones": [
+          {
+            "year": "1998",
+            "body": "Process Systèmes et Technologies is founded"
+          },
+          {
+            "year": "2002",
+            "body": "Process enters the parking industry"
+          },
+          {
+            "year": "2015",
+            "body": "Expansion into smart access and IoT-enabled terminals"
+          },
+          {
+            "year": "2023",
+            "body": "Strategic partnership with Parkwize for full-stack integration"
+          },
+          {
+            "year": "2025",
+            "body": "Next-generation hardware co-designed with Parkwize AI"
+          }
+        ],
+        "whyTitle": "Why Process?",
+        "why": [
+          "20+ years of industrial parking hardware expertise",
+          "IP65 certified: built for extreme weather and heavy traffic",
+          "Native API integration with Parkwize",
+          "Reliable equipment and reduced downtime",
+          "Modular design that scales from 1 to 100+ sites"
+        ]
+      },
+      "hardware": {
+        "eyebrow": "The hardware",
+        "title": "Stainless-steel *solutions.*",
+        "items": [
+          {
+            "title": "Flagship kiosks",
+            "body": "Ticketing, license plate capture and barrier control in a robust, weather-resistant enclosure designed for 24/7 operation.",
+            "specs": [
+              "Ticketing",
+              "LPR",
+              "Barrier control"
+            ],
+            "imageAlt": "Two Process flagship stainless-steel parking kiosks"
+          },
+          {
+            "title": "Compact payment kiosk",
+            "body": "Space-efficient and ready for every payment method: contactless, chip and mobile pay. Perfect for smaller facilities.",
+            "specs": [
+              "Contactless",
+              "Chip",
+              "Mobile pay"
+            ],
+            "imageAlt": "A Process compact parking payment kiosk"
+          }
+        ]
+      },
+      "demo": {
+        "eyebrow": "See it live",
+        "title": "A clear flow, *in four screens.*",
+        "lead": "Kiosk screens are built in HTML and take on your brand: a simple flow, large buttons and a clear receipt, connected to Parkwize at every step.",
+        "railLabel": "Kiosk payment steps",
+        "kioskLabel": "Simulated Process kiosk payment screens",
+        "behindLabel": "Behind the scenes",
+        "note": "Simulated payment, illustrative data.",
+        "kiosk": {
+          "lot": "Downtown P2",
+          "vehicleTitle": "Vehicle type",
+          "vehicleQuestion": "What type of vehicle are you parked in?",
+          "car": "Car",
+          "motorcycle": "Motorcycle",
+          "entryTitle": "Your stay",
+          "plateLabel": "Plate",
+          "entryLabel": "Entry",
+          "entryValue": "Today, 9:12 AM",
+          "durationLabel": "Duration",
+          "durationValue": "3 h 18 min",
+          "amountLabel": "Amount due",
+          "amount": "$14.50",
+          "payTitle": "Payment",
+          "payHint": "Follow the instructions on the payment terminal",
+          "payMethods": "Tap, insert or scan",
+          "receiptTitle": "Payment receipt",
+          "receiptLabel": "Receipt",
+          "receiptValue": "R-20481",
+          "paidLabel": "Amount paid",
+          "exitHint": "Please exit within 10 minutes",
+          "done": "Done"
+        },
+        "steps": [
+          {
+            "label": "Vehicle",
+            "title": "The driver picks a vehicle type",
+            "behind": "Rate table selected",
+            "detail": "Car rates for this lot, set in the Dashboard Manager"
+          },
+          {
+            "label": "Stay",
+            "title": "The stay appears, no ticket needed",
+            "behind": "Plate matched by LPR",
+            "detail": "Entry at 9:12 AM found automatically by the camera"
+          },
+          {
+            "label": "Payment",
+            "title": "Payment on the terminal",
+            "behind": "Payment approved",
+            "detail": "Contactless payment authorized and logged"
+          },
+          {
+            "label": "Receipt",
+            "title": "A receipt with a QR code",
+            "behind": "Synced everywhere",
+            "detail": "Revenue in the Dashboard Manager, exit gate notified"
+          }
+        ]
+      },
+      "cloud": {
+        "eyebrow": "Management",
+        "title": "An online *cloud platform.*",
+        "lead": "A fully web-based management platform, organized in modules:",
+        "imageAlt": "The Process management menu on a phone: tickets, subscribers, organizations, accounting and reports",
+        "modules": [
+          "Subscriber management",
+          "Equipment monitoring",
+          "Subscriber services",
+          "Accounting"
+        ],
+        "highlightTitle": "Hassle-free accounting.",
+        "highlightBody": "Fully automated accounting modules with invoice and payment default control. Monthly clients can even pay their subscription at the entrance when needed."
+      },
+      "features": {
+        "eyebrow": "Our solutions",
+        "title": "An integrated *platform.*",
+        "mediaAlt": "A driver paying for parking on a touch-screen kiosk in a garage",
+        "mediaCaption": "Hardware and software, one ecosystem",
+        "items": [
+          {
+            "title": "ANPR Cameras",
+            "body": "License plates are read at entry and exit, so drivers never need a ticket."
+          },
+          {
+            "title": "Access Control",
+            "body": "Barriers, gates and doors open for valid sessions, permits and subscribers."
+          },
+          {
+            "title": "Smart Terminals",
+            "body": "Pay stations and kiosks that show live prices and accept every payment method."
+          },
+          {
+            "title": "IoT Sensors",
+            "body": "Occupancy and equipment data flow into the Dashboard Manager in real time."
+          },
+          {
+            "title": "Remote Management",
+            "body": "Update rates, screens and settings for every device from the office."
+          },
+          {
+            "title": "Instant Alerts",
+            "body": "Jams, paper outages and offline devices raise alerts before drivers notice."
+          }
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Connected ecosystem",
+        "title": "Connected to the *Parkwize ecosystem.*"
+      },
+      "results": {
+        "eyebrow": "Built to last",
+        "title": "Hardware you can *count on*",
+        "items": [
+          {
+            "value": "20+",
+            "label": "Years of Expertise",
+            "body": "In industrial parking hardware"
+          },
+          {
+            "value": "IP65",
+            "label": "Certified",
+            "body": "Built for extreme weather"
+          },
+          {
+            "value": "100+",
+            "label": "Sites per Network",
+            "body": "Modular from one site upward"
+          },
+          {
+            "value": "24/7",
+            "label": "Operation",
+            "body": "Designed for heavy traffic"
+          }
+        ]
+      }
     }
   }
 }

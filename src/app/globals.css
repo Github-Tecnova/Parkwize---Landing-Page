@@ -339,7 +339,7 @@
   }
 
   .bg-bay-grid {
-    overflow: hidden;
+    overflow: clip;
   }
 
   .bg-bay-grid::before {

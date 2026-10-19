@@ -23,6 +23,15 @@ export type AiPageDictionary = DictionaryType["products"]["parkwizeAi"];
 export type DashboardDictionary =
   DictionaryType["products"]["dashboardManager"];
 
+export type SignageDictionary = DictionaryType["products"]["digitalSignage"];
+
+export type ReservationDictionary =
+  DictionaryType["products"]["onlineReservation"];
+
+export type EnforcementDictionary = DictionaryType["products"]["enforcement"];
+
+export type ProcessDictionary = DictionaryType["products"]["processKiosk"];
+
 const dictionaries: Record<Locale, () => Promise<DictionaryType>> = {
   en: () => import("./en.json").then((module) => module.default),
   fr: () => import("./fr.json").then((module) => module.default),

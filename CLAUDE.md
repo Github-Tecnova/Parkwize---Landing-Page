@@ -82,6 +82,10 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 - Section textures (Lovable look): `bg-dot-grid` / `bg-dot-grid-sm`, `bg-bay-grid` (skewed parking bays), `bg-bay-lines` (hero verticals), `bg-hero-fade` (hero gradient), plus `PointerSpotlight` inside a positioned section. Sections stay white; texture carries the rhythm.
 - Looping videos: `AmbientVideo` with `VIDEOS` from `@/lib/media` (WebM first, MP4 fallback, poster, plays only in view). Long-running animations must pause off screen and under reduced motion.
 - A hero that sits under the glass top bar uses the `under-top-bar` class.
+- Step-by-step product demos: `StepRail` from `@/components/sections/step-rail` with `useStepCycle` from `@/hooks/use-step-cycle` (auto-advances only in view, stops on click and under reduced motion).
+- Product pages: `ProductHero`, `ProductProblem` (icons from `PROBLEM_ICONS` in `@/lib/product-problems`), `ProductSolution`, `ProductFeatures`, `ProductEcosystem` and `ProductResults` from `@/components/sections/product`. Animated value swaps: `SwapValue` from `@/components/motion/swap-value`.
+- Partner logo: `ProcessLogo` from `@/components/brand/process-logo` (vector, `currentColor`). Decorative QR codes: `QrGlyph` from `@/components/media/qr-glyph`.
+- Phone mock-ups in demos: `DeviceFrame` from `@/components/media/device-frame`. The step title and "behind the scenes" card beside a demo: `DemoStepNote` from `@/components/sections/demo-step-note`.
 - If the same markup appears twice, make it a component.
 
 ## 5. Design tokens

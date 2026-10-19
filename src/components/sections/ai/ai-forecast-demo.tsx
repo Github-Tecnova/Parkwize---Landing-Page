@@ -4,7 +4,6 @@
 
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import {
   BadgeDollarSign,
   BarChart3,
@@ -23,15 +22,12 @@ import {
   TrainFront,
   Users,
 } from "lucide-react";
-import {
-  AnimatePresence,
-  motion,
-  useInView,
-  useReducedMotion,
-} from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { Container } from "@/components/layout/section/container";
 import { SectionHeader } from "@/components/layout/section/section-header";
+import { StepRail } from "@/components/sections/step-rail";
 import { AiPageDictionary } from "@/content/dictionary";
+import { useStepCycle } from "@/hooks/use-step-cycle";
 import { EASE_OUT_EXPO } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
@@ -70,27 +66,12 @@ type AiForecastDemoProps = {
 };
 
 export function AiForecastDemo({ dict }: AiForecastDemoProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { margin: "-20% 0px" });
-  const reducedMotion = useReducedMotion();
-  const [step, setStep] = useState(0);
-  const [auto, setAuto] = useState(true);
+  const { ref, step, selectStep, reducedMotion } = useStepCycle(
+    dict.steps.length,
+    STEP_DURATION,
+  );
   const formatPercent = (value: number) =>
     `${value > 0 ? "+" : ""}${value}${dict.percentSuffix}`;
-
-  useEffect(() => {
-    if (!auto || !inView || reducedMotion) return;
-    const timer = window.setInterval(
-      () => setStep((current) => (current + 1) % dict.steps.length),
-      STEP_DURATION,
-    );
-    return () => window.clearInterval(timer);
-  }, [auto, inView, reducedMotion, dict.steps.length]);
-
-  const selectStep = (index: number) => {
-    setAuto(false);
-    setStep(index);
-  };
 
   return (
     <section className="bg-dot-grid bg-surface py-14 sm:py-20">
@@ -101,45 +82,12 @@ export function AiForecastDemo({ dict }: AiForecastDemoProps) {
           ref={ref}
           className="mt-10 overflow-hidden rounded-3xl border border-hairline bg-surface shadow-media"
         >
-          <ol
-            aria-label={dict.railLabel}
-            className="grid grid-cols-4 border-b border-hairline"
-          >
-            {dict.steps.map((item, index) => (
-              <li key={item.label} className="relative">
-                <button
-                  type="button"
-                  aria-pressed={step === index}
-                  onClick={() => selectStep(index)}
-                  className={cn(
-                    "flex w-full flex-col items-center gap-2 px-1 py-4 text-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring sm:flex-row sm:justify-center sm:gap-3 sm:py-5",
-                    step === index ? "text-ink" : "text-copy hover:text-ink",
-                  )}
-                >
-                  <span
-                    className={cn(
-                      "flex size-7 shrink-0 items-center justify-center rounded-full text-xs font-bold transition-colors",
-                      step >= index
-                        ? "bg-deck text-white"
-                        : "border border-hairline bg-surface text-copy",
-                    )}
-                  >
-                    {index + 1}
-                  </span>
-                  <span className="text-[0.6875rem] font-bold uppercase tracking-wide sm:text-xs">
-                    {item.label}
-                  </span>
-                </button>
-                <span
-                  aria-hidden
-                  className={cn(
-                    "absolute inset-x-0 bottom-[-1px] h-0.5 origin-left bg-deck transition-transform duration-500",
-                    step === index ? "scale-x-100" : "scale-x-0",
-                  )}
-                />
-              </li>
-            ))}
-          </ol>
+          <StepRail
+            label={dict.railLabel}
+            steps={dict.steps}
+            current={step}
+            onSelect={selectStep}
+          />
 
           <div className="min-h-[34rem] p-5 sm:min-h-[30rem] sm:p-8 lg:min-h-[27rem]">
             <AnimatePresence mode="wait" initial={false}>

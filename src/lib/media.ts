@@ -158,6 +158,11 @@ export const MEDIA = {
       width: 967,
       height: 862,
     },
+    enforcementPatrolPortrait: {
+      src: "/images/os/enforcement-patrol-portrait.webp",
+      width: 350,
+      height: 862,
+    },
   },
   people: {
     dashboardOperatorPoster: {
