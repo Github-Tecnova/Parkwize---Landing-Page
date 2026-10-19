@@ -1230,37 +1230,7 @@
       "title": "L'écosystème *Parkwize.*",
       "lead": "Des solutions connectées. Une plateforme intelligente.",
       "cta": "Réserver un appel",
-      "indexLabel": "Produits Parkwize",
-      "items": {
-        "dashboardManager": {
-          "name": "Gestionnaire de tableau de bord Parkwize",
-          "blurb": "KPI en direct, tarification dynamique et pilotage à distance."
-        },
-        "parkwizeAi": {
-          "name": "Parkwize IA",
-          "blurb": "Des prévisions et des prix ajustés sans intervention."
-        },
-        "digitalSignage": {
-          "name": "Affichage Parkwize",
-          "blurb": "Des enseignes mises à jour avec vos données, en direct."
-        },
-        "onlineReservation": {
-          "name": "Réservation Parkwize",
-          "blurb": "Plateforme de réservation en ligne pour exploitations avec ou sans barrière."
-        },
-        "enforcement": {
-          "name": "Contrôle Parkwize",
-          "blurb": "Lecture de plaques et suivi des sessions, sans billet."
-        },
-        "processKiosk": {
-          "name": "Borne Process",
-          "blurb": "Barrières, bornes et capteurs conçus pour tourner 24/7."
-        },
-        "parkAid": {
-          "name": "ParkAid",
-          "blurb": "Une assistance toujours disponible, côté conducteurs et équipes."
-        }
-      }
+      "indexLabel": "Produits Parkwize"
     },
     "os": {
       "eyebrow": "Le nôtre ou le vôtre",
@@ -1459,13 +1429,162 @@
           "imageAlt": "Le stationnement d'une communauté résidentielle"
         }
       }
+    }
+  },
+  "productCards": {
+    "dashboardManager": {
+      "name": "Gestionnaire de tableau de bord Parkwize",
+      "blurb": "KPI en direct, tarification dynamique et pilotage à distance."
     },
-    "marquee": [
-      "Stationnement intelligent",
-      "Tarification dynamique",
-      "Accès sans barrière",
-      "Données en temps réel",
-      "IA du stationnement"
-    ]
+    "parkwizeAi": {
+      "name": "Parkwize IA",
+      "blurb": "Des prévisions et des prix ajustés sans intervention."
+    },
+    "digitalSignage": {
+      "name": "Affichage Parkwize",
+      "blurb": "Des enseignes mises à jour avec vos données, en direct."
+    },
+    "onlineReservation": {
+      "name": "Réservation Parkwize",
+      "blurb": "Plateforme de réservation en ligne pour exploitations avec ou sans barrière."
+    },
+    "enforcement": {
+      "name": "Contrôle Parkwize",
+      "blurb": "Lecture de plaques et suivi des sessions, sans billet."
+    },
+    "processKiosk": {
+      "name": "Borne Process",
+      "blurb": "Barrières, bornes et capteurs conçus pour tourner 24/7."
+    },
+    "parkAid": {
+      "name": "ParkAid",
+      "blurb": "Une assistance toujours disponible, côté conducteurs et équipes."
+    }
+  },
+  "marquee": [
+    "Stationnement intelligent",
+    "Tarification dynamique",
+    "Accès sans barrière",
+    "Données en temps réel",
+    "IA du stationnement"
+  ],
+  "products": {
+    "dashboardManager": {
+      "meta": {
+        "title": "Gestionnaire de tableau de bord | Parkwize",
+        "description": "Le cerveau opérationnel du stationnement moderne : un tableau de bord en temps réel qui relie et pilote tous vos équipements et logiciels."
+      },
+      "hero": {
+        "eyebrow": "Gestionnaire de tableau de bord Parkwize",
+        "title": "Là où tout se connecte.",
+        "lead": "Le cerveau opérationnel du stationnement moderne : un tableau de bord centralisé qui relie tous vos équipements et logiciels dans une seule plateforme en temps réel. Il prend le contrôle de tout.",
+        "cta": "Demander une démo",
+        "videoLabel": "Un exploitant consulte son stationnement sur un ordinateur portable"
+      },
+      "showcase": {
+        "label": "Vue d'ensemble du tableau de bord Parkwize",
+        "imageAlt": "Tableau de bord Parkwize : revenus, événements en direct, alertes, performance et tarification",
+        "eyebrow": "Une seule interface",
+        "caption": "Revenus. Activité. Tarification. Un tableau de bord général."
+      },
+      "summary": [
+        {
+          "value": "90+",
+          "title": "Indicateurs en direct",
+          "body": "Les données de chaque site, au même endroit."
+        },
+        {
+          "value": "24/7",
+          "title": "Contrôle à distance",
+          "body": "Gardez le contrôle, où que vous soyez."
+        },
+        {
+          "value": "1",
+          "title": "Plateforme connectée",
+          "body": "Équipements et logiciels réunis."
+        }
+      ],
+      "solution": {
+        "eyebrow": "La solution",
+        "title": "Un tableau de bord. Un contrôle total.",
+        "lead": "Le gestionnaire de tableau de bord est la source de vérité unique de chaque exploitation : entièrement à distance, en temps réel et profondément intégré à tout l'écosystème Parkwize.",
+        "photoAlt": "Deux personnes consultent le tableau de bord Parkwize sur une tablette dans un stationnement",
+        "photoCaption": "Conçu pour les équipes sur le terrain.",
+        "points": [
+          "Plus de 90 KPI en direct : occupation, revenus, trafic et plus.",
+          "Moteur de tarification dynamique avec calendriers et horaires planifiés.",
+          "Flux d'automatisation et tâches automatisées sur chaque stationnement et chaque écran.",
+          "Contrôle à distance des tarifs, des opérations et des événements, où que vous soyez.",
+          "Affichages TV personnalisés conçus dans l'éditeur de cadres intégré.",
+          "Connexions IoT et API simplifiées. Intégrations poussées avec les principaux équipementiers : Process, TIBA, Global, Scheidt & Bachmann et plus."
+        ]
+      },
+      "features": {
+        "eyebrow": "Fonctionnalités",
+        "title": "Ce qu'il y a *dedans*.",
+        "mediaAlt": "Un exploitant vérifie un site sur son téléphone dans un stationnement au crépuscule",
+        "mediaCaption": "Pilotez chaque site depuis votre téléphone",
+        "items": [
+          {
+            "title": "Plus de 90 KPI en direct",
+            "body": "Occupation, revenus, trafic, rotation et durée de séjour, mis à jour en temps réel pour chaque site et chaque voie."
+          },
+          {
+            "title": "Moteur de tarification dynamique",
+            "body": "Définissez vos règles une fois et laissez les tarifs suivre la demande, les événements et l'heure, avec un contrôle total des planchers et plafonds."
+          },
+          {
+            "title": "Horaires planifiés",
+            "body": "Planifiez tarifs et heures d'ouverture à l'avance grâce aux calendriers, pour que fêtes et événements roulent sans personne sur place."
+          },
+          {
+            "title": "Tâches automatisées",
+            "body": "Déclenchez automatiquement des actions sur les bornes, écrans et barrières dès que les conditions sont réunies, sur tous vos sites."
+          },
+          {
+            "title": "Contrôle à distance",
+            "body": "Ouvrez une barrière, changez un tarif ou passez en mode complet de n'importe où, en quelques secondes, sans déplacement."
+          },
+          {
+            "title": "Affichages TV personnalisés",
+            "body": "Concevez vos écrans de tarifs et d'orientation dans l'éditeur de cadres intégré et publiez-les sur tous vos écrans."
+          },
+          {
+            "title": "Connexion IoT et API",
+            "body": "Reliez capteurs et systèmes tiers par de simples liens IoT et API, avec des intégrations natives pour les principaux équipements."
+          }
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Écosystème connecté",
+        "title": "Connecté à *tout.*"
+      },
+      "results": {
+        "eyebrow": "Résultats",
+        "title": "Un impact *mesurable*",
+        "items": [
+          {
+            "value": "+35 %",
+            "label": "Croissance des revenus",
+            "body": "Hausse moyenne grâce à la tarification dynamique"
+          },
+          {
+            "value": "10×",
+            "label": "Décisions plus rapides",
+            "body": "Les données en temps réel remplacent les suppositions"
+          },
+          {
+            "value": "90+",
+            "label": "KPI en direct",
+            "body": "Une visibilité opérationnelle complète"
+          },
+          {
+            "value": "0",
+            "label": "Visite sur le site",
+            "body": "Un pilotage entièrement à distance"
+          }
+        ]
+      }
+    }
   }
 }

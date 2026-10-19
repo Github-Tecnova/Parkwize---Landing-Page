@@ -1,0 +1,65 @@
+/*
+ * Copyright (c) 2025-2026. Tecnova
+ */
+
+import Image from "next/image";
+import { Container } from "@/components/layout/section/container";
+import { Reveal } from "@/components/motion/reveal";
+import { DashboardDictionary } from "@/content/dictionary";
+import { MEDIA } from "@/lib/media";
+import { cn } from "@/lib/utils";
+
+type DashboardShowcaseProps = {
+  dict: DashboardDictionary["showcase"];
+  summary: DashboardDictionary["summary"];
+};
+
+export function DashboardShowcase({ dict, summary }: DashboardShowcaseProps) {
+  const { dashboardMockup } = MEDIA.product;
+
+  return (
+    <section
+      aria-label={dict.label}
+      className="bg-black pb-16 pt-10 text-white sm:pb-24 sm:pt-14"
+    >
+      <Container className="flex flex-col items-center">
+        <Reveal className="w-full">
+          <Image
+            src={dashboardMockup.src}
+            width={dashboardMockup.width}
+            height={dashboardMockup.height}
+            alt={dict.imageAlt}
+            sizes="(min-width: 1024px) 880px, 100vw"
+            className="mx-auto w-[calc(100%+1.75rem)] max-w-none -translate-x-3.5 sm:w-[min(55rem,94%)] sm:translate-x-0"
+          />
+        </Reveal>
+        <div className="mt-7 flex w-full max-w-[53rem] flex-col gap-2 border-t border-white/20 pt-5 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
+          <span className="kicker text-[0.625rem] tracking-[0.1em] text-white/60">
+            {dict.eyebrow}
+          </span>
+          <p className="text-sm font-semibold sm:text-right">{dict.caption}</p>
+        </div>
+
+        <dl className="mt-16 grid w-full border-t border-white/20 sm:grid-cols-3">
+          {summary.map((item, index) => (
+            <div
+              key={item.title}
+              className={cn(
+                "flex flex-col border-b border-white/20 py-5 sm:border-b-0 sm:pb-0 sm:pt-8",
+                index === 0 ? "sm:pr-8" : "sm:border-l sm:px-8",
+              )}
+            >
+              <dt className="mt-3.5 text-base font-bold">{item.title}</dt>
+              <dd className="order-first font-display text-[2rem] font-semibold leading-none">
+                {item.value}
+              </dd>
+              <dd className="mt-1.5 text-[0.8125rem] text-white/55">
+                {item.body}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </Container>
+    </section>
+  );
+}

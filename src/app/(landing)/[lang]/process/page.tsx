@@ -297,7 +297,7 @@ function ProcessBrandingSection() {
           <div className="relative z-20 mb-6 hidden translate-y-4 flex-col items-center md:flex lg:translate-y-6">
             <button
               onClick={() => setOpen(true)}
-              className="group relative rounded-full border border-foreground/20 bg-foreground/5 px-10 py-4 text-sm font-medium uppercase tracking-[0.2em] backdrop-blur-sm transition-all duration-300 hover:border-parkwize_blue hover:bg-parkwize_blue/10 hover:shadow-[0_0_40px_rgba(7,88,246,0.15)] lg:px-12 lg:py-5 lg:text-base lg:tracking-[0.25em]"
+              className="border-foreground/20 bg-foreground/5 group relative rounded-full border px-10 py-4 text-sm font-medium uppercase tracking-[0.2em] backdrop-blur-sm transition-all duration-300 hover:border-parkwize_blue hover:bg-parkwize_blue/10 hover:shadow-[0_0_40px_rgba(7,88,246,0.15)] lg:px-12 lg:py-5 lg:text-base lg:tracking-[0.25em]"
             >
               {ui.discover}
             </button>
@@ -307,12 +307,12 @@ function ProcessBrandingSection() {
           </div>
 
           <div className="mb-3 flex justify-center px-4 md:hidden">
-            <span className="min-w-[250px] rounded-full border border-foreground/20 bg-foreground/5 px-6 py-2.5 text-center text-[11px] font-light uppercase tracking-[0.2em] text-muted-foreground/60">
+            <span className="border-foreground/20 bg-foreground/5 text-muted-foreground/60 min-w-[250px] rounded-full border px-6 py-2.5 text-center text-[11px] font-light uppercase tracking-[0.2em]">
               {brandingFeatures[activeFeature]}
             </span>
           </div>
 
-          <div className="pointer-events-none absolute inset-x-0 -top-10 bottom-0 hidden items-end justify-center -gap-4 lg:-space-x-4 md:flex">
+          <div className="-gap-4 pointer-events-none absolute inset-x-0 -top-10 bottom-0 hidden items-end justify-center md:flex lg:-space-x-4">
             <Image
               src={ProcessKiosk}
               alt=""
@@ -341,7 +341,7 @@ function ProcessBrandingSection() {
             />
           </div>
 
-          <div className="my-3 flex items-end justify-center gap-2 pointer-events-none md:hidden">
+          <div className="pointer-events-none my-3 flex items-end justify-center gap-2 md:hidden">
             <Image
               src={ProcessKiosk}
               alt=""
@@ -374,7 +374,7 @@ function ProcessBrandingSection() {
             {brandingFeatures.map((feature, index) => (
               <motion.span
                 key={feature}
-                className="absolute cursor-default text-xs font-light uppercase tracking-widest text-muted-foreground/70 transition-colors duration-300 hover:text-foreground/90 lg:text-sm"
+                className="text-muted-foreground/70 hover:text-foreground/90 absolute cursor-default text-xs font-light uppercase tracking-widest transition-colors duration-300 lg:text-sm"
                 style={PROCESS_BRANDING_FEATURE_POSITIONS[index]}
                 animate={{ y: [0, -10, 0, 10, 0], x: [0, 3, 0, -3, 0] }}
                 transition={{
@@ -392,7 +392,7 @@ function ProcessBrandingSection() {
           <div className="flex flex-col items-center md:hidden">
             <button
               onClick={() => setOpen(true)}
-              className="group relative rounded-full border border-foreground/20 bg-foreground/5 px-8 py-4 text-xs font-medium uppercase tracking-[0.15em] backdrop-blur-sm transition-all duration-300 hover:border-parkwize_blue hover:bg-parkwize_blue/10 hover:shadow-[0_0_40px_rgba(7,88,246,0.15)]"
+              className="border-foreground/20 bg-foreground/5 group relative rounded-full border px-8 py-4 text-xs font-medium uppercase tracking-[0.15em] backdrop-blur-sm transition-all duration-300 hover:border-parkwize_blue hover:bg-parkwize_blue/10 hover:shadow-[0_0_40px_rgba(7,88,246,0.15)]"
             >
               {ui.discover}
             </button>
@@ -404,7 +404,7 @@ function ProcessBrandingSection() {
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-md rounded-2xl border border-foreground/10 bg-white p-8 shadow-[0_0_60px_rgba(0,0,0,0.1)] backdrop-blur-2xl">
+        <DialogContent className="border-foreground/10 max-w-md rounded-2xl border bg-white p-8 shadow-[0_0_60px_rgba(0,0,0,0.1)] backdrop-blur-2xl">
           <DialogTitle className="sr-only">{ui.dialogTitle}</DialogTitle>
           <div className="mb-6 flex justify-center">
             <Image
@@ -425,7 +425,7 @@ function ProcessBrandingSection() {
                 onChange={(event) =>
                   setForm({ ...form, firstName: event.target.value })
                 }
-                className="border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+                className="border-foreground/20 placeholder:text-muted-foreground/50 focus:border-foreground/50 border-b bg-transparent pb-3 text-base text-foreground transition-colors focus:outline-none md:pb-2 md:text-sm"
                 required
               />
               <input
@@ -435,7 +435,7 @@ function ProcessBrandingSection() {
                 onChange={(event) =>
                   setForm({ ...form, lastName: event.target.value })
                 }
-                className="border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+                className="border-foreground/20 placeholder:text-muted-foreground/50 focus:border-foreground/50 border-b bg-transparent pb-3 text-base text-foreground transition-colors focus:outline-none md:pb-2 md:text-sm"
               />
             </div>
 
@@ -446,7 +446,7 @@ function ProcessBrandingSection() {
               onChange={(event) =>
                 setForm({ ...form, email: event.target.value })
               }
-              className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+              className="border-foreground/20 placeholder:text-muted-foreground/50 focus:border-foreground/50 w-full border-b bg-transparent pb-3 text-base text-foreground transition-colors focus:outline-none md:pb-2 md:text-sm"
               required
             />
 
@@ -457,7 +457,7 @@ function ProcessBrandingSection() {
               onChange={(event) =>
                 setForm({ ...form, company: event.target.value })
               }
-              className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+              className="border-foreground/20 placeholder:text-muted-foreground/50 focus:border-foreground/50 w-full border-b bg-transparent pb-3 text-base text-foreground transition-colors focus:outline-none md:pb-2 md:text-sm"
             />
 
             <select
@@ -473,7 +473,7 @@ function ProcessBrandingSection() {
                       : form.roleOther,
                 })
               }
-              className={`w-full border-b border-foreground/20 bg-transparent pb-3 text-base transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm ${form.role ? "text-foreground" : "text-muted-foreground/50"}`}
+              className={`border-foreground/20 focus:border-foreground/50 w-full border-b bg-transparent pb-3 text-base transition-colors focus:outline-none md:pb-2 md:text-sm ${form.role ? "text-foreground" : "text-muted-foreground/50"}`}
             >
               <option
                 value=""
@@ -501,7 +501,7 @@ function ProcessBrandingSection() {
                 onChange={(event) =>
                   setForm({ ...form, roleOther: event.target.value })
                 }
-                className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+                className="border-foreground/20 placeholder:text-muted-foreground/50 focus:border-foreground/50 w-full border-b bg-transparent pb-3 text-base text-foreground transition-colors focus:outline-none md:pb-2 md:text-sm"
               />
             )}
 
@@ -512,12 +512,12 @@ function ProcessBrandingSection() {
               onChange={(event) =>
                 setForm({ ...form, phone: event.target.value })
               }
-              className="w-full border-b border-foreground/20 bg-transparent pb-3 text-base text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-foreground/50 focus:outline-none md:pb-2 md:text-sm"
+              className="border-foreground/20 placeholder:text-muted-foreground/50 focus:border-foreground/50 w-full border-b bg-transparent pb-3 text-base text-foreground transition-colors focus:outline-none md:pb-2 md:text-sm"
             />
 
             <button
               type="submit"
-              className="mt-2 w-full rounded-full border border-foreground/20 bg-foreground/5 py-4 text-sm font-medium uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-foreground/10 md:py-3"
+              className="border-foreground/20 bg-foreground/5 hover:bg-foreground/10 mt-2 w-full rounded-full border py-4 text-sm font-medium uppercase tracking-[0.2em] text-foreground transition-colors md:py-3"
             >
               {ui.submit}
             </button>
@@ -531,7 +531,7 @@ function ProcessBrandingSection() {
                 }
                 className="mt-1 accent-parkwize_blue"
               />
-              <span className="text-[11px] leading-relaxed text-muted-foreground/60">
+              <span className="text-muted-foreground/60 text-[11px] leading-relaxed">
                 {ui.consent}
               </span>
             </label>
@@ -723,22 +723,22 @@ const Hardware = () => {
       };
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden bg-background">
       {/* Background blurs */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-parkwize_blue/5 blur-[120px]" />
-        <div className="absolute top-[40%] -right-60 w-[500px] h-[500px] rounded-full bg-parkwize_blue/4 blur-[140px]" />
-        <div className="absolute bottom-0 left-[10%] w-[400px] h-[400px] rounded-full bg-parkwize_blue/3 blur-[100px]" />
+        <div className="absolute -left-40 -top-40 h-[600px] w-[600px] rounded-full bg-parkwize_blue/5 blur-[120px]" />
+        <div className="bg-parkwize_blue/4 absolute -right-60 top-[40%] h-[500px] w-[500px] rounded-full blur-[140px]" />
+        <div className="bg-parkwize_blue/3 absolute bottom-0 left-[10%] h-[400px] w-[400px] rounded-full blur-[100px]" />
       </div>
 
       <div className="relative z-10">
         {/* ===== HERO ===== */}
-        <section className="lg:pt-32 pb-20 px-6 relative pt-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <section className="relative px-6 pb-20 pt-10 lg:pt-32">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid items-center gap-12 lg:grid-cols-2">
               <motion.div {...anim}>
                 <div className="mb-6 flex flex-wrap items-center gap-3">
-                  <span className="inline-block text-xs font-semibold uppercase tracking-widest text-parkwize_blue bg-parkwize_blue/10 px-3 py-1.5">
+                  <span className="inline-block bg-parkwize_blue/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-parkwize_blue">
                     {ui.partnerBadge}
                   </span>
                   <Image
@@ -746,26 +746,26 @@ const Hardware = () => {
                     alt="Process Technology logo"
                     width={140}
                     height={32}
-                    className="h-10 w-auto mb-5"
+                    className="mb-5 h-10 w-auto"
                   />
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
+                <h1 className="mb-6 text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
                   {ui.heroTitle}{" "}
                   <span className="text-parkwize_blue">
                     {ui.heroTitleAccent}
                   </span>
                 </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-lg">
+                <p className="mb-8 max-w-lg text-lg leading-relaxed text-muted-foreground">
                   {ui.heroDescription}
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col gap-4 sm:flex-row">
                   <Button
                     asChild
                     size="lg"
-                    className="text-base px-8 bg-parkwize_blue text-white hover:bg-parkwize_blue/90 rounded-none"
+                    className="rounded-none bg-parkwize_blue px-8 text-base text-white hover:bg-parkwize_blue/90"
                   >
                     <Link href="#process-contact-form">
-                      {ui.requestDemo} <ArrowRight className="ml-2 w-4 h-4" />
+                      {ui.requestDemo} <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </div>
@@ -776,11 +776,11 @@ const Hardware = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
-                <div className="rounded-2xl overflow-hidden shadow-parkwize_blue/10">
+                <div className="overflow-hidden rounded-2xl shadow-parkwize_blue/10">
                   <Image
                     src={ProcessMiniKiosk} //hardwareImg
                     alt="Process Technology hardware"
-                    className="w-full h-auto"
+                    className="h-auto w-full"
                     priority
                   />
                 </div>
@@ -790,25 +790,25 @@ const Hardware = () => {
         </section>
 
         {/* ===== ABOUT / MILESTONES ===== */}
-        <section className="py-14 md:py-24 px-6 bg-secondary/50">
-          <div className="max-w-6xl mx-auto">
-            <motion.div {...anim} className="text-center mb-16">
-              <p className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-3">
+        <section className="bg-secondary/50 px-6 py-14 md:py-24">
+          <div className="mx-auto max-w-6xl">
+            <motion.div {...anim} className="mb-16 text-center">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-parkwize_blue">
                 {ui.aboutTag}
               </p>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+              <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-5xl">
                 {ui.aboutTitle}
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground">
                 {ui.aboutDescription}
               </p>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid gap-12 lg:grid-cols-2">
               {/* Milestones */}
               <motion.div {...anim} transition={{ delay: 0.1 }}>
-                <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                  <span className="w-1.5 h-6 bg-parkwize_blue rounded-full" />
+                <h3 className="mb-6 flex items-center gap-2 text-xl font-bold">
+                  <span className="h-6 w-1.5 rounded-full bg-parkwize_blue" />
                   {ui.milestonesTitle}
                 </h3>
                 <div className="space-y-4">
@@ -819,9 +819,9 @@ const Hardware = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
-                      className="flex gap-4 items-start"
+                      className="flex items-start gap-4"
                     >
-                      <span className="text-sm font-bold text-parkwize_blue bg-parkwize_blue/10 px-2.5 py-1 shrink-0 mt-0.5">
+                      <span className="mt-0.5 shrink-0 bg-parkwize_blue/10 px-2.5 py-1 text-sm font-bold text-parkwize_blue">
                         {m.year}
                       </span>
                       <p className="text-muted-foreground">{m.text}</p>
@@ -832,8 +832,8 @@ const Hardware = () => {
 
               {/* Why Process Technology */}
               <motion.div {...anim} transition={{ delay: 0.2 }}>
-                <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                  <span className="w-1.5 h-6 bg-parkwize_blue rounded-full" />
+                <h3 className="mb-6 flex items-center gap-2 text-xl font-bold">
+                  <span className="h-6 w-1.5 rounded-full bg-parkwize_blue" />
                   {ui.whyTitle}
                 </h3>
                 <div className="space-y-3">
@@ -846,8 +846,8 @@ const Hardware = () => {
                       transition={{ delay: i * 0.08 }}
                       className="flex items-center gap-3"
                     >
-                      <div className="w-5 h-5 rounded-full bg-parkwize_blue/10 flex items-center justify-center shrink-0">
-                        <Check className="w-3 h-3 text-parkwize_blue" />
+                      <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-parkwize_blue/10">
+                        <Check className="h-3 w-3 text-parkwize_blue" />
                       </div>
                       <p className="text-muted-foreground">{point}</p>
                     </motion.div>
@@ -859,24 +859,24 @@ const Hardware = () => {
         </section>
 
         {/* ===== SOLUTIONS / FEATURES ===== */}
-        <section className="py-14 md:py-24 px-6 bg-[#14181f]">
-          <div className="max-w-7xl mx-auto">
-            <motion.div {...anim} className="text-center mb-4">
-              <p className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-3">
+        <section className="bg-[#14181f] px-6 py-14 md:py-24">
+          <div className="mx-auto max-w-7xl">
+            <motion.div {...anim} className="mb-4 text-center">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-parkwize_blue">
                 {ui.solutionsTag}
               </p>
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <Cpu className="w-6 h-6 text-parkwize_blue" />
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
+              <div className="mb-6 flex items-center justify-center gap-3">
+                <Cpu className="h-6 w-6 text-parkwize_blue" />
+                <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
                   {ui.integratedPlatform}
                 </h2>
               </div>
-              <p className="text-lg text-[#a1a2a5] max-w-3xl mx-auto leading-relaxed mb-16 ">
+              <p className="mx-auto mb-16 max-w-3xl text-lg leading-relaxed text-[#a1a2a5]">
                 {ui.solutionsDescription}
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="mb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {localizedSolutionFeatures.map((f, i) => (
                 <motion.div
                   key={f.title}
@@ -884,15 +884,15 @@ const Hardware = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className=" border  border-[#ffffff1a] bg-[#ffffff0d] p-8 hover:border-parkwize_blue/40 hover:shadow-lg hover:shadow-parkwize_blue/5 transition-all duration-300 group"
+                  className="group border border-[#ffffff1a] bg-[#ffffff0d] p-8 transition-all duration-300 hover:border-parkwize_blue/40 hover:shadow-lg hover:shadow-parkwize_blue/5"
                 >
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-colors">
-                    <f.icon className="w-6 h-6 text-parkwize_blue" />
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl transition-colors">
+                    <f.icon className="h-6 w-6 text-parkwize_blue" />
                   </div>
-                  <h3 className="text-lg font-bold mb-2 text-white">
+                  <h3 className="mb-2 text-lg font-bold text-white">
                     {f.title}
                   </h3>
-                  <p className="text-sm text-[#a1a2a5] leading-relaxed">
+                  <p className="text-sm leading-relaxed text-[#a1a2a5]">
                     {f.desc}
                   </p>
                 </motion.div>
@@ -900,7 +900,7 @@ const Hardware = () => {
             </div>
 
             <motion.div {...anim} className="text-center">
-              <span className="inline-block text-sm font-medium text-parkwize_blue bg-parkwize_blue/10 px-4 py-2">
+              <span className="inline-block bg-parkwize_blue/10 px-4 py-2 text-sm font-medium text-parkwize_blue">
                 {ui.compatibility}
               </span>
             </motion.div>
@@ -948,24 +948,24 @@ const Hardware = () => {
         </section> */}
 
         {/* ===== PRODUCT SHOWCASE ===== */}
-        <section className="py-14 md:py-24 px-6">
-          <div className="max-w-7xl mx-auto">
-            <motion.div {...anim} className="text-center mb-16">
-              <p className="text-sm font-semibold uppercase tracking-widest text-parkwize_blue mb-3">
+        <section className="px-6 py-14 md:py-24">
+          <div className="mx-auto max-w-7xl">
+            <motion.div {...anim} className="mb-16 text-center">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-parkwize_blue">
                 {ui.equipmentTag}
               </p>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+              <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl">
                 {ui.equipmentTitle}{" "}
                 <span className="text-parkwize_blue">
                   {ui.equipmentTitleAccent}
                 </span>
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
                 {ui.equipmentDescription}
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid gap-8 md:grid-cols-2">
               {localizedProducts.map((product, i) => (
                 <motion.div
                   key={product.name}
@@ -973,28 +973,28 @@ const Hardware = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-2xl border border-border bg-card overflow-hidden group hover:border-parkwize_blue/40 hover:shadow-xl hover:shadow-parkwize_blue/5 transition-all duration-300"
+                  className="group overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-parkwize_blue/40 hover:shadow-xl hover:shadow-parkwize_blue/5"
                 >
                   {/* Product visual */}
-                  <div className="relative aspect-[4/3] bg-secondary/50 overflow-hidden">
+                  <div className="bg-secondary/50 relative aspect-[4/3] overflow-hidden">
                     {product.image ? (
                       <Image
                         src={product.image}
                         alt={product.name}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
                       <div className="h-full w-full bg-secondary" />
                     )}
                     {product.type === "3d" && (
-                      <div className="absolute top-4 right-4 bg-parkwize_blue/90 text-white text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm">
+                      <div className="absolute right-4 top-4 rounded-full bg-parkwize_blue/90 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
                         {ui.model3d}
                       </div>
                     )}
                     {product.type === "image" && (
-                      <div className="absolute top-4 right-4 bg-card/90 text-foreground text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm border border-border">
+                      <div className="bg-card/90 absolute right-4 top-4 rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground backdrop-blur-sm">
                         {ui.gallery}
                       </div>
                     )}
@@ -1002,15 +1002,15 @@ const Hardware = () => {
 
                   {/* Product info */}
                   <div className="p-6 lg:p-8">
-                    <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    <h3 className="mb-2 text-xl font-bold">{product.name}</h3>
+                    <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
                       {product.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {product.specs.map((spec) => (
                         <span
                           key={spec}
-                          className="text-xs font-medium bg-secondary text-secondary-foreground px-2.5 py-1 rounded-md"
+                          className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground"
                         >
                           {spec}
                         </span>
@@ -1066,29 +1066,29 @@ const Hardware = () => {
         </section> */}
 
         {/* ===== FINAL CTA ===== */}
-        <section className="py-10 md:py-12 px-6 bg-parkwize_blue">
+        <section className="bg-parkwize_blue px-6 py-10 md:py-12">
           <motion.div
             {...anim}
-            className=" mx-auto text-center rounded-3xl  p-12 md:p-16 px-0 lg:px-12"
+            className="mx-auto rounded-3xl p-12 px-0 text-center md:p-16 lg:px-12"
           >
-            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-white/70 mb-4">
+            <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-widest text-white/70">
               {ui.finalTag}
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
               {ui.finalTitle}
             </h2>
-            <p className="text-white/80 mb-8 max-w-xl mx-auto">
+            <p className="mx-auto mb-8 max-w-xl text-white/80">
               {ui.finalDescription}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button
                 asChild
                 size="lg"
                 variant="secondary"
-                className="text-base px-8"
+                className="px-8 text-base"
               >
                 <Link href="#process-contact-form">
-                  {ui.requestDemo} <ArrowRight className="ml-2 w-4 h-4" />
+                  {ui.requestDemo} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>

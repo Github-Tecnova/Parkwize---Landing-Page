@@ -138,6 +138,7 @@
     --glass-pill: rgba(255, 255, 255, 0.66);
     --glass-pill-border: rgba(255, 255, 255, 0.85);
     --maple-red: #d80621;
+    --night: #000000;
     --deck-tint: rgba(0, 108, 255, 0.06);
     --shadow-media:
       0 30px 60px -30px rgba(2, 12, 51, 0.35),
@@ -464,6 +465,14 @@
       ellipse at center,
       rgba(0, 0, 0, 0.24),
       transparent 70%
+    );
+  }
+
+  .night-fade {
+    background: linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--night) 76%, transparent),
+      var(--night) 92%
     );
   }
 

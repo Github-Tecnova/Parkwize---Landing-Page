@@ -16,6 +16,11 @@ export type ClosingCtaDictionary = DictionaryType["closingCta"];
 
 export type HomeDictionary = DictionaryType["home"];
 
+export type ProductCardsDictionary = DictionaryType["productCards"];
+
+export type DashboardDictionary =
+  DictionaryType["products"]["dashboardManager"];
+
 const dictionaries: Record<Locale, () => Promise<DictionaryType>> = {
   en: () => import("./en.json").then((module) => module.default),
   fr: () => import("./fr.json").then((module) => module.default),

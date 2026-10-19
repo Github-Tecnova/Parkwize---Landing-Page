@@ -40,11 +40,15 @@ export default async function HomePage({ params }: HomePageProps) {
     <>
       <HomeHero locale={locale} dict={home.hero} />
       <HomeStats dict={home.stats} />
-      <HomeEcosystem locale={locale} dict={home.ecosystem} />
+      <HomeEcosystem
+        locale={locale}
+        dict={home.ecosystem}
+        cards={dict.productCards}
+      />
       <HomeOs locale={locale} dict={home.os} />
       <HomeAi locale={locale} dict={home.ai} />
       <HomeBooking locale={locale} dict={home.booking} sectors={home.sectors} />
-      <MarqueeBand words={home.marquee} />
+      <MarqueeBand words={dict.marquee} />
       <ClosingCta locale={locale} dict={dict.closingCta} />
     </>
   );

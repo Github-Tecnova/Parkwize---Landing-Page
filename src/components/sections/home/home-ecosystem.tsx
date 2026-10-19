@@ -8,7 +8,7 @@ import { PointerSpotlight } from "@/components/motion/pointer-spotlight";
 import { Reveal } from "@/components/motion/reveal";
 import { ProductIndex } from "@/components/sections/product-index";
 import { ButtonLink } from "@/components/ui/button-link";
-import { HomeDictionary } from "@/content/dictionary";
+import { HomeDictionary, ProductCardsDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
 import { DEMO_HREF, PRODUCT_LINKS } from "@/lib/navigation";
 import { PRODUCT_VISUALS } from "@/lib/product-media";
@@ -17,13 +17,14 @@ import { OrbitRow } from "./orbit-row";
 type HomeEcosystemProps = {
   locale: Locale;
   dict: HomeDictionary["ecosystem"];
+  cards: ProductCardsDictionary;
 };
 
-export function HomeEcosystem({ locale, dict }: HomeEcosystemProps) {
+export function HomeEcosystem({ locale, dict, cards }: HomeEcosystemProps) {
   const tiles = PRODUCT_LINKS.map(({ key }) => ({
     key,
     media: PRODUCT_VISUALS[key],
-    caption: dict.items[key].name,
+    caption: cards[key].name,
   }));
 
   return (
@@ -50,11 +51,7 @@ export function HomeEcosystem({ locale, dict }: HomeEcosystemProps) {
 
       <Container className="relative z-[1] mt-6 sm:mt-10">
         <Reveal>
-          <ProductIndex
-            locale={locale}
-            label={dict.indexLabel}
-            items={dict.items}
-          />
+          <ProductIndex locale={locale} label={dict.indexLabel} items={cards} />
         </Reveal>
         <div className="mt-11 flex justify-center">
           <ButtonLink href={DEMO_HREF} locale={locale} withArrow>

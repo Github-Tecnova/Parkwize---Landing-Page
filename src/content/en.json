@@ -1246,37 +1246,7 @@
       "title": "The Parkwize *Ecosystem.*",
       "lead": "Connected solutions. One intelligent platform.",
       "cta": "Book a call",
-      "indexLabel": "Parkwize products",
-      "items": {
-        "dashboardManager": {
-          "name": "Parkwize Dashboard Manager",
-          "blurb": "Live KPIs, dynamic pricing and remote control for every site."
-        },
-        "parkwizeAi": {
-          "name": "Parkwize AI",
-          "blurb": "Forecasts and price adjustments that run themselves."
-        },
-        "digitalSignage": {
-          "name": "Parkwize Display",
-          "blurb": "Signage that updates with your data, in real time."
-        },
-        "onlineReservation": {
-          "name": "Parkwize Booking",
-          "blurb": "Online reservation platform for gated & gateless operations."
-        },
-        "enforcement": {
-          "name": "Parkwize Enforcement",
-          "blurb": "Plate recognition and session control, ticket-free."
-        },
-        "processKiosk": {
-          "name": "Process Kiosk",
-          "blurb": "Barriers, terminals and sensors built for 24/7 operation."
-        },
-        "parkAid": {
-          "name": "ParkAid",
-          "blurb": "Always-available assistance for drivers and teams."
-        }
-      }
+      "indexLabel": "Parkwize products"
     },
     "os": {
       "eyebrow": "Ours or Yours",
@@ -1475,13 +1445,162 @@
           "imageAlt": "A residential community parking area"
         }
       }
+    }
+  },
+  "productCards": {
+    "dashboardManager": {
+      "name": "Parkwize Dashboard Manager",
+      "blurb": "Live KPIs, dynamic pricing and remote control for every site."
     },
-    "marquee": [
-      "Smart parking",
-      "Dynamic pricing",
-      "Gateless access",
-      "Real-time data",
-      "Parking AI"
-    ]
+    "parkwizeAi": {
+      "name": "Parkwize AI",
+      "blurb": "Forecasts and price adjustments that run themselves."
+    },
+    "digitalSignage": {
+      "name": "Parkwize Display",
+      "blurb": "Signage that updates with your data, in real time."
+    },
+    "onlineReservation": {
+      "name": "Parkwize Booking",
+      "blurb": "Online reservation platform for gated & gateless operations."
+    },
+    "enforcement": {
+      "name": "Parkwize Enforcement",
+      "blurb": "Plate recognition and session control, ticket-free."
+    },
+    "processKiosk": {
+      "name": "Process Kiosk",
+      "blurb": "Barriers, terminals and sensors built for 24/7 operation."
+    },
+    "parkAid": {
+      "name": "ParkAid",
+      "blurb": "Always-available assistance for drivers and teams."
+    }
+  },
+  "marquee": [
+    "Smart parking",
+    "Dynamic pricing",
+    "Gateless access",
+    "Real-time data",
+    "Parking AI"
+  ],
+  "products": {
+    "dashboardManager": {
+      "meta": {
+        "title": "Dashboard Manager | Parkwize",
+        "description": "The operational brain of modern parking: one real-time dashboard that connects and controls every piece of equipment and software."
+      },
+      "hero": {
+        "eyebrow": "Parkwize Dashboard Manager",
+        "title": "Where Everything Connects.",
+        "lead": "The operational brain of modern parking: a centralized dashboard that links all your equipment and software in one real-time platform. It takes over command of everything.",
+        "cta": "Get in touch",
+        "videoLabel": "An operator working on his laptop overlooking the city"
+      },
+      "showcase": {
+        "label": "Parkwize dashboard overview",
+        "imageAlt": "Parkwize dashboard: revenue, live events, alerts, on-site performance and pricing",
+        "eyebrow": "One connected view",
+        "caption": "Revenue. Activity. Pricing. A general control board."
+      },
+      "summary": [
+        {
+          "value": "90+",
+          "title": "Live KPIs",
+          "body": "Every site's data, in one place."
+        },
+        {
+          "value": "24/7",
+          "title": "Remote control",
+          "body": "Stay in control from anywhere."
+        },
+        {
+          "value": "1",
+          "title": "Connected platform",
+          "body": "Hardware and software working together."
+        }
+      ],
+      "solution": {
+        "eyebrow": "The solution",
+        "title": "One Dashboard. Total Control.",
+        "lead": "Dashboard Manager is the single source of truth for every parking operation: fully remote, fully real-time, and deeply integrated with the entire Parkwize ecosystem.",
+        "photoAlt": "Two people reviewing the Parkwize dashboard on a tablet inside a parking garage",
+        "photoCaption": "Made for the people running the operation.",
+        "points": [
+          "90+ live KPIs: occupancy, revenue, traffic and more.",
+          "Dynamic pricing engine with calendars and pre-scheduled hours.",
+          "Automation flows and automated tasks across every lot and display.",
+          "Remote control of pricing, operations and events, from anywhere.",
+          "Custom TV displays designed in the built-in frame editor.",
+          "Simplified IoT and API connections. Deep integrations with major parking hardware: Process, TIBA, Global, Scheidt & Bachmann, and more."
+        ]
+      },
+      "features": {
+        "eyebrow": "Features",
+        "title": "What's *inside*.",
+        "mediaAlt": "An operator checking a site on his phone in a parking lot at dusk",
+        "mediaCaption": "Control every site from your phone",
+        "items": [
+          {
+            "title": "90+ Live KPIs",
+            "body": "Occupancy, revenue, traffic, turnover and stay length, refreshed in real time for every site and every lane."
+          },
+          {
+            "title": "Dynamic Pricing Engine",
+            "body": "Set rules once and let rates follow demand, events and time of day, with full control over floors and caps."
+          },
+          {
+            "title": "Pre-Scheduled Hours",
+            "body": "Plan rates and opening hours ahead with calendars, so holidays and events run without anyone on site."
+          },
+          {
+            "title": "Automated Tasks",
+            "body": "Trigger actions on kiosks, displays and barriers automatically when conditions are met, across every lot."
+          },
+          {
+            "title": "Remote Control",
+            "body": "Open a gate, change a rate or switch to sold-out mode from anywhere, in seconds, without a site visit."
+          },
+          {
+            "title": "Custom TV Displays",
+            "body": "Design pricing and wayfinding screens in the built-in frame editor and push them live to every display."
+          },
+          {
+            "title": "IoT & API Connection",
+            "body": "Connect sensors and third-party systems through simple IoT and API links, with native integrations for major hardware."
+          }
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Connected ecosystem",
+        "title": "Connected to *Everything.*"
+      },
+      "results": {
+        "eyebrow": "Results",
+        "title": "Measurable *Impact*",
+        "items": [
+          {
+            "value": "+35%",
+            "label": "Revenue Growth",
+            "body": "Average uplift with dynamic pricing"
+          },
+          {
+            "value": "10×",
+            "label": "Faster Decisions",
+            "body": "Real-time data replaces guesswork"
+          },
+          {
+            "value": "90+",
+            "label": "Live KPIs",
+            "body": "Complete operational visibility"
+          },
+          {
+            "value": "0",
+            "label": "Site Visits Needed",
+            "body": "Fully remote operations control"
+          }
+        ]
+      }
+    }
   }
 }

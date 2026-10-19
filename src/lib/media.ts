@@ -33,6 +33,11 @@ export const MEDIA = {
     },
   },
   product: {
+    dashboardMockup: {
+      src: "/images/product/dashboard-mockup.webp",
+      width: 1716,
+      height: 1846,
+    },
     heroLaptop: {
       src: "/images/product/hero-laptop.webp",
       width: 1108,
@@ -150,6 +155,16 @@ export const MEDIA = {
     },
   },
   people: {
+    dashboardOperatorPoster: {
+      src: "/images/people/dashboard-operator-poster.webp",
+      width: 1600,
+      height: 900,
+    },
+    dashboardIpad: {
+      src: "/images/people/dashboard-ipad.webp",
+      width: 1536,
+      height: 1024,
+    },
     heroTeam: {
       src: "/images/people/hero-team.webp",
       width: 1536,
@@ -264,6 +279,10 @@ export const VIDEOS = {
   heroBanner: [
     { src: "/videos/hero-banner.webm", type: "video/webm" },
     { src: "/videos/hero-banner.mp4", type: "video/mp4" },
+  ],
+  dashboardOperator: [
+    { src: "/videos/dashboard-operator.webm", type: "video/webm" },
+    { src: "/videos/dashboard-operator.mp4", type: "video/mp4" },
   ],
   bookingReady: [
     { src: "/videos/booking-ready.webm", type: "video/webm" },
