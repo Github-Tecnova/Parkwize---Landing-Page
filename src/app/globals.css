@@ -116,11 +116,36 @@
     --inverse-border: #232a3a;
     --inverse-hover: #ffffff;
     --success: #22c55e;
+
+    --surface: #ffffff;
+    --surface-muted: #f5f7fa;
+    --surface-border: #e4e8ee;
+    --deck-blue: #004fe6;
+    --deck-bright: #006cff;
+    --deck-strong: #0047cf;
+    --parking-midnight: #000c38;
+    --parking-blue: #002fb7;
+    --ink: #061329;
+    --copy: #3f4b5b;
+    --hairline: #cfd9e3;
+    --parking-line: rgba(0, 47, 183, 0.09);
+    --bay-grid-line: rgba(18, 71, 191, 0.1);
+    --panel-deep: #020b2e;
+    --panel-mid: #0a2a8a;
+    --panel-bright: #0b4bdc;
+    --panel-rule: rgba(255, 255, 255, 0.16);
+    --panel-tile: rgba(255, 255, 255, 0.1);
+    --glass-pill: rgba(255, 255, 255, 0.66);
+    --glass-pill-border: rgba(255, 255, 255, 0.85);
+    --maple-red: #d80621;
+    --deck-tint: rgba(0, 108, 255, 0.06);
+    --shadow-media:
+      0 30px 60px -30px rgba(2, 12, 51, 0.35),
+      0 12px 24px -12px rgba(2, 12, 51, 0.18);
+
     --glass-shadow:
       0 1px 0 0 var(--glass-highlight) inset,
-      0 0 0 1px rgba(10, 9, 8, 0.06),
-      0 8px 32px -8px rgba(10, 9, 8, 0.18),
-      0 2px 6px -2px rgba(10, 9, 8, 0.08);
+      0 8px 32px -8px rgba(2, 12, 51, 0.22), 0 2px 6px -2px rgba(10, 9, 8, 0.08);
 
     --top-bar-height: 3.5rem;
     --top-bar-gap: 0.75rem;
@@ -221,22 +246,247 @@
 }
 
 @layer components {
+  .kicker {
+    @apply font-sans text-xs font-extrabold uppercase leading-normal tracking-[0.08em];
+  }
+
   .eyebrow {
     @apply font-mono text-[0.6875rem] font-medium uppercase leading-5 tracking-[0.16em];
   }
 
   .glass {
     background-color: var(--glass-bg);
-    border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
     backdrop-filter: blur(24px) saturate(180%);
   }
 
-  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  @supports not (
+    (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+  ) {
     .glass {
       background-color: var(--glass-bg-fallback);
     }
+  }
+
+  .under-top-bar {
+    margin-top: calc(var(--top-bar-offset) * -1);
+    padding-top: calc(var(--top-bar-offset) + 3rem);
+  }
+
+  .bg-hero-fade {
+    background: linear-gradient(
+      180deg,
+      var(--parking-midnight) 0%,
+      var(--parking-blue) 7%,
+      color-mix(in oklab, var(--parking-blue) 62%, var(--surface)) 14%,
+      color-mix(in oklab, var(--parking-blue) 30%, var(--surface)) 22%,
+      color-mix(in oklab, var(--parking-blue) 12%, var(--surface)) 32%,
+      color-mix(in oklab, var(--parking-blue) 4%, var(--surface)) 42%,
+      var(--surface) 52%,
+      var(--surface) 100%
+    );
+  }
+
+  .bg-dot-grid {
+    background-image: radial-gradient(
+      circle at center,
+      var(--parking-line) 1px,
+      transparent 1.5px
+    );
+    background-size: 26px 26px;
+  }
+
+  .bg-dot-grid-sm {
+    background-image: radial-gradient(
+      circle at center,
+      var(--parking-line) 1px,
+      transparent 1.5px
+    );
+    background-size: 24px 24px;
+  }
+
+  .bg-bay-lines,
+  .bg-bay-grid {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .bg-bay-lines::before,
+  .bg-bay-grid::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .bg-bay-lines::before {
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent 0 290px,
+      var(--parking-line) 290px 292px
+    );
+    opacity: 0.45;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 24%,
+      black 66%,
+      transparent 96%
+    );
+  }
+
+  .bg-bay-grid {
+    overflow: hidden;
+  }
+
+  .bg-bay-grid::before {
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        transparent 0 144px,
+        var(--bay-grid-line) 144px 146px,
+        transparent 146px 288px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent 0 218px,
+        var(--bay-grid-line) 218px 220px,
+        transparent 220px 440px
+      );
+    transform: skewY(-7deg) scale(1.2);
+    opacity: 0.4;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 5%,
+      black 35%,
+      black 70%,
+      transparent 95%
+    );
+  }
+
+  .pointer-spot {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(
+      circle 260px at var(--pointer-x, 50%) var(--pointer-y, 45%),
+      color-mix(in oklab, var(--parking-blue) 8%, transparent),
+      transparent 100%
+    );
+    transition: opacity 0.35s ease;
+  }
+
+  .hub-line {
+    fill: none;
+    stroke: color-mix(in oklab, var(--deck-blue) 22%, transparent);
+    stroke-width: 1.5;
+  }
+
+  .hub-flow {
+    fill: none;
+    stroke: var(--deck-blue);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-dasharray: 4 46;
+    filter: drop-shadow(0 0 3px var(--deck-blue));
+  }
+
+  .hub-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 112%;
+    aspect-ratio: 1;
+    border-radius: 9999px;
+    border: 1px solid color-mix(in oklab, var(--deck-blue) 30%, transparent);
+    background: radial-gradient(
+      circle,
+      color-mix(in oklab, var(--deck-blue) 12%, transparent),
+      transparent 62%
+    );
+    transform: translate(-50%, -50%);
+  }
+
+  .hub-dot {
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--success) 30%, transparent);
+  }
+
+  .hub-label {
+    border: 1px solid color-mix(in oklab, var(--deck-blue) 25%, transparent);
+    box-shadow: 0 6px 16px color-mix(in oklab, var(--ink) 7%, transparent);
+  }
+
+  .hub-tick {
+    background: linear-gradient(var(--deck-blue), transparent);
+  }
+
+  .shadow-deck {
+    box-shadow: 0 10px 24px
+      color-mix(in oklab, var(--deck-blue) 35%, transparent);
+  }
+
+  .ai-panel {
+    background:
+      radial-gradient(
+        120% 80% at 0% 0%,
+        color-mix(in oklab, var(--deck-bright) 35%, transparent),
+        transparent 60%
+      ),
+      linear-gradient(
+        135deg,
+        var(--panel-deep),
+        var(--panel-mid) 70%,
+        var(--panel-bright)
+      );
+    box-shadow: 0 40px 80px -40px
+      color-mix(in oklab, var(--deck-bright) 55%, transparent);
+  }
+
+  .glass-pill {
+    background-color: var(--glass-pill);
+    border: 1px solid var(--glass-pill-border);
+    box-shadow: 0 10px 24px color-mix(in oklab, var(--ink) 7%, transparent);
+    -webkit-backdrop-filter: blur(12px) saturate(1.15);
+    backdrop-filter: blur(12px) saturate(1.15);
+  }
+
+  .glass-pill:hover {
+    border-color: var(--hairline);
+    box-shadow: 0 20px 40px color-mix(in oklab, var(--ink) 12%, transparent);
+  }
+
+  .car-shadow {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.24),
+      transparent 70%
+    );
+  }
+
+  .text-gradient-ink {
+    color: var(--ink);
+  }
+
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .text-gradient-ink {
+      background-image: linear-gradient(
+        180deg,
+        var(--ink) 20%,
+        var(--deck-bright) 130%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  .text-outline-brand {
+    color: transparent;
+    -webkit-text-stroke: 1.2px var(--deck-blue);
   }
 }
 

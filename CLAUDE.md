@@ -72,6 +72,16 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 - Small uppercase mono labels (column titles, eyebrows, meta text): the `eyebrow` class from `globals.css`.
 - Link lists: `FooterColumn` from `@/components/layout/footer/footer-column` handles internal (localized) and external links.
 - Site URLs and page lists (`SIGN_IN_URL`, `DEMO_URL`, `BOOK_CALL_HREF`, `PRODUCT_LINKS`, `LEGAL_LINKS`): `@/lib/navigation`. Never hardcode them in components.
+- Page sections: `Section` (surface `default | muted | inverse`, consistent vertical rhythm) and `Container` from `@/components/layout/section`. Headings: `SectionHeader` (eyebrow, title, lead, actions).
+- Accented words in titles: wrap them in `*asterisks*` in the dictionary and render with `AccentText`. Never split titles into separate keys for styling.
+- CTAs as links: `ButtonLink` from `@/components/ui/button-link` (localized internal links, plain external links, optional arrow).
+- Scroll-in animation: `Reveal` from `@/components/motion/reveal`. Animated numbers: `CountUp`. Never animate whole pages with global scripts.
+- Images: reference them through `MEDIA` in `@/lib/media` (typed `src`, `width`, `height`) and always pass `sizes`. New images go in `public/images/<group>/` as optimized WebP. Product visuals per product: `PRODUCT_VISUALS` in `@/lib/product-media`. Product lists: `ProductIndex`.
+- Closing call to action at the end of every page: `ClosingCta` (P mark, Proudly Canadian, Porsche parked on the footer edge).
+- Section kickers: the `kicker` class (bold uppercase sans, `text-deck`). `eyebrow` (mono) is for footer and meta labels only.
+- Section textures (Lovable look): `bg-dot-grid` / `bg-dot-grid-sm`, `bg-bay-grid` (skewed parking bays), `bg-bay-lines` (hero verticals), `bg-hero-fade` (hero gradient), plus `PointerSpotlight` inside a positioned section. Sections stay white; texture carries the rhythm.
+- Looping videos: `AmbientVideo` with `VIDEOS` from `@/lib/media` (WebM first, MP4 fallback, poster, plays only in view). Long-running animations must pause off screen and under reduced motion.
+- A hero that sits under the glass top bar uses the `under-top-bar` class.
 - If the same markup appears twice, make it a component.
 
 ## 5. Design tokens
@@ -79,12 +89,16 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 All visual values come from CSS variables in `src/app/globals.css`, exposed through `tailwind.config.ts`.
 
 - Colors: use token classes (`bg-background`, `text-foreground`, `text-muted-foreground`, `bg-brand`, `text-brand-foreground`, `border-border`, ...). **No hex, `rgb()`, `hsl()` or arbitrary color values in components** (`bg-[#0658f6]` is forbidden). Need a new color? Add a token in `globals.css` and `tailwind.config.ts`.
+- Deck palette (from the brand deck): `deck` (`deck-bright`, `deck-tint`), `ink` for headings, `copy` for body text, `hairline` for rules, `ai-panel` for the blue AI panel.
 - Brand blue: `brand` (`--brand`). `parkwize_blue` and `primary_action` are legacy aliases; do not use them in new code.
 - Dark surfaces (footer, dark sections): the `inverse` palette (`bg-inverse`, `text-inverse-foreground`, `text-inverse-muted`, `border-inverse-border`, `hover:text-inverse-hover`).
 - Status colors: `success`.
 - Fonts: `font-sans` (Inter) for body text, `font-display` (Poppins) for headings and display text, `font-mono` (JetBrains Mono) only for small uppercase labels (prefer the `eyebrow` class). All come from `next/font` variables in `src/app/layout.tsx`. Never import fonts elsewhere.
 - Radius, shadows, blur: use the theme scale (`rounded-lg`, `shadow-glass`, ...). Arbitrary values are only acceptable for one-off geometry (e.g. a pill radius matching a fixed height).
 - Top bar spacing: `--top-bar-height` and `--top-bar-gap` let sections offset content below the floating bar.
+- Type scale: `text-display`, `text-h1`, `text-h2`, `text-h3`, `text-lead` (fluid, defined in `tailwind.config.ts` and registered in `cn()`). Use them instead of ad hoc font sizes.
+- Surfaces: `bg-surface`, `bg-surface-muted`, `border-surface-border`. Radii: `rounded-2xl` for cards and media, `rounded-3xl` for large panels, `rounded-full` for buttons and pills.
+- Colors are CSS variables, so Tailwind opacity modifiers (`bg-brand/20`) do not work on them. Use `opacity-*` or add a token.
 
 ## 6. Internationalization (FR / EN)
 

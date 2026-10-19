@@ -1156,6 +1156,14 @@
     "termsOfUse": {
       "name": "Terms of use",
       "description": "The terms that govern the use of Parkwize."
+    },
+    "demo": {
+      "name": "Book a demo",
+      "description": "See your whole parking operation in one view."
+    },
+    "contact": {
+      "name": "Contact",
+      "description": "Questions about your parking technology and operations."
     }
   },
   "footer": {
@@ -1177,5 +1185,303 @@
     "madeIn": "Proudly Canadian",
     "backToTop": "Back to top",
     "navLabel": "Footer"
+  },
+  "closingCta": {
+    "eyebrow": "We're here to help",
+    "title": "Need help with your parking *technology* and *operations*?",
+    "cta": "Get in Touch",
+    "madeIn": "Proudly Canadian"
+  },
+  "home": {
+    "meta": {
+      "title": "Parkwize | Intelligent Parking Platform",
+      "description": "Connect parking operations, hardware, data, AI, pricing, booking and enforcement in one intelligent ecosystem."
+    },
+    "hero": {
+      "titleLines": [
+        "Unlock 15%–",
+        "40% More",
+        "Revenue"
+      ],
+      "titleAccent": [
+        "from Your",
+        "Parking"
+      ],
+      "lead": "The first fully AI-powered parking intelligence ecosystem. Modernize operations, pricing, displays, booking, and more, all from one platform.",
+      "cta": "Get in Touch",
+      "videoLabel": "Parking operators reviewing live data together",
+      "dashboardAlt": "The Parkwize Dashboard Manager on a laptop"
+    },
+    "stats": {
+      "label": "Parkwize in numbers",
+      "items": [
+        {
+          "value": 90,
+          "prefix": "",
+          "suffix": "+",
+          "label": "Live KPIs"
+        },
+        {
+          "value": 50,
+          "prefix": "",
+          "suffix": "+",
+          "label": "Parking Lots Managed"
+        },
+        {
+          "value": 60,
+          "prefix": "",
+          "suffix": "K+",
+          "label": "Daily Data Events Analyzed"
+        },
+        {
+          "value": 90,
+          "prefix": "$",
+          "suffix": "M+",
+          "label": "Revenue Processed"
+        }
+      ]
+    },
+    "ecosystem": {
+      "eyebrow": "Our parking solution",
+      "title": "The Parkwize *Ecosystem.*",
+      "lead": "Connected solutions. One intelligent platform.",
+      "cta": "Book a call",
+      "indexLabel": "Parkwize products",
+      "items": {
+        "dashboardManager": {
+          "name": "Parkwize Dashboard Manager",
+          "blurb": "Live KPIs, dynamic pricing and remote control for every site."
+        },
+        "parkwizeAi": {
+          "name": "Parkwize AI",
+          "blurb": "Forecasts and price adjustments that run themselves."
+        },
+        "digitalSignage": {
+          "name": "Parkwize Display",
+          "blurb": "Signage that updates with your data, in real time."
+        },
+        "onlineReservation": {
+          "name": "Parkwize Booking",
+          "blurb": "Online reservation platform for gated & gateless operations."
+        },
+        "enforcement": {
+          "name": "Parkwize Enforcement",
+          "blurb": "Plate recognition and session control, ticket-free."
+        },
+        "processKiosk": {
+          "name": "Process Kiosk",
+          "blurb": "Barriers, terminals and sensors built for 24/7 operation."
+        },
+        "parkAid": {
+          "name": "ParkAid",
+          "blurb": "Always-available assistance for drivers and teams."
+        }
+      }
+    },
+    "os": {
+      "eyebrow": "Ours or Yours",
+      "title": "One engine. *Our ecosystem*, or yours.",
+      "lead": "Parkwize offers its own ecosystem, but it doesn't stop there: it connects to the systems already in place and acts as an engine that takes over command and control of your kiosks, cameras, displays and barriers, so you manage everything from one place.",
+      "modes": [
+        {
+          "label": "Ours",
+          "title": "The Parkwize suite, natively connected",
+          "body": "Hardware and software designed together: zero friction, total control."
+        },
+        {
+          "label": "Yours",
+          "title": "Your existing equipment, taken over",
+          "body": "Parkwize installs on top of your current command and control systems and unifies them."
+        }
+      ],
+      "hub": {
+        "eyebrow": "Parkwize",
+        "title": "The OS of modern *parking*",
+        "lead": "One brain. Nine connected systems, controlled in real time.",
+        "core": "Central control",
+        "coreAlt": "Parkwize Dashboard Manager, the central control of every connected system",
+        "nodes": {
+          "payment": "Payment terminals",
+          "display": "Digital displays",
+          "barriers": "Barriers",
+          "cameras": "Cameras",
+          "booking": "Online booking",
+          "enforcement": "Enforcement",
+          "intelligence": "Parkwize AI",
+          "callCenter": "Call center",
+          "kiosks": "Kiosks"
+        }
+      }
+    },
+    "ai": {
+      "logoAlt": "Parkwize AI",
+      "title": "The first *AI model* built for parking.",
+      "lead": "We are pioneers in artificial intelligence applied to parking. Our models, trained on over 8 years of real-world parking data, learn the unique behavior of each facility by analyzing more than 90 internal and external KPIs to predict demand, find the optimal rate and adjust prices in real time.",
+      "cta": "Explore Parkwize AI",
+      "capabilities": {
+        "forecasting": {
+          "title": "Forecasting AI",
+          "body": "The first artificial intelligence model designed to predict all parking data, from occupancy and revenue to traffic and demand, with unmatched accuracy."
+        },
+        "pricing": {
+          "title": "Dynamic Pricing AI",
+          "body": "Real-time price calculation and adjustment based on the simultaneous analysis of dozens of variables. Zero manual intervention, immediate results."
+        },
+        "conversational": {
+          "title": "Conversational AI",
+          "body": "Talk to your parking. Ask questions, get recommendations, and receive actionable insights, all through a natural language interface powered by AI."
+        },
+        "agent": {
+          "title": "AI Agent",
+          "body": "From adjusting kiosk settings and optimizing pricing across every channel to activating sold-out mode, updating digital displays, and managing daily workflows, your AI agent handles the manual tasks across your entire operation."
+        }
+      },
+      "sources": {
+        "title": "Integrated Data Sources",
+        "lead": "Our AI continuously ingests and cross-references dozens of data sources to generate optimal forecasts and pricing.",
+        "items": {
+          "weather": {
+            "title": "Real-Time Weather",
+            "body": "Temperature, precipitation, 7-day forecasts"
+          },
+          "events": {
+            "title": "Local Events",
+            "body": "Concerts, sports, conferences, festivals"
+          },
+          "traffic": {
+            "title": "Traffic Data",
+            "body": "Google Maps data, congestion, route patterns"
+          },
+          "history": {
+            "title": "Parking History",
+            "body": "Demand cycles, seasonal patterns"
+          },
+          "venues": {
+            "title": "Ticketing & Buildings",
+            "body": "Traffic from nearby platforms and venues"
+          },
+          "revenue": {
+            "title": "Revenue Patterns",
+            "body": "Revenue trends, peaks and troughs"
+          }
+        }
+      },
+      "chat": {
+        "eyebrow": "*Chat* with your parking",
+        "title": "Ask questions. Delegate tasks.",
+        "lead": "The conversational agent answers questions about your data and executes operational tasks on your behalf.",
+        "placeholder": "Ask about your facility…",
+        "assistant": "Parkwize AI",
+        "you": "You",
+        "transcriptLabel": "Example conversation with Parkwize AI",
+        "conversation": [
+          {
+            "q": "How can you help me analyze my parkings?",
+            "a": [
+              "I read every facility live: occupancy, revenue, traffic, turnover, rates and incidents.",
+              "Ask in plain language and I compare your sites, flag anomalies and tell you what to change."
+            ]
+          },
+          {
+            "q": "Show the global overview of all my parkings.",
+            "a": [
+              "12 sites online. Occupancy 68%, revenue today $41,280, 3 sites at capacity.",
+              "Tour CIBC and Central Plateau run 9 points above last month. One site is under-priced in the evening."
+            ]
+          },
+          {
+            "q": "Analyze traffic and suggest optimizations.",
+            "a": [
+              "Peak arrivals 8:30–9:15 and 17:45–18:30 on weekdays.",
+              "Open the south lane 10 minutes earlier, extend the evening cap to 20:00 and move the 18:00 rate to $6.50."
+            ]
+          },
+          {
+            "q": "Which parking earned the most this month?",
+            "a": [
+              "Tour CIBC leads with $128,400, up 14% month over month.",
+              "Central Plateau follows at $96,100. The gap comes from weekday evening demand."
+            ]
+          },
+          {
+            "q": "Schedule a new rate starting at 4 p.m.",
+            "a": [
+              "Done. The $7.00 evening rate applies today from 16:00 at all 12 sites, fixed contracts aside.",
+              "Want me to preview the revenue impact before it goes live?"
+            ]
+          },
+          {
+            "q": "Automate a monthly revenue and occupancy report.",
+            "a": [
+              "Set up. On the 1st of each month at 07:00, I send a PDF and a spreadsheet with revenue, occupancy, average ticket and rate changes per site.",
+              "Should I copy your finance team?"
+            ]
+          },
+          {
+            "q": "Forecast occupancy and traffic for the next 7 days.",
+            "a": [
+              "Average occupancy 71%, peaking Friday 18:00–20:00 at 94%.",
+              "Rain on Wednesday will shift arrivals 20 minutes earlier. Hold the current rate until Thursday."
+            ]
+          },
+          {
+            "q": "Suggest dynamic pricing structures across all my sites.",
+            "a": [
+              "Three fit your data: a base rate with a demand multiplier for offices, event surge pricing near arenas, and a flat weekend cap for retail.",
+              "Applied as-is, the model projects +11% revenue and +4 points of occupancy."
+            ]
+          }
+        ]
+      },
+      "outcome": "Automatic and continuous optimization.",
+      "outcomeCta": "Get in Touch",
+      "photoAlt": "A parking operations team reviewing forecasts together",
+      "screenAlt": "Parkwize AI answering a question about revenue"
+    },
+    "booking": {
+      "title": "A modern *booking platform*, built for conversion.",
+      "lead": "For parking facilities with or without barriers. Designed to outrank the competition on Google and efficiently turn demand into bookings.",
+      "features": [
+        "Ultra-fast booking, designed for mobile",
+        "Secure payments (Apple Pay, Google Pay, etc.)",
+        "Fully customizable to your brand",
+        "Synced in real time with the Dashboard Manager"
+      ],
+      "cta": "Explore Online Booking",
+      "videoLabel": "A driver booking a parking spot on her phone",
+      "phoneAlt": "The Parkwize booking flow on a phone"
+    },
+    "sectors": {
+      "eyebrow": "Who we serve",
+      "items": {
+        "airports": {
+          "title": "Airports",
+          "body": "Queues that clear themselves, even at peak.",
+          "imageAlt": "An airport parking structure"
+        },
+        "tenant": {
+          "title": "Tenant & Public Parking",
+          "body": "Every empty spot priced, sold and filled.",
+          "imageAlt": "A public parking garage"
+        },
+        "retail": {
+          "title": "Retail & Hospitality",
+          "body": "From the gate to the counter, zero friction.",
+          "imageAlt": "A hotel and retail parking entrance"
+        },
+        "residential": {
+          "title": "Residential Communities",
+          "body": "Residents in, everyone else out.",
+          "imageAlt": "A residential community parking area"
+        }
+      }
+    },
+    "marquee": [
+      "Smart parking",
+      "Dynamic pricing",
+      "Gateless access",
+      "Real-time data",
+      "Parking AI"
+    ]
   }
 }

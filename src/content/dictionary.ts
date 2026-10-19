@@ -12,6 +12,10 @@ export type PagesDictionary = DictionaryType["pages"];
 
 export type FooterDictionary = DictionaryType["footer"];
 
+export type ClosingCtaDictionary = DictionaryType["closingCta"];
+
+export type HomeDictionary = DictionaryType["home"];
+
 const dictionaries: Record<Locale, () => Promise<DictionaryType>> = {
   en: () => import("./en.json").then((module) => module.default),
   fr: () => import("./fr.json").then((module) => module.default),

@@ -29,8 +29,36 @@ export default {
         display: ["var(--font-poppins)", "var(--font-inter)", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
+      fontSize: {
+        display: [
+          "clamp(2.5rem, 1.6rem + 3.4vw, 4.25rem)",
+          { lineHeight: "1.02", letterSpacing: "-0.035em" },
+        ],
+        h1: [
+          "clamp(2.25rem, 1.6rem + 2.9vw, 3.75rem)",
+          { lineHeight: "1.05", letterSpacing: "-0.03em" },
+        ],
+        h2: [
+          "clamp(1.875rem, 1.35rem + 2.2vw, 3.125rem)",
+          { lineHeight: "1.08", letterSpacing: "-0.025em" },
+        ],
+        h3: [
+          "clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem)",
+          { lineHeight: "1.25", letterSpacing: "-0.015em" },
+        ],
+        lead: [
+          "clamp(1.0625rem, 1rem + 0.3vw, 1.25rem)",
+          { lineHeight: "1.6" },
+        ],
+      },
+      dropShadow: {
+        media: "0 28px 36px rgba(2, 12, 51, 0.26)",
+        soft: "0 12px 18px rgba(2, 12, 51, 0.16)",
+      },
       boxShadow: {
         glass: "var(--glass-shadow)",
+        media: "var(--shadow-media)",
+        "card-deep": "0 30px 60px -30px rgba(2, 11, 46, 0.6)",
         shadow: "var(--shadow)",
         "shadow-s": "var(--shadow-s)",
         "shadow-m": "var(--shadow-m)",
@@ -73,6 +101,25 @@ export default {
           hover: "var(--inverse-hover)",
         },
         success: "var(--success)",
+        deck: {
+          DEFAULT: "var(--deck-blue)",
+          bright: "var(--deck-bright)",
+          strong: "var(--deck-strong)",
+          tint: "var(--deck-tint)",
+        },
+        ink: "var(--ink)",
+        copy: "var(--copy)",
+        hairline: "var(--hairline)",
+        maple: "var(--maple-red)",
+        panel: {
+          rule: "var(--panel-rule)",
+          tile: "var(--panel-tile)",
+        },
+        surface: {
+          DEFAULT: "var(--surface)",
+          muted: "var(--surface-muted)",
+          border: "var(--surface-border)",
+        },
         background: "var(--background)",
         foreground: "var(--foreground)",
         card: {
@@ -121,6 +168,26 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "hub-flow": {
+          from: { strokeDashoffset: "50" },
+          to: { strokeDashoffset: "0" },
+        },
+        "hub-pulse": {
+          "0%": {
+            transform: "translate(-50%, -50%) scale(0.7)",
+            opacity: "0.9",
+          },
+          "100%": {
+            transform: "translate(-50%, -50%) scale(1.15)",
+            opacity: "0",
+          },
+        },
+        blink: {
+          "50%": { opacity: "0.35" },
+        },
+        marquee: {
+          to: { transform: "translateX(-50%)" },
+        },
         "accordion-down": {
           from: {
             height: "0",
@@ -144,6 +211,10 @@ export default {
         },
       },
       animation: {
+        "hub-flow": "hub-flow 3.2s linear infinite",
+        "hub-pulse": "hub-pulse 3.6s ease-out infinite",
+        blink: "blink 1.6s ease-in-out infinite",
+        marquee: "marquee 40s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         scroll:

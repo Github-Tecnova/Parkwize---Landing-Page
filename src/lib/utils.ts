@@ -3,7 +3,7 @@
  */
 
 import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { extendTailwindMerge } from "tailwind-merge";
 import {
   addMonths,
   endOfMonth,
@@ -14,6 +14,14 @@ import {
   startOfWeek,
   subDays,
 } from "date-fns";
+
+const twMerge = extendTailwindMerge({
+  extend: {
+    classGroups: {
+      "font-size": [{ text: ["display", "h1", "h2", "h3", "lead"] }],
+    },
+  },
+});
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

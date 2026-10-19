@@ -31,6 +31,8 @@ const buttonVariants = cva(
         brand:
           "rounded-full bg-brand font-medium text-brand-foreground shadow-sm hover:bg-brand-hover active:scale-[0.97]",
         soft: "rounded-full font-medium text-foreground hover:bg-glass-hover active:scale-95",
+        subtle:
+          "rounded-full border border-surface-border bg-surface font-medium text-foreground shadow-sm hover:bg-surface-muted active:scale-[0.97]",
       },
       size: {
         default: "h-9 px-4 py-2",
@@ -39,6 +41,7 @@ const buttonVariants = cva(
         icon: "min-h-9 min-w-9 max-h-9 max-w-9",
         "icon-lg": "size-11 rounded-full",
         pill: "h-11 rounded-full px-4 sm:px-5",
+        "pill-lg": "h-12 rounded-full px-6 text-[0.9375rem]",
       },
     },
     defaultVariants: {

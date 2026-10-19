@@ -1140,6 +1140,14 @@
     "termsOfUse": {
       "name": "Conditions d'utilisation",
       "description": "Les conditions qui encadrent l'utilisation de Parkwize."
+    },
+    "demo": {
+      "name": "Réserver une démo",
+      "description": "Voyez toute votre exploitation en une seule vue."
+    },
+    "contact": {
+      "name": "Nous joindre",
+      "description": "Des questions sur votre technologie et vos opérations ?"
     }
   },
   "footer": {
@@ -1161,5 +1169,303 @@
     "madeIn": "Fièrement canadien",
     "backToTop": "Haut de page",
     "navLabel": "Pied de page"
+  },
+  "closingCta": {
+    "eyebrow": "Nous sommes là pour vous",
+    "title": "Besoin d'aide avec votre *technologie* et vos *opérations* ?",
+    "cta": "Nous joindre",
+    "madeIn": "Fièrement canadien"
+  },
+  "home": {
+    "meta": {
+      "title": "Parkwize | Plateforme intelligente de stationnement",
+      "description": "Connectez vos opérations, vos équipements, vos données, l'IA, la tarification, les réservations et le contrôle dans un seul écosystème intelligent."
+    },
+    "hero": {
+      "titleLines": [
+        "Générez de",
+        "15 à 40 % plus",
+        "de revenus"
+      ],
+      "titleAccent": [
+        "avec votre",
+        "stationnement"
+      ],
+      "lead": "Le premier écosystème d'intelligence du stationnement entièrement propulsé par l'IA. Modernisez vos opérations, votre tarification, votre affichage, vos réservations et plus encore, depuis une seule plateforme.",
+      "cta": "Nous joindre",
+      "videoLabel": "Des gestionnaires de stationnement consultent des données en direct",
+      "dashboardAlt": "Le gestionnaire de tableau de bord Parkwize sur un ordinateur portable"
+    },
+    "stats": {
+      "label": "Parkwize en chiffres",
+      "items": [
+        {
+          "value": 90,
+          "prefix": "",
+          "suffix": "+",
+          "label": "KPI en direct"
+        },
+        {
+          "value": 50,
+          "prefix": "",
+          "suffix": "+",
+          "label": "Stationnements gérés"
+        },
+        {
+          "value": 60,
+          "prefix": "",
+          "suffix": " k+",
+          "label": "Données analysées par jour"
+        },
+        {
+          "value": 90,
+          "prefix": "",
+          "suffix": " M$+",
+          "label": "Revenus traités"
+        }
+      ]
+    },
+    "ecosystem": {
+      "eyebrow": "Notre solution de stationnement",
+      "title": "L'écosystème *Parkwize.*",
+      "lead": "Des solutions connectées. Une plateforme intelligente.",
+      "cta": "Réserver un appel",
+      "indexLabel": "Produits Parkwize",
+      "items": {
+        "dashboardManager": {
+          "name": "Gestionnaire de tableau de bord Parkwize",
+          "blurb": "KPI en direct, tarification dynamique et pilotage à distance."
+        },
+        "parkwizeAi": {
+          "name": "Parkwize IA",
+          "blurb": "Des prévisions et des prix ajustés sans intervention."
+        },
+        "digitalSignage": {
+          "name": "Affichage Parkwize",
+          "blurb": "Des enseignes mises à jour avec vos données, en direct."
+        },
+        "onlineReservation": {
+          "name": "Réservation Parkwize",
+          "blurb": "Plateforme de réservation en ligne pour exploitations avec ou sans barrière."
+        },
+        "enforcement": {
+          "name": "Contrôle Parkwize",
+          "blurb": "Lecture de plaques et suivi des sessions, sans billet."
+        },
+        "processKiosk": {
+          "name": "Borne Process",
+          "blurb": "Barrières, bornes et capteurs conçus pour tourner 24/7."
+        },
+        "parkAid": {
+          "name": "ParkAid",
+          "blurb": "Une assistance toujours disponible, côté conducteurs et équipes."
+        }
+      }
+    },
+    "os": {
+      "eyebrow": "Le nôtre ou le vôtre",
+      "title": "Un seul moteur. *Notre écosystème*, ou le vôtre.",
+      "lead": "Parkwize offre son propre écosystème, mais il ne s'arrête pas là : il se connecte aux systèmes déjà en place et agit comme un moteur qui prend le contrôle des commandes de vos bornes, caméras, affichages et barrières, pour tout piloter depuis un seul endroit.",
+      "modes": [
+        {
+          "label": "Notre écosystème",
+          "title": "La suite Parkwize, nativement connectée",
+          "body": "Matériel et logiciels conçus ensemble : zéro friction, contrôle total."
+        },
+        {
+          "label": "Vos systèmes",
+          "title": "Vos équipements existants, repris en main",
+          "body": "Parkwize s'installe par-dessus vos systèmes de commande et de contrôle actuels et les unifie."
+        }
+      ],
+      "hub": {
+        "eyebrow": "Parkwize",
+        "title": "Le système d'exploitation du *stationnement* moderne",
+        "lead": "Un seul cerveau. Neuf systèmes connectés, pilotés en temps réel.",
+        "core": "Contrôle central",
+        "coreAlt": "Le gestionnaire de tableau de bord Parkwize, contrôle central de tous les systèmes connectés",
+        "nodes": {
+          "payment": "Terminaux de paiement",
+          "display": "Affichage dynamique",
+          "barriers": "Barrières",
+          "cameras": "Caméras",
+          "booking": "Réservation en ligne",
+          "enforcement": "Contrôle",
+          "intelligence": "Parkwize IA",
+          "callCenter": "Centre d'appels",
+          "kiosks": "Bornes"
+        }
+      }
+    },
+    "ai": {
+      "logoAlt": "Parkwize IA",
+      "title": "Le premier *modèle d'IA* conçu pour le stationnement.",
+      "lead": "Nous sommes pionniers de l'intelligence artificielle appliquée au stationnement. Entraînés sur plus de 8 ans de données réelles, nos modèles apprennent le comportement unique de chaque site en analysant plus de 90 KPI internes et externes pour prévoir la demande, trouver le tarif optimal et ajuster les prix en temps réel.",
+      "cta": "Découvrir Parkwize IA",
+      "capabilities": {
+        "forecasting": {
+          "title": "IA de prévision",
+          "body": "Le premier modèle d'intelligence artificielle conçu pour prévoir toutes les données de stationnement, de l'occupation aux revenus en passant par le trafic et la demande, avec une précision inégalée."
+        },
+        "pricing": {
+          "title": "IA de tarification dynamique",
+          "body": "Calcul et ajustement des prix en temps réel grâce à l'analyse simultanée de dizaines de variables. Aucune intervention manuelle, des résultats immédiats."
+        },
+        "conversational": {
+          "title": "IA conversationnelle",
+          "body": "Parlez à votre stationnement. Posez des questions, obtenez des recommandations et des analyses concrètes, le tout en langage naturel grâce à l'IA."
+        },
+        "agent": {
+          "title": "Agent IA",
+          "body": "Du réglage des bornes à l'optimisation des tarifs sur chaque canal, en passant par le mode complet, l'affichage dynamique et les tâches quotidiennes, votre agent IA prend en charge le travail manuel de toute votre exploitation."
+        }
+      },
+      "sources": {
+        "title": "Sources de données intégrées",
+        "lead": "Notre IA intègre et croise en continu des dizaines de sources de données pour générer les meilleures prévisions et les meilleurs tarifs.",
+        "items": {
+          "weather": {
+            "title": "Météo en temps réel",
+            "body": "Température, précipitations, prévisions sur 7 jours"
+          },
+          "events": {
+            "title": "Événements locaux",
+            "body": "Concerts, sports, congrès, festivals"
+          },
+          "traffic": {
+            "title": "Données de circulation",
+            "body": "Données Google Maps, congestion, itinéraires"
+          },
+          "history": {
+            "title": "Historique du stationnement",
+            "body": "Cycles de demande, tendances saisonnières"
+          },
+          "venues": {
+            "title": "Billetterie et bâtiments",
+            "body": "Achalandage des plateformes et lieux voisins"
+          },
+          "revenue": {
+            "title": "Tendances de revenus",
+            "body": "Évolution, pointes et creux des revenus"
+          }
+        }
+      },
+      "chat": {
+        "eyebrow": "*Discutez* avec votre stationnement",
+        "title": "Posez des questions. Confiez des tâches.",
+        "lead": "L'agent conversationnel répond aux questions sur vos données et exécute des tâches opérationnelles à votre place.",
+        "placeholder": "Posez une question sur votre site…",
+        "assistant": "Parkwize IA",
+        "you": "Vous",
+        "transcriptLabel": "Exemple de conversation avec Parkwize IA",
+        "conversation": [
+          {
+            "q": "Comment pouvez-vous m'aider à analyser mes stationnements ?",
+            "a": [
+              "Je lis chaque site en direct : occupation, revenus, trafic, rotation, tarifs et incidents.",
+              "Posez votre question en langage courant : je compare vos sites, signale les anomalies et vous dis quoi ajuster."
+            ]
+          },
+          {
+            "q": "Affichez le bilan global de tous mes stationnements.",
+            "a": [
+              "12 sites en ligne. Occupation de 68 %, revenus du jour de 41 280 $, 3 sites complets.",
+              "Tour CIBC et Central Plateau dépassent le mois dernier de 9 points. Un site est sous-tarifé en soirée."
+            ]
+          },
+          {
+            "q": "Analysez le trafic et proposez des optimisations.",
+            "a": [
+              "Pointes d'arrivées de 8 h 30 à 9 h 15 et de 17 h 45 à 18 h 30 en semaine.",
+              "Ouvrez la voie sud 10 minutes plus tôt, prolongez le plafond du soir jusqu'à 20 h et passez le tarif de 18 h à 6,50 $."
+            ]
+          },
+          {
+            "q": "Quel stationnement a le plus rapporté ce mois-ci ?",
+            "a": [
+              "Tour CIBC arrive en tête avec 128 400 $, en hausse de 14 % sur un mois.",
+              "Central Plateau suit avec 96 100 $. L'écart vient de la demande en soirée la semaine."
+            ]
+          },
+          {
+            "q": "Planifiez un nouveau tarif à partir de 16 h.",
+            "a": [
+              "C'est fait. Le tarif de soirée de 7,00 $ s'applique dès 16 h aujourd'hui sur les 12 sites, hors contrats fixes.",
+              "Voulez-vous que je simule l'effet sur les revenus avant la mise en ligne ?"
+            ]
+          },
+          {
+            "q": "Automatisez un rapport mensuel des revenus et de l'occupation.",
+            "a": [
+              "C'est configuré. Le 1er de chaque mois à 7 h, j'envoie un PDF et un tableur : revenus, occupation, ticket moyen et changements de tarif par site.",
+              "Dois-je ajouter votre équipe des finances en copie ?"
+            ]
+          },
+          {
+            "q": "Prévoyez l'occupation et le trafic des 7 prochains jours.",
+            "a": [
+              "Occupation moyenne de 71 %, avec une pointe à 94 % vendredi entre 18 h et 20 h.",
+              "La pluie mercredi avancera les arrivées de 20 minutes. Conservez le tarif actuel jusqu'à jeudi."
+            ]
+          },
+          {
+            "q": "Proposez des structures de prix dynamiques pour tous mes sites.",
+            "a": [
+              "Trois structures correspondent à vos données : un tarif de base avec multiplicateur de demande pour les bureaux, une majoration lors des événements près des arénas et un plafond fixe la fin de semaine pour le commerce.",
+              "Appliquées telles quelles, le modèle prévoit +11 % de revenus et +4 points d'occupation."
+            ]
+          }
+        ]
+      },
+      "outcome": "Une optimisation automatique et continue.",
+      "outcomeCta": "Nous joindre",
+      "photoAlt": "Une équipe d'exploitation analyse des prévisions ensemble",
+      "screenAlt": "Parkwize IA répond à une question sur les revenus"
+    },
+    "booking": {
+      "title": "Une *plateforme de réservation* moderne, optimisée pour la conversion.",
+      "lead": "Pour les stationnements avec ou sans barrière. Conçue pour devancer la concurrence sur Google et convertir efficacement la demande en réservations.",
+      "features": [
+        "Réservation ultrarapide, pensée pour le mobile",
+        "Paiements sécurisés (Apple Pay, Google Pay, etc.)",
+        "Entièrement personnalisable à votre image",
+        "Synchronisée en temps réel avec le gestionnaire de tableau de bord"
+      ],
+      "cta": "Découvrir la réservation en ligne",
+      "videoLabel": "Une conductrice réserve une place sur son téléphone",
+      "phoneAlt": "Le parcours de réservation Parkwize sur un téléphone"
+    },
+    "sectors": {
+      "eyebrow": "Qui nous servons",
+      "items": {
+        "airports": {
+          "title": "Aéroports",
+          "body": "Des files qui se résorbent d'elles-mêmes, même en pointe.",
+          "imageAlt": "Un stationnement étagé d'aéroport"
+        },
+        "tenant": {
+          "title": "Stationnements publics et locatifs",
+          "body": "Chaque place libre tarifée, vendue et occupée.",
+          "imageAlt": "Un stationnement public intérieur"
+        },
+        "retail": {
+          "title": "Commerce et hôtellerie",
+          "body": "De la barrière au comptoir, zéro friction.",
+          "imageAlt": "L'entrée d'un stationnement d'hôtel et de commerces"
+        },
+        "residential": {
+          "title": "Communautés résidentielles",
+          "body": "Les résidents entrent, les autres restent dehors.",
+          "imageAlt": "Le stationnement d'une communauté résidentielle"
+        }
+      }
+    },
+    "marquee": [
+      "Stationnement intelligent",
+      "Tarification dynamique",
+      "Accès sans barrière",
+      "Données en temps réel",
+      "IA du stationnement"
+    ]
   }
 }

@@ -7,7 +7,7 @@ import Link from "@/components/custom-ui/link";
 import { FooterDictionary, PagesDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
 import {
-  BOOK_CALL_HREF,
+  DEMO_HREF,
   DEMO_URL,
   LEGAL_LINKS,
   PageLink,
@@ -33,7 +33,7 @@ export function Footer({ locale, dict, pages }: FooterProps) {
     }));
 
   const getStartedLinks: FooterLinkItem[] = [
-    { label: dict.links.bookCall, href: BOOK_CALL_HREF },
+    { label: dict.links.bookCall, href: DEMO_HREF },
     { label: dict.links.exploreDemo, href: DEMO_URL, newTab: true },
     { label: dict.links.signIn, href: SIGN_IN_URL },
   ];

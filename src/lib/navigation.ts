@@ -8,7 +8,9 @@ import {
   LayoutDashboard,
   LifeBuoy,
   LucideIcon,
+  MessageSquare,
   MonitorPlay,
+  Presentation,
   ShieldCheck,
   Sparkles,
   Ticket,
@@ -21,7 +23,9 @@ export const DEMO_URL = "https://demo.parkwize.ai/app/dashboard";
 
 export const SYSTEM_STATUS_URL = "https://status.parkwizeinc.com";
 
-export const BOOK_CALL_HREF = "/#early-access-form";
+export const DEMO_HREF = "/demo";
+
+export const CONTACT_HREF = "/contact";
 
 export type ProductKey =
   | "dashboardManager"
@@ -34,7 +38,9 @@ export type ProductKey =
 
 export type LegalKey = "privacyPolicy" | "termsOfUse";
 
-export type PageKey = ProductKey | LegalKey;
+export type CompanyKey = "demo" | "contact";
+
+export type PageKey = ProductKey | LegalKey | CompanyKey;
 
 export type PageLink<Key extends PageKey = PageKey> = {
   key: Key;
@@ -57,7 +63,16 @@ export const LEGAL_LINKS: PageLink<LegalKey>[] = [
   { key: "termsOfUse", slug: "terms-of-use", Icon: FileText },
 ];
 
-export const COMING_SOON_LINKS: PageLink[] = [...PRODUCT_LINKS, ...LEGAL_LINKS];
+export const COMPANY_LINKS: PageLink<CompanyKey>[] = [
+  { key: "demo", slug: "demo", Icon: Presentation },
+  { key: "contact", slug: "contact", Icon: MessageSquare },
+];
+
+export const COMING_SOON_LINKS: PageLink[] = [
+  ...PRODUCT_LINKS,
+  ...LEGAL_LINKS,
+  ...COMPANY_LINKS,
+];
 
 export function findComingSoonPage(slug: string): PageLink | undefined {
   return COMING_SOON_LINKS.find((page) => page.slug === slug);

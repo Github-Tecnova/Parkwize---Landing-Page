@@ -1,38 +1,51 @@
 /*
- * Copyright (c) 2025. Tecnova
+ * Copyright (c) 2025-2026. Tecnova
  */
 
-import { getDictionary } from "@/content/dictionary";
-import LandingPage from "@/app/(landing)/landing-page";
 import { Metadata } from "next";
+import { ClosingCta } from "@/components/sections/closing-cta";
+import { HomeAi } from "@/components/sections/home/home-ai";
+import { HomeBooking } from "@/components/sections/home/home-booking";
+import { HomeEcosystem } from "@/components/sections/home/home-ecosystem";
+import { HomeHero } from "@/components/sections/home/home-hero";
+import { HomeOs } from "@/components/sections/home/home-os";
+import { HomeStats } from "@/components/sections/home/home-stats";
+import { MarqueeBand } from "@/components/sections/home/marquee-band";
+import { getDictionary } from "@/content/dictionary";
+import { resolveLocale } from "@/lib/i18n";
+
+type HomePageProps = {
+  params: Promise<{ lang: string }>;
+};
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ lang: string }>;
-}): Promise<Metadata> {
+}: HomePageProps): Promise<Metadata> {
   const { lang } = await params;
-  const locale = lang === "en" || lang === "fr" ? lang : "en";
-  const dict = await getDictionary(locale);
+  const { home } = await getDictionary(resolveLocale(lang));
 
   return {
-    title:
-      locale === "fr"
-        ? "Parkwize | Plateforme intelligente de stationnement"
-        : "Parkwize | Intelligent Parking Platform",
-    description: dict.homepage.landing.header.description,
+    title: home.meta.title,
+    description: home.meta.description,
   };
 }
 
-export default async function Home({
-  params,
-}: {
-  params: Promise<{ lang: string }>;
-}) {
+export default async function HomePage({ params }: HomePageProps) {
   const { lang } = await params;
-  const dict = await getDictionary(
-    lang === "en" || lang === "fr" ? lang : "en",
-  );
+  const locale = resolveLocale(lang);
+  const dict = await getDictionary(locale);
+  const { home } = dict;
 
-  return <LandingPage dict={dict} />;
+  return (
+    <>
+      <HomeHero locale={locale} dict={home.hero} />
+      <HomeStats dict={home.stats} />
+      <HomeEcosystem locale={locale} dict={home.ecosystem} />
+      <HomeOs locale={locale} dict={home.os} />
+      <HomeAi locale={locale} dict={home.ai} />
+      <HomeBooking locale={locale} dict={home.booking} sectors={home.sectors} />
+      <MarqueeBand words={home.marquee} />
+      <ClosingCta locale={locale} dict={dict.closingCta} />
+    </>
+  );
 }

@@ -69,7 +69,7 @@ export function TopBar({ locale, dict, pages }: TopBarProps) {
             >
               <ParkwizeLogo
                 title={dict.logoAlt}
-                className="w-[7.5rem] sm:w-[8.5rem]"
+                className="w-[6.75rem] min-[400px]:w-[7.5rem] sm:w-[8.5rem]"
               />
             </Link>
             <div className="flex items-center gap-0.5 sm:gap-1.5">
