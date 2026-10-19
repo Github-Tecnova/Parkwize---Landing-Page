@@ -22,7 +22,8 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 import { InfiniteMovingCardsCard } from "@/components/ui/infinite-moving-cards-card";
-import { getDictionary, LangType } from "@/content/dictionary";
+import { getDictionary } from "@/content/dictionary";
+import type { Locale } from "@/lib/i18n";
 
 interface EquipmentCardProps {
   title: string;
@@ -44,7 +45,7 @@ export default async function ProcessPage({
 }) {
   const { lang } = await params;
   const dict = await getDictionary(
-    lang === "en" || lang === "fr" ? (lang as LangType) : "en",
+    lang === "en" || lang === "fr" ? (lang as Locale) : "en",
   );
   const processDict = dict.processPage;
 

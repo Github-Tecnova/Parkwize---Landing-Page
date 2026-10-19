@@ -24,7 +24,12 @@ export default {
         "0": "0ms",
         "2000": "1800ms",
       },
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-poppins)", "var(--font-inter)", "sans-serif"],
+      },
       boxShadow: {
+        glass: "var(--glass-shadow)",
         shadow: "var(--shadow)",
         "shadow-s": "var(--shadow-s)",
         "shadow-m": "var(--shadow-m)",
@@ -48,6 +53,17 @@ export default {
         primary_action: "#5486ff",
         primary_action_dark: "#466bcd",
         parkwize_blue: "#0658f6",
+        brand: {
+          DEFAULT: "var(--brand)",
+          hover: "var(--brand-hover)",
+          foreground: "var(--brand-foreground)",
+          soft: "var(--brand-soft)",
+        },
+        glass: {
+          hover: "var(--glass-hover)",
+          divider: "var(--glass-divider)",
+        },
+        scrim: "var(--scrim)",
         background: "var(--background)",
         foreground: "var(--foreground)",
         card: {
@@ -59,7 +75,7 @@ export default {
           foreground: "var(--popover-foreground)",
         },
         primary: {
-          DEFAULT: "var(--primary))",
+          DEFAULT: "var(--primary)",
           foreground: "var(--primary-foreground)",
         },
         secondary: {

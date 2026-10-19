@@ -1130,5 +1130,51 @@
       "terms": "Terms of use",
       "rights": "All rights reserved."
     }
+  },
+  "navigation": {
+    "homeLabel": "Parkwize home",
+    "logoAlt": "Parkwize",
+    "signIn": "Sign in",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menuTitle": "Solutions",
+    "switchLanguage": "Voir le site en français",
+    "products": {
+      "dashboardManager": {
+        "name": "Dashboard Manager",
+        "description": "Revenue, occupancy and operations in one view."
+      },
+      "parkwizeAi": {
+        "name": "Parkwize AI",
+        "description": "Ask questions, get forecasts and insights."
+      },
+      "digitalSignage": {
+        "name": "Digital Signage Solution",
+        "description": "Live pricing and availability on every screen."
+      },
+      "onlineReservation": {
+        "name": "Online Reservation",
+        "description": "Let drivers book and pay ahead."
+      },
+      "enforcement": {
+        "name": "Enforcement",
+        "description": "Plate recognition and violation tracking."
+      },
+      "processKiosk": {
+        "name": "Process Kiosk",
+        "description": "Pay stations and entry terminals."
+      },
+      "parkAid": {
+        "name": "ParkAid",
+        "description": "Support and assistance for your sites."
+      }
+    }
+  },
+  "comingSoon": {
+    "eyebrow": "Coming soon",
+    "title": "This page is on its way",
+    "description": "We're putting the finishing touches on this page. In the meantime, explore the rest of Parkwize or sign in to your account.",
+    "backHome": "Back to home",
+    "metaDescription": "Coming soon on Parkwize."
   }
 }

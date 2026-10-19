@@ -1114,5 +1114,51 @@
       "terms": "Conditions d’utilisation",
       "rights": "Tous droits réservés."
     }
+  },
+  "navigation": {
+    "homeLabel": "Accueil Parkwize",
+    "logoAlt": "Parkwize",
+    "signIn": "Se connecter",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "menuTitle": "Solutions",
+    "switchLanguage": "View the site in English",
+    "products": {
+      "dashboardManager": {
+        "name": "Gestionnaire de tableau de bord",
+        "description": "Revenus, occupation et opérations en une seule vue."
+      },
+      "parkwizeAi": {
+        "name": "Parkwize IA",
+        "description": "Posez vos questions, obtenez prévisions et analyses."
+      },
+      "digitalSignage": {
+        "name": "Solution d'affichage numérique",
+        "description": "Tarifs et disponibilités en direct sur chaque écran."
+      },
+      "onlineReservation": {
+        "name": "Réservation en ligne",
+        "description": "Les conducteurs réservent et paient à l'avance."
+      },
+      "enforcement": {
+        "name": "Contrôle et application",
+        "description": "Lecture de plaques et suivi des infractions."
+      },
+      "processKiosk": {
+        "name": "Borne Process",
+        "description": "Bornes de paiement et terminaux d'entrée."
+      },
+      "parkAid": {
+        "name": "ParkAid",
+        "description": "Soutien et assistance pour vos sites."
+      }
+    }
+  },
+  "comingSoon": {
+    "eyebrow": "Bientôt disponible",
+    "title": "Cette page arrive bientôt",
+    "description": "Nous mettons la touche finale à cette page. En attendant, découvrez le reste de Parkwize ou connectez-vous à votre compte.",
+    "backHome": "Retour à l'accueil",
+    "metaDescription": "Bientôt disponible sur Parkwize."
   }
 }

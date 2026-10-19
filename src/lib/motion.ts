@@ -1,0 +1,26 @@
+/*
+ * Copyright (c) 2025-2026. Tecnova
+ */
+
+import type { Transition } from "motion/react";
+
+export const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
+
+export const SPRING_SMOOTH: Transition = {
+  type: "spring",
+  stiffness: 420,
+  damping: 38,
+  mass: 0.9,
+};
+
+export const FADE_FAST: Transition = {
+  duration: 0.18,
+  ease: EASE_OUT_EXPO,
+};
+
+export const FADE_BASE: Transition = {
+  duration: 0.32,
+  ease: EASE_OUT_EXPO,
+};
+
+export const STAGGER_STEP = 0.035;

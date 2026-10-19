@@ -28,12 +28,17 @@ const buttonVariants = cva(
           "bg-primary_action hover:bg-primary_action/90 text-white shadow-shadow-m hover:shadow-shadow-s",
         glass:
           "bg-white/40 backdrop-blur-sm backdrop-saturate-150 border border-border shadow-sm hover:bg-white/60",
+        brand:
+          "rounded-full bg-brand font-medium text-brand-foreground shadow-sm hover:bg-brand-hover active:scale-[0.97]",
+        soft: "rounded-full font-medium text-foreground hover:bg-glass-hover active:scale-95",
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "min-h-9 min-w-9 max-h-9 max-w-9",
+        "icon-lg": "size-11 rounded-full",
+        pill: "h-11 rounded-full px-4 sm:px-5",
       },
     },
     defaultVariants: {

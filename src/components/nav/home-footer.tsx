@@ -2,10 +2,11 @@ import { LucideAlertTriangle, LucideInstagram, LucideMail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import type { DictionaryType, LangType } from "@/content/dictionary";
+import type { DictionaryType } from "@/content/dictionary";
+import type { Locale } from "@/lib/i18n";
 
 interface HomeFooterProps {
-  lang: LangType;
+  lang: Locale;
   dict: DictionaryType;
 }
 

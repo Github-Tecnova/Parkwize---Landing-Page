@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { DictionaryType, getDictionary, LangType } from "@/content/dictionary";
+import { DictionaryType, getDictionary } from "@/content/dictionary";
+import type { Locale } from "@/lib/i18n";
 import useSWR from "swr";
 
 type TranslationContextType = {
-  lang: LangType;
-  setLang: (lang: LangType) => void;
+  lang: Locale;
+  setLang: (lang: Locale) => void;
   dict: DictionaryType;
 };
 
@@ -21,7 +22,7 @@ export default function TranslationProvider({
   children: React.ReactNode;
   initialDict: DictionaryType;
 }) {
-  const [lang, setLang] = useState<LangType>("en");
+  const [lang, setLang] = useState<Locale>("en");
   const [dict, setDict] = useState<DictionaryType>(initialDict);
 
   useSWR(`/get-dictionary/${lang}`, async () => {

@@ -2,7 +2,7 @@
  * Copyright (c) 2025-2026. Tecnova
  */
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -17,6 +17,7 @@ import {Analytics} from "@vercel/analytics/next";
 const inter = Inter({
   subsets: ["latin"],
   weight: "variable",
+  variable: "--font-inter",
 });
 
 const poppins = Poppins({
@@ -32,6 +33,7 @@ const poppins = Poppins({
     "800",
     "900",
   ] as const,
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -44,6 +46,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -54,7 +62,11 @@ export default async function RootLayout({
   return (
     <TooltipProvider>
       <FontsProvider inter={inter.className} poppins={poppins.className}>
-        <html lang="en" className={"scroll-smooth"} suppressHydrationWarning>
+        <html
+          lang="en"
+          className={`${inter.variable} ${poppins.variable} scroll-smooth`}
+          suppressHydrationWarning
+        >
           <body
             className={`${inter.className} max-h-screen min-h-screen antialiased`}
           >
