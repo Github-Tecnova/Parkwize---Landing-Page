@@ -16,7 +16,7 @@ type ProductEcosystemProps = {
   title: string;
   label: string;
   cards: ProductCardsDictionary;
-  exclude: ProductKey;
+  exclude?: ProductKey;
 };
 
 export function ProductEcosystem({

@@ -2581,6 +2581,432 @@
           }
         ]
       }
+    },
+    "parkAid": {
+      "meta": {
+        "title": "ParkAid | Parkwize",
+        "description": "ParkAid relie chaque intercom de votre stationnement à un assistant vocal IA bilingue et à des agents formés au stationnement, disponibles 24/7."
+      },
+      "hero": {
+        "eyebrow": "ParkAid · Centre d'appels",
+        "logoAlt": "ParkAid",
+        "title": "Toujours là pour *vos usagers.*",
+        "lead": "ParkAid relie chaque intercom de votre stationnement (bornes d'entrée, de sortie et de paiement) à un assistant vocal IA et à des agents humains disponibles 24/7.",
+        "cta": "Nous joindre",
+        "imageAlt": "L'équipe du centre d'appels ParkAid au travail"
+      },
+      "focus": {
+        "eyebrow": "Nos agents",
+        "title": "Pas un agent de centre d'appels *ordinaire.*",
+        "lead": "Nos agents sont formés et concentrés uniquement sur le stationnement. Ils connaissent la réalité et la complexité de votre site, et débloquent chaque situation avec l'usager ou avec votre équipe de support technique.",
+        "imageAlt": "Une agente ParkAid avec un casque d'écoute prend un appel",
+        "points": [
+          {
+            "tag": "Stationnement seulement",
+            "title": "Formés au stationnement, rien d'autre",
+            "body": "Aucun script générique ni ticket sans rapport. Chaque agent apprend le langage de votre site : barrières, tickets perdus, tarifs, règles d'accès et terminaux de paiement."
+          },
+          {
+            "tag": "Votre site",
+            "title": "Ils connaissent votre réalité",
+            "body": "Chaque site garde ses consignes, ses exceptions et ses points de panne connus : l'agent répond avec vos règles plutôt qu'avec une FAQ générale."
+          },
+          {
+            "tag": "Des deux côtés",
+            "title": "Avec l'usager ou votre équipe technique",
+            "body": "L'agent règle la situation avec la personne en ligne, ou fait intervenir votre support technique avec le contexte de l'appel, la vue caméra et les actions déjà tentées."
+          }
+        ]
+      },
+      "demo": {
+        "eyebrow": "Comment un appel circule",
+        "title": "Du bouton d'appel *à la barrière ouverte.*",
+        "lead": "Suivez une usagère qui a perdu son ticket à la sortie. Chaque étape est tracée : audio, chronologie, actions et qualification.",
+        "railLabel": "Étapes de l'appel",
+        "consoleLabel": "Simulation d'un appel ParkAid à un intercom de sortie",
+        "behindLabel": "En coulisses",
+        "note": "Appel simulé, données fictives.",
+        "terminal": "Sortie 2 · Centre-ville P2",
+        "live": "En direct",
+        "cameraLabel": "Caméra de sortie",
+        "barrierLabel": "Barrière",
+        "barrierClosed": "Fermée",
+        "barrierOpen": "Ouverte",
+        "assistantName": "IA ParkAid",
+        "visitorName": "Usagère",
+        "messages": [
+          {
+            "step": 0,
+            "role": "system",
+            "text": "Appel entrant de l'intercom Sortie 2"
+          },
+          {
+            "step": 1,
+            "role": "assistant",
+            "text": "Bonjour, hello! Comment puis-je vous aider ?"
+          },
+          {
+            "step": 2,
+            "role": "visitor",
+            "text": "J'ai perdu mon ticket."
+          },
+          {
+            "step": 2,
+            "role": "assistant",
+            "text": "J'ai trouvé votre plaque, FKL 482, entrée à 9 h 12. J'applique le tarif ticket perdu."
+          },
+          {
+            "step": 3,
+            "role": "action",
+            "text": "Barrière ouverte · Motif : ticket perdu"
+          },
+          {
+            "step": 3,
+            "role": "assistant",
+            "text": "La barrière est ouverte. Bonne journée !"
+          },
+          {
+            "step": 4,
+            "role": "system",
+            "text": "Appel résumé et consigné · Agent en attente"
+          }
+        ],
+        "steps": [
+          {
+            "label": "Intercom",
+            "title": "L'usagère appuie sur le bouton d'appel",
+            "behind": "Appel acheminé",
+            "detail": "L'intercom, le site et la caméra sont identifiés aussitôt"
+          },
+          {
+            "label": "Accueil",
+            "title": "Un accueil bilingue",
+            "behind": "Accueil et menu vocal",
+            "detail": "Français et anglais, avec traitement audio pour les voies bruyantes"
+          },
+          {
+            "label": "IA",
+            "title": "L'IA comprend la demande",
+            "behind": "Plaque et session vérifiées",
+            "detail": "L'assistant lit la plaque, retrouve l'entrée et choisit la bonne règle"
+          },
+          {
+            "label": "Action",
+            "title": "Elle agit selon vos règles",
+            "behind": "Action autorisée",
+            "detail": "Tarif ticket perdu appliqué, barrière ouverte, motif consigné"
+          },
+          {
+            "label": "Agents",
+            "title": "Un humain reste à portée",
+            "behind": "File des agents",
+            "detail": "Tout ce qui dépasse les permissions de l'IA passe à un agent, appel déjà résumé"
+          }
+        ]
+      },
+      "ai": {
+        "eyebrow": "Assistant IA",
+        "title": "L'IA répond en premier, *et elle peut agir.*",
+        "lead": "L'assistant décroche dans les deux langues, comprend ce dont l'usager a besoin et exécute les actions que vous avez autorisées sur cette borne. Tout ce qui dépasse ses permissions, ou qui demande un humain, part dans votre file avec ce qu'il a déjà rassemblé.",
+        "actions": [
+          {
+            "tag": "Ticket perdu",
+            "situation": "L'usager n'a plus de ticket",
+            "action": "Vérifie la plaque et la session, lance l'action ticket perdu, ouvre la barrière et consigne le motif."
+          },
+          {
+            "tag": "Paiement bloqué",
+            "situation": "Le terminal n'a pas accepté le paiement",
+            "action": "Lit l'état du terminal, explique la prochaine étape à l'usager et transfère à un agent avec l'appel déjà résumé."
+          },
+          {
+            "tag": "Barrière bloquée",
+            "situation": "La boucle de véhicule ou la caméra doute",
+            "action": "Confirme la boucle et la vue caméra, ouvre la barrière si vos règles le permettent, puis signale le site à votre équipe."
+          },
+          {
+            "tag": "Rien n'est clair",
+            "situation": "L'usager n'arrive pas à expliquer son problème",
+            "action": "Repose la question dans la même langue, garde la ligne, puis passe l'appel dans votre file avec ce qu'il a compris."
+          }
+        ]
+      },
+      "teams": {
+        "eyebrow": "Votre équipe ou la nôtre",
+        "title": "Notre équipe *ou la vôtre.*",
+        "lead": "ParkAid répond avec vos agents, avec les nôtres, ou avec les deux. Vos intercoms et vos lignes d'aide arrivent dans une seule file : un appel est pris par qui est disponible, votre personnel en poste, nos agents, ou l'assistant IA quand tout le monde est occupé.",
+        "queue": "Une seule file pour tous vos intercoms",
+        "modes": [
+          {
+            "label": "Votre équipe",
+            "title": "Vos agents, sur vos heures",
+            "body": "Vos agents gardent les appels qui leur reviennent. ParkAid leur donne la console, l'historique de l'appelant et l'aide de l'IA, et ne prend le relais que si personne ne répond."
+          },
+          {
+            "label": "Notre équipe",
+            "title": "Nos agents, quand vous êtes fermé",
+            "body": "Hors de vos heures, nos agents reprennent la même file avec vos scripts et vos autorisations, escaladent ce qui demande une vraie décision et consignent chaque échange pour vous."
+          }
+        ]
+      },
+      "console": {
+        "eyebrow": "Pour les agents",
+        "title": "La console *d'appels.*",
+        "lead": "Une seule page web, pensée pour répondre vite, agir avec les bonnes autorisations et documenter chaque appel. Audio dans le navigateur, aucun téléphone physique.",
+        "imageAlt": "La console d'agent ParkAid pendant un appel, avec la caméra en direct et les actions sur la barrière",
+        "points": [
+          "Disponibilité et vérification de présence",
+          "File d'attente et appels IA en temps réel",
+          "Collègues et transfert d'appel",
+          "Sites et intercoms, appel sortant vers une borne",
+          "Suivis obligatoires et historique personnel"
+        ],
+        "highlightTitle": "Agir sur la barrière, l'écran de la borne et le terminal de paiement en un clic.",
+        "highlightBody": "Caméra en direct, contexte opérationnel et consignes du site, puis les actions permises sur la borne : ouvrir ou fermer la barrière, ticket perdu, boucle de véhicule. Chaque action demande une confirmation et un motif."
+      },
+      "access": {
+        "eyebrow": "Une plateforme",
+        "title": "Deux niveaux *d'accès.*",
+        "levels": [
+          {
+            "tag": "Agent",
+            "title": "L'espace agent",
+            "body": "Répond aux appels des intercoms, exécute les actions autorisées (ouvrir la barrière, ticket perdu…) et qualifie chaque appel. Tout se fait dans une console web, sans logiciel ni téléphone physique.",
+            "imageAlt": "L'espace agent ParkAid, prêt à recevoir des appels",
+            "points": []
+          },
+          {
+            "tag": "Organisation",
+            "title": "Le portail opérateur",
+            "body": "Le gestionnaire de stationnements configure ses sites et ses bornes, décide qui répond et quand, et suit tout ce qui se passe sur ses intercoms.",
+            "imageAlt": "Le portail opérateur ParkAid avec la liste des derniers appels",
+            "points": [
+              "Sites, appareils SIP et capacités (écran, caméra LPR)",
+              "Modèles de routage selon l'horaire, avec exceptions",
+              "Actions et autorisations selon le niveau de l'agent",
+              "Base de connaissances qui alimente l'IA et les agents",
+              "Direct, statistiques et journal des appels avec audio et parcours"
+            ]
+          }
+        ]
+      },
+      "ecosystem": {
+        "eyebrow": "Écosystème connecté",
+        "title": "Connecté à l'écosystème *Parkwize.*"
+      },
+      "results": {
+        "eyebrow": "Toujours en service",
+        "title": "De l'aide à *chaque voie*",
+        "items": [
+          {
+            "value": "24/7",
+            "label": "Couverture",
+            "body": "IA et agents humains, jour et nuit"
+          },
+          {
+            "value": "2",
+            "label": "Langues",
+            "body": "Français et anglais à chaque appel"
+          },
+          {
+            "value": "100 %",
+            "label": "Appels tracés",
+            "body": "Audio, chronologie, actions et motif"
+          },
+          {
+            "value": "1",
+            "label": "File d'attente",
+            "body": "Tous les intercoms et lignes d'aide réunis"
+          }
+        ]
+      }
+    }
+  },
+  "demoPage": {
+    "meta": {
+      "title": "Réserver une démo | Parkwize",
+      "description": "Réservez une démo Parkwize sur mesure : parlez-nous de vos stationnements et nous vous présenterons la plateforme autour de votre portefeuille."
+    },
+    "hero": {
+      "eyebrow": "Réserver une démo",
+      "title": "Voyez toute votre opération de stationnement *dans une seule vue.*",
+      "lead": "Parlez-nous de vos sites et nous adapterons la présentation à votre portefeuille : équipements, tarifs, occupation, revenus et les flux de travail que vos équipes utilisent chaque jour.",
+      "stepsLabel": "Comment ça fonctionne",
+      "steps": [
+        {
+          "title": "Vous nous parlez de vos sites",
+          "body": "Stationnements, places, équipements et ce que vous utilisez aujourd'hui."
+        },
+        {
+          "title": "Nous préparons la présentation",
+          "body": "Construite autour de votre portefeuille, pas une visite générique."
+        },
+        {
+          "title": "Nous la parcourons ensemble",
+          "body": "En direct dans le produit, avec réponse à vos questions."
+        }
+      ],
+      "facts": [
+        {
+          "value": "90+",
+          "label": "indicateurs en direct dans un seul tableau de bord"
+        },
+        {
+          "value": "8 ans+",
+          "label": "de données de stationnement réelles derrière l'IA"
+        },
+        {
+          "value": "Canadien",
+          "label": "conçu et soutenu ici"
+        }
+      ],
+      "madeIn": "Fièrement canadien"
+    },
+    "see": {
+      "eyebrow": "Ce que vous verrez",
+      "title": "Une plateforme qui relie *chaque partie de l'opération.*"
+    },
+    "form": {
+      "title": "Parlez-nous de votre opération",
+      "lead": "Cela prend environ deux minutes. Les champs marqués d'un * sont obligatoires.",
+      "groups": {
+        "contact": "Vos coordonnées",
+        "parking": "Vos stationnements",
+        "needs": "Vos besoins"
+      },
+      "fields": {
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "email": "Courriel professionnel",
+        "company": "Entreprise",
+        "jobTitle": "Poste",
+        "country": "Pays",
+        "facilities": "Nombre de stationnements",
+        "spaces": "Nombre total de places",
+        "barriers": "Mode d'accès",
+        "timeline": "Échéancier",
+        "interests": "Ce qui vous intéresse",
+        "currentSetup": "Installation actuelle",
+        "message": "Autre chose ?"
+      },
+      "optional": "Facultatif",
+      "interestsHint": "Choisissez tout ce qui s'applique.",
+      "currentSetupPlaceholder": "Équipements, logiciels ou fournisseurs que vous utilisez aujourd'hui",
+      "messagePlaceholder": "Objectifs, questions ou contraintes à connaître",
+      "selectPlaceholder": "Choisir une option",
+      "options": {
+        "facilities": {
+          "1": "1 stationnement",
+          "2-5": "2 à 5",
+          "6-20": "6 à 20",
+          "21-50": "21 à 50",
+          "50+": "Plus de 50"
+        },
+        "spaces": {
+          "under-100": "Moins de 100",
+          "100-500": "100 à 500",
+          "500-2000": "500 à 2 000",
+          "2000+": "Plus de 2 000"
+        },
+        "barriers": {
+          "barriers": "Avec barrières",
+          "gateless": "Sans barrière",
+          "both": "Les deux",
+          "unknown": "Pas encore sûr"
+        },
+        "timeline": {
+          "now": "Le plus tôt possible",
+          "3-months": "D'ici 3 mois",
+          "6-months": "Dans 3 à 6 mois",
+          "exploring": "Je me renseigne"
+        }
+      },
+      "consent": "J'accepte que Parkwize me contacte au sujet de cette demande.",
+      "honeypot": "Laissez ce champ vide",
+      "submit": "Demander ma démo",
+      "sending": "Envoi en cours…",
+      "errors": {
+        "required": "Ce champ est obligatoire.",
+        "email": "Entrez une adresse courriel valide.",
+        "tooLong": "Cette réponse est trop longue.",
+        "consent": "Veuillez confirmer que nous pouvons vous contacter.",
+        "invalid": "Veuillez vérifier cette réponse."
+      },
+      "errorSummary": "Veuillez vérifier les champs indiqués.",
+      "sendError": "Nous n'avons pas pu envoyer votre demande. Réessayez dans un instant.",
+      "success": {
+        "title": "Merci, votre demande est bien reçue.",
+        "body": "Une personne de notre équipe vous contactera d'ici un jour ouvrable pour planifier votre présentation.",
+        "again": "Envoyer une autre demande"
+      }
+    }
+  },
+  "contactPage": {
+    "meta": {
+      "title": "Contact | Parkwize",
+      "description": "Une question sur un site, une intégration, les tarifs ou un déploiement ? Envoyez-nous les détails et la bonne personne de l'équipe Parkwize s'en occupera."
+    },
+    "hero": {
+      "eyebrow": "Nous sommes là pour vous",
+      "title": "Besoin d'aide avec votre *technologie* et vos *opérations* de stationnement ?",
+      "lead": "Une question sur un site, une intégration, les tarifs ou un déploiement ? Envoyez-nous les détails et la bonne personne de notre équipe s'en occupera.",
+      "exploreTitle": "Vous préférez regarder d'abord ?",
+      "exploreBody": "Ouvrez la démo en direct ou vérifiez l'état de la plateforme avant d'écrire.",
+      "liveDemo": "Explorer la démo en direct",
+      "liveDemoBody": "Le vrai Dashboard Manager, avec des données fictives",
+      "status": "État des systèmes",
+      "statusBody": "La disponibilité en direct de chaque service Parkwize",
+      "demoPrompt": "Vous voulez une présentation construite autour de vos sites ?",
+      "demoLink": "Réserver une démo",
+      "newTab": "s'ouvre dans un nouvel onglet",
+      "madeIn": "Fièrement canadien"
+    },
+    "see": {
+      "eyebrow": "Ce que nous offrons",
+      "title": "Une plateforme pour *chaque partie de l'opération.*"
+    },
+    "form": {
+      "title": "Écrivez-nous",
+      "lead": "Nous répondons habituellement en un jour ouvrable. Les champs marqués d'un * sont obligatoires.",
+      "fields": {
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "email": "Courriel",
+        "company": "Entreprise",
+        "topic": "Sujet",
+        "message": "Message"
+      },
+      "optional": "Facultatif",
+      "selectPlaceholder": "Choisir un sujet",
+      "topics": {
+        "demo": "Réserver une démo",
+        "pricing": "Tarifs",
+        "technical": "Question technique ou intégration",
+        "support": "Support",
+        "partnership": "Partenariat",
+        "other": "Autre"
+      },
+      "demoHint": "Pour une présentation sur mesure, le formulaire de démo pose les bonnes questions dès le départ.",
+      "demoHintLink": "Aller au formulaire de démo",
+      "messagePlaceholder": "Parlez-nous de votre site, de votre question ou de votre besoin",
+      "consent": "J'accepte que Parkwize me contacte au sujet de ce message.",
+      "honeypot": "Laissez ce champ vide",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours…",
+      "errors": {
+        "required": "Ce champ est obligatoire.",
+        "email": "Entrez une adresse courriel valide.",
+        "tooLong": "Cette réponse est trop longue.",
+        "consent": "Veuillez confirmer que nous pouvons vous contacter.",
+        "invalid": "Veuillez vérifier cette réponse."
+      },
+      "errorSummary": "Veuillez vérifier les champs indiqués.",
+      "sendError": "Nous n'avons pas pu envoyer votre message. Réessayez dans un instant.",
+      "success": {
+        "title": "Merci, votre message est bien reçu.",
+        "body": "La bonne personne de notre équipe vous répondra d'ici un jour ouvrable.",
+        "again": "Envoyer un autre message"
+      }
     }
   }
 }

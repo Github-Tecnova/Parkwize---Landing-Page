@@ -278,6 +278,28 @@ export const MEDIA = {
       height: 800,
     },
   },
+  parkaid: {
+    agentCall: {
+      src: "/images/parkaid/agent-call.webp",
+      width: 1200,
+      height: 912,
+    },
+    consoleCall: {
+      src: "/images/parkaid/console-call.webp",
+      width: 1054,
+      height: 430,
+    },
+    agentReady: {
+      src: "/images/parkaid/agent-ready.webp",
+      width: 1440,
+      height: 679,
+    },
+    portal: {
+      src: "/images/parkaid/portal.webp",
+      width: 1054,
+      height: 671,
+    },
+  },
 } as const satisfies Record<string, Record<string, Media>>;
 
 export type VideoSource = {

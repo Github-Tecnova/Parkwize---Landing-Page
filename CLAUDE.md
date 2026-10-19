@@ -1,6 +1,6 @@
 # Parkwize Landing Page — Guidelines
 
-Marketing site for Parkwize (by Tecnova). Next.js 15 App Router, React 19, TypeScript (strict), Tailwind CSS 3, `motion`, `lucide-react`. Deployed on Vercel. The only server code is `src/app/api/early-access/route.ts` (emails sign-ups through Resend).
+Marketing site for Parkwize (by Tecnova). Next.js 15 App Router, React 19, TypeScript (strict), Tailwind CSS 3, `motion`, `lucide-react`. Deployed on Vercel. Server code lives in `src/app/api`: `demo` and `contact` email leads through Resend, `early-access` is legacy.
 
 Every change follows these rules. When a rule and existing legacy code disagree, the rule wins; migrate legacy code when you touch it.
 
@@ -86,6 +86,9 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 - Product pages: `ProductHero`, `ProductProblem` (icons from `PROBLEM_ICONS` in `@/lib/product-problems`), `ProductSolution`, `ProductFeatures`, `ProductEcosystem` and `ProductResults` from `@/components/sections/product`. Animated value swaps: `SwapValue` from `@/components/motion/swap-value`.
 - Partner logo: `ProcessLogo` from `@/components/brand/process-logo` (vector, `currentColor`). Decorative QR codes: `QrGlyph` from `@/components/media/qr-glyph`.
 - Phone mock-ups in demos: `DeviceFrame` from `@/components/media/device-frame`. The step title and "behind the scenes" card beside a demo: `DemoStepNote` from `@/components/sections/demo-step-note`.
+- Two side-by-side options with a center rule ("ours or yours"): `ModeSplit` from `@/components/sections/mode-split`.
+- Lead forms: fields from `@/components/forms` (`TextField`, `SelectField`, `ChipGroup`, `ConsentField`, `FormCard`, `FormGroup`, `FormSubmit`, `FormSuccess`), state with `useLeadForm`, a zod schema in `@/lib/leads/*-schema.ts` shared by the browser and the route, option values in `@/lib/leads/lead-options.ts` (labels in the dictionaries). Routes send with `sendLeadEmail` from `@/lib/leads/send-lead-email`. Lead pages use `LeadHero`.
+- Lead email environment: `RESEND_API_KEY`, `RESEND_FROM`, and `DEMO_TO` / `CONTACT_TO` (fallback `RESEND_TO`). Without `RESEND_API_KEY` outside production, routes accept the form without sending.
 - If the same markup appears twice, make it a component.
 
 ## 5. Design tokens

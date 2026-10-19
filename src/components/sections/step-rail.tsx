@@ -15,7 +15,10 @@ export function StepRail({ label, steps, current, onSelect }: StepRailProps) {
   return (
     <ol
       aria-label={label}
-      className="grid grid-cols-4 border-b border-hairline"
+      className={cn(
+        "grid border-b border-hairline",
+        steps.length === 5 ? "grid-cols-5" : "grid-cols-4",
+      )}
     >
       {steps.map((item, index) => (
         <li key={item.label} className="relative">

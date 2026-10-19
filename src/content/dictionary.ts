@@ -32,6 +32,12 @@ export type EnforcementDictionary = DictionaryType["products"]["enforcement"];
 
 export type ProcessDictionary = DictionaryType["products"]["processKiosk"];
 
+export type ParkAidDictionary = DictionaryType["products"]["parkAid"];
+
+export type DemoPageDictionary = DictionaryType["demoPage"];
+
+export type ContactPageDictionary = DictionaryType["contactPage"];
+
 const dictionaries: Record<Locale, () => Promise<DictionaryType>> = {
   en: () => import("./en.json").then((module) => module.default),
   fr: () => import("./fr.json").then((module) => module.default),
