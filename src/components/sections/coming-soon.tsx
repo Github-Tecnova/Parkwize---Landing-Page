@@ -3,7 +3,7 @@
  */
 
 import { LucideIcon } from "lucide-react";
-import Link from "@/components/custom-ui/link";
+import { Link } from "@/components/navigation/link";
 import { SignInLink } from "@/components/layout/top-bar/sign-in-link";
 import { buttonVariants } from "@/components/ui/button";
 import { ComingSoonDictionary } from "@/content/dictionary";
@@ -44,9 +44,8 @@ export function ComingSoon({
             href="/"
             lang={locale}
             className={buttonVariants({
-              variant: "outline",
+              variant: "subtle",
               size: "pill",
-              className: "rounded-full",
             })}
           >
             {dict.backHome}

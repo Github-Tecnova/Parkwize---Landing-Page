@@ -2,7 +2,7 @@
  * Copyright (c) 2025-2026. Tecnova
  */
 
-import Link from "@/components/custom-ui/link";
+import { Link } from "@/components/navigation/link";
 import { Locale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 

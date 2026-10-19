@@ -35,7 +35,7 @@ export function StepRail({ label, steps, current, onSelect }: StepRailProps) {
               className={cn(
                 "flex size-7 shrink-0 items-center justify-center rounded-full text-xs font-bold transition-colors",
                 current >= index
-                  ? "bg-deck text-white"
+                  ? "bg-deck text-brand-foreground"
                   : "border border-hairline bg-surface text-copy",
               )}
             >

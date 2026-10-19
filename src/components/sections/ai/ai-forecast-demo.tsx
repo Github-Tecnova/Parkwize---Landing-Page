@@ -281,7 +281,7 @@ function ImpactStep({
           {dict.formulaNet}
         </span>
         <span className="text-copy">=</span>
-        <span className="rounded-full bg-deck px-3 py-1 text-white">
+        <span className="rounded-full bg-deck px-3 py-1 text-brand-foreground">
           {dict.formulaResult}
         </span>
       </p>
@@ -307,7 +307,7 @@ function ActionStep({ dict }: { dict: ForecastDictionary }) {
           </div>
         ))}
       </dl>
-      <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-deck px-5 py-2.5 text-sm font-semibold text-white">
+      <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-deck px-5 py-2.5 text-sm font-semibold text-brand-foreground">
         <Check aria-hidden className="size-4" />
         {dict.apply}
       </span>

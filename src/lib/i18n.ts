@@ -26,3 +26,18 @@ export function switchLocalePath(pathname: string, locale: Locale): string {
   const path = pathname.replace(LOCALE_PREFIX, "");
   return path === "" || path === "/" ? `/${locale}` : `/${locale}${path}`;
 }
+
+export function localizedPath(href: string, locale: Locale): string {
+  if (
+    !href.startsWith("/") ||
+    href.startsWith("//") ||
+    LOCALE_PREFIX.test(href)
+  ) {
+    return href;
+  }
+  return href === "/" ? `/${locale}` : `/${locale}${href}`;
+}
+
+export function stripLocale(pathname: string): string {
+  return pathname.replace(LOCALE_PREFIX, "") || "/";
+}

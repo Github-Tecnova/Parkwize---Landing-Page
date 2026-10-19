@@ -18,7 +18,7 @@ type ProductSolutionProps = {
 
 export function ProductSolution({ dict }: ProductSolutionProps) {
   return (
-    <section className="bg-ink py-14 text-white sm:py-20">
+    <section className="bg-navy py-14 text-inverse-foreground sm:py-20">
       <Container className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
         <Reveal>
           <SectionHeader
@@ -29,11 +29,11 @@ export function ProductSolution({ dict }: ProductSolutionProps) {
           />
         </Reveal>
         <Reveal delay={0.1}>
-          <ul className="border-t border-white/20">
+          <ul className="border-t border-inverse-border">
             {dict.points.map((point) => (
               <li
                 key={point}
-                className="flex gap-3.5 border-b border-white/20 py-[1.0625rem] text-sm leading-relaxed text-white/85"
+                className="flex gap-3.5 border-b border-inverse-border py-[1.0625rem] text-sm leading-relaxed text-inverse-muted"
               >
                 <ArrowUpRight
                   aria-hidden

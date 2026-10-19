@@ -16,6 +16,7 @@ import {
   Ticket,
   UserLock,
 } from "lucide-react";
+import { stripLocale } from "@/lib/i18n";
 
 export const SIGN_IN_URL = "https://app.parkwize.ai/";
 
@@ -36,11 +37,11 @@ export type ProductKey =
   | "processKiosk"
   | "parkAid";
 
-export type LegalKey = "privacyPolicy" | "termsOfUse";
+type LegalKey = "privacyPolicy" | "termsOfUse";
 
 export type CompanyKey = "demo" | "contact";
 
-export type PageKey = ProductKey | LegalKey | CompanyKey;
+type PageKey = ProductKey | LegalKey | CompanyKey;
 
 export type PageLink<Key extends PageKey = PageKey> = {
   key: Key;
@@ -72,4 +73,13 @@ export const COMING_SOON_LINKS: PageLink[] = [...LEGAL_LINKS];
 
 export function findComingSoonPage(slug: string): PageLink | undefined {
   return COMING_SOON_LINKS.find((page) => page.slug === slug);
+}
+
+export const SOLUTION_LINKS = PRODUCT_LINKS.filter(
+  (link) => link.key !== "parkAid",
+);
+
+export function isActivePath(pathname: string, slug: string) {
+  const path = stripLocale(pathname);
+  return path === `/${slug}` || path.startsWith(`/${slug}/`);
 }

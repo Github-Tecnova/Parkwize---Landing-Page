@@ -3,7 +3,7 @@
  */
 
 import { ArrowRight, ArrowUpRight, Activity, MonitorPlay } from "lucide-react";
-import Link from "@/components/custom-ui/link";
+import { Link } from "@/components/navigation/link";
 import { ContactForm } from "@/components/sections/contact/contact-form";
 import { LeadHero } from "@/components/sections/lead-hero";
 import { ContactPageDictionary } from "@/content/dictionary";

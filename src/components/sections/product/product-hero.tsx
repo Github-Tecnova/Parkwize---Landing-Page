@@ -10,7 +10,7 @@ import { AccentText } from "@/components/typography/accent-text";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Locale } from "@/lib/i18n";
 import { Media } from "@/lib/media";
-import { CONTACT_HREF } from "@/lib/navigation";
+import { DEMO_HREF } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 type ProductHeroProps = {
@@ -26,7 +26,6 @@ type ProductHeroProps = {
   sizes: string;
   mediaClassName?: string;
   brand?: ReactNode;
-  ctaHref?: string;
 };
 
 export function ProductHero({
@@ -36,7 +35,6 @@ export function ProductHero({
   sizes,
   mediaClassName,
   brand,
-  ctaHref = CONTACT_HREF,
 }: ProductHeroProps) {
   return (
     <section className="under-top-bar bg-hero-fade bg-bay-lines overflow-hidden pb-16 lg:pb-24">
@@ -50,7 +48,12 @@ export function ProductHero({
           <p className="mt-6 text-pretty text-[0.9375rem] leading-relaxed text-copy">
             {dict.lead}
           </p>
-          <ButtonLink href={ctaHref} locale={locale} withArrow className="mt-7">
+          <ButtonLink
+            href={DEMO_HREF}
+            locale={locale}
+            withArrow
+            className="mt-7"
+          >
             {dict.cta}
           </ButtonLink>
         </div>

@@ -36,8 +36,8 @@ export function KioskScreen({ label, dict, step, animate }: KioskScreenProps) {
       className="mx-auto w-full max-w-[19rem] rounded-[1.75rem] border border-hairline bg-surface-muted p-3 shadow-card-deep"
     >
       <div className="flex h-[30rem] flex-col overflow-hidden rounded-2xl border-4 border-ink bg-surface">
-        <div className="bg-deck px-4 py-3 text-center text-white">
-          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-white/70">
+        <div className="bg-deck px-4 py-3 text-center text-brand-foreground">
+          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-inverse-muted">
             {dict.lot}
           </p>
           <p className="font-display text-lg font-bold">{titles[step]}</p>
@@ -76,7 +76,7 @@ function VehicleScreen({ dict }: { dict: KioskDictionary }) {
         {dict.vehicleQuestion}
       </p>
       <div className="mt-6 grid grid-cols-2 gap-3">
-        <span className="flex aspect-square flex-col items-center justify-center gap-2 rounded-2xl bg-deck text-sm font-bold text-white ring-2 ring-deck-bright ring-offset-2">
+        <span className="flex aspect-square flex-col items-center justify-center gap-2 rounded-2xl bg-deck text-sm font-bold text-brand-foreground ring-2 ring-deck-bright ring-offset-2">
           <CarFront aria-hidden className="size-9" />
           {dict.car}
         </span>
@@ -118,7 +118,7 @@ function PayScreen({ dict }: { dict: KioskDictionary }) {
       <p className="mt-3 text-balance text-center text-sm font-semibold text-ink">
         {dict.payHint}
       </p>
-      <span className="mx-auto mt-6 flex h-28 w-20 flex-col items-center justify-center gap-2 rounded-xl bg-ink text-white shadow-media">
+      <span className="mx-auto mt-6 flex h-28 w-20 flex-col items-center justify-center gap-2 rounded-xl bg-navy text-brand-foreground shadow-media">
         <Nfc aria-hidden className="size-8 motion-safe:animate-pulse" />
       </span>
       <p className="mt-auto text-center text-xs font-semibold text-copy">
@@ -139,7 +139,7 @@ function ReceiptScreen({ dict }: { dict: KioskDictionary }) {
       <p className="mt-3 text-center text-xs font-semibold text-copy">
         {dict.exitHint}
       </p>
-      <span className="mt-auto flex h-11 items-center justify-center rounded-xl bg-deck text-sm font-semibold text-white">
+      <span className="mt-auto flex h-11 items-center justify-center rounded-xl bg-deck text-sm font-semibold text-brand-foreground">
         {dict.done}
       </span>
     </>

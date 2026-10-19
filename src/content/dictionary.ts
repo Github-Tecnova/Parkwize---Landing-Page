@@ -1,8 +1,12 @@
+/*
+ * Copyright (c) 2025-2026. Tecnova
+ */
+
 import { cache } from "react";
 import type { Locale } from "@/lib/i18n";
 import enJson from "./en.json";
 
-export type DictionaryType = typeof enJson;
+type DictionaryType = typeof enJson;
 
 export type NavigationDictionary = DictionaryType["navigation"];
 

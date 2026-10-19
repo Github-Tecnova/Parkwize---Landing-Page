@@ -6,18 +6,27 @@
 
 import { useEffect } from "react";
 
-export function useScrollLock(
-  active: boolean,
-  mediaQuery = "(max-width: 767px)",
-) {
+export function useScrollLock(active: boolean) {
   useEffect(() => {
-    if (!active || !window.matchMedia(mediaQuery).matches) return;
+    if (!active) return;
 
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const { body } = document;
+    const scrollY = window.scrollY;
+    const previous = {
+      position: body.style.position,
+      top: body.style.top,
+      width: body.style.width,
+    };
+
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
 
     return () => {
-      document.body.style.overflow = previousOverflow;
+      body.style.position = previous.position;
+      body.style.top = previous.top;
+      body.style.width = previous.width;
+      window.scrollTo({ top: scrollY, behavior: "instant" });
     };
-  }, [active, mediaQuery]);
+  }, [active]);
 }

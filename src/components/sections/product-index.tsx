@@ -4,16 +4,13 @@
 
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import Link from "@/components/custom-ui/link";
+import { Link } from "@/components/navigation/link";
 import { Locale } from "@/lib/i18n";
 import { PRODUCT_LINKS, ProductKey } from "@/lib/navigation";
 import { PRODUCT_VISUALS } from "@/lib/product-media";
 import { cn } from "@/lib/utils";
 
-export type ProductIndexItems = Record<
-  ProductKey,
-  { name: string; blurb: string }
->;
+type ProductIndexItems = Record<ProductKey, { name: string; blurb: string }>;
 
 type ProductIndexProps = {
   locale: Locale;

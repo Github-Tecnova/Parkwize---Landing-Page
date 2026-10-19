@@ -32,12 +32,12 @@ export function PatrolDevice({
 
   return (
     <DeviceFrame label={label}>
-      <div className="flex items-center justify-between gap-3 bg-ink px-5 pb-4 pt-12 text-white">
+      <div className="flex items-center justify-between gap-3 bg-navy px-5 pb-4 pt-12 text-brand-foreground">
         <span className="min-w-0">
           <span className="block font-display text-lg font-semibold">
             {dict.title}
           </span>
-          <span className="block truncate text-xs text-white/60">
+          <span className="block truncate text-xs text-inverse-muted">
             {dict.zone}
           </span>
         </span>

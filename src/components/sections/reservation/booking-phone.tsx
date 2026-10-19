@@ -31,7 +31,7 @@ export function BookingPhone({
   return (
     <DeviceFrame label={label}>
       <div className="flex items-center gap-2.5 border-b border-hairline px-5 pb-3 pt-12">
-        <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-deck font-display text-sm font-bold text-white">
+        <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-deck font-display text-sm font-bold text-brand-foreground">
           P
         </span>
         <span className="min-w-0">
@@ -104,7 +104,7 @@ function PayScreen({ dict }: { dict: PhoneDictionary }) {
         <Row label={dict.totalLabel} value={dict.price} />
       </dl>
       <div className="mt-auto grid gap-2.5">
-        <span className="flex h-12 items-center justify-center rounded-xl bg-black text-sm font-semibold text-white ring-2 ring-deck-bright ring-offset-2">
+        <span className="flex h-12 items-center justify-center rounded-xl bg-bezel text-sm font-semibold text-brand-foreground ring-2 ring-deck-bright ring-offset-2">
           {dict.applePay}
         </span>
         <span className="flex h-12 items-center justify-center rounded-xl border border-hairline text-sm font-semibold text-ink">
@@ -172,7 +172,7 @@ function PhoneButton({
   return (
     <span
       className={cn(
-        "flex h-12 items-center justify-center rounded-full bg-deck text-sm font-semibold text-white",
+        "flex h-12 items-center justify-center rounded-full bg-deck text-sm font-semibold text-brand-foreground",
         className,
       )}
     >

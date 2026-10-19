@@ -12,7 +12,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { HomeDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
 import { MEDIA, VIDEOS } from "@/lib/media";
-import { SectorStrip } from "./home-sectors";
+import { SectorStrip } from "./sector-strip";
 
 type HomeBookingProps = {
   locale: Locale;
@@ -40,7 +40,7 @@ export function HomeBooking({ locale, dict, sectors }: HomeBookingProps) {
                   key={feature}
                   className="flex items-center gap-[0.6875rem] text-[0.90625rem] font-semibold text-ink"
                 >
-                  <span className="flex size-[1.625rem] shrink-0 items-center justify-center rounded-full bg-deck text-white">
+                  <span className="flex size-[1.625rem] shrink-0 items-center justify-center rounded-full bg-deck text-brand-foreground">
                     <Check aria-hidden className="size-4" strokeWidth={2.6} />
                   </span>
                   {feature}

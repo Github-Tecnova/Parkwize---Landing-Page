@@ -132,7 +132,7 @@ export function HomeAi({ locale, dict, showCta = true }: HomeAiProps) {
           })}
         </ul>
 
-        <Reveal className="ai-panel relative mt-20 grid grid-cols-1 gap-9 overflow-hidden rounded-3xl px-5 py-8 text-white sm:p-[clamp(2.5rem,6vw,5rem)] lg:mt-28 lg:grid-cols-2 lg:gap-[clamp(2.25rem,5vw,4.5rem)]">
+        <Reveal className="ai-panel relative mt-20 grid grid-cols-1 gap-9 overflow-hidden rounded-3xl px-5 py-8 text-brand-foreground sm:p-[clamp(2.5rem,6vw,5rem)] lg:mt-28 lg:grid-cols-2 lg:gap-[clamp(2.25rem,5vw,4.5rem)]">
           <div className="flex flex-col justify-center">
             <Image
               src={parkwizeAiWhite.src}
@@ -145,7 +145,7 @@ export function HomeAi({ locale, dict, showCta = true }: HomeAiProps) {
             <h3 className="font-display text-[clamp(1.75rem,3vw,2.375rem)] font-bold leading-tight">
               {dict.sources.title}
             </h3>
-            <p className="mb-7 mt-4 text-[1.0625rem] leading-relaxed text-white/80">
+            <p className="mb-7 mt-4 text-[1.0625rem] leading-relaxed text-inverse-foreground">
               {dict.sources.lead}
             </p>
             <ul className="grid border-t border-panel-rule md:grid-cols-2">
@@ -156,7 +156,7 @@ export function HomeAi({ locale, dict, showCta = true }: HomeAiProps) {
                   <li
                     key={key}
                     className={cn(
-                      "flex items-center gap-3.5 border-b border-panel-rule py-4 transition-colors hover:bg-white/5 md:py-5",
+                      "flex items-center gap-3.5 border-b border-panel-rule py-4 transition-colors hover:bg-panel-tile md:py-5",
                       index % 2 === 0 ? "md:border-r md:pr-5" : "md:pl-5",
                     )}
                   >
@@ -167,7 +167,7 @@ export function HomeAi({ locale, dict, showCta = true }: HomeAiProps) {
                       <span className="block text-sm font-bold">
                         {source.title}
                       </span>
-                      <span className="mt-0.5 block text-xs text-white/70">
+                      <span className="mt-0.5 block text-xs text-inverse-foreground">
                         {source.body}
                       </span>
                     </span>

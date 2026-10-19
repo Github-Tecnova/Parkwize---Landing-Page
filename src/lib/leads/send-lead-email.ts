@@ -4,7 +4,7 @@
 
 import { Resend } from "resend";
 
-export type LeadEmailRow = {
+type LeadEmailRow = {
   label: string;
   value: string;
 };
@@ -17,7 +17,7 @@ type LeadEmail = {
   rows: LeadEmailRow[];
 };
 
-export type LeadEmailResult = "sent" | "skipped" | "unconfigured" | "failed";
+type LeadEmailResult = "sent" | "skipped" | "unconfigured" | "failed";
 
 export async function sendLeadEmail({
   title,

@@ -35,7 +35,7 @@ export function DemoHero({ dict, pages }: DemoHeroProps) {
                 className="absolute bottom-0 left-[0.9375rem] top-8 w-px bg-hairline"
               />
             )}
-            <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-deck text-sm font-bold text-white">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-deck text-sm font-bold text-brand-foreground">
               {index + 1}
             </span>
             <span className="pt-1">

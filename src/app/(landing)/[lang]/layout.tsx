@@ -11,7 +11,7 @@ import { Footer } from "@/components/layout/footer/footer";
 import { TopBar } from "@/components/layout/top-bar/top-bar";
 import { getDictionary } from "@/content/dictionary";
 import { isLocale, LOCALES } from "@/lib/i18n";
-import "../../globals.css";
+import "@/app/globals.css";
 
 const inter = Inter({
   subsets: ["latin"],

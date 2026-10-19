@@ -17,7 +17,6 @@ import { ProductResults } from "@/components/sections/product/product-results";
 import { getDictionary } from "@/content/dictionary";
 import { resolveLocale } from "@/lib/i18n";
 import { MEDIA } from "@/lib/media";
-import { DEMO_HREF } from "@/lib/navigation";
 
 type ProcessPageProps = {
   params: Promise<{ lang: string }>;
@@ -49,7 +48,6 @@ export default async function ProcessPage({ params }: ProcessPageProps) {
         media={MEDIA.product.processKiosk}
         sizes="(min-width: 1024px) 208px, 136px"
         mediaClassName="max-w-[8.5rem] sm:max-w-[10rem] lg:max-w-[13rem]"
-        ctaHref={DEMO_HREF}
         brand={
           <ProcessLogo
             title={page.hero.logoLabel}

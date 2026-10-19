@@ -35,14 +35,14 @@ export function CallConsole({ dict, step, animate }: CallConsoleProps) {
       aria-label={dict.consoleLabel}
       className="mx-auto w-full max-w-md overflow-hidden rounded-3xl bg-surface shadow-card-deep"
     >
-      <div className="flex items-center gap-3 bg-ink px-5 py-4 text-white">
+      <div className="flex items-center gap-3 bg-navy px-5 py-4 text-inverse-foreground">
         <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-deck">
           <PhoneCall aria-hidden className="size-4" />
         </span>
         <span className="min-w-0 flex-1 truncate text-sm font-semibold">
           {dict.terminal}
         </span>
-        <span className="flex shrink-0 items-center gap-2 text-xs font-bold tabular-nums text-white/70">
+        <span className="flex shrink-0 items-center gap-2 text-xs font-bold tabular-nums text-inverse-muted">
           <span
             aria-hidden
             className={cn(
@@ -56,15 +56,15 @@ export function CallConsole({ dict, step, animate }: CallConsoleProps) {
       </div>
 
       <div className="grid grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-3 border-b border-hairline p-4">
-        <div className="relative flex aspect-video items-center justify-center rounded-xl bg-black">
-          <span className="absolute left-2.5 top-2 flex items-center gap-1.5 text-[0.625rem] font-bold uppercase tracking-[0.12em] text-white/70">
+        <div className="relative flex aspect-video items-center justify-center rounded-xl bg-bezel">
+          <span className="absolute left-2.5 top-2 flex items-center gap-1.5 text-[0.625rem] font-bold uppercase tracking-[0.12em] text-inverse-muted">
             <span
               aria-hidden
               className="size-1.5 rounded-full bg-destructive"
             />
             {dict.cameraLabel}
           </span>
-          <span className="rounded-md border-2 border-white bg-surface px-2 py-0.5 font-display text-sm font-bold tracking-[0.1em] text-ink">
+          <span className="rounded-md border-2 border-surface bg-surface px-2 py-0.5 font-display text-sm font-bold tracking-[0.1em] text-ink">
             {PLATE}
           </span>
         </div>
@@ -137,7 +137,7 @@ function CallLine({
         "max-w-[84%] px-4 py-3 text-sm leading-normal",
         fromVisitor
           ? "self-end rounded-[14px] rounded-br-[4px] border border-hairline bg-surface text-ink"
-          : "self-start rounded-[14px] rounded-bl-[4px] bg-deck text-white",
+          : "self-start rounded-[14px] rounded-bl-[4px] bg-deck text-inverse-foreground",
       )}
     >
       <span className="sr-only">

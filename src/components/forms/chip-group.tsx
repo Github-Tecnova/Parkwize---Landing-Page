@@ -39,7 +39,7 @@ export function ChipGroup({
               className={cn(
                 "inline-flex min-h-10 items-center gap-1.5 rounded-full border px-3.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-deck-tint",
                 active
-                  ? "border-deck bg-deck text-white"
+                  ? "border-deck bg-deck text-brand-foreground"
                   : "border-hairline bg-surface text-ink hover:border-deck",
               )}
             >

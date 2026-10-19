@@ -40,7 +40,7 @@ export default async function AiPage({ params }: AiPageProps) {
 
   return (
     <>
-      <AiHero dict={page.hero} />
+      <AiHero locale={locale} dict={page.hero} />
       <HomeAi locale={locale} dict={dict.home.ai} showCta={false} />
       <AiForecastDemo dict={page.forecast} />
       <ProductSolution dict={page.solution} />

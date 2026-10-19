@@ -5,19 +5,23 @@
 import Image from "next/image";
 import { Container } from "@/components/layout/section/container";
 import { Reveal } from "@/components/motion/reveal";
+import { ButtonLink } from "@/components/ui/button-link";
 import { AiPageDictionary } from "@/content/dictionary";
+import { Locale } from "@/lib/i18n";
 import { MEDIA } from "@/lib/media";
+import { DEMO_HREF } from "@/lib/navigation";
 
 type AiHeroProps = {
+  locale: Locale;
   dict: AiPageDictionary["hero"];
 };
 
-export function AiHero({ dict }: AiHeroProps) {
+export function AiHero({ locale, dict }: AiHeroProps) {
   const { parkwizeAiWhite } = MEDIA.brand;
   const { aiHeroLaptop } = MEDIA.product;
 
   return (
-    <section className="under-top-bar relative isolate overflow-hidden bg-black text-white">
+    <section className="under-top-bar relative isolate overflow-hidden bg-navy text-inverse-foreground">
       <div aria-hidden className="ai-hero-glow absolute inset-0 -z-10" />
       <Container className="flex flex-col items-center pt-10 text-center sm:pt-16 lg:pt-20">
         <Reveal>
@@ -34,9 +38,17 @@ export function AiHero({ dict }: AiHeroProps) {
           </h1>
         </Reveal>
         <Reveal delay={0.15}>
-          <p className="mt-5 text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-white/60 sm:text-xs">
+          <p className="mt-5 text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-inverse-muted sm:text-xs">
             {dict.tagline}
           </p>
+          <ButtonLink
+            href={DEMO_HREF}
+            locale={locale}
+            withArrow
+            className="mt-7"
+          >
+            {dict.cta}
+          </ButtonLink>
         </Reveal>
 
         <Reveal

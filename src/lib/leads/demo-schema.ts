@@ -53,7 +53,3 @@ export const demoLeadSchema = z.object({
   consent: z.literal(true, "consent"),
   website: z.string().max(200, "invalid"),
 });
-
-export type DemoLead = z.infer<typeof demoLeadSchema>;
-
-export type DemoLeadField = keyof DemoLead;

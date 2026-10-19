@@ -43,7 +43,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
         cards={dict.productCards}
       />
       <MarqueeBand words={dict.marquee} />
-      <ClosingCta locale={locale} dict={dict.closingCta} />
+      <ClosingCta locale={locale} dict={dict.closingCta} showCta={false} />
     </>
   );
 }

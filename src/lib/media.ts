@@ -64,16 +64,6 @@ export const MEDIA = {
       width: 408,
       height: 510,
     },
-    dashboardLaptop: {
-      src: "/images/product/dashboard-laptop-m4.webp",
-      width: 1600,
-      height: 966,
-    },
-    dashboardIsometric: {
-      src: "/images/product/dashboard-isometric-soft.webp",
-      width: 1400,
-      height: 1226,
-    },
     bookingPhones: {
       src: "/images/product/booking-phones-soft.webp",
       width: 1400,
@@ -89,21 +79,6 @@ export const MEDIA = {
       width: 725,
       height: 1083,
     },
-    aiMonitor: {
-      src: "/images/product/ai-monitor.webp",
-      width: 1150,
-      height: 929,
-    },
-    dynamicPricing: {
-      src: "/images/product/dynamic-pricing.webp",
-      width: 1529,
-      height: 585,
-    },
-    kioskPema: {
-      src: "/images/product/kiosk-pema.webp",
-      width: 777,
-      height: 999,
-    },
     processKiosk: {
       src: "/images/product/process-kiosk.webp",
       width: 391,
@@ -118,11 +93,6 @@ export const MEDIA = {
       src: "/images/product/process-flagship-kiosk.webp",
       width: 650,
       height: 634,
-    },
-    processScreens: {
-      src: "/images/product/process-screens.webp",
-      width: 924,
-      height: 477,
     },
     processPhoneMenu: {
       src: "/images/product/process-phone-menu.webp",
@@ -142,7 +112,6 @@ export const MEDIA = {
       height: 170,
     },
     kiosks: { src: "/images/os/kiosks.webp", width: 114, height: 257 },
-    callCenter: { src: "/images/os/call-center.webp", width: 157, height: 156 },
     enforcementOfficer: {
       src: "/images/os/enforcement-officer.webp",
       width: 600,
@@ -152,11 +121,6 @@ export const MEDIA = {
       src: "/images/os/enforcement-scan.webp",
       width: 806,
       height: 1082,
-    },
-    enforcementPatrol: {
-      src: "/images/os/enforcement-patrol.webp",
-      width: 967,
-      height: 862,
     },
     enforcementPatrolPortrait: {
       src: "/images/os/enforcement-patrol-portrait.webp",
@@ -210,11 +174,6 @@ export const MEDIA = {
       width: 1024,
       height: 1280,
     },
-    gatelessUser: {
-      src: "/images/people/gateless-user.webp",
-      width: 1536,
-      height: 1024,
-    },
     kioskUser: {
       src: "/images/people/kiosk-user.webp",
       width: 1536,
@@ -255,28 +214,12 @@ export const MEDIA = {
       width: 1280,
       height: 800,
     },
-    aerialParking: {
-      src: "/images/places/aerial-parking.webp",
-      width: 1024,
-      height: 1280,
-    },
-    aerial: { src: "/images/places/aerial.webp", width: 1280, height: 730 },
     garageLed: {
       src: "/images/places/garage-led.webp",
       width: 1200,
       height: 1504,
     },
     gate: { src: "/images/places/gate.webp", width: 1200, height: 1504 },
-    structure: {
-      src: "/images/places/structure.webp",
-      width: 1200,
-      height: 1504,
-    },
-    iotHardware: {
-      src: "/images/places/iot-hardware.webp",
-      width: 1280,
-      height: 800,
-    },
   },
   parkaid: {
     agentCall: {

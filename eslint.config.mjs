@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025. Tecnova
+ * Copyright (c) 2025-2026. Tecnova
  */
 
 import { dirname } from "path";
@@ -19,8 +19,6 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
     rules: {
-      "@typescript-eslint/no-explicit-any": "off",
-      // Disable expensive rules in production
       ...(isProd && {
         "@typescript-eslint/no-unused-vars": "off",
         "@typescript-eslint/no-explicit-any": "off",

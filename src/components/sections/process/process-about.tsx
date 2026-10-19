@@ -34,7 +34,7 @@ export function ProcessAbout({ dict }: ProcessAboutProps) {
                   key={reason}
                   className="flex items-start gap-3 border-b border-hairline py-3.5 text-[0.9375rem] text-ink"
                 >
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-deck text-white">
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-deck text-brand-foreground">
                     <Check aria-hidden className="size-3" strokeWidth={3} />
                   </span>
                   {reason}

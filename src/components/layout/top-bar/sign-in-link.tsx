@@ -8,17 +8,19 @@ import { cn } from "@/lib/utils";
 
 type SignInLinkProps = {
   label: string;
+  variant?: "brand" | "soft" | "subtle";
   className?: string;
 };
 
-export function SignInLink({ label, className }: SignInLinkProps) {
+export function SignInLink({
+  label,
+  variant = "brand",
+  className,
+}: SignInLinkProps) {
   return (
     <a
       href={SIGN_IN_URL}
-      className={cn(
-        buttonVariants({ variant: "brand", size: "pill" }),
-        className,
-      )}
+      className={cn(buttonVariants({ variant, size: "pill" }), className)}
     >
       {label}
     </a>

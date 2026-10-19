@@ -40,9 +40,9 @@ export function LiveSign({
     <div
       role="group"
       aria-label={dict.signLabel}
-      className="mx-auto w-full max-w-md rounded-[1.75rem] bg-black p-2.5 shadow-card-deep sm:p-3"
+      className="mx-auto w-full max-w-md rounded-[1.75rem] bg-bezel p-2.5 shadow-card-deep sm:p-3"
     >
-      <div className="flex flex-col gap-5 rounded-[1.25rem] bg-ink p-4 text-white sm:p-7">
+      <div className="flex flex-col gap-5 rounded-[1.25rem] bg-navy p-4 text-inverse-foreground sm:p-7">
         <div className="flex items-center justify-between gap-3">
           <span className="flex min-w-0 items-center gap-3">
             <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-deck font-display text-lg font-bold">
@@ -52,7 +52,7 @@ export function LiveSign({
               {dict.lotName}
             </span>
           </span>
-          <span className="flex shrink-0 items-center gap-2 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-white/60">
+          <span className="flex shrink-0 items-center gap-2 text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-inverse-muted">
             <span
               aria-hidden
               className={cn(
@@ -64,8 +64,8 @@ export function LiveSign({
           </span>
         </div>
 
-        <div className="border-t border-white/10 pt-5">
-          <p className="text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-white/60">
+        <div className="border-t border-inverse-border pt-5">
+          <p className="text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-inverse-muted">
             {dict.rateLabel}
           </p>
           <SwapValue
@@ -80,9 +80,9 @@ export function LiveSign({
           />
         </div>
 
-        <div className="border-t border-white/10 pt-5">
+        <div className="border-t border-inverse-border pt-5">
           <div className="flex items-end justify-between gap-3">
-            <p className="text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-white/60">
+            <p className="text-[0.6875rem] font-bold uppercase tracking-[0.14em] text-inverse-muted">
               {dict.spacesLabel}
             </p>
             <SwapValue
@@ -94,7 +94,7 @@ export function LiveSign({
               )}
             />
           </div>
-          <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/10">
+          <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-navy-raised">
             <motion.div
               className={cn(
                 "h-full rounded-full",

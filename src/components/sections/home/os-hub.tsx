@@ -7,7 +7,7 @@
 import { CSSProperties, useRef } from "react";
 import Image from "next/image";
 import { useInView } from "motion/react";
-import Link from "@/components/custom-ui/link";
+import { Link } from "@/components/navigation/link";
 import { HomeDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
 import { Media, MEDIA } from "@/lib/media";
@@ -20,7 +20,7 @@ type HubNode = {
   media: Media;
   x: number;
   y: number;
-  slug?: string;
+  slug: string;
 };
 
 const CORE = { x: 50, y: 42 };
@@ -41,7 +41,13 @@ const HUB_NODES: HubNode[] = [
     y: 37,
     slug: "digital-signage",
   },
-  { key: "barriers", media: MEDIA.os.barriers, x: 11, y: 61 },
+  {
+    key: "barriers",
+    media: MEDIA.os.barriers,
+    x: 11,
+    y: 61,
+    slug: "process-kiosk",
+  },
   {
     key: "cameras",
     media: MEDIA.os.cameras,
@@ -151,7 +157,7 @@ export function OsHub({ locale, dict }: OsHubProps) {
           sizes="(min-width: 1024px) 480px, 90vw"
           className="relative z-[1] w-full drop-shadow-media"
         />
-        <span className="absolute bottom-[-6%] left-1/2 z-[2] inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-deck px-4 py-2 text-[0.6875rem] font-extrabold uppercase leading-none tracking-[0.12em] text-white shadow-deck">
+        <span className="absolute bottom-[-6%] left-1/2 z-[2] inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full bg-deck px-4 py-2 text-[0.6875rem] font-extrabold uppercase leading-none tracking-[0.12em] text-brand-foreground shadow-deck">
           <span
             aria-hidden
             style={{ animationPlayState: playState }}
@@ -185,7 +191,10 @@ function HubNodeItem({
   const highlighted = node.key === "intelligence";
   const className =
     "group/node relative z-[3] flex flex-col items-center gap-1.5 rounded-2xl transition-transform duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring lg:absolute lg:left-[var(--x)] lg:top-[var(--y)] lg:w-[17%] lg:-translate-x-1/2 lg:-translate-y-1/2 lg:hover:scale-[1.07]";
-  const style = { "--x": `${node.x}%`, "--y": `${node.y}%` } as CSSProperties;
+  const style: CSSProperties & Record<"--x" | "--y", string> = {
+    "--x": `${node.x}%`,
+    "--y": `${node.y}%`,
+  };
   const content = (
     <>
       <span
@@ -204,28 +213,20 @@ function HubNodeItem({
       <span
         className={cn(
           "hub-label relative inline-flex max-w-full items-center justify-center gap-[7px] rounded-full px-2 py-[5px] text-center text-[0.5625rem] font-extrabold uppercase leading-tight lg:px-3 lg:py-1.5 lg:text-[0.65625rem] lg:tracking-[0.04em]",
-          highlighted ? "bg-deck text-white" : "bg-surface text-ink",
+          highlighted ? "bg-deck text-brand-foreground" : "bg-surface text-ink",
         )}
       >
         <span
           aria-hidden
           className={cn(
             "hidden size-1.5 shrink-0 rounded-full lg:block",
-            highlighted ? "bg-white" : "bg-deck",
+            highlighted ? "bg-surface" : "bg-deck",
           )}
         />
         {label}
       </span>
     </>
   );
-
-  if (!node.slug) {
-    return (
-      <div style={style} className={className}>
-        {content}
-      </div>
-    );
-  }
 
   return (
     <Link

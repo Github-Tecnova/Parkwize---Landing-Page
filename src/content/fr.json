@@ -6,7 +6,15 @@
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "menuTitle": "Solutions",
-    "switchLanguage": "View the site in English"
+    "switchLanguage": "View the site in English",
+    "bookDemo": "Réserver une démo",
+    "company": "Entreprise",
+    "seeItLive": "Voyez-le en direct",
+    "seeItLiveBody": "Explorez le vrai Dashboard Manager avec des données fictives, sans inscription.",
+    "liveDemo": "Ouvrir la démo en direct",
+    "systemStatus": "État des systèmes",
+    "newTab": "s'ouvre dans un nouvel onglet",
+    "mainLabel": "Principal"
   },
   "comingSoon": {
     "eyebrow": "Bientôt disponible",
@@ -70,7 +78,7 @@
       "legal": "Légal"
     },
     "links": {
-      "bookCall": "Planifier un appel",
+      "bookDemo": "Réserver une démo",
       "exploreDemo": "Explorer la démo",
       "signIn": "Se connecter"
     },
@@ -92,15 +100,8 @@
       "description": "Connectez vos opérations, vos équipements, vos données, l'IA, la tarification, les réservations et le contrôle dans un seul écosystème intelligent."
     },
     "hero": {
-      "titleLines": [
-        "Générez de",
-        "15 à 40 % plus",
-        "de revenus"
-      ],
-      "titleAccent": [
-        "avec votre",
-        "stationnement"
-      ],
+      "titleLines": ["Générez de", "15 à 40 % plus", "de revenus"],
+      "titleAccent": ["avec votre", "stationnement"],
       "lead": "Le premier écosystème d'intelligence du stationnement entièrement propulsé par l'IA. Modernisez vos opérations, votre tarification, votre affichage, vos réservations et plus encore, depuis une seule plateforme.",
       "cta": "Nous joindre",
       "videoLabel": "Des gestionnaires de stationnement consultent des données en direct",
@@ -139,7 +140,7 @@
       "eyebrow": "Notre solution de stationnement",
       "title": "L'écosystème *Parkwize.*",
       "lead": "Des solutions connectées. Une plateforme intelligente.",
-      "cta": "Réserver un appel",
+      "cta": "Réserver une démo",
       "indexLabel": "Produits Parkwize"
     },
     "os": {
@@ -388,7 +389,7 @@
         "eyebrow": "Gestionnaire de tableau de bord Parkwize",
         "title": "Là où tout se connecte.",
         "lead": "Le cerveau opérationnel du stationnement moderne : un tableau de bord centralisé qui relie tous vos équipements et logiciels dans une seule plateforme en temps réel. Il prend le contrôle de tout.",
-        "cta": "Demander une démo",
+        "cta": "Réserver une démo",
         "videoLabel": "Un exploitant consulte son stationnement sur un ordinateur portable"
       },
       "showcase": {
@@ -504,7 +505,8 @@
       "hero": {
         "logoAlt": "Parkwize IA",
         "tagline": "La façon ultime de gérer le stationnement intelligent",
-        "laptopAlt": "Parkwize IA répond à des questions sur les données de stationnement sur un ordinateur portable"
+        "laptopAlt": "Parkwize IA répond à des questions sur les données de stationnement sur un ordinateur portable",
+        "cta": "Réserver une démo"
       },
       "forecast": {
         "eyebrow": "Comment la prévision est calculée",
@@ -602,15 +604,7 @@
         "chartTitle": "Occupation prévue, 7 prochains jours",
         "legendBase": "Base",
         "legendAdjusted": "Ajustée",
-        "days": [
-          "Lun",
-          "Mar",
-          "Mer",
-          "Jeu",
-          "Ven",
-          "Sam",
-          "Dim"
-        ],
+        "days": ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
         "formulaBase": "Prévision de base",
         "formulaNet": "(1 + impact net)",
         "formulaResult": "Prévision ajustée",
@@ -726,7 +720,7 @@
         "eyebrow": "Parkwize Display",
         "title": "Vos données connectées au *monde physique.*",
         "lead": "Transformez l'affichage statique de vos stationnements en systèmes de décision intelligents et dynamiques. Tarifs, disponibilités et messages se mettent à jour sur chaque écran dès que vos données changent.",
-        "cta": "Nous joindre",
+        "cta": "Réserver une démo",
         "imageAlt": "Deux enseignes numériques Parkwize affichant les tarifs réguliers et un tarif événement"
       },
       "problem": {
@@ -892,7 +886,7 @@
         "eyebrow": "Parkwize Booking",
         "title": "Une plateforme de réservation moderne, *conçue pour convertir.*",
         "lead": "Transformez la demande en réservations confirmées. Recherche pensée pour le mobile, paiement en un geste et disponibilités synchronisées avec vos tarifs en direct.",
-        "cta": "Nous joindre",
+        "cta": "Réserver une démo",
         "imageAlt": "Quatre écrans de Parkwize Booking : formulaire de réservation, prix, minuterie de séjour et laissez-passer QR"
       },
       "problem": {
@@ -1088,7 +1082,7 @@
         "eyebrow": "Parkwize Enforcement",
         "title": "Chaque session sous contrôle. *Sans barrière.*",
         "lead": "Une solution connectée, sans billet, qui suit chaque véhicule, automatise la surveillance et donne aux exploitants une visibilité totale, sans ralentir les conducteurs.",
-        "cta": "Nous joindre",
+        "cta": "Réserver une démo",
         "imageAlt": "Une agente de contrôle scanne la plaque d'un véhicule avec son téléphone"
       },
       "problem": {
@@ -1291,7 +1285,7 @@
         "logoLabel": "Process Kiosk",
         "title": "Du matériel industriel, *intelligent par nature.*",
         "lead": "Parkwize s'intègre nativement à Process Kiosk : barrières, terminaux, capteurs et contrôle d'accès conçus pour la nouvelle génération du stationnement.",
-        "cta": "Demander une démo",
+        "cta": "Réserver une démo",
         "imageAlt": "Une borne de paiement de stationnement Process en acier inoxydable"
       },
       "about": {
@@ -1337,21 +1331,13 @@
           {
             "title": "Bornes phares",
             "body": "Émission de billets, lecture de plaques et contrôle des barrières, dans un boîtier robuste résistant aux intempéries, conçu pour fonctionner 24/7.",
-            "specs": [
-              "Billetterie",
-              "Lecture de plaques",
-              "Barrières"
-            ],
+            "specs": ["Billetterie", "Lecture de plaques", "Barrières"],
             "imageAlt": "Deux bornes phares Process en acier inoxydable"
           },
           {
             "title": "Borne de paiement compacte",
             "body": "Peu encombrante, elle accepte tous les modes de paiement : sans contact, puce et paiement mobile. Idéale pour les plus petits sites.",
-            "specs": [
-              "Sans contact",
-              "Puce",
-              "Paiement mobile"
-            ],
+            "specs": ["Sans contact", "Puce", "Paiement mobile"],
             "imageAlt": "Une borne de paiement compacte Process"
           }
         ]
@@ -1502,7 +1488,7 @@
         "logoAlt": "ParkAid",
         "title": "Toujours là pour *vos usagers.*",
         "lead": "ParkAid relie chaque intercom de votre stationnement (bornes d'entrée, de sortie et de paiement) à un assistant vocal IA et à des agents humains disponibles 24/7.",
-        "cta": "Nous joindre",
+        "cta": "Réserver une démo",
         "imageAlt": "L'équipe du centre d'appels ParkAid au travail"
       },
       "focus": {

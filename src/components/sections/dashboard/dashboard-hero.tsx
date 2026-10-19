@@ -18,7 +18,7 @@ type DashboardHeroProps = {
 
 export function DashboardHero({ locale, dict }: DashboardHeroProps) {
   return (
-    <section className="under-top-bar relative isolate overflow-hidden bg-black pb-12 text-white">
+    <section className="under-top-bar relative isolate overflow-hidden bg-navy pb-12 text-inverse-foreground">
       <Image
         src={MEDIA.places.parkingGarage.src}
         alt=""
@@ -30,13 +30,13 @@ export function DashboardHero({ locale, dict }: DashboardHeroProps) {
       <div aria-hidden className="night-fade absolute inset-0 -z-10" />
       <Container className="grid items-center gap-9 pt-8 text-center sm:pt-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-14 lg:pt-16 lg:text-left">
         <div className="flex flex-col items-center lg:items-start">
-          <span className="kicker rounded-full border border-white/25 px-[1.125rem] py-2 text-[0.6875rem] tracking-[0.12em] text-white">
+          <span className="kicker rounded-full border border-inverse-border px-[1.125rem] py-2 text-[0.6875rem] tracking-[0.12em] text-inverse-foreground">
             {dict.eyebrow}
           </span>
           <h1 className="mb-[1.125rem] mt-6 max-w-[14ch] text-balance font-display text-[clamp(2.7rem,5.4vw,4.5rem)] font-semibold leading-[1.02] tracking-[-0.02em]">
             {dict.title}
           </h1>
-          <p className="mb-8 max-w-[41rem] text-pretty text-[0.9375rem] leading-relaxed text-white/70 sm:text-[1.0625rem]">
+          <p className="mb-8 max-w-[41rem] text-pretty text-[0.9375rem] leading-relaxed text-inverse-muted sm:text-[1.0625rem]">
             {dict.lead}
           </p>
           <ButtonLink href={DEMO_HREF} locale={locale} withArrow>

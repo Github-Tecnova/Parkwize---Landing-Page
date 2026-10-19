@@ -5,7 +5,7 @@
 "use client";
 
 import { Info } from "lucide-react";
-import Link from "@/components/custom-ui/link";
+import { Link } from "@/components/navigation/link";
 import { ConsentField } from "@/components/forms/consent-field";
 import { FormCard } from "@/components/forms/form-card";
 import { FormSubmit } from "@/components/forms/form-submit";

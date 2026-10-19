@@ -6,6 +6,7 @@
 
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
+import { Globe } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { getAlternateLocale, Locale, switchLocalePath } from "@/lib/i18n";
 
@@ -26,10 +27,11 @@ export function LanguageToggle({ locale, label }: LanguageToggleProps) {
       scroll={false}
       className={buttonVariants({
         variant: "soft",
-        size: "icon-lg",
-        className: "text-sm font-semibold uppercase tracking-wide",
+        size: "pill",
+        className: "gap-1.5 px-3 text-sm font-semibold uppercase sm:px-3",
       })}
     >
+      <Globe aria-hidden className="text-copy" />
       {alternateLocale}
     </NextLink>
   );

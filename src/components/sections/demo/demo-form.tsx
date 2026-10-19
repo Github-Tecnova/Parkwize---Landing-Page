@@ -25,6 +25,8 @@ import { PRODUCT_LINKS } from "@/lib/navigation";
 
 const ID = "demo";
 
+const NO_INTERESTS: string[] = [];
+
 const INITIAL = {
   firstName: "",
   lastName: "",
@@ -36,7 +38,7 @@ const INITIAL = {
   spaces: "",
   barriers: "",
   timeline: "",
-  interests: [] as string[],
+  interests: NO_INTERESTS,
   currentSetup: "",
   message: "",
   consent: false,

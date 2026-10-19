@@ -43,7 +43,7 @@ export function DemoStepNote({
         className={className}
       >
         <div className="flex items-center gap-3">
-          <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-deck text-sm font-bold text-white">
+          <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-deck text-sm font-bold text-brand-foreground">
             {step + 1}
           </span>
           <h3 className="font-display text-lg font-bold text-ink sm:text-xl">

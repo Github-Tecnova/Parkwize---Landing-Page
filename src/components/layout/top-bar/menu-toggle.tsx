@@ -15,12 +15,13 @@ type MenuToggleProps = {
   openLabel: string;
   closeLabel: string;
   onToggle: () => void;
+  className?: string;
 };
 
 const LINE_OFFSET = 4;
 
 export const MenuToggle = forwardRef<HTMLButtonElement, MenuToggleProps>(
-  ({ open, controls, openLabel, closeLabel, onToggle }, ref) => (
+  ({ open, controls, openLabel, closeLabel, onToggle, className }, ref) => (
     <Button
       ref={ref}
       type="button"
@@ -30,6 +31,7 @@ export const MenuToggle = forwardRef<HTMLButtonElement, MenuToggleProps>(
       aria-controls={controls}
       aria-label={open ? closeLabel : openLabel}
       onClick={onToggle}
+      className={className}
     >
       <span className="relative block h-2.5 w-5">
         <motion.span

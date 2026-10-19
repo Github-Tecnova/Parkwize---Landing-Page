@@ -62,14 +62,16 @@ src/
 
 Before writing markup, check `components/ui`, `components/layout` and `components/sections`.
 
-- Buttons and button-looking links: `Button` / `buttonVariants` from `@/components/ui/button`. Add a variant there instead of restyling ad hoc.
+- Buttons and button-looking links: `Button` / `buttonVariants` from `@/components/ui/button` (variants `brand`, `soft`, `subtle`; sizes `pill`, `pill-lg`, `icon-lg`). Add a variant there instead of restyling ad hoc.
 - Variants of any component: `cva`.
 - Class merging: `cn()` from `@/lib/utils`.
-- Internal links: the localized `Link` from `@/components/custom-ui/link` (adds the `/en` or `/fr` prefix). External links: plain `<a>` with `rel="noopener noreferrer"` when `target="_blank"`.
+- Internal links: the localized `Link` from `@/components/navigation/link` (named export, adds the `/en` or `/fr` prefix). External links: plain `<a>` with `rel="noopener noreferrer"` when `target="_blank"`.
 - Glass surfaces: the `glass` class from `globals.css`.
 - Logo: `ParkwizeLogo` from `@/components/brand/parkwize-logo` (vector, colored with `currentColor`). Do not use the logo image files.
 - Sign-in call to action: `SignInLink` from `@/components/layout/top-bar/sign-in-link`.
-- Outside-click / Escape handling: `useDismiss`. Mobile scroll lock: `useScrollLock`.
+- Outside-click / Escape handling: `useDismiss`. Scroll lock (iOS safe): `useScrollLock`. Focus trap: `useFocusTrap`. Scrolled state: `useScrolled`.
+- Top bar: `TopBar` composes `TopBarNav` (desktop links, active state through `isActivePath`), `SolutionsPanel` (desktop mega menu) and `MobileMenu`. Links come from `PRODUCT_LINKS`, `SOLUTION_LINKS` and `@/lib/navigation` URLs.
+- Calls to action: product heroes always say "Book a demo" and go to `DEMO_HREF`; "Get in touch" always goes to `CONTACT_HREF`.
 - Small uppercase mono labels (column titles, eyebrows, meta text): the `eyebrow` class from `globals.css`.
 - Link lists: `FooterColumn` from `@/components/layout/footer/footer-column` handles internal (localized) and external links.
 - Site URLs and page lists (`SIGN_IN_URL`, `DEMO_URL`, `BOOK_CALL_HREF`, `PRODUCT_LINKS`, `LEGAL_LINKS`): `@/lib/navigation`. Never hardcode them in components.
@@ -98,8 +100,8 @@ All visual values come from CSS variables in `src/app/globals.css`, exposed thro
 
 - Colors: use token classes (`bg-background`, `text-foreground`, `text-muted-foreground`, `bg-brand`, `text-brand-foreground`, `border-border`, ...). **No hex, `rgb()`, `hsl()` or arbitrary color values in components** (`bg-[#0658f6]` is forbidden). Need a new color? Add a token in `globals.css` and `tailwind.config.ts`.
 - Deck palette (from the brand deck): `deck` (`deck-bright`, `deck-tint`), `ink` for headings, `copy` for body text, `hairline` for rules, `ai-panel` for the blue AI panel.
-- Brand blue: `brand` (`--brand`). `parkwize_blue` and `primary_action` are legacy aliases; do not use them in new code.
-- Dark surfaces (footer, dark sections): the `inverse` palette (`bg-inverse`, `text-inverse-foreground`, `text-inverse-muted`, `border-inverse-border`, `hover:text-inverse-hover`).
+- Brand blue: `brand` (`--brand`).
+- Dark surfaces are brand navy, never black: sections use `bg-navy` (cards on navy `bg-navy-raised`), the footer `bg-inverse`, text and rules the `inverse` palette (`text-inverse-foreground`, `text-inverse-muted`, `border-inverse-border`, `hover:text-inverse-hover`). Device bezels in mockups use `bg-bezel`. Inside blue `ai-panel` cards use `border-panel-rule` / `bg-panel-tile`. White text on blue or navy: `text-brand-foreground` or `text-inverse-foreground`, never `text-white`.
 - Status colors: `success`.
 - Fonts: `font-sans` (Inter) for body text, `font-display` (Poppins) for headings and display text, `font-mono` (JetBrains Mono) only for small uppercase labels (prefer the `eyebrow` class). All come from `next/font` variables in `src/app/(landing)/[lang]/layout.tsx`. Never import fonts elsewhere.
 - Radius, shadows, blur: use the theme scale (`rounded-lg`, `shadow-glass`, ...). Arbitrary values are only acceptable for one-off geometry (e.g. a pill radius matching a fixed height).

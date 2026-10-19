@@ -18,7 +18,7 @@ import { useInView } from "motion/react";
 import { Media } from "@/lib/media";
 import { cn } from "@/lib/utils";
 
-export type OrbitTile = {
+type OrbitTile = {
   key: string;
   media: Media;
   caption: string;
@@ -27,7 +27,6 @@ export type OrbitTile = {
 type OrbitRowProps = ComponentPropsWithoutRef<"div"> & {
   tiles: OrbitTile[];
   children?: ReactNode;
-  speed?: number;
   tileHeight?: number;
   aspectRatio?: number;
   gap?: number;
@@ -44,6 +43,7 @@ type OrbitLayout = {
   radius: number;
 };
 
+const SECONDS_PER_TILE = 4;
 const SLICES = 16;
 const CAMERA = 1.6;
 const MAX_WIDTH = 40;
@@ -53,7 +53,6 @@ const FALLBACK_SIZE = { width: 1200, height: 560 };
 export function OrbitRow({
   tiles,
   children,
-  speed = 2.2,
   tileHeight = 34,
   aspectRatio = 16 / 9,
   gap = 6,
@@ -126,8 +125,8 @@ export function OrbitRow({
     `${hide + 0.001}%,${100 - hide - 0.001}%{visibility:visible}}` +
     `@media(prefers-reduced-motion:reduce){.${tileClass}{animation-play-state:paused!important}}`;
   const share = aspectRatio / SLICES;
-  const duration = columns * speed;
-  const mask = `linear-gradient(90deg,transparent,#000 ${fade}%,#000 ${100 - fade}%,transparent)`;
+  const duration = columns * SECONDS_PER_TILE;
+  const mask = `linear-gradient(90deg,transparent,black ${fade}%,black ${100 - fade}%,transparent)`;
 
   return (
     <div
@@ -163,7 +162,7 @@ export function OrbitRow({
                 width: length(aspectRatio),
                 height: length(1),
                 transformStyle: "preserve-3d",
-                animation: `${orbitName} ${duration}s linear ${-column * speed}s infinite`,
+                animation: `${orbitName} ${duration}s linear ${-column * SECONDS_PER_TILE}s infinite`,
                 animationPlayState: inView ? "running" : "paused",
               }}
               onAnimationIteration={(event) => {

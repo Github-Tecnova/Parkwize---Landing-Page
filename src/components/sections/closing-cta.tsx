@@ -16,9 +16,10 @@ import { CONTACT_HREF } from "@/lib/navigation";
 type ClosingCtaProps = {
   locale: Locale;
   dict: ClosingCtaDictionary;
+  showCta?: boolean;
 };
 
-export function ClosingCta({ locale, dict }: ClosingCtaProps) {
+export function ClosingCta({ locale, dict, showCta = true }: ClosingCtaProps) {
   const { pMark, porsche911 } = MEDIA.brand;
 
   return (
@@ -41,9 +42,11 @@ export function ClosingCta({ locale, dict }: ClosingCtaProps) {
           <h2 className="mb-7 mt-3.5 max-w-[50rem] text-balance font-display text-h2 font-semibold text-ink">
             <AccentText text={dict.title} />
           </h2>
-          <ButtonLink href={CONTACT_HREF} locale={locale} withArrow>
-            {dict.cta}
-          </ButtonLink>
+          {showCta && (
+            <ButtonLink href={CONTACT_HREF} locale={locale} withArrow>
+              {dict.cta}
+            </ButtonLink>
+          )}
           <p className="mt-6 flex items-center gap-2 text-[0.71875rem] font-semibold uppercase tracking-[0.16em] text-copy">
             <MapleLeaf className="h-[13px] w-3 text-maple" />
             {dict.madeIn}

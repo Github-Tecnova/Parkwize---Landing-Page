@@ -5,7 +5,7 @@
 import { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 import { VariantProps } from "class-variance-authority";
-import Link from "@/components/custom-ui/link";
+import { Link } from "@/components/navigation/link";
 import { buttonVariants } from "@/components/ui/button";
 import { Locale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";

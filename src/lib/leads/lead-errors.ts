@@ -2,8 +2,7 @@
  * Copyright (c) 2025-2026. Tecnova
  */
 
-export type LeadErrorCode =
-  "required" | "email" | "tooLong" | "consent" | "invalid";
+type LeadErrorCode = "required" | "email" | "tooLong" | "consent" | "invalid";
 
 export type LeadErrors = Partial<Record<string, LeadErrorCode>>;
 

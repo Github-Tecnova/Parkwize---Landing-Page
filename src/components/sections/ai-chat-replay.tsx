@@ -145,7 +145,7 @@ export function AiChatReplay({
               <span
                 key={dot}
                 style={{ animationDelay: `${dot * 0.16}s` }}
-                className="size-1.5 animate-pulse rounded-full bg-white"
+                className="size-1.5 animate-pulse rounded-full bg-surface"
               />
             ))}
           </div>
@@ -160,7 +160,7 @@ export function AiChatReplay({
         >
           {draft || placeholder}
         </span>
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-deck text-white">
+        <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-deck text-brand-foreground">
           <ArrowRight className="size-[1.125rem]" />
         </span>
       </div>
@@ -185,7 +185,7 @@ function ChatBubble({
         "max-w-[84%] whitespace-pre-line break-words px-4 py-[0.8125rem] text-sm leading-normal",
         fromUser
           ? "self-end rounded-[14px] rounded-br-[4px] border border-hairline bg-surface text-ink"
-          : "self-start rounded-[14px] rounded-bl-[4px] bg-deck text-white",
+          : "self-start rounded-[14px] rounded-bl-[4px] bg-deck text-brand-foreground",
       )}
     >
       <span className="sr-only">{label}: </span>
@@ -193,7 +193,7 @@ function ChatBubble({
       {streaming && (
         <span
           aria-hidden
-          className="ml-[3px] inline-block h-[1em] w-0.5 animate-blink bg-white align-[-2px]"
+          className="ml-[3px] inline-block h-[1em] w-0.5 animate-blink bg-surface align-[-2px]"
         />
       )}
     </p>
