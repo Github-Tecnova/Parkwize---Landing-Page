@@ -1,6 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
-import HomeFooter from "@/components/nav/home-footer";
+import { Footer } from "@/components/layout/footer/footer";
 import { TopBar } from "@/components/layout/top-bar/top-bar";
 import { getDictionary } from "@/content/dictionary";
 import { isLocale, LOCALES } from "@/lib/i18n";
@@ -24,9 +24,9 @@ export default async function LangLayout({
 
   return (
     <>
-      <TopBar locale={lang} dict={dict.navigation} />
+      <TopBar locale={lang} dict={dict.navigation} pages={dict.pages} />
       <div className="pt-[var(--top-bar-offset)]">{children}</div>
-      <HomeFooter lang={lang} dict={dict} />
+      <Footer locale={lang} dict={dict.footer} pages={dict.pages} />
     </>
   );
 }

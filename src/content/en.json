@@ -215,32 +215,6 @@
   "homepage": {
     "ctu": "Get in Touch",
     "cto": "Something",
-    "footer": {
-      "tagline": "The Future of Parking Intelligence",
-      "privacyPolicy": "Privacy policy",
-      "termsOfUse": "Terms of use",
-      "systemStatus": "Systems operational.",
-      "products": {
-        "title": "Products",
-        "dashboard": "Dashboard Manager",
-        "signage": "Digital Signage Solution",
-        "booking": "Online Booking",
-        "ai": "Parkwize AI"
-      },
-      "navigate": {
-        "title": "Navigate",
-        "ecosystem": "Ecosystem",
-        "products": "Products",
-        "vision": "Vision",
-        "getInTouch": "Get in touch"
-      },
-      "actions": {
-        "title": "Actions",
-        "bookCall": "Book a call",
-        "exploreDemo": "Explore demo",
-        "signIn": "Sign-in"
-      }
-    },
     "landing": {
       "header": {
         "description": "The first fully AI-powered parking intelligence ecosystem. Modernize operations, pricing, displays, booking, and more — from one platform.",
@@ -1138,43 +1112,70 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "menuTitle": "Solutions",
-    "switchLanguage": "Voir le site en français",
-    "products": {
-      "dashboardManager": {
-        "name": "Dashboard Manager",
-        "description": "Revenue, occupancy and operations in one view."
-      },
-      "parkwizeAi": {
-        "name": "Parkwize AI",
-        "description": "Ask questions, get forecasts and insights."
-      },
-      "digitalSignage": {
-        "name": "Digital Signage Solution",
-        "description": "Live pricing and availability on every screen."
-      },
-      "onlineReservation": {
-        "name": "Online Reservation",
-        "description": "Let drivers book and pay ahead."
-      },
-      "enforcement": {
-        "name": "Enforcement",
-        "description": "Plate recognition and violation tracking."
-      },
-      "processKiosk": {
-        "name": "Process Kiosk",
-        "description": "Pay stations and entry terminals."
-      },
-      "parkAid": {
-        "name": "ParkAid",
-        "description": "Support and assistance for your sites."
-      }
-    }
+    "switchLanguage": "Voir le site en français"
   },
   "comingSoon": {
     "eyebrow": "Coming soon",
     "title": "This page is on its way",
     "description": "We're putting the finishing touches on this page. In the meantime, explore the rest of Parkwize or sign in to your account.",
-    "backHome": "Back to home",
-    "metaDescription": "Coming soon on Parkwize."
+    "backHome": "Back to home"
+  },
+  "pages": {
+    "dashboardManager": {
+      "name": "Dashboard Manager",
+      "description": "Revenue, occupancy and operations in one view."
+    },
+    "parkwizeAi": {
+      "name": "Parkwize AI",
+      "description": "Ask questions, get forecasts and insights."
+    },
+    "digitalSignage": {
+      "name": "Digital Signage Solution",
+      "description": "Live pricing and availability on every screen."
+    },
+    "onlineReservation": {
+      "name": "Online Reservation",
+      "description": "Let drivers book and pay ahead."
+    },
+    "enforcement": {
+      "name": "Enforcement",
+      "description": "Plate recognition and violation tracking."
+    },
+    "processKiosk": {
+      "name": "Process Kiosk",
+      "description": "Pay stations and entry terminals."
+    },
+    "parkAid": {
+      "name": "ParkAid",
+      "description": "Support and assistance for your sites."
+    },
+    "privacyPolicy": {
+      "name": "Privacy policy",
+      "description": "How we collect, use and protect your data."
+    },
+    "termsOfUse": {
+      "name": "Terms of use",
+      "description": "The terms that govern the use of Parkwize."
+    }
+  },
+  "footer": {
+    "logoAlt": "Parkwize",
+    "tagline": "The intelligent parking platform. Operations, pricing, displays and bookings, from one place.",
+    "status": "All systems operational",
+    "columns": {
+      "products": "Products",
+      "getStarted": "Get started",
+      "legal": "Legal"
+    },
+    "links": {
+      "bookCall": "Book a call",
+      "exploreDemo": "Explore the demo",
+      "signIn": "Sign in"
+    },
+    "company": "Parkwize Inc.",
+    "rights": "All rights reserved.",
+    "madeIn": "Proudly Canadian",
+    "backToTop": "Back to top",
+    "navLabel": "Footer"
   }
 }

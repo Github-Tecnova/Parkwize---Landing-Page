@@ -6,7 +6,7 @@
 
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
-import { NavigationDictionary } from "@/content/dictionary";
+import { NavigationDictionary, PagesDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
 import { FADE_BASE, SPRING_SMOOTH, STAGGER_STEP } from "@/lib/motion";
 import { PRODUCT_LINKS } from "@/lib/navigation";
@@ -17,10 +17,17 @@ type TopBarMenuProps = {
   id: string;
   locale: Locale;
   dict: NavigationDictionary;
+  pages: PagesDictionary;
   onNavigate: () => void;
 };
 
-export function TopBarMenu({ id, locale, dict, onNavigate }: TopBarMenuProps) {
+export function TopBarMenu({
+  id,
+  locale,
+  dict,
+  pages,
+  onNavigate,
+}: TopBarMenuProps) {
   const pathname = usePathname();
 
   return (
@@ -48,10 +55,10 @@ export function TopBarMenu({ id, locale, dict, onNavigate }: TopBarMenuProps) {
               transition={{ ...FADE_BASE, delay: index * STAGGER_STEP }}
             >
               <TopBarMenuItem
-                product={product}
+                page={product}
                 locale={locale}
-                name={dict.products[product.key].name}
-                description={dict.products[product.key].description}
+                name={pages[product.key].name}
+                description={pages[product.key].description}
                 active={pathname === `/${locale}/${product.slug}`}
                 onNavigate={onNavigate}
               />

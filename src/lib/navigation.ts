@@ -4,6 +4,7 @@
 
 import {
   CalendarCheck,
+  FileText,
   LayoutDashboard,
   LifeBuoy,
   LucideIcon,
@@ -11,9 +12,16 @@ import {
   ShieldCheck,
   Sparkles,
   Ticket,
+  UserLock,
 } from "lucide-react";
 
 export const SIGN_IN_URL = "https://app.parkwize.ai/";
+
+export const DEMO_URL = "https://demo.parkwize.ai/app/dashboard";
+
+export const SYSTEM_STATUS_URL = "https://status.parkwizeinc.com";
+
+export const BOOK_CALL_HREF = "/#early-access-form";
 
 export type ProductKey =
   | "dashboardManager"
@@ -24,13 +32,17 @@ export type ProductKey =
   | "processKiosk"
   | "parkAid";
 
-export type ProductLink = {
-  key: ProductKey;
+export type LegalKey = "privacyPolicy" | "termsOfUse";
+
+export type PageKey = ProductKey | LegalKey;
+
+export type PageLink<Key extends PageKey = PageKey> = {
+  key: Key;
   slug: string;
   Icon: LucideIcon;
 };
 
-export const PRODUCT_LINKS: ProductLink[] = [
+export const PRODUCT_LINKS: PageLink<ProductKey>[] = [
   { key: "dashboardManager", slug: "dashboard-manager", Icon: LayoutDashboard },
   { key: "parkwizeAi", slug: "parkwize-ai", Icon: Sparkles },
   { key: "digitalSignage", slug: "digital-signage", Icon: MonitorPlay },
@@ -40,6 +52,13 @@ export const PRODUCT_LINKS: ProductLink[] = [
   { key: "parkAid", slug: "parkaid", Icon: LifeBuoy },
 ];
 
-export function findProductBySlug(slug: string): ProductLink | undefined {
-  return PRODUCT_LINKS.find((product) => product.slug === slug);
+export const LEGAL_LINKS: PageLink<LegalKey>[] = [
+  { key: "privacyPolicy", slug: "privacy-policy", Icon: UserLock },
+  { key: "termsOfUse", slug: "terms-of-use", Icon: FileText },
+];
+
+export const COMING_SOON_LINKS: PageLink[] = [...PRODUCT_LINKS, ...LEGAL_LINKS];
+
+export function findComingSoonPage(slug: string): PageLink | undefined {
+  return COMING_SOON_LINKS.find((page) => page.slug === slug);
 }

@@ -27,6 +27,7 @@ export default {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         display: ["var(--font-poppins)", "var(--font-inter)", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       boxShadow: {
         glass: "var(--glass-shadow)",
@@ -64,6 +65,14 @@ export default {
           divider: "var(--glass-divider)",
         },
         scrim: "var(--scrim)",
+        inverse: {
+          DEFAULT: "var(--inverse)",
+          foreground: "var(--inverse-foreground)",
+          muted: "var(--inverse-muted)",
+          border: "var(--inverse-border)",
+          hover: "var(--inverse-hover)",
+        },
+        success: "var(--success)",
         background: "var(--background)",
         foreground: "var(--foreground)",
         card: {

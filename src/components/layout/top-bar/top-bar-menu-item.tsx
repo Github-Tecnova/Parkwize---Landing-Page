@@ -7,11 +7,11 @@
 import { ArrowRight } from "lucide-react";
 import Link from "@/components/custom-ui/link";
 import { Locale } from "@/lib/i18n";
-import { ProductLink } from "@/lib/navigation";
+import { PageLink } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 type TopBarMenuItemProps = {
-  product: ProductLink;
+  page: PageLink;
   locale: Locale;
   name: string;
   description: string;
@@ -20,18 +20,18 @@ type TopBarMenuItemProps = {
 };
 
 export function TopBarMenuItem({
-  product,
+  page,
   locale,
   name,
   description,
   active,
   onNavigate,
 }: TopBarMenuItemProps) {
-  const { Icon } = product;
+  const { Icon } = page;
 
   return (
     <Link
-      href={`/${product.slug}`}
+      href={`/${page.slug}`}
       lang={locale}
       aria-current={active ? "page" : undefined}
       onClick={onNavigate}

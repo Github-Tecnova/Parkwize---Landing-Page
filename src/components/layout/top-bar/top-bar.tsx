@@ -8,7 +8,7 @@ import { useCallback, useId, useRef, useState } from "react";
 import { AnimatePresence, motion, MotionConfig } from "motion/react";
 import { ParkwizeLogo } from "@/components/brand/parkwize-logo";
 import Link from "@/components/custom-ui/link";
-import { NavigationDictionary } from "@/content/dictionary";
+import { NavigationDictionary, PagesDictionary } from "@/content/dictionary";
 import { DismissReason, useDismiss } from "@/hooks/use-dismiss";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
 import { Locale } from "@/lib/i18n";
@@ -21,9 +21,10 @@ import { TopBarMenu } from "./top-bar-menu";
 type TopBarProps = {
   locale: Locale;
   dict: NavigationDictionary;
+  pages: PagesDictionary;
 };
 
-export function TopBar({ locale, dict }: TopBarProps) {
+export function TopBar({ locale, dict, pages }: TopBarProps) {
   const [open, setOpen] = useState(false);
   const menuId = useId();
   const surfaceRef = useRef<HTMLDivElement>(null);
@@ -90,6 +91,7 @@ export function TopBar({ locale, dict }: TopBarProps) {
                 id={menuId}
                 locale={locale}
                 dict={dict}
+                pages={pages}
                 onNavigate={closeMenu}
               />
             )}

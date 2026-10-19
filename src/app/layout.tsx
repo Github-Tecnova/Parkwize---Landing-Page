@@ -3,7 +3,7 @@
  */
 
 import type { Metadata, Viewport } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, JetBrains_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
@@ -12,7 +12,7 @@ import TranslationProvider from "@/hooks/translation-hook";
 import { getDictionary } from "@/content/dictionary";
 import { Suspense } from "react";
 import { FontsProvider } from "@/components/providers/fonts-provider";
-import {Analytics} from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,6 +34,12 @@ const poppins = Poppins({
     "900",
   ] as const,
   variable: "--font-poppins",
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -64,13 +70,13 @@ export default async function RootLayout({
       <FontsProvider inter={inter.className} poppins={poppins.className}>
         <html
           lang="en"
-          className={`${inter.variable} ${poppins.variable} scroll-smooth`}
+          className={`${inter.variable} ${poppins.variable} ${jetBrainsMono.variable} scroll-smooth`}
           suppressHydrationWarning
         >
           <body
             className={`${inter.className} max-h-screen min-h-screen antialiased`}
           >
-          <Analytics />
+            <Analytics />
             <TranslationProvider initialDict={dict}>
               <ThemeProvider
                 storageKey={"parkwize-theme"}

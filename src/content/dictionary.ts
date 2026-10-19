@@ -8,6 +8,10 @@ export type NavigationDictionary = DictionaryType["navigation"];
 
 export type ComingSoonDictionary = DictionaryType["comingSoon"];
 
+export type PagesDictionary = DictionaryType["pages"];
+
+export type FooterDictionary = DictionaryType["footer"];
+
 const dictionaries: Record<Locale, () => Promise<DictionaryType>> = {
   en: () => import("./en.json").then((module) => module.default),
   fr: () => import("./fr.json").then((module) => module.default),

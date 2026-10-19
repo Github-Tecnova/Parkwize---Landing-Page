@@ -215,32 +215,6 @@
   "homepage": {
     "ctu": "Contactez-nous",
     "cto": "Planifier une rencontre",
-    "footer": {
-      "tagline": "Le futur de l'intelligence du stationnement",
-      "privacyPolicy": "Politique de confidentialité",
-      "termsOfUse": "Conditions d'utilisation",
-      "systemStatus": "Systèmes opérationnels.",
-      "products": {
-        "title": "Produits",
-        "dashboard": "Gestionnaire de tableau de bord",
-        "signage": "Solution d'affichage numérique",
-        "booking": "Réservation en ligne",
-        "ai": "Parkwize IA"
-      },
-      "navigate": {
-        "title": "Navigation",
-        "ecosystem": "Écosystème",
-        "products": "Produits",
-        "vision": "Vision",
-        "getInTouch": "Nous contacter"
-      },
-      "actions": {
-        "title": "Actions",
-        "bookCall": "Planifier un appel",
-        "exploreDemo": "Explorer la démo",
-        "signIn": "Se connecter"
-      }
-    },
     "landing": {
       "header": {
         "description": "Le premier écosystème d’intelligence de stationnement entièrement propulsé par l’IA. Modernisez vos opérations, votre tarification, vos affichages, vos réservations et plus encore — depuis une seule plateforme.",
@@ -1122,43 +1096,70 @@
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "menuTitle": "Solutions",
-    "switchLanguage": "View the site in English",
-    "products": {
-      "dashboardManager": {
-        "name": "Gestionnaire de tableau de bord",
-        "description": "Revenus, occupation et opérations en une seule vue."
-      },
-      "parkwizeAi": {
-        "name": "Parkwize IA",
-        "description": "Posez vos questions, obtenez prévisions et analyses."
-      },
-      "digitalSignage": {
-        "name": "Solution d'affichage numérique",
-        "description": "Tarifs et disponibilités en direct sur chaque écran."
-      },
-      "onlineReservation": {
-        "name": "Réservation en ligne",
-        "description": "Les conducteurs réservent et paient à l'avance."
-      },
-      "enforcement": {
-        "name": "Contrôle et application",
-        "description": "Lecture de plaques et suivi des infractions."
-      },
-      "processKiosk": {
-        "name": "Borne Process",
-        "description": "Bornes de paiement et terminaux d'entrée."
-      },
-      "parkAid": {
-        "name": "ParkAid",
-        "description": "Soutien et assistance pour vos sites."
-      }
-    }
+    "switchLanguage": "View the site in English"
   },
   "comingSoon": {
     "eyebrow": "Bientôt disponible",
     "title": "Cette page arrive bientôt",
     "description": "Nous mettons la touche finale à cette page. En attendant, découvrez le reste de Parkwize ou connectez-vous à votre compte.",
-    "backHome": "Retour à l'accueil",
-    "metaDescription": "Bientôt disponible sur Parkwize."
+    "backHome": "Retour à l'accueil"
+  },
+  "pages": {
+    "dashboardManager": {
+      "name": "Gestionnaire de tableau de bord",
+      "description": "Revenus, occupation et opérations en une seule vue."
+    },
+    "parkwizeAi": {
+      "name": "Parkwize IA",
+      "description": "Posez vos questions, obtenez prévisions et analyses."
+    },
+    "digitalSignage": {
+      "name": "Solution d'affichage numérique",
+      "description": "Tarifs et disponibilités en direct sur chaque écran."
+    },
+    "onlineReservation": {
+      "name": "Réservation en ligne",
+      "description": "Les conducteurs réservent et paient à l'avance."
+    },
+    "enforcement": {
+      "name": "Contrôle et application",
+      "description": "Lecture de plaques et suivi des infractions."
+    },
+    "processKiosk": {
+      "name": "Borne Process",
+      "description": "Bornes de paiement et terminaux d'entrée."
+    },
+    "parkAid": {
+      "name": "ParkAid",
+      "description": "Soutien et assistance pour vos sites."
+    },
+    "privacyPolicy": {
+      "name": "Politique de confidentialité",
+      "description": "Comment nous collectons, utilisons et protégeons vos données."
+    },
+    "termsOfUse": {
+      "name": "Conditions d'utilisation",
+      "description": "Les conditions qui encadrent l'utilisation de Parkwize."
+    }
+  },
+  "footer": {
+    "logoAlt": "Parkwize",
+    "tagline": "La plateforme de stationnement intelligente. Opérations, tarification, affichage et réservations, au même endroit.",
+    "status": "Systèmes opérationnels",
+    "columns": {
+      "products": "Produits",
+      "getStarted": "Commencer",
+      "legal": "Légal"
+    },
+    "links": {
+      "bookCall": "Planifier un appel",
+      "exploreDemo": "Explorer la démo",
+      "signIn": "Se connecter"
+    },
+    "company": "Parkwize Inc.",
+    "rights": "Tous droits réservés.",
+    "madeIn": "Fièrement canadien",
+    "backToTop": "Haut de page",
+    "navLabel": "Pied de page"
   }
 }

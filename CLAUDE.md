@@ -29,6 +29,7 @@ src/
 
 - Route files (`page.tsx`, `layout.tsx`) stay short: no large JSX trees. Build sections in `components/sections` and compose them.
 - New pages go under `src/app/(landing)/[lang]/<slug>/page.tsx`. Register the slug in `src/lib/navigation.ts`.
+- Pages listed in `navigation.ts` but not built yet are served by `src/app/(landing)/[lang]/[slug]/page.tsx` as a translated coming-soon page. A real page folder automatically takes precedence.
 
 ## 2. Naming and files
 
@@ -68,6 +69,9 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 - Logo: `ParkwizeLogo` from `@/components/brand/parkwize-logo` (vector, colored with `currentColor`). Do not use the logo image files.
 - Sign-in call to action: `SignInLink` from `@/components/layout/top-bar/sign-in-link`.
 - Outside-click / Escape handling: `useDismiss`. Mobile scroll lock: `useScrollLock`.
+- Small uppercase mono labels (column titles, eyebrows, meta text): the `eyebrow` class from `globals.css`.
+- Link lists: `FooterColumn` from `@/components/layout/footer/footer-column` handles internal (localized) and external links.
+- Site URLs and page lists (`SIGN_IN_URL`, `DEMO_URL`, `BOOK_CALL_HREF`, `PRODUCT_LINKS`, `LEGAL_LINKS`): `@/lib/navigation`. Never hardcode them in components.
 - If the same markup appears twice, make it a component.
 
 ## 5. Design tokens
@@ -76,7 +80,9 @@ All visual values come from CSS variables in `src/app/globals.css`, exposed thro
 
 - Colors: use token classes (`bg-background`, `text-foreground`, `text-muted-foreground`, `bg-brand`, `text-brand-foreground`, `border-border`, ...). **No hex, `rgb()`, `hsl()` or arbitrary color values in components** (`bg-[#0658f6]` is forbidden). Need a new color? Add a token in `globals.css` and `tailwind.config.ts`.
 - Brand blue: `brand` (`--brand`). `parkwize_blue` and `primary_action` are legacy aliases; do not use them in new code.
-- Fonts: `font-sans` (Inter) for body text, `font-display` (Poppins) for headings and display text. Both come from `next/font` variables in `src/app/layout.tsx`. Never import fonts elsewhere.
+- Dark surfaces (footer, dark sections): the `inverse` palette (`bg-inverse`, `text-inverse-foreground`, `text-inverse-muted`, `border-inverse-border`, `hover:text-inverse-hover`).
+- Status colors: `success`.
+- Fonts: `font-sans` (Inter) for body text, `font-display` (Poppins) for headings and display text, `font-mono` (JetBrains Mono) only for small uppercase labels (prefer the `eyebrow` class). All come from `next/font` variables in `src/app/layout.tsx`. Never import fonts elsewhere.
 - Radius, shadows, blur: use the theme scale (`rounded-lg`, `shadow-glass`, ...). Arbitrary values are only acceptable for one-off geometry (e.g. a pill radius matching a fixed height).
 - Top bar spacing: `--top-bar-height` and `--top-bar-gap` let sections offset content below the floating bar.
 
@@ -85,6 +91,7 @@ All visual values come from CSS variables in `src/app/globals.css`, exposed thro
 - Every user-facing string lives in **both** `src/content/en.json` and `src/content/fr.json` under the same key path. This includes `aria-label`s, `alt` text, metadata titles and descriptions, button labels and error messages.
 - `fr.json` is type-checked against `en.json` in `dictionary.ts`: a missing or misnamed key fails `tsc` and the build.
 - No inline translations (`lang === "fr" ? "..." : "..."`) in components.
+- Page names and descriptions live once in the `pages` block, keyed like `PRODUCT_LINKS` / `LEGAL_LINKS`. The top bar, footer and page metadata all read from it; never duplicate a page name elsewhere.
 - The locale comes from the `[lang]` route param, resolved with `resolveLocale()` from `@/lib/i18n`. Never from client state or `localStorage`.
 - Server components load the dictionary with `getDictionary(locale)` and pass **only the slice** a client component needs as a prop.
 - French copy is real French with accents (é, è, à, ç), not machine-stripped ASCII.
