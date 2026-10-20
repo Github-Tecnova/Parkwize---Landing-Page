@@ -38,14 +38,12 @@ export function HomeEcosystem({ locale, dict, cards }: HomeEcosystemProps) {
         className="h-[22rem] sm:h-[clamp(32.5rem,62vw,45rem)]"
       >
         <Container className="relative z-[2]">
-          <Reveal>
-            <SectionHeader
-              align="center"
-              eyebrow={dict.eyebrow}
-              title={dict.title}
-              lead={dict.lead}
-            />
-          </Reveal>
+          <SectionHeader
+            align="center"
+            eyebrow={dict.eyebrow}
+            title={dict.title}
+            lead={dict.lead}
+          />
         </Container>
       </OrbitRow>
 

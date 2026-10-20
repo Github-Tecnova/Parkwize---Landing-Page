@@ -16,7 +16,7 @@ src/
     ui/                       Primitives (button, dialog, input, ...). Generic, no copy, no business logic
     layout/                   Site chrome: top bar, footer, page shell
     sections/<page>/          Page sections, one component per section
-    sections/                 Sections shared by several pages (e.g. coming-soon)
+    sections/                 Sections shared by several pages (e.g. lead-hero, closing-cta)
   content/
     en.json, fr.json          All user-facing copy
     dictionary.ts             Typed dictionary loader
@@ -98,6 +98,11 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 - Selects: `SelectField` is a custom accessible listbox (combobox button, keyboard, typeahead). Never use a native `<select>`.
 - Every clickable element shows a pointer cursor through the base rule in `globals.css`; disabled controls show `not-allowed`.
 - Animated canvases (`NeuralField`, `DotWordmark`): ref-callback mount, ResizeObserver, pause off screen, single frame under reduced motion.
+- Section titles: `SectionHeader` animates its own title word by word (`RevealTitle` from `@/components/motion/reveal-title`) and fades in eyebrow, lead and actions. Do not wrap it in `Reveal`. Page hero `h1`s stay static so the main title paints immediately.
+- Top bar indicator: the active underline and hover pill are shared `layoutId` elements in `TopBarNav`; keep new nav items on the same `NavHighlight` pattern.
+- Product lists: `ProductIndex` includes `ProductIndexPreview`, a cursor-following preview (fine pointers only) fed by `PRODUCT_PREVIEWS` in `@/lib/product-media`.
+- Vector vehicles: `CarRear` (with `CAR_REAR_PLATE` for overlaying a plate) and `CarTop` from `@/components/media`. Token fills only.
+- Scroll-linked motion is reserved for signature pieces: `DashboardWalkthrough` (Dashboard Manager) and `HomeLot` (home, scene math in `@/lib/lot-scene`). Both pin with `useScroll` on `lg` and up, autoplay in view below `lg`, and show a static final state under reduced motion. Follow that pattern for any new one.
 - If the same markup appears twice, make it a component.
 
 ## 5. Design tokens
@@ -150,7 +155,7 @@ Mobile-first: base classes target phones, then `sm`, `md`, `lg`, `xl`, `2xl` add
 ## 9. Motion
 
 - Use `motion/react` only.
-- Use the presets in `@/lib/motion` for durations, springs and easings; do not invent new timings per component.
+- Use the presets in `@/lib/motion` for durations, springs and easings; do not invent new timings per component. Presets include `REVEAL_BASE`, `WORD_STAGGER`, `DRAW_BASE`, `CAMERA_MOVE`, `LOT_PLAYBACK`, and the `useSpring` configs `SCROLL_SPRING` and `CURSOR_SPRING`.
 - Animate `transform` and `opacity` where possible. Keep animations short and purposeful.
 
 ## 10. Quality gate

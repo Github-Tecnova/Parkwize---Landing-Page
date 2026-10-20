@@ -30,9 +30,7 @@ export function ProductEcosystem({
   return (
     <section className="bg-bay-grid bg-surface py-14 sm:py-20">
       <Container>
-        <Reveal>
-          <SectionHeader eyebrow={eyebrow} title={title} />
-        </Reveal>
+        <SectionHeader eyebrow={eyebrow} title={title} />
         <Reveal className="mt-10">
           <ProductIndex
             locale={locale}

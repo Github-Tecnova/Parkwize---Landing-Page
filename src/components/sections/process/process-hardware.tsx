@@ -22,9 +22,7 @@ export function ProcessHardware({ dict }: ProcessHardwareProps) {
   return (
     <section className="bg-surface py-14 sm:py-20">
       <Container>
-        <Reveal>
-          <SectionHeader eyebrow={dict.eyebrow} title={dict.title} />
-        </Reveal>
+        <SectionHeader eyebrow={dict.eyebrow} title={dict.title} />
         <ul className="mt-10 grid gap-6 md:grid-cols-2">
           {dict.items.map((item, index) => {
             const media = HARDWARE_MEDIA[index];

@@ -8,6 +8,7 @@ import { HomeAi } from "@/components/sections/home/home-ai";
 import { HomeBooking } from "@/components/sections/home/home-booking";
 import { HomeEcosystem } from "@/components/sections/home/home-ecosystem";
 import { HomeHero } from "@/components/sections/home/home-hero";
+import { HomeLot } from "@/components/sections/home/home-lot";
 import { HomeOs } from "@/components/sections/home/home-os";
 import { HomeStats } from "@/components/sections/home/home-stats";
 import { MarqueeBand } from "@/components/sections/home/marquee-band";
@@ -40,6 +41,7 @@ export default async function HomePage({ params }: HomePageProps) {
     <>
       <HomeHero locale={locale} dict={home.hero} />
       <HomeStats dict={home.stats} />
+      <HomeLot dict={home.lot} />
       <HomeEcosystem
         locale={locale}
         dict={home.ecosystem}

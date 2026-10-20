@@ -7,6 +7,7 @@
 import { CircleAlert, CircleCheck, CloudUpload, ScanLine } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { DeviceFrame } from "@/components/media/device-frame";
+import { PlateScanner } from "@/components/sections/enforcement/plate-scanner";
 import { EnforcementDictionary } from "@/content/dictionary";
 import { EASE_OUT_EXPO } from "@/lib/motion";
 import { cn } from "@/lib/utils";
@@ -50,32 +51,21 @@ export function PatrolDevice({
         />
       </div>
 
-      <div className="px-5 pt-6">
-        <div className="relative mx-auto w-full max-w-[13rem] rounded-xl border-2 border-ink bg-surface px-3 py-3 text-center">
-          <span className="block font-display text-3xl font-bold tracking-[0.12em] text-ink">
-            {STEP_PLATES[step]}
-          </span>
-          {step === 0 && animate && (
-            <motion.span
-              aria-hidden
-              className="absolute inset-x-1 h-0.5 rounded-full bg-deck-bright"
-              initial={{ top: "12%" }}
-              animate={{ top: ["12%", "86%", "12%"] }}
-              transition={{
-                duration: 1.8,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          )}
-        </div>
+      <div className="px-5 pt-4">
+        <PlateScanner
+          plate={STEP_PLATES[step]}
+          scanning={step === 0}
+          animate={animate}
+          scanningLabel={dict.scanning}
+          confidence={dict.confidence}
+        />
       </div>
 
       <div className="relative flex-1">
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.div
             key={step}
-            className="absolute inset-0 flex flex-col px-5 py-5"
+            className="absolute inset-0 flex flex-col px-5 py-4"
             initial={animate ? { opacity: 0, y: 16 } : false}
             animate={{ opacity: 1, y: 0 }}
             exit={animate ? { opacity: 0, y: -12 } : undefined}

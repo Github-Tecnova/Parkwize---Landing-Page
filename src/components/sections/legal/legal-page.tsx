@@ -18,6 +18,8 @@ type LegalPageProps = {
 };
 
 export function LegalPage({ locale, dict, document }: LegalPageProps) {
+  const entries = document.sections.map(({ id, title }) => ({ id, title }));
+
   return (
     <>
       <section className="under-top-bar relative isolate overflow-hidden bg-surface pb-10 sm:pb-14">
@@ -53,13 +55,13 @@ export function LegalPage({ locale, dict, document }: LegalPageProps) {
                 />
               </summary>
               <div className="border-t border-hairline px-5 py-3">
-                <LegalToc sections={document.sections} />
+                <LegalToc entries={entries} />
               </div>
             </details>
             <div className="hidden lg:block">
               <p className="eyebrow text-copy">{dict.tocLabel}</p>
               <div className="mt-3">
-                <LegalToc sections={document.sections} />
+                <LegalToc entries={entries} withRail />
               </div>
             </div>
           </nav>

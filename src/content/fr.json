@@ -131,6 +131,20 @@
         }
       ]
     },
+    "lot": {
+      "eyebrow": "Opérations en direct",
+      "title": "Votre stationnement *se gère tout seul.*",
+      "lead": "À mesure que les voitures arrivent, Parkwize suit chaque place, ajuste le tarif selon la demande et met à jour l’affichage à l’entrée. Personne n’a à intervenir.",
+      "sceneLabel": "Illustration animée : des voitures remplissent un stationnement pendant que l’occupation, le tarif journalier et l’affichage à l’entrée se mettent à jour automatiquement.",
+      "occupancy": "Occupation",
+      "price": "Tarif journalier",
+      "prices": ["3,50 $", "4,25 $", "5,00 $"],
+      "aiChip": "Ajusté par Parkwize AI",
+      "sign": "Affichage à l’entrée",
+      "signFree": "LIBRES",
+      "signFull": "COMPLET · VOIR P2",
+      "note": "Stationnement simulé, valeurs illustratives."
+    },
     "ecosystem": {
       "eyebrow": "Notre solution de stationnement",
       "title": "L'écosystème *Parkwize.*",
@@ -391,7 +405,30 @@
         "label": "Vue d'ensemble du tableau de bord Parkwize",
         "imageAlt": "Tableau de bord Parkwize : revenus, événements en direct, alertes, performance et tarification",
         "eyebrow": "Une seule interface",
-        "caption": "Revenus. Activité. Tarification. Un tableau de bord général."
+        "caption": "Revenus. Activité. Tarification. Un tableau de bord général.",
+        "railLabel": "Visite du tableau de bord",
+        "steps": [
+          {
+            "label": "Vue d’ensemble",
+            "title": "Tous vos sites, un seul écran",
+            "body": "Filtrez par emplacement et par date et voyez tout le portefeuille d’un coup d’œil, actualisé toutes les 30 secondes."
+          },
+          {
+            "label": "Revenus",
+            "title": "Les revenus, en détail",
+            "body": "Bornes, réservations, abonnés et organisations, avec le revenu par entrée et par billet."
+          },
+          {
+            "label": "Activité",
+            "title": "Activité et achalandage en direct",
+            "body": "Chaque entrée, sortie et billet en temps réel, avec la tendance d’achalandage de chaque stationnement."
+          },
+          {
+            "label": "Tarification",
+            "title": "Une tarification que vous contrôlez",
+            "body": "Définissez tarifs, maximums et modèles de prix dynamiques ou IA, puis appliquez-les à tous vos sites."
+          }
+        ]
       },
       "summary": [
         {
@@ -1135,7 +1172,9 @@
           "timeValue": "17 h 42",
           "placeLabel": "Lieu",
           "placeValue": "P4, place 27",
-          "synced": "Synchronisé avec le Dashboard Manager"
+          "synced": "Synchronisé avec le Dashboard Manager",
+          "scanning": "Analyse",
+          "confidence": "Correspondance 99,2 %"
         },
         "steps": [
           {

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { MapleLeaf } from "@/components/brand/maple-leaf";
 import { Container } from "@/components/layout/section/container";
 import { Reveal } from "@/components/motion/reveal";
-import { AccentText } from "@/components/typography/accent-text";
+import { RevealTitle } from "@/components/motion/reveal-title";
 import { ButtonLink } from "@/components/ui/button-link";
 import { ClosingCtaDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
@@ -40,7 +40,7 @@ export function ClosingCta({ locale, dict, showCta = true }: ClosingCtaProps) {
           />
           <p className="kicker text-deck">{dict.eyebrow}</p>
           <h2 className="mb-7 mt-3.5 max-w-[50rem] text-balance font-display text-h2 font-semibold text-ink">
-            <AccentText text={dict.title} />
+            <RevealTitle text={dict.title} />
           </h2>
           {showCta && (
             <ButtonLink href={CONTACT_HREF} locale={locale} withArrow>

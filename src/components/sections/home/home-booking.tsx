@@ -7,7 +7,7 @@ import { Check } from "lucide-react";
 import { Container } from "@/components/layout/section/container";
 import { AmbientVideo } from "@/components/media/ambient-video";
 import { Reveal } from "@/components/motion/reveal";
-import { AccentText } from "@/components/typography/accent-text";
+import { RevealTitle } from "@/components/motion/reveal-title";
 import { ButtonLink } from "@/components/ui/button-link";
 import { HomeDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
@@ -29,7 +29,7 @@ export function HomeBooking({ locale, dict, sectors }: HomeBookingProps) {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-[4.375rem]">
           <Reveal className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <h2 className="text-balance font-display text-h2 font-semibold text-ink">
-              <AccentText text={dict.title} />
+              <RevealTitle text={dict.title} />
             </h2>
             <p className="mt-5 max-w-2xl text-pretty text-[1.0625rem] leading-relaxed text-copy">
               {dict.lead}

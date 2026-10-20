@@ -131,6 +131,20 @@
         }
       ]
     },
+    "lot": {
+      "eyebrow": "Live operations",
+      "title": "Watch your lot *run itself.*",
+      "lead": "As cars arrive, Parkwize tracks every space, adjusts the rate with demand and updates the sign at the entrance. Nobody has to touch a thing.",
+      "sceneLabel": "Animated illustration: cars fill a parking lot while the occupancy, the day rate and the entrance sign update on their own.",
+      "occupancy": "Occupancy",
+      "price": "Day rate",
+      "prices": ["$3.50", "$4.25", "$5.00"],
+      "aiChip": "Adjusted by Parkwize AI",
+      "sign": "Entrance sign",
+      "signFree": "FREE",
+      "signFull": "FULL · SEE P2",
+      "note": "Simulated lot, illustrative values."
+    },
     "ecosystem": {
       "eyebrow": "Our parking solution",
       "title": "The Parkwize *Ecosystem.*",
@@ -391,7 +405,30 @@
         "label": "Parkwize dashboard overview",
         "imageAlt": "Parkwize dashboard: revenue, live events, alerts, on-site performance and pricing",
         "eyebrow": "One connected view",
-        "caption": "Revenue. Activity. Pricing. One control board for it all."
+        "caption": "Revenue. Activity. Pricing. One control board for it all.",
+        "railLabel": "Dashboard walkthrough",
+        "steps": [
+          {
+            "label": "Overview",
+            "title": "Every site, one screen",
+            "body": "Filter by location and date and see the whole portfolio at a glance, refreshed every 30 seconds."
+          },
+          {
+            "label": "Revenue",
+            "title": "Revenue, broken down",
+            "body": "Kiosks, bookings, subscribers and organizations, with revenue per entry and per ticket."
+          },
+          {
+            "label": "Activity",
+            "title": "Live activity and traffic",
+            "body": "Every entry, exit and ticket as it happens, with the traffic trend for each lot."
+          },
+          {
+            "label": "Pricing",
+            "title": "Pricing you control",
+            "body": "Set rates, maximums and dynamic or AI price models, then push them to every site."
+          }
+        ]
       },
       "summary": [
         {
@@ -1135,7 +1172,9 @@
           "timeValue": "5:42 PM",
           "placeLabel": "Location",
           "placeValue": "Lot P4, space 27",
-          "synced": "Synced to the Dashboard Manager"
+          "synced": "Synced to the Dashboard Manager",
+          "scanning": "Scanning",
+          "confidence": "Match 99.2%"
         },
         "steps": [
           {

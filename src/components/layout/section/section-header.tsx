@@ -3,7 +3,8 @@
  */
 
 import { ReactNode } from "react";
-import { AccentText } from "@/components/typography/accent-text";
+import { Reveal } from "@/components/motion/reveal";
+import { RevealTitle } from "@/components/motion/reveal-title";
 import { cn } from "@/lib/utils";
 
 type SectionHeaderProps = {
@@ -39,11 +40,16 @@ export function SectionHeader({
       )}
     >
       {eyebrow && (
-        <p
-          className={cn("kicker", inverse ? "text-inverse-muted" : "text-deck")}
-        >
-          {eyebrow}
-        </p>
+        <Reveal>
+          <p
+            className={cn(
+              "kicker",
+              inverse ? "text-inverse-muted" : "text-deck",
+            )}
+          >
+            {eyebrow}
+          </p>
+        </Reveal>
       )}
       <Heading
         className={cn(
@@ -52,30 +58,33 @@ export function SectionHeader({
           inverse ? "text-inverse-foreground" : "text-ink",
         )}
       >
-        <AccentText
+        <RevealTitle
           text={title}
           accentClassName={inverse ? "text-deck-bright" : undefined}
         />
       </Heading>
       {lead && (
-        <p
-          className={cn(
-            "max-w-2xl text-pretty text-lead",
-            inverse ? "text-inverse-muted" : "text-copy",
-          )}
-        >
-          {lead}
-        </p>
+        <Reveal delay={0.12}>
+          <p
+            className={cn(
+              "max-w-2xl text-pretty text-lead",
+              inverse ? "text-inverse-muted" : "text-copy",
+            )}
+          >
+            {lead}
+          </p>
+        </Reveal>
       )}
       {actions && (
-        <div
+        <Reveal
+          delay={0.18}
           className={cn(
             "mt-2 flex flex-wrap gap-3",
             centered && "justify-center",
           )}
         >
           {actions}
-        </div>
+        </Reveal>
       )}
     </div>
   );

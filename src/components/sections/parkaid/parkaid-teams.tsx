@@ -17,14 +17,12 @@ export function ParkAidTeams({ dict }: ParkAidTeamsProps) {
   return (
     <section className="bg-dot-grid bg-surface py-14 sm:py-20">
       <Container>
-        <Reveal>
-          <SectionHeader
-            eyebrow={dict.eyebrow}
-            title={dict.title}
-            lead={dict.lead}
-            className="max-w-[54rem]"
-          />
-        </Reveal>
+        <SectionHeader
+          eyebrow={dict.eyebrow}
+          title={dict.title}
+          lead={dict.lead}
+          className="max-w-[54rem]"
+        />
         <Reveal className="mt-8">
           <p className="inline-flex items-center gap-2 rounded-full bg-deck-tint px-4 py-2 text-sm font-bold text-deck">
             <Inbox aria-hidden className="size-4" />

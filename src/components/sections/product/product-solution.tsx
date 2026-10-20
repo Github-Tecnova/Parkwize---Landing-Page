@@ -20,14 +20,12 @@ export function ProductSolution({ dict }: ProductSolutionProps) {
   return (
     <section className="bg-navy py-14 text-inverse-foreground sm:py-20">
       <Container className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
-        <Reveal>
-          <SectionHeader
-            tone="inverse"
-            eyebrow={dict.eyebrow}
-            title={dict.title}
-            lead={dict.lead}
-          />
-        </Reveal>
+        <SectionHeader
+          tone="inverse"
+          eyebrow={dict.eyebrow}
+          title={dict.title}
+          lead={dict.lead}
+        />
         <Reveal delay={0.1}>
           <ul className="border-t border-inverse-border">
             {dict.points.map((point) => (

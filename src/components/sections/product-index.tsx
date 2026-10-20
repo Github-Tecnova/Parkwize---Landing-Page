@@ -5,6 +5,7 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/components/navigation/link";
+import { ProductIndexPreview } from "@/components/sections/product-index-preview";
 import { Locale } from "@/lib/i18n";
 import { PRODUCT_LINKS, ProductKey } from "@/lib/navigation";
 import { PRODUCT_VISUALS } from "@/lib/product-media";
@@ -28,7 +29,7 @@ export function ProductIndex({
   const products = PRODUCT_LINKS.filter(({ key }) => key !== exclude);
 
   return (
-    <nav aria-label={label}>
+    <nav aria-label={label} className="relative">
       <ul className="grid border-t border-hairline md:grid-cols-2">
         {products.map(({ key, slug }, index) => {
           const visual = PRODUCT_VISUALS[key];
@@ -38,6 +39,7 @@ export function ProductIndex({
           return (
             <li
               key={key}
+              data-product={key}
               className={cn(
                 "border-b border-hairline",
                 index % 2 === 0 && !lastAlone && "md:border-r",
@@ -75,6 +77,7 @@ export function ProductIndex({
           );
         })}
       </ul>
+      <ProductIndexPreview />
     </nav>
   );
 }

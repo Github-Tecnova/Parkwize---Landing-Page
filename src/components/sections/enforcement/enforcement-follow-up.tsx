@@ -28,23 +28,21 @@ export function EnforcementFollowUp({
   return (
     <section className="bg-surface py-14 sm:py-20">
       <Container className="grid items-center gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
-        <Reveal>
-          <SectionHeader
-            eyebrow={dict.eyebrow}
-            title={dict.title}
-            lead={dict.lead}
-            actions={
-              <ButtonLink
-                href={DEMO_HREF}
-                locale={locale}
-                variant="subtle"
-                withArrow
-              >
-                {dict.cta}
-              </ButtonLink>
-            }
-          />
-        </Reveal>
+        <SectionHeader
+          eyebrow={dict.eyebrow}
+          title={dict.title}
+          lead={dict.lead}
+          actions={
+            <ButtonLink
+              href={DEMO_HREF}
+              locale={locale}
+              variant="subtle"
+              withArrow
+            >
+              {dict.cta}
+            </ButtonLink>
+          }
+        />
 
         <Reveal
           delay={0.1}

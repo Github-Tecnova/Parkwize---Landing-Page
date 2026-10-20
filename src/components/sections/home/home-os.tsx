@@ -23,14 +23,12 @@ export function HomeOs({ locale, dict }: HomeOsProps) {
       className="bg-dot-grid bg-bay-grid bg-surface py-16 sm:py-24 lg:py-28"
     >
       <Container>
-        <Reveal>
-          <SectionHeader
-            eyebrow={dict.eyebrow}
-            title={dict.title}
-            lead={dict.lead}
-            className="max-w-[54rem]"
-          />
-        </Reveal>
+        <SectionHeader
+          eyebrow={dict.eyebrow}
+          title={dict.title}
+          lead={dict.lead}
+          className="max-w-[54rem]"
+        />
 
         <ModeSplit modes={dict.modes} className="mt-10 sm:mt-12" />
 

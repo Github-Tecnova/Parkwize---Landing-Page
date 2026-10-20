@@ -18,6 +18,8 @@ export type ClosingCtaDictionary = DictionaryType["closingCta"];
 
 export type HomeDictionary = DictionaryType["home"];
 
+export type LotDictionary = HomeDictionary["lot"];
+
 export type ProductCardsDictionary = DictionaryType["productCards"];
 
 export type AiPageDictionary = DictionaryType["products"]["parkwizeAi"];

@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/layout/section/container";
 import { SectionHeader } from "@/components/layout/section/section-header";
-import { Reveal } from "@/components/motion/reveal";
 import { DemoStepNote } from "@/components/sections/demo-step-note";
 import { CallConsole } from "@/components/sections/parkaid/call-console";
 import { StepRail } from "@/components/sections/step-rail";
@@ -44,13 +43,11 @@ export function CallDemo({ dict }: CallDemoProps) {
   return (
     <section className="bg-bay-grid bg-surface py-14 sm:py-20">
       <Container>
-        <Reveal>
-          <SectionHeader
-            eyebrow={dict.eyebrow}
-            title={dict.title}
-            lead={dict.lead}
-          />
-        </Reveal>
+        <SectionHeader
+          eyebrow={dict.eyebrow}
+          title={dict.title}
+          lead={dict.lead}
+        />
 
         <div
           ref={ref}

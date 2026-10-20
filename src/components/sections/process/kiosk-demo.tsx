@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/layout/section/container";
 import { SectionHeader } from "@/components/layout/section/section-header";
-import { Reveal } from "@/components/motion/reveal";
 import { DemoStepNote } from "@/components/sections/demo-step-note";
 import { KioskScreen } from "@/components/sections/process/kiosk-screen";
 import { StepRail } from "@/components/sections/step-rail";
@@ -37,13 +36,11 @@ export function KioskDemo({ dict }: KioskDemoProps) {
   return (
     <section className="bg-bay-grid bg-surface py-14 sm:py-20">
       <Container>
-        <Reveal>
-          <SectionHeader
-            eyebrow={dict.eyebrow}
-            title={dict.title}
-            lead={dict.lead}
-          />
-        </Reveal>
+        <SectionHeader
+          eyebrow={dict.eyebrow}
+          title={dict.title}
+          lead={dict.lead}
+        />
 
         <div
           ref={ref}

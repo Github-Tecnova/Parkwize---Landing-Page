@@ -25,3 +25,11 @@ export function scrollToTop() {
   }
   window.scrollTo({ top: 0 });
 }
+
+export function scrollToPosition(top: number) {
+  if (instance) {
+    instance.scrollTo(top);
+    return;
+  }
+  window.scrollTo({ top, behavior: "smooth" });
+}

@@ -22,13 +22,11 @@ export function ProductProblem({ dict, icons }: ProductProblemProps) {
   return (
     <section className="bg-dot-grid bg-surface py-14 sm:py-20">
       <Container className="grid items-start gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
-        <Reveal>
-          <SectionHeader
-            eyebrow={dict.eyebrow}
-            title={dict.title}
-            lead={dict.lead}
-          />
-        </Reveal>
+        <SectionHeader
+          eyebrow={dict.eyebrow}
+          title={dict.title}
+          lead={dict.lead}
+        />
         <Reveal delay={0.1}>
           <ul className="grid border-t border-hairline sm:grid-cols-2">
             {dict.items.map((item, index) => {

@@ -16,7 +16,6 @@ import {
 import { AnimatePresence, motion } from "motion/react";
 import { Container } from "@/components/layout/section/container";
 import { SectionHeader } from "@/components/layout/section/section-header";
-import { Reveal } from "@/components/motion/reveal";
 import { LiveSign, SignState } from "@/components/sections/signage/live-sign";
 import { StepRail } from "@/components/sections/step-rail";
 import { SignageDictionary } from "@/content/dictionary";
@@ -54,13 +53,11 @@ export function SignageDemo({ dict }: SignageDemoProps) {
   return (
     <section className="bg-bay-grid bg-surface py-14 sm:py-20">
       <Container>
-        <Reveal>
-          <SectionHeader
-            eyebrow={dict.eyebrow}
-            title={dict.title}
-            lead={dict.lead}
-          />
-        </Reveal>
+        <SectionHeader
+          eyebrow={dict.eyebrow}
+          title={dict.title}
+          lead={dict.lead}
+        />
 
         <div
           ref={ref}

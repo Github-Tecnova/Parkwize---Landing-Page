@@ -23,9 +23,7 @@ export function ProductResults({ eyebrow, title, items }: ProductResultsProps) {
   return (
     <section className="bg-dot-grid bg-surface py-14 sm:py-20">
       <Container>
-        <Reveal>
-          <SectionHeader eyebrow={eyebrow} title={title} />
-        </Reveal>
+        <SectionHeader eyebrow={eyebrow} title={title} />
         <Reveal className="mt-10">
           <dl className="grid grid-cols-2 border-t border-hairline lg:grid-cols-4">
             {items.map((item, index) => (

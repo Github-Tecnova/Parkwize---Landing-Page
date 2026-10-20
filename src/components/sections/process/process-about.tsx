@@ -17,13 +17,11 @@ export function ProcessAbout({ dict }: ProcessAboutProps) {
     <section className="bg-dot-grid bg-surface py-14 sm:py-20">
       <Container>
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:gap-16">
-          <Reveal>
-            <SectionHeader
-              eyebrow={dict.eyebrow}
-              title={dict.title}
-              lead={dict.lead}
-            />
-          </Reveal>
+          <SectionHeader
+            eyebrow={dict.eyebrow}
+            title={dict.title}
+            lead={dict.lead}
+          />
           <Reveal delay={0.1}>
             <h3 className="font-display text-xl font-bold text-ink">
               {dict.whyTitle}

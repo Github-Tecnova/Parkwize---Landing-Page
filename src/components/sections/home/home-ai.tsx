@@ -16,6 +16,7 @@ import { Container } from "@/components/layout/section/container";
 import { Reveal } from "@/components/motion/reveal";
 import { AiChatReplay } from "@/components/sections/ai-chat-replay";
 import { AccentText } from "@/components/typography/accent-text";
+import { RevealTitle } from "@/components/motion/reveal-title";
 import { ButtonLink } from "@/components/ui/button-link";
 import { HomeDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
@@ -67,7 +68,7 @@ export function HomeAi({ locale, dict, showCta = true }: HomeAiProps) {
               className="h-[clamp(1.0625rem,1.5vw,1.375rem)] w-auto"
             />
             <h2 className="mt-4 text-balance font-display text-h2 font-semibold text-ink">
-              <AccentText text={dict.title} />
+              <RevealTitle text={dict.title} />
             </h2>
             <p className="mt-5 max-w-2xl text-pretty text-[1.0625rem] leading-relaxed text-copy">
               {dict.lead}
