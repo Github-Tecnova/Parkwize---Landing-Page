@@ -20,7 +20,7 @@ type LegalPageProps = {
 export function LegalPage({ locale, dict, document }: LegalPageProps) {
   return (
     <>
-      <section className="under-top-bar relative isolate bg-surface pb-10 sm:pb-14">
+      <section className="under-top-bar relative isolate overflow-hidden bg-surface pb-10 sm:pb-14">
         <div
           aria-hidden
           className="bg-hero-fade absolute inset-x-0 top-0 -z-10 h-[56rem]"
