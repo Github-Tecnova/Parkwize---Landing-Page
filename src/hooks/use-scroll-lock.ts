@@ -14,6 +14,7 @@ export function useScrollLock(active: boolean) {
     pauseSmoothScroll();
     const { body } = document;
     const scrollY = window.scrollY;
+    const lockedPath = window.location.pathname;
     const previous = {
       position: body.style.position,
       top: body.style.top,
@@ -28,7 +29,10 @@ export function useScrollLock(active: boolean) {
       body.style.position = previous.position;
       body.style.top = previous.top;
       body.style.width = previous.width;
-      window.scrollTo({ top: scrollY, behavior: "instant" });
+      window.scrollTo({
+        top: window.location.pathname === lockedPath ? scrollY : 0,
+        behavior: "instant",
+      });
       resumeSmoothScroll();
     };
   }, [active]);

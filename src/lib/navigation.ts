@@ -69,12 +69,6 @@ export const COMPANY_LINKS: PageLink<CompanyKey>[] = [
   { key: "contact", slug: "contact", Icon: MessageSquare },
 ];
 
-export const COMING_SOON_LINKS: PageLink[] = [...LEGAL_LINKS];
-
-export function findComingSoonPage(slug: string): PageLink | undefined {
-  return COMING_SOON_LINKS.find((page) => page.slug === slug);
-}
-
 export const SOLUTION_LINKS = PRODUCT_LINKS.filter(
   (link) => link.key !== "parkAid",
 );

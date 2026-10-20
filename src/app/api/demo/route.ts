@@ -6,10 +6,15 @@ import { NextResponse } from "next/server";
 import { getDictionary } from "@/content/dictionary";
 import { demoLeadSchema } from "@/lib/leads/demo-schema";
 import { collectLeadErrors } from "@/lib/leads/lead-errors";
+import { isSameOrigin, isTooFast } from "@/lib/leads/lead-guard";
 import { sendLeadEmail } from "@/lib/leads/send-lead-email";
 import { PRODUCT_LINKS } from "@/lib/navigation";
 
 export async function POST(request: Request) {
+  if (!isSameOrigin(request)) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
+
   let body: unknown;
 
   try {
@@ -29,7 +34,7 @@ export async function POST(request: Request) {
 
   const lead = parsed.data;
 
-  if (lead.website) {
+  if (lead.website || isTooFast(body)) {
     return NextResponse.json({ ok: true });
   }
 

@@ -18,9 +18,9 @@ import { ParkwizeLogo } from "@/components/brand/parkwize-logo";
 import { Link } from "@/components/navigation/link";
 import { buttonVariants } from "@/components/ui/button";
 import { NavigationDictionary, PagesDictionary } from "@/content/dictionary";
-import { useBarTone } from "@/hooks/use-bar-tone";
 import { DismissReason, useDismiss } from "@/hooks/use-dismiss";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
+import { useHeroPresence } from "@/hooks/use-hero-presence";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
 import { useScrolled } from "@/hooks/use-scrolled";
 import { Locale } from "@/lib/i18n";
@@ -58,7 +58,7 @@ export function TopBar({ locale, dict, pages }: TopBarProps) {
   const toggleRef = useRef<HTMLButtonElement>(null);
   const solutionsRef = useRef<HTMLButtonElement>(null);
   const hoverTimer = useRef<number | undefined>(undefined);
-  const tone = useBarTone(surfaceRef);
+  const overHero = useHeroPresence();
 
   const closeMenu = useCallback(() => setMenu("none"), []);
 
@@ -117,7 +117,7 @@ export function TopBar({ locale, dict, pages }: TopBarProps) {
         <div
           ref={surfaceRef}
           data-raised={scrolled || menu !== "none"}
-          data-tone={menu === "none" ? tone : "light"}
+          data-clear={overHero && !scrolled && menu === "none"}
           onPointerLeave={(event) => {
             if (event.pointerType === "mouse" && menu === "solutions") {
               scheduleMenu("none", HOVER_CLOSE_DELAY);

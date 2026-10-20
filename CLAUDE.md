@@ -30,7 +30,6 @@ src/
 - The root layout is `src/app/(landing)/[lang]/layout.tsx`: it renders `<html lang>` from the locale, fonts, top bar and footer. `/` and the old routes (`/dashboard`, `/ai`, `/display`, `/booking`, `/process`) redirect in `next.config.ts`.
 - Route files (`page.tsx`, `layout.tsx`) stay short: no large JSX trees. Build sections in `components/sections` and compose them.
 - New pages go under `src/app/(landing)/[lang]/<slug>/page.tsx`. Register the slug in `src/lib/navigation.ts`.
-- Pages listed in `navigation.ts` but not built yet are served by `src/app/(landing)/[lang]/[slug]/page.tsx` as a translated coming-soon page. A real page folder automatically takes precedence.
 
 ## 2. Naming and files
 
@@ -90,9 +89,10 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 - Partner logo: `ProcessLogo` from `@/components/brand/process-logo` (vector, `currentColor`). Decorative QR codes: `QrGlyph` from `@/components/media/qr-glyph`.
 - Phone mock-ups in demos: `DeviceFrame` from `@/components/media/device-frame`. The step title and "behind the scenes" card beside a demo: `DemoStepNote` from `@/components/sections/demo-step-note`.
 - Two side-by-side options with a center rule ("ours or yours"): `ModeSplit` from `@/components/sections/mode-split`.
-- Lead forms: fields from `@/components/forms` (`TextField`, `SelectField`, `ChipGroup`, `ConsentField`, `FormCard`, `FormGroup`, `FormSubmit`, `FormSuccess`), state with `useLeadForm`, a zod schema in `@/lib/leads/*-schema.ts` shared by the browser and the route, option values in `@/lib/leads/lead-options.ts` (labels in the dictionaries). Routes send with `sendLeadEmail` from `@/lib/leads/send-lead-email`. Lead pages use `LeadHero`.
+- Lead forms: fields from `@/components/forms` (`TextField`, `SelectField`, `ChipGroup`, `ConsentField`, `FormCard`, `FormGroup`, `FormSubmit`, `FormSuccess`), state with `useLeadForm`, a zod schema in `@/lib/leads/*-schema.ts` shared by the browser and the route, option values in `@/lib/leads/lead-options.ts` (labels in the dictionaries). Routes send with `sendLeadEmail` from `@/lib/leads/send-lead-email`. Bot protection: a hidden `website` honeypot field, plus `isSameOrigin` (403 otherwise) and `isTooFast` (silent drop under 2.5 s, from the `elapsed` that `useLeadForm` sends) from `@/lib/leads/lead-guard`. Lead pages use `LeadHero`.
+- Legal pages (privacy policy, terms of use): `LegalPage` from `@/components/sections/legal/legal-page`, content in the `legal` dictionary block as numbered `sections` (`id` anchors, `paragraphs`, `items`, `note`). Bump `updated` in both languages whenever the text changes.
 - Lead email environment: `RESEND_API_KEY`, `RESEND_FROM`, and `DEMO_TO` / `CONTACT_TO` (fallback `RESEND_TO`, then the legacy `EARLY_ACCESS_TO`). Empty values fall through to the next one. Without `RESEND_API_KEY` outside production, routes accept the form without sending.
-- Top bar tone: sections on navy carry `data-top-bar="dark"`; `useBarTone` switches the bar to its dark glass (`bar-*` color tokens) while it sits over them. Menus use typographic items (`TopBarMenuItem`), no icon tiles.
+- Top bar surface: on pages with an `under-top-bar` hero the bar is clear (no pill, white text through the `bar-*` tokens) until the page scrolls; then it becomes the white glass pill. Menus use typographic items (`TopBarMenuItem`), no icon tiles.
 - Smooth scrolling: Lenis, mounted once by `SmoothScroll` in the root layout. Pause it through `useScrollLock`; scrollable overlays add `data-lenis-prevent`. Programmatic scroll to top: `scrollToTop` from `@/lib/smooth-scroll`.
 - Page transitions: the localized `Link` starts `RouteProgress` (top bar) through `startRouteProgress`; `PageFade` in the root layout fades pages in after the first load (no `template.tsx`: next to a root layout in `[lang]` it triggers a Next.js invariant error); `loading.tsx` shows `PageLoader`.
 - Selects: `SelectField` is a custom accessible listbox (combobox button, keyboard, typeahead). Never use a native `<select>`.

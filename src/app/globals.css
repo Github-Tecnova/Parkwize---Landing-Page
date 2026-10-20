@@ -93,10 +93,6 @@
     --glass-shadow-raised:
       0 0 0 1px var(--surface-border), 0 14px 36px -16px rgba(2, 12, 51, 0.3);
     --glass-bg-raised: rgba(255, 255, 255, 0.92);
-    --glass-bg-dark: rgba(0, 12, 56, 0.42);
-    --glass-bg-dark-raised: rgba(0, 12, 56, 0.86);
-    --glass-shadow-dark:
-      0 0 0 1px var(--inverse-border), 0 14px 36px -16px rgba(0, 0, 0, 0.5);
 
     --bar-fg: var(--ink);
     --bar-muted: var(--copy);
@@ -176,17 +172,15 @@
     box-shadow: var(--glass-shadow-raised);
   }
 
-  .glass[data-tone="dark"] {
+  .glass[data-clear="true"] {
     --bar-fg: var(--inverse-foreground);
-    --bar-muted: var(--inverse-muted);
+    --bar-muted: var(--inverse-foreground);
     --bar-logo: var(--inverse-foreground);
-    --bar-hover: rgba(255, 255, 255, 0.08);
-    background-color: var(--glass-bg-dark);
-    box-shadow: var(--glass-shadow-dark);
-  }
-
-  .glass[data-tone="dark"][data-raised="true"] {
-    background-color: var(--glass-bg-dark-raised);
+    --bar-hover: rgba(255, 255, 255, 0.12);
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
 
   @supports not (

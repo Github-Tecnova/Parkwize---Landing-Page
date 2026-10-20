@@ -18,10 +18,7 @@ export function ParkAidConsole({ dict }: ParkAidConsoleProps) {
   const { consoleCall } = MEDIA.parkaid;
 
   return (
-    <section
-      data-top-bar="dark"
-      className="bg-navy py-14 text-inverse-foreground sm:py-20"
-    >
+    <section className="bg-navy py-14 text-inverse-foreground sm:py-20">
       <Container>
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-16">
           <Reveal>

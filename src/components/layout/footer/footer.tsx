@@ -39,10 +39,7 @@ export function Footer({ locale, dict, pages }: FooterProps) {
   ];
 
   return (
-    <footer
-      data-top-bar="dark"
-      className="overflow-hidden bg-inverse text-inverse-foreground"
-    >
+    <footer className="overflow-hidden bg-inverse text-inverse-foreground">
       <div className="mx-auto max-w-6xl px-5 pt-16 sm:px-8 sm:pt-20 lg:pt-24">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="flex max-w-sm flex-col items-start gap-6 lg:col-span-4">

@@ -12,7 +12,7 @@ import {
   drawDots,
   getDotFieldAspectRatio,
   getDotFieldMetrics,
-  Point,
+  PointerState,
   resolveCssColor,
   sampleDots,
   stepDots,
@@ -21,12 +21,9 @@ import { cn } from "@/lib/utils";
 
 const SHAPE: DotFieldShape = { paths: LOGO_PATHS, ...LOGO_VIEWBOX };
 const MAX_PIXEL_RATIO = 2;
-const POINTER_MOVE_EVENTS = ["pointermove", "pointerdown"] as const;
-const POINTER_END_EVENTS = [
-  "pointerleave",
-  "pointercancel",
-  "pointerup",
-] as const;
+const POINTER_END_EVENTS = ["pointerleave", "pointercancel"] as const;
+const VELOCITY_SMOOTHING = 0.35;
+const VELOCITY_DECAY = 0.86;
 
 type DotWordmarkProps = {
   className?: string;
@@ -58,7 +55,10 @@ function mountDotWordmark(canvas: HTMLCanvasElement | null) {
 
   let dots: Dot[] = [];
   let metrics: DotFieldMetrics | null = null;
-  let pointer: Point | null = null;
+  const pointer: PointerState = {
+    position: null,
+    velocity: { x: 0, y: 0 },
+  };
   let frame = 0;
   let visible = true;
 
@@ -70,8 +70,10 @@ function mountDotWordmark(canvas: HTMLCanvasElement | null) {
     frame = 0;
     if (!metrics || !visible) return;
     const moving = stepDots(dots, pointer, metrics);
+    pointer.velocity.x *= VELOCITY_DECAY;
+    pointer.velocity.y *= VELOCITY_DECAY;
     render();
-    if (moving || pointer) frame = requestAnimationFrame(tick);
+    if (moving || pointer.position) frame = requestAnimationFrame(tick);
   };
 
   const start = () => {
@@ -93,14 +95,25 @@ function mountDotWordmark(canvas: HTMLCanvasElement | null) {
     render();
   };
 
-  const handlePointerMove = (event: PointerEvent) => {
+  const locate = (event: PointerEvent) => {
     const bounds = canvas.getBoundingClientRect();
-    pointer = { x: event.clientX - bounds.left, y: event.clientY - bounds.top };
+    return { x: event.clientX - bounds.left, y: event.clientY - bounds.top };
+  };
+
+  const handlePointerMove = (event: PointerEvent) => {
+    const next = locate(event);
+    if (pointer.position) {
+      pointer.velocity.x +=
+        (next.x - pointer.position.x - pointer.velocity.x) * VELOCITY_SMOOTHING;
+      pointer.velocity.y +=
+        (next.y - pointer.position.y - pointer.velocity.y) * VELOCITY_SMOOTHING;
+    }
+    pointer.position = next;
     start();
   };
 
   const handlePointerEnd = () => {
-    pointer = null;
+    pointer.position = null;
     start();
   };
 
@@ -114,9 +127,7 @@ function mountDotWordmark(canvas: HTMLCanvasElement | null) {
   intersectionObserver.observe(canvas);
 
   if (!reducedMotion) {
-    POINTER_MOVE_EVENTS.forEach((type) =>
-      canvas.addEventListener(type, handlePointerMove),
-    );
+    canvas.addEventListener("pointermove", handlePointerMove);
     POINTER_END_EVENTS.forEach((type) =>
       canvas.addEventListener(type, handlePointerEnd),
     );
@@ -126,9 +137,7 @@ function mountDotWordmark(canvas: HTMLCanvasElement | null) {
     cancelAnimationFrame(frame);
     resizeObserver.disconnect();
     intersectionObserver.disconnect();
-    POINTER_MOVE_EVENTS.forEach((type) =>
-      canvas.removeEventListener(type, handlePointerMove),
-    );
+    canvas.removeEventListener("pointermove", handlePointerMove);
     POINTER_END_EVENTS.forEach((type) =>
       canvas.removeEventListener(type, handlePointerEnd),
     );

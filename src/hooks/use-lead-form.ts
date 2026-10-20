@@ -4,7 +4,7 @@
 
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { z } from "zod";
 import { collectLeadErrors, LeadErrors } from "@/lib/leads/lead-errors";
 
@@ -26,6 +26,11 @@ export function useLeadForm<T extends Record<string, unknown>>({
   const [values, setValues] = useState(initial);
   const [errors, setErrors] = useState<LeadErrors>({});
   const [status, setStatus] = useState<LeadStatus>("idle");
+  const startedAt = useRef(0);
+
+  useEffect(() => {
+    startedAt.current = Date.now();
+  }, []);
 
   const validate = (next: T) => {
     const result = schema.safeParse(next);
@@ -67,7 +72,10 @@ export function useLeadForm<T extends Record<string, unknown>>({
       const response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify({
+          ...values,
+          elapsed: Date.now() - startedAt.current,
+        }),
       });
 
       if (response.ok) {
@@ -95,6 +103,7 @@ export function useLeadForm<T extends Record<string, unknown>>({
     setValues(initial);
     setErrors({});
     setStatus("idle");
+    startedAt.current = Date.now();
   };
 
   return { values, errors, status, setField, blurField, submit, reset };

@@ -18,10 +18,7 @@ type DashboardHeroProps = {
 
 export function DashboardHero({ locale, dict }: DashboardHeroProps) {
   return (
-    <section
-      data-top-bar="dark"
-      className="under-top-bar relative isolate overflow-hidden bg-navy pb-12 text-inverse-foreground"
-    >
+    <section className="under-top-bar relative isolate overflow-hidden bg-navy pb-12 text-inverse-foreground">
       <Image
         src={MEDIA.places.parkingGarage.src}
         alt=""

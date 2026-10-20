@@ -17,12 +17,6 @@
     "mainLabel": "Principal",
     "siteDescription": "Parkwize, la plateforme de stationnement intelligent conçue par Tecnova."
   },
-  "comingSoon": {
-    "eyebrow": "Bientôt disponible",
-    "title": "Cette page arrive bientôt",
-    "description": "Nous mettons la touche finale à cette page. En attendant, découvrez le reste de Parkwize ou connectez-vous à votre compte.",
-    "backHome": "Retour à l'accueil"
-  },
   "pages": {
     "dashboardManager": {
       "name": "Dashboard Manager",
@@ -83,7 +77,7 @@
       "exploreDemo": "Explorer la démo",
       "signIn": "Se connecter"
     },
-    "company": "Parkwize Inc.",
+    "company": "Logiciel Parkwize inc.",
     "rights": "Tous droits réservés.",
     "madeIn": "Fièrement canadien",
     "backToTop": "Haut de page",
@@ -1904,6 +1898,270 @@
         "body": "La bonne personne de notre équipe vous répondra d'ici un jour ouvrable.",
         "again": "Envoyer un autre message"
       }
+    }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "body": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil"
+  },
+  "legal": {
+    "kicker": "Mentions légales",
+    "updatedLabel": "Dernière mise à jour",
+    "tocLabel": "Sur cette page",
+    "contact": {
+      "title": "Des questions sur ce document ?",
+      "body": "Écrivez-nous au moyen du formulaire de contact. Nous répondons dans un délai de 30 jours, habituellement bien plus tôt.",
+      "cta": "Nous joindre"
+    },
+    "privacy": {
+      "meta": {
+        "title": "Politique de confidentialité | Parkwize",
+        "description": "Comment Logiciel Parkwize inc. recueille, utilise et protège les renseignements personnels transmis sur parkwize.ai."
+      },
+      "title": "Politique de confidentialité",
+      "updated": "20 octobre 2026",
+      "intro": "Cette politique explique quels renseignements personnels nous recueillons sur ce site, pourquoi nous les recueillons, à qui ils sont communiqués et comment exercer vos droits. Elle respecte la Loi sur la protection des renseignements personnels dans le secteur privé (Québec) et la Loi sur la protection des renseignements personnels et les documents électroniques (Canada).",
+      "sections": [
+        {
+          "id": "who-we-are",
+          "title": "Qui nous sommes",
+          "paragraphs": [
+            "Ce site est exploité par Logiciel Parkwize inc. (« Parkwize », « nous »), une entreprise immatriculée au Québec sous le numéro d’entreprise du Québec (NEQ) 1181843559.",
+            "Siège social : 700-2828, boulevard Laurier, Québec (Québec) G1V 0B9, Canada."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "scope",
+          "title": "Portée",
+          "paragraphs": [
+            "Cette politique vise le site vitrine parkwize.ai et ses formulaires. La plateforme Parkwize utilisée par nos clients (app.parkwize.ai) est régie par l’entente conclue avec chaque client et par ses propres conditions de confidentialité."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "information-we-collect",
+          "title": "Renseignements recueillis",
+          "paragraphs": [
+            "Nous recueillons uniquement ce que vous choisissez de nous transmettre et le minimum nécessaire au fonctionnement du site :"
+          ],
+          "items": [
+            "Formulaire de demande de démo : prénom et nom, courriel professionnel, entreprise, poste, pays, renseignements sur vos stationnements, produits qui vous intéressent et votre message.",
+            "Formulaire de contact : prénom et nom, courriel, entreprise (facultatif), sujet et message.",
+            "Statistiques d’audience : pages vues, anonymes et agrégées, mesurées sans témoins (Vercel Web Analytics). Aucun profil n’est créé et vous n’êtes pas identifié.",
+            "Journaux techniques : notre hébergeur enregistre automatiquement des données techniques comme votre adresse IP, le type de navigateur et les pages demandées, pour la sécurité et le bon fonctionnement du site."
+          ],
+          "note": ""
+        },
+        {
+          "id": "how-we-use-it",
+          "title": "Utilisation",
+          "paragraphs": [
+            "Nous utilisons vos renseignements seulement pour répondre à votre demande, préparer et tenir votre démo, faire le suivi avec vous, ainsi que pour protéger et améliorer le site.",
+            "Nous ne vendons ni ne louons vos renseignements personnels, et nous ne vous inscrivons à aucune liste de marketing sans votre consentement."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "consent",
+          "title": "Consentement",
+          "paragraphs": [
+            "Avant d’envoyer un formulaire, vous acceptez d’être contacté au sujet de votre demande en cochant la case de consentement. Vous pouvez retirer votre consentement en tout temps en nous écrivant au moyen du formulaire de contact; nous cesserons alors de vous contacter et supprimerons vos renseignements, sauf si la loi nous oblige à les conserver."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "service-providers",
+          "title": "Fournisseurs et communication hors du Québec",
+          "paragraphs": [
+            "Nous faisons appel à un petit nombre de fournisseurs qui traitent des renseignements pour notre compte, en vertu de contrats qui les obligent à les protéger et à ne les utiliser que pour les services qu’ils nous rendent :"
+          ],
+          "items": [
+            "Vercel Inc. (États-Unis) : hébergement du site et statistiques d’audience sans témoins.",
+            "Resend (États-Unis) : acheminement par courriel des formulaires à notre équipe."
+          ],
+          "note": "Vos renseignements peuvent donc être conservés ou traités à l’extérieur du Québec et du Canada. Avant toute communication de ce type, nous évaluons si les renseignements bénéficieront d’une protection adéquate, comme l’exige la loi québécoise."
+        },
+        {
+          "id": "retention",
+          "title": "Conservation",
+          "paragraphs": [
+            "Nous conservons les formulaires reçus le temps nécessaire pour traiter votre demande et la relation d’affaires qui en découle, et au plus trois ans après notre dernier échange. Les renseignements sont ensuite détruits ou anonymisés."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "security",
+          "title": "Sécurité",
+          "paragraphs": [
+            "Le site est servi uniquement par une connexion chiffrée (HTTPS), et l’accès aux formulaires reçus est limité aux personnes qui en ont besoin pour vous répondre. Si un incident de confidentialité présente un risque de préjudice sérieux, nous aviserons les personnes concernées et la Commission d’accès à l’information du Québec, comme l’exige la loi."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "cookies",
+          "title": "Témoins (cookies)",
+          "paragraphs": [
+            "Ce site n’utilise aucun témoin publicitaire ou de suivi et n’enregistre aucune information dans votre navigateur. Nos statistiques d’audience sont mesurées sans témoins. Si cela change, nous mettrons à jour cette politique et demanderons votre consentement lorsque la loi l’exige."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "your-rights",
+          "title": "Vos droits",
+          "paragraphs": ["Sous réserve de la loi, vous pouvez :"],
+          "items": [
+            "accéder aux renseignements personnels que nous détenons sur vous et en obtenir une copie;",
+            "les faire rectifier s’ils sont inexacts, incomplets ou équivoques;",
+            "retirer votre consentement et en demander la suppression;",
+            "demander qu’ils vous soient communiqués, ou à un autre organisme, dans un format technologique structuré et couramment utilisé;",
+            "porter plainte auprès de la Commission d’accès à l’information du Québec si notre réponse ne vous satisfait pas."
+          ],
+          "note": "Pour exercer ces droits, écrivez-nous au moyen du formulaire de contact. Nous pourrions vous demander de confirmer votre identité et vous répondrons dans un délai de 30 jours."
+        },
+        {
+          "id": "person-in-charge",
+          "title": "Responsable de la protection des renseignements personnels",
+          "paragraphs": [
+            "La personne responsable de la protection des renseignements personnels chez Logiciel Parkwize inc. est son président. Vous pouvez la joindre au moyen du formulaire de contact, en choisissant n’importe quel sujet et en indiquant « Confidentialité » dans votre message, ou par la poste à l’adresse ci-dessus, à l’attention de la personne responsable de la protection des renseignements personnels."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "changes",
+          "title": "Modifications de cette politique",
+          "paragraphs": [
+            "Nous pouvons mettre à jour cette politique pour tenir compte de changements au site ou à la loi. La date en haut de la page indique la version en vigueur. Les changements importants seront signalés sur cette page."
+          ],
+          "items": [],
+          "note": ""
+        }
+      ]
+    },
+    "terms": {
+      "meta": {
+        "title": "Conditions d’utilisation | Parkwize",
+        "description": "Les conditions qui régissent l’utilisation du site parkwize.ai exploité par Logiciel Parkwize inc."
+      },
+      "title": "Conditions d’utilisation",
+      "updated": "20 octobre 2026",
+      "intro": "Ces conditions régissent votre utilisation du site parkwize.ai. Lisez-les attentivement : en naviguant sur le site, vous les acceptez.",
+      "sections": [
+        {
+          "id": "acceptance",
+          "title": "Acceptation",
+          "paragraphs": [
+            "En accédant à ce site ou en l’utilisant, vous acceptez les présentes conditions d’utilisation. Si vous ne les acceptez pas, veuillez ne pas utiliser le site."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "operator",
+          "title": "Exploitant du site",
+          "paragraphs": [
+            "Le site est exploité par Logiciel Parkwize inc., 700-2828, boulevard Laurier, Québec (Québec) G1V 0B9, Canada, numéro d’entreprise du Québec (NEQ) 1181843559."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "purpose",
+          "title": "Objet du site",
+          "paragraphs": [
+            "Le site présente les produits Parkwize et vous permet de demander une démo ou de joindre notre équipe. Rien sur le site ne constitue une offre de contracter. L’accès à la plateforme Parkwize (app.parkwize.ai) est régi par une entente distincte conclue avec chaque client."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "intellectual-property",
+          "title": "Propriété intellectuelle",
+          "paragraphs": [
+            "Les textes, visuels, vidéos, maquettes d’interface, logos et le nom Parkwize appartiennent à Logiciel Parkwize inc. ou à ses concédants et sont protégés par la loi. Vous pouvez consulter et partager les pages à des fins personnelles ou d’affaires internes, mais vous ne pouvez pas les copier, les modifier ou les réutiliser commercialement sans notre autorisation écrite.",
+            "Process ainsi que les autres noms et logos de tiers présentés sur le site appartiennent à leurs propriétaires respectifs."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "acceptable-use",
+          "title": "Utilisation acceptable",
+          "paragraphs": ["En utilisant le site, vous vous engagez à ne pas :"],
+          "items": [
+            "transmettre des renseignements faux, trompeurs ou appartenant à un tiers au moyen des formulaires;",
+            "nuire au fonctionnement ou à la sécurité du site, ni tenter d’accéder à ses parties non publiques;",
+            "extraire du contenu ou des données du site par des moyens automatisés sans notre autorisation;",
+            "introduire du code malveillant ou utiliser le site à des fins illégales."
+          ],
+          "note": ""
+        },
+        {
+          "id": "demos-and-figures",
+          "title": "Démos et chiffres",
+          "paragraphs": [
+            "Les démos interactives de ce site fonctionnent avec des données simulées : noms, plaques, montants et événements sont fictifs. Les résultats et chiffres présentés, comme les gains de revenus ou d’occupation, sont des estimations illustratives fondées sur des déploiements types. Ils ne garantissent pas les résultats que vous obtiendrez."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "external-links",
+          "title": "Liens externes",
+          "paragraphs": [
+            "Le site contient des liens vers d’autres sites, comme la plateforme Parkwize, la démo en direct et la page d’état des systèmes. Les sites de tiers relèvent de leurs exploitants, et leurs propres conditions s’appliquent."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "liability",
+          "title": "Exclusion de garantie et limitation de responsabilité",
+          "paragraphs": [
+            "Nous faisons de notre mieux pour que le site soit exact et accessible, mais il est fourni « tel quel », sans garantie qu’il soit ininterrompu, exempt d’erreurs ou toujours à jour. Nous pouvons modifier ou retirer du contenu en tout temps.",
+            "Dans la mesure permise par la loi, Logiciel Parkwize inc. n’est pas responsable des dommages indirects résultant de l’utilisation du site ou de l’impossibilité de l’utiliser. Rien dans ces conditions ne limite les droits que vous confèrent le Code civil du Québec ou la Loi sur la protection du consommateur."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "privacy",
+          "title": "Confidentialité",
+          "paragraphs": [
+            "La façon dont nous traitons les renseignements personnels que vous transmettez sur ce site est décrite dans notre politique de confidentialité."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "changes",
+          "title": "Modifications de ces conditions",
+          "paragraphs": [
+            "Nous pouvons mettre à jour ces conditions en tout temps. La date en haut de la page indique la version en vigueur, et c’est la version en ligne au moment où vous utilisez le site qui s’applique."
+          ],
+          "items": [],
+          "note": ""
+        },
+        {
+          "id": "governing-law",
+          "title": "Droit applicable",
+          "paragraphs": [
+            "Ces conditions sont régies par les lois de la province de Québec et les lois fédérales du Canada qui s’y appliquent. Tout litige relève des tribunaux du district judiciaire de Québec, sous réserve de toute règle d’ordre public vous accordant une autre compétence.",
+            "Ces conditions sont offertes en français et en anglais. En cas de divergence, la version française prévaut."
+          ],
+          "items": [],
+          "note": ""
+        }
+      ]
     }
   }
 }

@@ -30,11 +30,20 @@ export type DotFieldShape = {
   height: number;
 };
 
+export type PointerState = {
+  position: Point | null;
+  velocity: Point;
+};
+
 const PADDING = { x: 2, top: 7, bottom: 2 };
-const STIFFNESS = 0.12;
-const DAMPING = 0.78;
-const PUSH_STRENGTH = 0.55;
-const HEAT_EASING = 0.14;
+const STIFFNESS = 0.085;
+const DAMPING = 0.86;
+const PUSH_STRENGTH = 0.5;
+const SPEED_BOOST = 0.04;
+const HEAT_EASING = 0.16;
+const STRETCH_PER_SPEED = 0.07;
+const MAX_STRETCH = 2.6;
+const SQUASH_EXPONENT = 0.35;
 const REST_THRESHOLD = 0.02;
 const ALPHA_THRESHOLD = 128;
 
@@ -112,26 +121,54 @@ export function sampleDots(
 
 export function stepDots(
   dots: Dot[],
-  pointer: Point | null,
+  pointer: PointerState,
   metrics: DotFieldMetrics,
 ): boolean {
-  let moving = false;
+  const { position, velocity } = pointer;
+  const speed = Math.hypot(velocity.x, velocity.y);
+  const pushScale = PUSH_STRENGTH * (1 + Math.min(speed * SPEED_BOOST, 1));
+  const stretch = Math.min(1 + speed * STRETCH_PER_SPEED, MAX_STRETCH);
+  const squash = stretch ** SQUASH_EXPONENT;
+  const directionX = speed > REST_THRESHOLD ? velocity.x / speed : 1;
+  const directionY = speed > REST_THRESHOLD ? velocity.y / speed : 0;
+  const inMotion = speed > REST_THRESHOLD;
+  let moving = inMotion;
 
   for (const dot of dots) {
     let targetX = dot.originX;
     let targetY = dot.originY;
     let targetHeat = 0;
 
-    if (pointer) {
-      const deltaX = dot.originX - pointer.x;
-      const deltaY = dot.originY - pointer.y;
+    if (position) {
+      const deltaX = dot.originX - position.x;
+      const deltaY = dot.originY - position.y;
       const distance = Math.hypot(deltaX, deltaY) || 1;
+      const along = deltaX * directionX + deltaY * directionY;
+      const across = deltaY * directionX - deltaX * directionY;
+      const behind = along < 0;
+      const reach = Math.hypot(
+        behind ? along / stretch : along,
+        across * squash,
+      );
 
-      if (distance < metrics.influence) {
-        const falloff = (1 - distance / metrics.influence) ** 2;
-        const push = falloff * metrics.influence * PUSH_STRENGTH;
-        targetX += (deltaX / distance) * push;
-        targetY += (deltaY / distance) * push;
+      if (reach < metrics.influence) {
+        const falloff = (1 - reach / metrics.influence) ** 2;
+        const push = falloff * metrics.influence * pushScale;
+        let pushX = deltaX / distance;
+        let pushY = deltaY / distance;
+
+        if (behind && inMotion) {
+          const wake = Math.min(-along / (metrics.influence * stretch), 1);
+          const side = Math.sign(across) || 1;
+          pushX = pushX * (1 - wake) - directionY * side * wake;
+          pushY = pushY * (1 - wake) + directionX * side * wake;
+          const length = Math.hypot(pushX, pushY) || 1;
+          pushX /= length;
+          pushY /= length;
+        }
+
+        targetX += pushX * push;
+        targetY += pushY * push;
         targetHeat = falloff;
       }
     }
@@ -183,14 +220,14 @@ export function drawDots(
     context.arc(
       dot.x,
       dot.y,
-      metrics.radius * (1 + dot.heat * 0.5),
+      metrics.radius * (1 + dot.heat * 0.35),
       0,
       Math.PI * 2,
     );
     context.fillStyle = mixColor(
       colors.base,
       colors.accent,
-      Math.min(dot.heat * 1.6, 1),
+      Math.min(dot.heat * 1.4, 1),
     );
     context.fill();
   }

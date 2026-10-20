@@ -22,10 +22,7 @@ export function AiHero({ locale, dict }: AiHeroProps) {
   const { aiHeroLaptop } = MEDIA.product;
 
   return (
-    <section
-      data-top-bar="dark"
-      className="under-top-bar relative isolate overflow-hidden bg-navy text-inverse-foreground"
-    >
+    <section className="under-top-bar relative isolate overflow-hidden bg-navy text-inverse-foreground">
       <div aria-hidden className="ai-hero-glow absolute inset-0 -z-20" />
       <NeuralField className="absolute inset-0 -z-10 size-full opacity-90" />
       <Container className="flex flex-col items-center pt-10 text-center sm:pt-16 lg:pt-20">

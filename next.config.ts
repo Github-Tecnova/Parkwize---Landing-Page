@@ -10,6 +10,9 @@ const LEGACY_PAGES = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  experimental: {
+    globalNotFound: true,
+  },
   async redirects() {
     return [
       { source: "/", destination: "/en", permanent: false },

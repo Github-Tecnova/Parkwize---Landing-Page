@@ -10,8 +10,6 @@ type DictionaryType = typeof enJson;
 
 export type NavigationDictionary = DictionaryType["navigation"];
 
-export type ComingSoonDictionary = DictionaryType["comingSoon"];
-
 export type PagesDictionary = DictionaryType["pages"];
 
 export type FooterDictionary = DictionaryType["footer"];
@@ -41,6 +39,13 @@ export type ParkAidDictionary = DictionaryType["products"]["parkAid"];
 export type DemoPageDictionary = DictionaryType["demoPage"];
 
 export type ContactPageDictionary = DictionaryType["contactPage"];
+
+export type LegalDictionary = DictionaryType["legal"];
+
+export type LegalDocument =
+  LegalDictionary["privacy"] | LegalDictionary["terms"];
+
+export type LegalSection = LegalDocument["sections"][number];
 
 const dictionaries: Record<Locale, () => Promise<DictionaryType>> = {
   en: () => import("./en.json").then((module) => module.default),
