@@ -102,7 +102,7 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 - Top bar indicator: the active underline and hover pill are shared `layoutId` elements in `TopBarNav`; keep new nav items on the same `NavHighlight` pattern.
 - Product lists: `ProductIndex` includes `ProductIndexPreview`, a cursor-following preview (fine pointers only) fed by `PRODUCT_PREVIEWS` in `@/lib/product-media`.
 - Vector vehicles: `CarRear` (with `CAR_REAR_PLATE` for overlaying a plate) and `CarTop` from `@/components/media`. Token fills only.
-- Scroll-linked motion is reserved for signature pieces: `DashboardWalkthrough` (Dashboard Manager) and `HomeLot` (home, scene math in `@/lib/lot-scene`). Both pin with `useScroll` on `lg` and up, autoplay in view below `lg`, and show a static final state under reduced motion. Follow that pattern for any new one.
+- Scroll-linked motion is reserved for `DashboardWalkthrough` (Dashboard Manager): it pins with `useScroll` on `lg` and up and autoplays in view below `lg`. `HomeLot` (home, scene math in `@/lib/lot-scene`) autoplays in view at every width and loops. Both show a static final state under reduced motion.
 - If the same markup appears twice, make it a component.
 
 ## 5. Design tokens
