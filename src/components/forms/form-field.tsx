@@ -12,7 +12,7 @@ export const fieldControl = cva(
     variants: {
       kind: {
         input: "h-12",
-        select: "h-12 appearance-none bg-no-repeat pr-10",
+        select: "h-12",
         textarea: "min-h-28 resize-y py-3",
       },
     },

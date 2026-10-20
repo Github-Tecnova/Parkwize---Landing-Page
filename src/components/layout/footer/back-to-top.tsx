@@ -5,19 +5,13 @@
 "use client";
 
 import { ArrowUp } from "lucide-react";
+import { scrollToTop } from "@/lib/smooth-scroll";
 
 type BackToTopProps = {
   label: string;
 };
 
 export function BackToTop({ label }: BackToTopProps) {
-  const scrollToTop = () => {
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
-  };
-
   return (
     <button
       type="button"

@@ -53,6 +53,12 @@ export default {
           divider: "var(--glass-divider)",
         },
         scrim: "var(--scrim)",
+        bar: {
+          fg: "var(--bar-fg)",
+          muted: "var(--bar-muted)",
+          logo: "var(--bar-logo)",
+          hover: "var(--bar-hover)",
+        },
         inverse: {
           DEFAULT: "var(--inverse)",
           foreground: "var(--inverse-foreground)",

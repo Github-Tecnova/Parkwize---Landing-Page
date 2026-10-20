@@ -91,7 +91,13 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 - Phone mock-ups in demos: `DeviceFrame` from `@/components/media/device-frame`. The step title and "behind the scenes" card beside a demo: `DemoStepNote` from `@/components/sections/demo-step-note`.
 - Two side-by-side options with a center rule ("ours or yours"): `ModeSplit` from `@/components/sections/mode-split`.
 - Lead forms: fields from `@/components/forms` (`TextField`, `SelectField`, `ChipGroup`, `ConsentField`, `FormCard`, `FormGroup`, `FormSubmit`, `FormSuccess`), state with `useLeadForm`, a zod schema in `@/lib/leads/*-schema.ts` shared by the browser and the route, option values in `@/lib/leads/lead-options.ts` (labels in the dictionaries). Routes send with `sendLeadEmail` from `@/lib/leads/send-lead-email`. Lead pages use `LeadHero`.
-- Lead email environment: `RESEND_API_KEY`, `RESEND_FROM`, and `DEMO_TO` / `CONTACT_TO` (fallback `RESEND_TO`). Without `RESEND_API_KEY` outside production, routes accept the form without sending.
+- Lead email environment: `RESEND_API_KEY`, `RESEND_FROM`, and `DEMO_TO` / `CONTACT_TO` (fallback `RESEND_TO`, then the legacy `EARLY_ACCESS_TO`). Empty values fall through to the next one. Without `RESEND_API_KEY` outside production, routes accept the form without sending.
+- Top bar tone: sections on navy carry `data-top-bar="dark"`; `useBarTone` switches the bar to its dark glass (`bar-*` color tokens) while it sits over them. Menus use typographic items (`TopBarMenuItem`), no icon tiles.
+- Smooth scrolling: Lenis, mounted once by `SmoothScroll` in the root layout. Pause it through `useScrollLock`; scrollable overlays add `data-lenis-prevent`. Programmatic scroll to top: `scrollToTop` from `@/lib/smooth-scroll`.
+- Page transitions: the localized `Link` starts `RouteProgress` (top bar) through `startRouteProgress`; `PageFade` in the root layout fades pages in after the first load (no `template.tsx`: next to a root layout in `[lang]` it triggers a Next.js invariant error); `loading.tsx` shows `PageLoader`.
+- Selects: `SelectField` is a custom accessible listbox (combobox button, keyboard, typeahead). Never use a native `<select>`.
+- Every clickable element shows a pointer cursor through the base rule in `globals.css`; disabled controls show `not-allowed`.
+- Animated canvases (`NeuralField`, `DotWordmark`): ref-callback mount, ResizeObserver, pause off screen, single frame under reduced motion.
 - If the same markup appears twice, make it a component.
 
 ## 5. Design tokens

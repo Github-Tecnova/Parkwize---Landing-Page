@@ -21,7 +21,7 @@ export function ConsentField({
 
   return (
     <div className="mt-6">
-      <label className="flex cursor-pointer items-start gap-3 text-sm text-ink">
+      <label className="flex items-start gap-3 text-sm text-ink">
         <input
           id={id}
           type="checkbox"
@@ -29,7 +29,7 @@ export function ConsentField({
           aria-invalid={Boolean(error)}
           aria-describedby={error ? errorId : undefined}
           onChange={(event) => onChange(event.target.checked)}
-          className="mt-0.5 size-5 shrink-0 cursor-pointer rounded accent-deck"
+          className="mt-0.5 size-5 shrink-0 rounded accent-deck"
         />
         {label}
       </label>

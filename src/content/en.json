@@ -14,7 +14,8 @@
     "liveDemo": "Open the live demo",
     "systemStatus": "System status",
     "newTab": "opens in a new tab",
-    "mainLabel": "Main"
+    "mainLabel": "Main",
+    "siteDescription": "Parkwize, the smart parking platform built by Tecnova."
   },
   "comingSoon": {
     "eyebrow": "Coming soon",
@@ -91,7 +92,7 @@
   "closingCta": {
     "eyebrow": "We're here to help",
     "title": "Need help with your parking *technology* and *operations*?",
-    "cta": "Get in Touch",
+    "cta": "Get in touch",
     "madeIn": "Proudly Canadian"
   },
   "home": {
@@ -103,7 +104,7 @@
       "titleLines": ["Unlock 15%–", "40% More", "Revenue"],
       "titleAccent": ["from Your", "Parking"],
       "lead": "The first fully AI-powered parking intelligence ecosystem. Modernize operations, pricing, displays, booking, and more, all from one platform.",
-      "cta": "Get in Touch",
+      "cta": "Get in touch",
       "videoLabel": "Parking operators reviewing live data together",
       "dashboardAlt": "The Parkwize Dashboard Manager on a laptop"
     },
@@ -146,7 +147,7 @@
     "os": {
       "eyebrow": "Ours or Yours",
       "title": "One engine. *Our ecosystem*, or yours.",
-      "lead": "Parkwize offers its own ecosystem, but it doesn't stop there: it connects to the systems already in place and acts as an engine that takes over command and control of your kiosks, cameras, displays and barriers, so you manage everything from one place.",
+      "lead": "Parkwize offers its own ecosystem, but it doesn't stop there: it connects to the systems already in place and acts as an engine that takes command and control of your kiosks, cameras, displays and barriers, so you manage everything from one place.",
       "modes": [
         {
           "label": "Ours",
@@ -241,14 +242,14 @@
         "transcriptLabel": "Example conversation with Parkwize AI",
         "conversation": [
           {
-            "q": "How can you help me analyze my parkings?",
+            "q": "How can you help me analyze my parking facilities?",
             "a": [
               "I read every facility live: occupancy, revenue, traffic, turnover, rates and incidents.",
               "Ask in plain language and I compare your sites, flag anomalies and tell you what to change."
             ]
           },
           {
-            "q": "Show the global overview of all my parkings.",
+            "q": "Show me an overview of all my parking facilities.",
             "a": [
               "12 sites online. Occupancy 68%, revenue today $41,280, 3 sites at capacity.",
               "Tour CIBC and Central Plateau run 9 points above last month. One site is under-priced in the evening."
@@ -257,8 +258,8 @@
           {
             "q": "Analyze traffic and suggest optimizations.",
             "a": [
-              "Peak arrivals 8:30–9:15 and 17:45–18:30 on weekdays.",
-              "Open the south lane 10 minutes earlier, extend the evening cap to 20:00 and move the 18:00 rate to $6.50."
+              "Peak arrivals 8:30–9:15 AM and 5:45–6:30 PM on weekdays.",
+              "Open the south lane 10 minutes earlier, extend the evening cap to 8 PM and move the 6 PM rate to $6.50."
             ]
           },
           {
@@ -269,23 +270,23 @@
             ]
           },
           {
-            "q": "Schedule a new rate starting at 4 p.m.",
+            "q": "Schedule a new rate starting at 4 PM",
             "a": [
-              "Done. The $7.00 evening rate applies today from 16:00 at all 12 sites, fixed contracts aside.",
+              "Done. The $7.00 evening rate applies today from 4 PM at all 12 sites, fixed contracts aside.",
               "Want me to preview the revenue impact before it goes live?"
             ]
           },
           {
             "q": "Automate a monthly revenue and occupancy report.",
             "a": [
-              "Set up. On the 1st of each month at 07:00, I send a PDF and a spreadsheet with revenue, occupancy, average ticket and rate changes per site.",
+              "Set up. On the 1st of each month at 7 AM, I send a PDF and a spreadsheet with revenue, occupancy, average ticket and rate changes per site.",
               "Should I copy your finance team?"
             ]
           },
           {
             "q": "Forecast occupancy and traffic for the next 7 days.",
             "a": [
-              "Average occupancy 71%, peaking Friday 18:00–20:00 at 94%.",
+              "Average occupancy 71%, peaking Friday 6–8 PM at 94%.",
               "Rain on Wednesday will shift arrivals 20 minutes earlier. Hold the current rate until Thursday."
             ]
           },
@@ -299,7 +300,7 @@
         ]
       },
       "outcome": "Automatic and continuous optimization.",
-      "outcomeCta": "Get in Touch",
+      "outcomeCta": "Get in touch",
       "photoAlt": "A parking operations team reviewing forecasts together",
       "screenAlt": "Parkwize AI answering a question about revenue"
     },
@@ -388,7 +389,7 @@
       "hero": {
         "eyebrow": "Parkwize Dashboard Manager",
         "title": "Where Everything Connects.",
-        "lead": "The operational brain of modern parking: a centralized dashboard that links all your equipment and software in one real-time platform. It takes over command of everything.",
+        "lead": "The operational brain of modern parking: a centralized dashboard that links all your equipment and software in one real-time platform. It takes command of everything.",
         "cta": "Book a demo",
         "videoLabel": "An operator working on his laptop overlooking the city"
       },
@@ -396,7 +397,7 @@
         "label": "Parkwize dashboard overview",
         "imageAlt": "Parkwize dashboard: revenue, live events, alerts, on-site performance and pricing",
         "eyebrow": "One connected view",
-        "caption": "Revenue. Activity. Pricing. A general control board."
+        "caption": "Revenue. Activity. Pricing. One control board for it all."
       },
       "summary": [
         {
@@ -616,7 +617,7 @@
           },
           {
             "label": "Lot",
-            "value": "Riverain Parking"
+            "value": "Riverside Parking"
           },
           {
             "label": "Expected occupancy",
@@ -640,7 +641,7 @@
         "title": "Intelligence That *Learns* and *Optimizes.*",
         "lead": "Parkwize AI is trained on over 8 years of real-world parking data. It learns the unique behavior of each facility by reading more than 90 internal and external KPIs, from demand cycles, revenue patterns and occupancy dynamics to local events, weather and traffic. Then it acts: it forecasts demand, finds the optimal rate and adjusts prices automatically, around the clock.",
         "points": [
-          "Demand cycle analysis: understanding how each parking reacts to time, day, season, and external events.",
+          "Demand cycle analysis: understanding how each facility reacts to time, day, season, and external events.",
           "Revenue pattern recognition: identifying optimal pricing strategies for maximum yield.",
           "Occupancy dynamics modeling: predicting fill rates and turnover with high accuracy.",
           "External data integration: weather, local events, Google Maps traffic, ticketing platforms, nearby building activity.",
@@ -704,7 +705,7 @@
             "body": "Fully autonomous optimization"
           },
           {
-            "value": "8yr+",
+            "value": "8+ yrs",
             "label": "Training Data",
             "body": "Real-world parking intelligence"
           }
@@ -932,7 +933,7 @@
           "getPrice": "Get a price",
           "price": "$18.00",
           "durationLabel": "Duration",
-          "durationValue": "24 h",
+          "durationValue": "24 hrs",
           "validLabel": "Valid until",
           "validValue": "Tomorrow, 3:30 PM",
           "continue": "Continue",
@@ -1186,7 +1187,7 @@
         "eyebrow": "Connected follow-up",
         "title": "Every step *in one place.*",
         "lead": "From plate recognition to payment validation and violation management, your team gets one continuous digital record for every vehicle.",
-        "cta": "Request a demo",
+        "cta": "Book a demo",
         "imageAlt": "An enforcement officer reviewing parking sessions on a tablet",
         "timelineLabel": "Digital record of one vehicle",
         "events": [
@@ -1296,7 +1297,7 @@
         "milestones": [
           {
             "year": "1998",
-            "body": "Process Systèmes et Technologies is founded"
+            "body": "Process Systèmes et Technologies founded"
           },
           {
             "year": "2002",
@@ -1353,7 +1354,7 @@
         "kiosk": {
           "lot": "Downtown P2",
           "vehicleTitle": "Vehicle type",
-          "vehicleQuestion": "What type of vehicle are you parked in?",
+          "vehicleQuestion": "What type of vehicle did you park?",
           "car": "Car",
           "motorcycle": "Motorcycle",
           "entryTitle": "Your stay",
@@ -1361,7 +1362,7 @@
           "entryLabel": "Entry",
           "entryValue": "Today, 9:12 AM",
           "durationLabel": "Duration",
-          "durationValue": "3 h 18 min",
+          "durationValue": "3 hr 18 min",
           "amountLabel": "Amount due",
           "amount": "$14.50",
           "payTitle": "Payment",
@@ -1413,7 +1414,7 @@
           "Accounting"
         ],
         "highlightTitle": "Hassle-free accounting.",
-        "highlightBody": "Fully automated accounting modules with invoice and payment default control. Monthly clients can even pay their subscription at the entrance when needed."
+        "highlightBody": "Fully automated accounting with invoicing and late-payment tracking. Monthly clients can even pay their subscription at the entrance when needed."
       },
       "features": {
         "eyebrow": "Our solutions",
@@ -1422,7 +1423,7 @@
         "mediaCaption": "Hardware and software, one ecosystem",
         "items": [
           {
-            "title": "ANPR Cameras",
+            "title": "LPR Cameras",
             "body": "License plates are read at entry and exit, so drivers never need a ticket."
           },
           {

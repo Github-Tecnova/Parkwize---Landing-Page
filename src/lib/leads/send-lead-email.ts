@@ -32,8 +32,13 @@ export async function sendLeadEmail({
     return process.env.NODE_ENV === "production" ? "unconfigured" : "skipped";
   }
 
-  const from = process.env.RESEND_FROM ?? "onboarding@resend.dev";
-  const to = (process.env[recipientsEnv] ?? process.env.RESEND_TO ?? from)
+  const from = process.env.RESEND_FROM || "onboarding@resend.dev";
+  const to = (
+    process.env[recipientsEnv] ||
+    process.env.RESEND_TO ||
+    process.env.EARLY_ACCESS_TO ||
+    from
+  )
     .split(",")
     .map((value) => value.trim())
     .filter(Boolean);
@@ -48,8 +53,13 @@ export async function sendLeadEmail({
       text: rows.map((row) => `${row.label}: ${row.value}`).join("\n"),
     });
 
-    return error ? "failed" : "sent";
-  } catch {
+    if (error) {
+      console.error("Lead email rejected by Resend", error);
+      return "failed";
+    }
+    return "sent";
+  } catch (error) {
+    console.error("Lead email could not be sent", error);
     return "failed";
   }
 }

@@ -5,11 +5,13 @@
 "use client";
 
 import { useEffect } from "react";
+import { pauseSmoothScroll, resumeSmoothScroll } from "@/lib/smooth-scroll";
 
 export function useScrollLock(active: boolean) {
   useEffect(() => {
     if (!active) return;
 
+    pauseSmoothScroll();
     const { body } = document;
     const scrollY = window.scrollY;
     const previous = {
@@ -27,6 +29,7 @@ export function useScrollLock(active: boolean) {
       body.style.top = previous.top;
       body.style.width = previous.width;
       window.scrollTo({ top: scrollY, behavior: "instant" });
+      resumeSmoothScroll();
     };
   }, [active]);
 }

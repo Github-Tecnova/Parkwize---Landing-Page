@@ -4,7 +4,7 @@
 
 export type Point = { x: number; y: number };
 
-type Rgb = [number, number, number];
+export type Rgb = [number, number, number];
 
 export type Dot = {
   originX: number;

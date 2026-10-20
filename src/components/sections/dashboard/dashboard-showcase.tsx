@@ -19,6 +19,8 @@ export function DashboardShowcase({ dict, summary }: DashboardShowcaseProps) {
 
   return (
     <section
+      data-top-bar="dark"
+
       aria-label={dict.label}
       className="bg-navy pb-16 pt-10 text-inverse-foreground sm:pb-24 sm:pt-14"
     >

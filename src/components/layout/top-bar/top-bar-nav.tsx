@@ -21,7 +21,7 @@ import { cn } from "@/lib/utils";
 const PARKAID = PRODUCT_LINKS.find((link) => link.key === "parkAid");
 
 const NAV_ITEM =
-  "relative inline-flex h-10 items-center gap-1 rounded-full px-3.5 text-sm font-medium text-copy transition-colors hover:bg-glass-hover hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring after:absolute after:inset-x-3.5 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-deck after:transition-transform aria-[current=page]:text-ink aria-[current=page]:after:scale-x-100";
+  "relative inline-flex h-10 items-center gap-1 rounded-full px-3.5 text-sm font-medium text-bar-muted transition-colors hover:bg-bar-hover hover:text-bar-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring after:absolute after:inset-x-3.5 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-deck after:transition-transform aria-[current=page]:text-bar-fg aria-[current=page]:after:scale-x-100";
 
 type TopBarNavProps = {
   solutionsRef: Ref<HTMLButtonElement>;
@@ -65,7 +65,10 @@ export function TopBarNav({
             onPointerEnter={(event) => {
               if (event.pointerType === "mouse") onSolutionsHover();
             }}
-            className={cn(NAV_ITEM, solutionsOpen && "bg-glass-hover text-ink")}
+            className={cn(
+              NAV_ITEM,
+              solutionsOpen && "bg-bar-hover text-bar-fg",
+            )}
           >
             {dict.menuTitle}
             <ChevronDown

@@ -14,7 +14,8 @@
     "liveDemo": "Ouvrir la démo en direct",
     "systemStatus": "État des systèmes",
     "newTab": "s'ouvre dans un nouvel onglet",
-    "mainLabel": "Principal"
+    "mainLabel": "Principal",
+    "siteDescription": "Parkwize, la plateforme de stationnement intelligent conçue par Tecnova."
   },
   "comingSoon": {
     "eyebrow": "Bientôt disponible",
@@ -24,7 +25,7 @@
   },
   "pages": {
     "dashboardManager": {
-      "name": "Gestionnaire de tableau de bord",
+      "name": "Dashboard Manager",
       "description": "Revenus, occupation et opérations en une seule vue."
     },
     "parkwizeAi": {
@@ -32,19 +33,19 @@
       "description": "Posez vos questions, obtenez prévisions et analyses."
     },
     "digitalSignage": {
-      "name": "Solution d'affichage numérique",
+      "name": "Parkwize Display",
       "description": "Tarifs et disponibilités en direct sur chaque écran."
     },
     "onlineReservation": {
-      "name": "Réservation en ligne",
+      "name": "Parkwize Booking",
       "description": "Les conducteurs réservent et paient à l'avance."
     },
     "enforcement": {
-      "name": "Contrôle et application",
+      "name": "Parkwize Enforcement",
       "description": "Lecture de plaques et suivi des infractions."
     },
     "processKiosk": {
-      "name": "Borne Process",
+      "name": "Process Kiosk",
       "description": "Bornes de paiement et terminaux d'entrée."
     },
     "parkAid": {
@@ -71,11 +72,11 @@
   "footer": {
     "logoAlt": "Parkwize",
     "tagline": "La plateforme de stationnement intelligente. Opérations, tarification, affichage et réservations, au même endroit.",
-    "status": "Systèmes opérationnels",
+    "status": "Tous les systèmes sont opérationnels",
     "columns": {
       "products": "Produits",
       "getStarted": "Commencer",
-      "legal": "Légal"
+      "legal": "Mentions légales"
     },
     "links": {
       "bookDemo": "Réserver une démo",
@@ -90,7 +91,7 @@
   },
   "closingCta": {
     "eyebrow": "Nous sommes là pour vous",
-    "title": "Besoin d'aide avec votre *technologie* et vos *opérations* ?",
+    "title": "Besoin d'aide pour votre *technologie* et vos *opérations* ?",
     "cta": "Nous joindre",
     "madeIn": "Fièrement canadien"
   },
@@ -105,7 +106,7 @@
       "lead": "Le premier écosystème d'intelligence du stationnement entièrement propulsé par l'IA. Modernisez vos opérations, votre tarification, votre affichage, vos réservations et plus encore, depuis une seule plateforme.",
       "cta": "Nous joindre",
       "videoLabel": "Des gestionnaires de stationnement consultent des données en direct",
-      "dashboardAlt": "Le gestionnaire de tableau de bord Parkwize sur un ordinateur portable"
+      "dashboardAlt": "Le Dashboard Manager de Parkwize sur un ordinateur portable"
     },
     "stats": {
       "label": "Parkwize en chiffres",
@@ -146,7 +147,7 @@
     "os": {
       "eyebrow": "Le nôtre ou le vôtre",
       "title": "Un seul moteur. *Notre écosystème*, ou le vôtre.",
-      "lead": "Parkwize offre son propre écosystème, mais il ne s'arrête pas là : il se connecte aux systèmes déjà en place et agit comme un moteur qui prend le contrôle des commandes de vos bornes, caméras, affichages et barrières, pour tout piloter depuis un seul endroit.",
+      "lead": "Parkwize offre son propre écosystème, mais il ne s'arrête pas là : il se connecte aux systèmes déjà en place et agit comme un moteur qui prend les commandes de vos bornes, caméras, affichages et barrières, pour tout piloter depuis un seul endroit.",
       "modes": [
         {
           "label": "Notre écosystème",
@@ -164,7 +165,7 @@
         "title": "Le système d'exploitation du *stationnement* moderne",
         "lead": "Un seul cerveau. Neuf systèmes connectés, pilotés en temps réel.",
         "core": "Contrôle central",
-        "coreAlt": "Le gestionnaire de tableau de bord Parkwize, contrôle central de tous les systèmes connectés",
+        "coreAlt": "Le Dashboard Manager de Parkwize, contrôle central de tous les systèmes connectés",
         "nodes": {
           "payment": "Terminaux de paiement",
           "display": "Affichage dynamique",
@@ -181,7 +182,7 @@
     "ai": {
       "logoAlt": "Parkwize IA",
       "title": "Le premier *modèle d'IA* conçu pour le stationnement.",
-      "lead": "Nous sommes pionniers de l'intelligence artificielle appliquée au stationnement. Entraînés sur plus de 8 ans de données réelles, nos modèles apprennent le comportement unique de chaque site en analysant plus de 90 KPI internes et externes pour prévoir la demande, trouver le tarif optimal et ajuster les prix en temps réel.",
+      "lead": "Nous sommes des pionniers de l'intelligence artificielle appliquée au stationnement. Entraînés sur plus de 8 ans de données réelles, nos modèles apprennent le comportement unique de chaque site en analysant plus de 90 KPI internes et externes pour prévoir la demande, trouver le tarif optimal et ajuster les prix en temps réel.",
       "cta": "Découvrir Parkwize IA",
       "capabilities": {
         "forecasting": {
@@ -293,7 +294,7 @@
             "q": "Proposez des structures de prix dynamiques pour tous mes sites.",
             "a": [
               "Trois structures correspondent à vos données : un tarif de base avec multiplicateur de demande pour les bureaux, une majoration lors des événements près des arénas et un plafond fixe la fin de semaine pour le commerce.",
-              "Appliquées telles quelles, le modèle prévoit +11 % de revenus et +4 points d'occupation."
+              "Si elles sont appliquées telles quelles, le modèle prévoit +11 % de revenus et +4 points d'occupation."
             ]
           }
         ]
@@ -310,14 +311,14 @@
         "Réservation ultrarapide, pensée pour le mobile",
         "Paiements sécurisés (Apple Pay, Google Pay, etc.)",
         "Entièrement personnalisable à votre image",
-        "Synchronisée en temps réel avec le gestionnaire de tableau de bord"
+        "Synchronisée en temps réel avec le Dashboard Manager"
       ],
       "cta": "Découvrir la réservation en ligne",
       "videoLabel": "Une conductrice réserve une place sur son téléphone",
       "phoneAlt": "Le parcours de réservation Parkwize sur un téléphone"
     },
     "sectors": {
-      "eyebrow": "Qui nous servons",
+      "eyebrow": "Notre clientèle",
       "items": {
         "airports": {
           "title": "Aéroports",
@@ -344,7 +345,7 @@
   },
   "productCards": {
     "dashboardManager": {
-      "name": "Gestionnaire de tableau de bord Parkwize",
+      "name": "Parkwize Dashboard Manager",
       "blurb": "KPI en direct, tarification dynamique et pilotage à distance."
     },
     "parkwizeAi": {
@@ -352,19 +353,19 @@
       "blurb": "Des prévisions et des prix ajustés sans intervention."
     },
     "digitalSignage": {
-      "name": "Affichage Parkwize",
+      "name": "Parkwize Display",
       "blurb": "Des enseignes mises à jour avec vos données, en direct."
     },
     "onlineReservation": {
-      "name": "Réservation Parkwize",
+      "name": "Parkwize Booking",
       "blurb": "Plateforme de réservation en ligne pour exploitations avec ou sans barrière."
     },
     "enforcement": {
-      "name": "Contrôle Parkwize",
+      "name": "Parkwize Enforcement",
       "blurb": "Lecture de plaques et suivi des sessions, sans billet."
     },
     "processKiosk": {
-      "name": "Borne Process",
+      "name": "Process Kiosk",
       "blurb": "Barrières, bornes et capteurs conçus pour tourner 24/7."
     },
     "parkAid": {
@@ -382,11 +383,11 @@
   "products": {
     "dashboardManager": {
       "meta": {
-        "title": "Gestionnaire de tableau de bord | Parkwize",
+        "title": "Dashboard Manager | Parkwize",
         "description": "Le cerveau opérationnel du stationnement moderne : un tableau de bord en temps réel qui relie et pilote tous vos équipements et logiciels."
       },
       "hero": {
-        "eyebrow": "Gestionnaire de tableau de bord Parkwize",
+        "eyebrow": "Parkwize Dashboard Manager",
         "title": "Là où tout se connecte.",
         "lead": "Le cerveau opérationnel du stationnement moderne : un tableau de bord centralisé qui relie tous vos équipements et logiciels dans une seule plateforme en temps réel. Il prend le contrôle de tout.",
         "cta": "Réserver une démo",
@@ -418,7 +419,7 @@
       "solution": {
         "eyebrow": "La solution",
         "title": "Un tableau de bord. Un contrôle total.",
-        "lead": "Le gestionnaire de tableau de bord est la source de vérité unique de chaque exploitation : entièrement à distance, en temps réel et profondément intégré à tout l'écosystème Parkwize.",
+        "lead": "Le Dashboard Manager est la source de vérité unique de chaque exploitation : entièrement à distance, en temps réel et profondément intégré à tout l'écosystème Parkwize.",
         "photoAlt": "Deux personnes consultent le tableau de bord Parkwize sur une tablette dans un stationnement",
         "photoCaption": "Conçu pour les équipes sur le terrain.",
         "points": [
@@ -432,7 +433,7 @@
       },
       "features": {
         "eyebrow": "Fonctionnalités",
-        "title": "Ce qu'il y a *dedans*.",
+        "title": "Les *fonctionnalités*.",
         "mediaAlt": "Un exploitant vérifie un site sur son téléphone dans un stationnement au crépuscule",
         "mediaCaption": "Pilotez chaque site depuis votre téléphone",
         "items": [
@@ -446,7 +447,7 @@
           },
           {
             "title": "Horaires planifiés",
-            "body": "Planifiez tarifs et heures d'ouverture à l'avance grâce aux calendriers, pour que fêtes et événements roulent sans personne sur place."
+            "body": "Planifiez tarifs et heures d'ouverture à l'avance grâce aux calendriers, pour que fêtes et événements se déroulent sans personne sur place."
           },
           {
             "title": "Tâches automatisées",
@@ -491,7 +492,7 @@
           },
           {
             "value": "0",
-            "label": "Visite sur le site",
+            "label": "Déplacement requis",
             "body": "Un pilotage entièrement à distance"
           }
         ]
@@ -638,7 +639,7 @@
       "solution": {
         "eyebrow": "La solution",
         "title": "Une intelligence qui *apprend* et *optimise.*",
-        "lead": "Parkwize IA s'appuie sur plus de 8 ans de données de stationnement réelles. Il apprend le comportement propre à chaque site en analysant plus de 90 KPI internes et externes : cycles de demande, tendances de revenus, dynamique d'occupation, événements locaux, météo et trafic. Puis il agit : il prévoit la demande, détermine le tarif optimal et ajuste les prix automatiquement, en continu.",
+        "lead": "Parkwize IA s'appuie sur plus de 8 ans de données de stationnement réelles. Elle apprend le comportement propre à chaque site en analysant plus de 90 KPI internes et externes : cycles de demande, tendances de revenus, dynamique d'occupation, événements locaux, météo et trafic. Puis elle agit : elle prévoit la demande, détermine le tarif optimal et ajuste les prix automatiquement, en continu.",
         "points": [
           "Analyse des cycles de demande : comprendre comment chaque stationnement réagit à l'heure, au jour, à la saison et aux événements externes.",
           "Reconnaissance des tendances de revenus : trouver les stratégies tarifaires qui maximisent le rendement.",
@@ -650,7 +651,7 @@
       },
       "features": {
         "eyebrow": "Fonctionnalités",
-        "title": "Ce qu'il y a *dedans*.",
+        "title": "Les *fonctionnalités*.",
         "mediaAlt": "Une équipe d'exploitation analyse des prévisions ensemble",
         "mediaCaption": "Entraînée sur plus de 8 ans de données réelles",
         "items": [
@@ -704,7 +705,7 @@
             "body": "Une optimisation entièrement autonome"
           },
           {
-            "value": "8 ans+",
+            "value": "+ de 8 ans",
             "label": "Données d'entraînement",
             "body": "Une intelligence issue du terrain"
           }
@@ -713,7 +714,7 @@
     },
     "digitalSignage": {
       "meta": {
-        "title": "Affichage dynamique | Parkwize",
+        "title": "Parkwize Display | Parkwize",
         "description": "Transformez vos enseignes de stationnement statiques en affichages connectés : tarifs, disponibilités et mode complet mis à jour automatiquement."
       },
       "hero": {
@@ -816,7 +817,7 @@
       },
       "features": {
         "eyebrow": "Fonctionnalités",
-        "title": "Ce qu'il y a *dedans*.",
+        "title": "Les *fonctionnalités*.",
         "mediaAlt": "Une gestionnaire de stationnement consulte une enseigne de disponibilités à l'entrée d'un garage",
         "mediaCaption": "Tous vos écrans, gérés au même endroit",
         "items": [
@@ -879,7 +880,7 @@
     },
     "onlineReservation": {
       "meta": {
-        "title": "Réservation en ligne | Parkwize",
+        "title": "Parkwize Booking | Parkwize",
         "description": "Une plateforme moderne de réservation de stationnement, pensée pour le mobile : paiement en un geste, accès par code QR et tarifs synchronisés avec vos opérations."
       },
       "hero": {
@@ -1012,7 +1013,7 @@
       },
       "features": {
         "eyebrow": "Fonctionnalités",
-        "title": "Ce qu'il y a *dedans*.",
+        "title": "Les *fonctionnalités*.",
         "mediaAlt": "Un stationnement intérieur moderne et lumineux, éclairé par des DEL",
         "mediaCaption": "Votre marque, vos sites, un seul moteur de réservation",
         "items": [
@@ -1075,7 +1076,7 @@
     },
     "enforcement": {
       "meta": {
-        "title": "Contrôle | Parkwize",
+        "title": "Parkwize Enforcement | Parkwize",
         "description": "Le contrôle du stationnement sans billet ni barrière : lecture de plaques en temps réel, validation des sessions et des paiements, et infractions numériques dans une même vue."
       },
       "hero": {
@@ -1132,7 +1133,7 @@
           "overstay": "Stationné depuis 18 min",
           "valid": "Valide",
           "flagged": "Signalé",
-          "violation": "Infraction émise",
+          "violation": "Constat d'infraction émis",
           "violationId": "PW-20418",
           "photoLabel": "Photos",
           "photoValue": "2 jointes",
@@ -1186,7 +1187,7 @@
         "eyebrow": "Suivi connecté",
         "title": "Chaque étape, *au même endroit.*",
         "lead": "De la lecture de plaques à la validation des paiements et au traitement des infractions, vos équipes disposent d'un historique numérique continu pour chaque véhicule.",
-        "cta": "Demander une démo",
+        "cta": "Réserver une démo",
         "imageAlt": "Un agent de contrôle vérifie les sessions de stationnement sur sa tablette",
         "timelineLabel": "Historique numérique d'un véhicule",
         "events": [
@@ -1202,7 +1203,7 @@
           },
           {
             "time": "17 h 42",
-            "title": "Infraction émise",
+            "title": "Constat d'infraction émis",
             "body": "Photos, heure et lieu joints au dossier"
           },
           {
@@ -1236,7 +1237,7 @@
           },
           {
             "title": "Gestion des infractions",
-            "body": "Émettez, suivez et réglez les infractions à partir d'un même dossier connecté."
+            "body": "Émettez, suivez et réglez les constats d'infraction à partir d'un même dossier connecté."
           },
           {
             "title": "Expérience personnalisable",
@@ -1255,7 +1256,7 @@
           {
             "value": "100 %",
             "label": "Sans billet",
-            "body": "Ni papier, ni ticket au tableau de bord"
+            "body": "Ni papier, ni billet au tableau de bord"
           },
           {
             "value": "<2 s",
@@ -1312,7 +1313,7 @@
           },
           {
             "year": "2025",
-            "body": "Nouvelle gamme de matériel co-conçue avec Parkwize IA"
+            "body": "Nouvelle gamme de matériel coconçue avec Parkwize IA"
           }
         ],
         "whyTitle": "Pourquoi Process ?",
@@ -1347,7 +1348,7 @@
         "title": "Un parcours clair, *en quatre écrans.*",
         "lead": "Les écrans de la borne sont en HTML et s'adaptent à votre image : un parcours simple, de gros boutons et un reçu clair, connectés à Parkwize à chaque étape.",
         "railLabel": "Étapes du paiement à la borne",
-        "kioskLabel": "Simulation des écrans de paiement d'une borne Process",
+        "kioskLabel": "Simulation des écrans de paiement d'une borne Process Kiosk",
         "behindLabel": "En coulisses",
         "note": "Paiement simulé, données fictives.",
         "kiosk": {
@@ -1481,26 +1482,26 @@
     "parkAid": {
       "meta": {
         "title": "ParkAid | Parkwize",
-        "description": "ParkAid relie chaque intercom de votre stationnement à un assistant vocal IA bilingue et à des agents formés au stationnement, disponibles 24/7."
+        "description": "ParkAid relie chaque interphone de votre stationnement à un assistant vocal IA bilingue et à des agents formés au stationnement, disponibles 24/7."
       },
       "hero": {
         "eyebrow": "ParkAid · Centre d'appels",
         "logoAlt": "ParkAid",
         "title": "Toujours là pour *vos usagers.*",
-        "lead": "ParkAid relie chaque intercom de votre stationnement (bornes d'entrée, de sortie et de paiement) à un assistant vocal IA et à des agents humains disponibles 24/7.",
+        "lead": "ParkAid relie chaque interphone de votre stationnement (bornes d'entrée, de sortie et de paiement) à un assistant vocal IA et à des agents humains disponibles 24/7.",
         "cta": "Réserver une démo",
         "imageAlt": "L'équipe du centre d'appels ParkAid au travail"
       },
       "focus": {
         "eyebrow": "Nos agents",
         "title": "Pas un agent de centre d'appels *ordinaire.*",
-        "lead": "Nos agents sont formés et concentrés uniquement sur le stationnement. Ils connaissent la réalité et la complexité de votre site, et débloquent chaque situation avec l'usager ou avec votre équipe de support technique.",
+        "lead": "Nos agents sont formés et concentrés uniquement sur le stationnement. Ils connaissent la réalité et la complexité de votre site, et débloquent chaque situation avec l'usager ou avec votre équipe de soutien technique.",
         "imageAlt": "Une agente ParkAid avec un casque d'écoute prend un appel",
         "points": [
           {
             "tag": "Stationnement seulement",
             "title": "Formés au stationnement, rien d'autre",
-            "body": "Aucun script générique ni ticket sans rapport. Chaque agent apprend le langage de votre site : barrières, tickets perdus, tarifs, règles d'accès et terminaux de paiement."
+            "body": "Aucun script générique ni demande sans rapport. Chaque agent apprend le langage de votre site : barrières, billets perdus, tarifs, règles d'accès et terminaux de paiement."
           },
           {
             "tag": "Votre site",
@@ -1517,9 +1518,9 @@
       "demo": {
         "eyebrow": "Comment un appel circule",
         "title": "Du bouton d'appel *à la barrière ouverte.*",
-        "lead": "Suivez une usagère qui a perdu son ticket à la sortie. Chaque étape est tracée : audio, chronologie, actions et qualification.",
+        "lead": "Suivez une usagère qui a perdu son billet à la sortie. Chaque étape est tracée : audio, chronologie, actions et qualification.",
         "railLabel": "Étapes de l'appel",
-        "consoleLabel": "Simulation d'un appel ParkAid à un intercom de sortie",
+        "consoleLabel": "Simulation d'un appel ParkAid à un interphone de sortie",
         "behindLabel": "En coulisses",
         "note": "Appel simulé, données fictives.",
         "terminal": "Sortie 2 · Centre-ville P2",
@@ -1528,33 +1529,33 @@
         "barrierLabel": "Barrière",
         "barrierClosed": "Fermée",
         "barrierOpen": "Ouverte",
-        "assistantName": "IA ParkAid",
+        "assistantName": "ParkAid IA",
         "visitorName": "Usagère",
         "messages": [
           {
             "step": 0,
             "role": "system",
-            "text": "Appel entrant de l'intercom Sortie 2"
+            "text": "Appel entrant de l'interphone Sortie 2"
           },
           {
             "step": 1,
             "role": "assistant",
-            "text": "Bonjour, hello! Comment puis-je vous aider ?"
+            "text": "Bonjour, hello ! Comment puis-je vous aider ?"
           },
           {
             "step": 2,
             "role": "visitor",
-            "text": "J'ai perdu mon ticket."
+            "text": "J'ai perdu mon billet."
           },
           {
             "step": 2,
             "role": "assistant",
-            "text": "J'ai trouvé votre plaque, FKL 482, entrée à 9 h 12. J'applique le tarif ticket perdu."
+            "text": "J'ai trouvé votre plaque, FKL 482, entrée à 9 h 12. J'applique le tarif billet perdu."
           },
           {
             "step": 3,
             "role": "action",
-            "text": "Barrière ouverte · Motif : ticket perdu"
+            "text": "Barrière ouverte · Motif : billet perdu"
           },
           {
             "step": 3,
@@ -1569,10 +1570,10 @@
         ],
         "steps": [
           {
-            "label": "Intercom",
+            "label": "Interphone",
             "title": "L'usagère appuie sur le bouton d'appel",
             "behind": "Appel acheminé",
-            "detail": "L'intercom, le site et la caméra sont identifiés aussitôt"
+            "detail": "L'interphone, le site et la caméra sont identifiés aussitôt"
           },
           {
             "label": "Accueil",
@@ -1590,7 +1591,7 @@
             "label": "Action",
             "title": "Elle agit selon vos règles",
             "behind": "Action autorisée",
-            "detail": "Tarif ticket perdu appliqué, barrière ouverte, motif consigné"
+            "detail": "Tarif billet perdu appliqué, barrière ouverte, motif consigné"
           },
           {
             "label": "Agents",
@@ -1606,9 +1607,9 @@
         "lead": "L'assistant décroche dans les deux langues, comprend ce dont l'usager a besoin et exécute les actions que vous avez autorisées sur cette borne. Tout ce qui dépasse ses permissions, ou qui demande un humain, part dans votre file avec ce qu'il a déjà rassemblé.",
         "actions": [
           {
-            "tag": "Ticket perdu",
-            "situation": "L'usager n'a plus de ticket",
-            "action": "Vérifie la plaque et la session, lance l'action ticket perdu, ouvre la barrière et consigne le motif."
+            "tag": "Billet perdu",
+            "situation": "L'usager n'a plus de billet",
+            "action": "Vérifie la plaque et la session, lance l'action billet perdu, ouvre la barrière et consigne le motif."
           },
           {
             "tag": "Paiement bloqué",
@@ -1630,8 +1631,8 @@
       "teams": {
         "eyebrow": "Votre équipe ou la nôtre",
         "title": "Notre équipe *ou la vôtre.*",
-        "lead": "ParkAid répond avec vos agents, avec les nôtres, ou avec les deux. Vos intercoms et vos lignes d'aide arrivent dans une seule file : un appel est pris par qui est disponible, votre personnel en poste, nos agents, ou l'assistant IA quand tout le monde est occupé.",
-        "queue": "Une seule file pour tous vos intercoms",
+        "lead": "ParkAid répond avec vos agents, avec les nôtres, ou avec les deux. Vos interphones et vos lignes d'aide arrivent dans une seule file : un appel est pris par qui est disponible, votre personnel en poste, nos agents, ou l'assistant IA quand tout le monde est occupé.",
+        "queue": "Une seule file pour tous vos interphones",
         "modes": [
           {
             "label": "Votre équipe",
@@ -1640,8 +1641,8 @@
           },
           {
             "label": "Notre équipe",
-            "title": "Nos agents, quand vous êtes fermé",
-            "body": "Hors de vos heures, nos agents reprennent la même file avec vos scripts et vos autorisations, escaladent ce qui demande une vraie décision et consignent chaque échange pour vous."
+            "title": "Nos agents, quand vous êtes fermés",
+            "body": "Hors de vos heures, nos agents reprennent la même file avec vos scripts et vos autorisations, font remonter ce qui demande une vraie décision et consignent chaque échange pour vous."
           }
         ]
       },
@@ -1654,11 +1655,11 @@
           "Disponibilité et vérification de présence",
           "File d'attente et appels IA en temps réel",
           "Collègues et transfert d'appel",
-          "Sites et intercoms, appel sortant vers une borne",
+          "Sites et interphones, appel sortant vers une borne",
           "Suivis obligatoires et historique personnel"
         ],
         "highlightTitle": "Agir sur la barrière, l'écran de la borne et le terminal de paiement en un clic.",
-        "highlightBody": "Caméra en direct, contexte opérationnel et consignes du site, puis les actions permises sur la borne : ouvrir ou fermer la barrière, ticket perdu, boucle de véhicule. Chaque action demande une confirmation et un motif."
+        "highlightBody": "Caméra en direct, contexte opérationnel et consignes du site, puis les actions permises sur la borne : ouvrir ou fermer la barrière, billet perdu, boucle de véhicule. Chaque action demande une confirmation et un motif."
       },
       "access": {
         "eyebrow": "Une plateforme",
@@ -1667,21 +1668,21 @@
           {
             "tag": "Agent",
             "title": "L'espace agent",
-            "body": "Répond aux appels des intercoms, exécute les actions autorisées (ouvrir la barrière, ticket perdu…) et qualifie chaque appel. Tout se fait dans une console web, sans logiciel ni téléphone physique.",
+            "body": "Répond aux appels des interphones, exécute les actions autorisées (ouvrir la barrière, billet perdu…) et qualifie chaque appel. Tout se fait dans une console web, sans logiciel ni téléphone physique.",
             "imageAlt": "L'espace agent ParkAid, prêt à recevoir des appels",
             "points": []
           },
           {
             "tag": "Organisation",
-            "title": "Le portail opérateur",
-            "body": "Le gestionnaire de stationnements configure ses sites et ses bornes, décide qui répond et quand, et suit tout ce qui se passe sur ses intercoms.",
+            "title": "Le portail exploitant",
+            "body": "Le gestionnaire de stationnements configure ses sites et ses bornes, décide qui répond et quand, et suit tout ce qui se passe sur ses interphones.",
             "imageAlt": "Le portail opérateur ParkAid avec la liste des derniers appels",
             "points": [
-              "Sites, appareils SIP et capacités (écran, caméra LPR)",
+              "Sites, appareils SIP et capacités (écran, caméra de lecture de plaques)",
               "Modèles de routage selon l'horaire, avec exceptions",
               "Actions et autorisations selon le niveau de l'agent",
               "Base de connaissances qui alimente l'IA et les agents",
-              "Direct, statistiques et journal des appels avec audio et parcours"
+              "Vue en direct, statistiques et journal des appels avec audio et parcours"
             ]
           }
         ]
@@ -1712,7 +1713,7 @@
           {
             "value": "1",
             "label": "File d'attente",
-            "body": "Tous les intercoms et lignes d'aide réunis"
+            "body": "Tous les interphones et lignes d'aide réunis"
           }
         ]
       }
@@ -1748,7 +1749,7 @@
           "label": "indicateurs en direct dans un seul tableau de bord"
         },
         {
-          "value": "8 ans+",
+          "value": "+ de 8 ans",
           "label": "de données de stationnement réelles derrière l'IA"
         },
         {
@@ -1808,7 +1809,7 @@
           "barriers": "Avec barrières",
           "gateless": "Sans barrière",
           "both": "Les deux",
-          "unknown": "Pas encore sûr"
+          "unknown": "Je ne sais pas encore"
         },
         "timeline": {
           "now": "Le plus tôt possible",
@@ -1839,7 +1840,7 @@
   },
   "contactPage": {
     "meta": {
-      "title": "Contact | Parkwize",
+      "title": "Nous joindre | Parkwize",
       "description": "Une question sur un site, une intégration, les tarifs ou un déploiement ? Envoyez-nous les détails et la bonne personne de l'équipe Parkwize s'en occupera."
     },
     "hero": {
@@ -1878,7 +1879,7 @@
         "demo": "Réserver une démo",
         "pricing": "Tarifs",
         "technical": "Question technique ou intégration",
-        "support": "Support",
+        "support": "Soutien technique",
         "partnership": "Partenariat",
         "other": "Autre"
       },

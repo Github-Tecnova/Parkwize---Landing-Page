@@ -18,7 +18,10 @@ type ProductSolutionProps = {
 
 export function ProductSolution({ dict }: ProductSolutionProps) {
   return (
-    <section className="bg-navy py-14 text-inverse-foreground sm:py-20">
+    <section
+      data-top-bar="dark"
+      className="bg-navy py-14 text-inverse-foreground sm:py-20"
+    >
       <Container className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
         <Reveal>
           <SectionHeader

@@ -18,6 +18,7 @@ import { ParkwizeLogo } from "@/components/brand/parkwize-logo";
 import { Link } from "@/components/navigation/link";
 import { buttonVariants } from "@/components/ui/button";
 import { NavigationDictionary, PagesDictionary } from "@/content/dictionary";
+import { useBarTone } from "@/hooks/use-bar-tone";
 import { DismissReason, useDismiss } from "@/hooks/use-dismiss";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
@@ -38,6 +39,8 @@ type OpenMenu = "none" | "solutions" | "mobile";
 const HOVER_OPEN_DELAY = 120;
 const HOVER_CLOSE_DELAY = 220;
 
+const BAR_CONTROL = "text-bar-fg hover:bg-bar-hover";
+
 type TopBarProps = {
   locale: Locale;
   dict: NavigationDictionary;
@@ -55,6 +58,7 @@ export function TopBar({ locale, dict, pages }: TopBarProps) {
   const toggleRef = useRef<HTMLButtonElement>(null);
   const solutionsRef = useRef<HTMLButtonElement>(null);
   const hoverTimer = useRef<number | undefined>(undefined);
+  const tone = useBarTone(surfaceRef);
 
   const closeMenu = useCallback(() => setMenu("none"), []);
 
@@ -113,6 +117,7 @@ export function TopBar({ locale, dict, pages }: TopBarProps) {
         <div
           ref={surfaceRef}
           data-raised={scrolled || menu !== "none"}
+          data-tone={menu === "none" ? tone : "light"}
           onPointerLeave={(event) => {
             if (event.pointerType === "mouse" && menu === "solutions") {
               scheduleMenu("none", HOVER_CLOSE_DELAY);
@@ -133,7 +138,7 @@ export function TopBar({ locale, dict, pages }: TopBarProps) {
             >
               <ParkwizeLogo
                 title={dict.logoAlt}
-                className="w-[6.75rem] min-[400px]:w-[7.5rem] sm:w-[8.5rem]"
+                className="w-[6.75rem] text-bar-logo transition-colors min-[400px]:w-[7.5rem] sm:w-[8.5rem]"
               />
             </Link>
             <TopBarNav
@@ -148,11 +153,15 @@ export function TopBar({ locale, dict, pages }: TopBarProps) {
               onNavigate={closeMenu}
             />
             <div className="ml-auto flex items-center gap-1 sm:gap-1.5">
-              <LanguageToggle locale={locale} label={dict.switchLanguage} />
+              <LanguageToggle
+                locale={locale}
+                label={dict.switchLanguage}
+                className={BAR_CONTROL}
+              />
               <SignInLink
                 label={dict.signIn}
                 variant="soft"
-                className="hidden lg:inline-flex"
+                className={cn(BAR_CONTROL, "hidden lg:inline-flex")}
               />
               <Link
                 href={DEMO_HREF}
@@ -171,7 +180,7 @@ export function TopBar({ locale, dict, pages }: TopBarProps) {
                 controls={mobileId}
                 openLabel={dict.openMenu}
                 closeLabel={dict.closeMenu}
-                className="lg:hidden"
+                className={cn(BAR_CONTROL, "lg:hidden")}
                 onToggle={() =>
                   setMenu((current) =>
                     current === "mobile" ? "none" : "mobile",
