@@ -10,7 +10,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { EnforcementDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
 import { MEDIA } from "@/lib/media";
-import { DEMO_HREF } from "@/lib/navigation";
+import { CONTACT_HREF } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 type EnforcementFollowUpProps = {
@@ -34,7 +34,7 @@ export function EnforcementFollowUp({
           lead={dict.lead}
           actions={
             <ButtonLink
-              href={DEMO_HREF}
+              href={CONTACT_HREF}
               locale={locale}
               variant="subtle"
               withArrow

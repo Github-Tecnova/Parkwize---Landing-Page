@@ -10,7 +10,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { AiPageDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
 import { MEDIA } from "@/lib/media";
-import { DEMO_HREF } from "@/lib/navigation";
+import { CONTACT_HREF } from "@/lib/navigation";
 
 type AiHeroProps = {
   locale: Locale;
@@ -44,7 +44,7 @@ export function AiHero({ locale, dict }: AiHeroProps) {
             {dict.tagline}
           </p>
           <ButtonLink
-            href={DEMO_HREF}
+            href={CONTACT_HREF}
             locale={locale}
             withArrow
             className="mt-7"

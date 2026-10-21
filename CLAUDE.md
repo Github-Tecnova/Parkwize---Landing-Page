@@ -70,10 +70,10 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 - Sign-in call to action: `SignInLink` from `@/components/layout/top-bar/sign-in-link`.
 - Outside-click / Escape handling: `useDismiss`. Scroll lock (iOS safe): `useScrollLock`. Focus trap: `useFocusTrap`. Scrolled state: `useScrolled`.
 - Top bar: `TopBar` composes `TopBarNav` (desktop links, active state through `isActivePath`), `SolutionsPanel` (desktop mega menu) and `MobileMenu`. Links come from `PRODUCT_LINKS`, `SOLUTION_LINKS` and `@/lib/navigation` URLs.
-- Calls to action: product heroes always say "Book a demo" and go to `DEMO_HREF`; "Get in touch" always goes to `CONTACT_HREF`.
+- Calls to action: in-page CTAs (heroes, sections) say "Get in touch" and go to `CONTACT_HREF`. "Book a demo" (`DEMO_HREF`) appears only in the top bar, the menus and the footer. Never link to the live demo app.
 - Small uppercase mono labels (column titles, eyebrows, meta text): the `eyebrow` class from `globals.css`.
 - Link lists: `FooterColumn` from `@/components/layout/footer/footer-column` handles internal (localized) and external links.
-- Site URLs and page lists (`SIGN_IN_URL`, `DEMO_URL`, `BOOK_CALL_HREF`, `PRODUCT_LINKS`, `LEGAL_LINKS`): `@/lib/navigation`. Never hardcode them in components.
+- Site URLs and page lists (`SIGN_IN_URL`, `DEMO_HREF`, `CONTACT_HREF`, `PRODUCT_LINKS`, `LEGAL_LINKS`): `@/lib/navigation`. Never hardcode them in components.
 - Page sections: a transparent `<section>` with `py-14 sm:py-20`, wrapping a `Container` from `@/components/layout/section/container`. Headings: `SectionHeader` (eyebrow, title, lead, actions, `tone="inverse"` on dark).
 - Accented words in titles: wrap them in `*asterisks*` in the dictionary and render with `AccentText`. Never split titles into separate keys for styling.
 - CTAs as links: `ButtonLink` from `@/components/ui/button-link` (localized internal links, plain external links, optional arrow).

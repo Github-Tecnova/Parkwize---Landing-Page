@@ -20,8 +20,6 @@ import { stripLocale } from "@/lib/i18n";
 
 export const SIGN_IN_URL = "https://app.parkwize.ai/";
 
-export const DEMO_URL = "https://demo.parkwize.ai/app/dashboard";
-
 export const SYSTEM_STATUS_URL = "https://status.parkwizeinc.com";
 
 export const DEMO_HREF = "/demo";

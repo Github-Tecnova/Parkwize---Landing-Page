@@ -10,7 +10,7 @@ import { AccentText } from "@/components/typography/accent-text";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Locale } from "@/lib/i18n";
 import { Media } from "@/lib/media";
-import { DEMO_HREF } from "@/lib/navigation";
+import { CONTACT_HREF } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 type ProductHeroProps = {
@@ -49,7 +49,7 @@ export function ProductHero({
             {dict.lead}
           </p>
           <ButtonLink
-            href={DEMO_HREF}
+            href={CONTACT_HREF}
             locale={locale}
             withArrow
             className="mt-7"

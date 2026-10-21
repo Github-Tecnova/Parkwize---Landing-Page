@@ -9,7 +9,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { DashboardDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
 import { MEDIA, VIDEOS } from "@/lib/media";
-import { DEMO_HREF } from "@/lib/navigation";
+import { CONTACT_HREF } from "@/lib/navigation";
 
 type DashboardHeroProps = {
   locale: Locale;
@@ -39,7 +39,7 @@ export function DashboardHero({ locale, dict }: DashboardHeroProps) {
           <p className="mb-8 max-w-[41rem] text-pretty text-[0.9375rem] leading-relaxed text-inverse-muted sm:text-[1.0625rem]">
             {dict.lead}
           </p>
-          <ButtonLink href={DEMO_HREF} locale={locale} withArrow>
+          <ButtonLink href={CONTACT_HREF} locale={locale} withArrow>
             {dict.cta}
           </ButtonLink>
         </div>

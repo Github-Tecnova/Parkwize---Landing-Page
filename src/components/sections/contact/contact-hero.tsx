@@ -2,13 +2,12 @@
  * Copyright (c) 2025-2026. Tecnova
  */
 
-import { ArrowRight, ArrowUpRight, Activity, MonitorPlay } from "lucide-react";
-import { Link } from "@/components/navigation/link";
+import { Activity, ArrowUpRight } from "lucide-react";
 import { ContactForm } from "@/components/sections/contact/contact-form";
 import { LeadHero } from "@/components/sections/lead-hero";
 import { ContactPageDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
-import { DEMO_HREF, DEMO_URL, SYSTEM_STATUS_URL } from "@/lib/navigation";
+import { SYSTEM_STATUS_URL } from "@/lib/navigation";
 
 type ContactHeroProps = {
   locale: Locale;
@@ -18,12 +17,6 @@ type ContactHeroProps = {
 export function ContactHero({ locale, dict }: ContactHeroProps) {
   const { hero } = dict;
   const channels = [
-    {
-      href: DEMO_URL,
-      title: hero.liveDemo,
-      body: hero.liveDemoBody,
-      Icon: MonitorPlay,
-    },
     {
       href: SYSTEM_STATUS_URL,
       title: hero.status,
@@ -69,17 +62,6 @@ export function ContactHero({ locale, dict }: ContactHeroProps) {
           </li>
         ))}
       </ul>
-      <p className="mt-6 text-sm text-copy">
-        {hero.demoPrompt}{" "}
-        <Link
-          href={DEMO_HREF}
-          lang={locale}
-          className="inline-flex items-center gap-1 font-semibold text-deck underline-offset-2 hover:underline"
-        >
-          {hero.demoLink}
-          <ArrowRight aria-hidden className="size-3.5" />
-        </Link>
-      </p>
     </LeadHero>
   );
 }

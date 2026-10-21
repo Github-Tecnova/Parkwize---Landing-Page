@@ -15,7 +15,6 @@ import { EASE_OUT_EXPO, FADE_BASE, STAGGER_STEP } from "@/lib/motion";
 import {
   CONTACT_HREF,
   DEMO_HREF,
-  DEMO_URL,
   isActivePath,
   PRODUCT_LINKS,
   SYSTEM_STATUS_URL,
@@ -42,10 +41,7 @@ export function MobileMenu({
   onNavigate,
 }: MobileMenuProps) {
   const pathname = usePathname();
-  const externalLinks = [
-    { href: DEMO_URL, label: dict.liveDemo },
-    { href: SYSTEM_STATUS_URL, label: dict.systemStatus },
-  ];
+  const externalLinks = [{ href: SYSTEM_STATUS_URL, label: dict.systemStatus }];
 
   return (
     <motion.div

@@ -7,7 +7,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "@/components/navigation/link";
 import { NavigationDictionary, PagesDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
@@ -16,7 +16,6 @@ import { EASE_OUT_EXPO, FADE_BASE, STAGGER_STEP } from "@/lib/motion";
 import {
   CONTACT_HREF,
   DEMO_HREF,
-  DEMO_URL,
   isActivePath,
   SOLUTION_LINKS,
   SYSTEM_STATUS_URL,
@@ -123,16 +122,18 @@ export function SolutionsPanel({
             <p className="mt-1 text-[0.8125rem] leading-snug text-copy">
               {dict.seeItLiveBody}
             </p>
-            <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={CONTACT_HREF}
+              lang={locale}
+              onClick={onNavigate}
               className={cn(TEXT_LINK, "mt-4")}
             >
-              {dict.liveDemo}
-              <ArrowUpRight aria-hidden className="size-4 text-deck" />
-              <span className="sr-only">({dict.newTab})</span>
-            </a>
+              {dict.getInTouch}
+              <ArrowRight
+                aria-hidden
+                className="size-4 text-deck transition-transform group-hover:translate-x-0.5"
+              />
+            </Link>
             <a
               href={SYSTEM_STATUS_URL}
               target="_blank"

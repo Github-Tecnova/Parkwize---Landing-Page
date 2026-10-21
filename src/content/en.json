@@ -9,9 +9,9 @@
     "switchLanguage": "Voir le site en français",
     "bookDemo": "Book a demo",
     "company": "Company",
-    "seeItLive": "See it live",
-    "seeItLiveBody": "Explore the real Dashboard Manager with sample data, no sign-up needed.",
-    "liveDemo": "Open the live demo",
+    "seeItLive": "See it on your sites",
+    "seeItLiveBody": "Tell us about your parking and we will show you how Parkwize fits.",
+    "getInTouch": "Get in touch",
     "systemStatus": "System status",
     "newTab": "opens in a new tab",
     "mainLabel": "Main",
@@ -74,7 +74,7 @@
     },
     "links": {
       "bookDemo": "Book a demo",
-      "exploreDemo": "Explore the demo",
+      "getInTouch": "Get in touch",
       "signIn": "Sign in"
     },
     "company": "Logiciel Parkwize Inc.",
@@ -166,7 +166,7 @@
       "eyebrow": "Our parking solution",
       "title": "The Parkwize *Ecosystem.*",
       "lead": "Connected solutions. One intelligent platform.",
-      "cta": "Book a demo",
+      "cta": "Get in touch",
       "indexLabel": "Parkwize products"
     },
     "os": {
@@ -475,7 +475,7 @@
         "eyebrow": "Parkwize Dashboard Manager",
         "title": "Where Everything Connects.",
         "lead": "The operational brain of modern parking: a centralized dashboard that links all your equipment and software in one real-time platform. It takes command of everything.",
-        "cta": "Book a demo",
+        "cta": "Get in touch",
         "videoLabel": "An operator working on his laptop overlooking the city"
       },
       "showcase": {
@@ -615,7 +615,7 @@
         "logoAlt": "Parkwize AI",
         "tagline": "The ultimate way to manage smart parking",
         "laptopAlt": "Parkwize AI answering questions about parking data on a laptop",
-        "cta": "Book a demo"
+        "cta": "Get in touch"
       },
       "forecast": {
         "eyebrow": "How the forecast is calculated",
@@ -829,7 +829,7 @@
         "eyebrow": "Parkwize Display",
         "title": "Data connected to the *physical world.*",
         "lead": "Transform static parking signage into intelligent, dynamic decision systems. Prices, availability and messages update on every screen the moment your data changes.",
-        "cta": "Book a demo",
+        "cta": "Get in touch",
         "imageAlt": "Two Parkwize digital parking signs showing regular rates and an event rate"
       },
       "problem": {
@@ -995,7 +995,7 @@
         "eyebrow": "Parkwize Booking",
         "title": "A modern, *conversion-driven* parking reservation platform.",
         "lead": "Turn demand into confirmed bookings. Mobile-first search, one-tap checkout, and availability that stays in sync with your live pricing.",
-        "cta": "Book a demo",
+        "cta": "Get in touch",
         "imageAlt": "Four Parkwize Booking screens: reservation form, price, live session timer and QR access pass"
       },
       "problem": {
@@ -1191,7 +1191,7 @@
         "eyebrow": "Parkwize Enforcement",
         "title": "Every session under control. *No barriers required.*",
         "lead": "A connected, ticket-free solution that tracks every vehicle, automates monitoring and gives operators complete visibility without slowing drivers down.",
-        "cta": "Book a demo",
+        "cta": "Get in touch",
         "imageAlt": "An enforcement officer scanning a vehicle's license plate with her phone"
       },
       "problem": {
@@ -1297,7 +1297,7 @@
         "eyebrow": "Connected follow-up",
         "title": "Every step *in one place.*",
         "lead": "From plate recognition to payment validation and violation management, your team gets one continuous digital record for every vehicle.",
-        "cta": "Book a demo",
+        "cta": "Get in touch",
         "imageAlt": "An enforcement officer reviewing parking sessions on a tablet",
         "timelineLabel": "Digital record of one vehicle",
         "events": [
@@ -1396,7 +1396,7 @@
         "logoLabel": "Process Kiosk",
         "title": "Industrial-grade hardware, *intelligent by design.*",
         "lead": "Parkwize integrates natively with Process Kiosk: barriers, terminals, sensors and access control built for the next generation of parking.",
-        "cta": "Book a demo",
+        "cta": "Get in touch",
         "imageAlt": "A Process stainless-steel parking payment kiosk"
       },
       "about": {
@@ -1599,7 +1599,7 @@
         "logoAlt": "ParkAid",
         "title": "Always there for *your visitors.*",
         "lead": "ParkAid connects every intercom in your facility (entry, exit and pay stations) to an AI voice assistant and human agents available 24/7.",
-        "cta": "Book a demo",
+        "cta": "Get in touch",
         "imageAlt": "The ParkAid call center team at work"
       },
       "focus": {
@@ -1957,14 +1957,10 @@
       "eyebrow": "We're here to help",
       "title": "Need help with your parking *technology* and *operations*?",
       "lead": "Questions about a site, an integration, pricing or a rollout? Send us the details and the right person on our team will pick it up.",
-      "exploreTitle": "Prefer to look around first?",
-      "exploreBody": "Open the live demo or check the platform status before writing.",
-      "liveDemo": "Explore the live demo",
-      "liveDemoBody": "The real Dashboard Manager, with sample data",
+      "exploreTitle": "Before you write",
+      "exploreBody": "Check the live status of every Parkwize service.",
       "status": "System status",
       "statusBody": "Live uptime of every Parkwize service",
-      "demoPrompt": "Want a walkthrough built around your sites?",
-      "demoLink": "Book a demo",
       "newTab": "opens in a new tab",
       "madeIn": "Proudly Canadian"
     },

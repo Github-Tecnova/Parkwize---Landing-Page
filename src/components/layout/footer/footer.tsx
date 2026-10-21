@@ -8,7 +8,7 @@ import { FooterDictionary, PagesDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
 import {
   DEMO_HREF,
-  DEMO_URL,
+  CONTACT_HREF,
   LEGAL_LINKS,
   PageLink,
   PRODUCT_LINKS,
@@ -34,7 +34,7 @@ export function Footer({ locale, dict, pages }: FooterProps) {
 
   const getStartedLinks: FooterLinkItem[] = [
     { label: dict.links.bookDemo, href: DEMO_HREF },
-    { label: dict.links.exploreDemo, href: DEMO_URL, newTab: true },
+    { label: dict.links.getInTouch, href: CONTACT_HREF },
     { label: dict.links.signIn, href: SIGN_IN_URL },
   ];
 

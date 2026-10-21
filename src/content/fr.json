@@ -9,9 +9,9 @@
     "switchLanguage": "View the site in English",
     "bookDemo": "Réserver une démo",
     "company": "Entreprise",
-    "seeItLive": "Voyez-le en direct",
-    "seeItLiveBody": "Explorez le vrai Dashboard Manager avec des données fictives, sans inscription.",
-    "liveDemo": "Ouvrir la démo en direct",
+    "seeItLive": "Voyez-le sur vos sites",
+    "seeItLiveBody": "Parlez-nous de vos stationnements et nous vous montrerons comment Parkwize s'y intègre.",
+    "getInTouch": "Nous joindre",
     "systemStatus": "État des systèmes",
     "newTab": "s'ouvre dans un nouvel onglet",
     "mainLabel": "Principal",
@@ -74,7 +74,7 @@
     },
     "links": {
       "bookDemo": "Réserver une démo",
-      "exploreDemo": "Explorer la démo",
+      "getInTouch": "Nous joindre",
       "signIn": "Se connecter"
     },
     "company": "Logiciel Parkwize inc.",
@@ -166,7 +166,7 @@
       "eyebrow": "Notre solution de stationnement",
       "title": "L'écosystème *Parkwize.*",
       "lead": "Des solutions connectées. Une plateforme intelligente.",
-      "cta": "Réserver une démo",
+      "cta": "Nous joindre",
       "indexLabel": "Produits Parkwize"
     },
     "os": {
@@ -475,7 +475,7 @@
         "eyebrow": "Parkwize Dashboard Manager",
         "title": "Là où tout se connecte.",
         "lead": "Le cerveau opérationnel du stationnement moderne : un tableau de bord centralisé qui relie tous vos équipements et logiciels dans une seule plateforme en temps réel. Il prend le contrôle de tout.",
-        "cta": "Réserver une démo",
+        "cta": "Nous joindre",
         "videoLabel": "Un exploitant consulte son stationnement sur un ordinateur portable"
       },
       "showcase": {
@@ -615,7 +615,7 @@
         "logoAlt": "Parkwize IA",
         "tagline": "La façon ultime de gérer le stationnement intelligent",
         "laptopAlt": "Parkwize IA répond à des questions sur les données de stationnement sur un ordinateur portable",
-        "cta": "Réserver une démo"
+        "cta": "Nous joindre"
       },
       "forecast": {
         "eyebrow": "Comment la prévision est calculée",
@@ -829,7 +829,7 @@
         "eyebrow": "Parkwize Display",
         "title": "Vos données connectées au *monde physique.*",
         "lead": "Transformez l'affichage statique de vos stationnements en systèmes de décision intelligents et dynamiques. Tarifs, disponibilités et messages se mettent à jour sur chaque écran dès que vos données changent.",
-        "cta": "Réserver une démo",
+        "cta": "Nous joindre",
         "imageAlt": "Deux enseignes numériques Parkwize affichant les tarifs réguliers et un tarif événement"
       },
       "problem": {
@@ -995,7 +995,7 @@
         "eyebrow": "Parkwize Booking",
         "title": "Une plateforme de réservation moderne, *conçue pour convertir.*",
         "lead": "Transformez la demande en réservations confirmées. Recherche pensée pour le mobile, paiement en un geste et disponibilités synchronisées avec vos tarifs en direct.",
-        "cta": "Réserver une démo",
+        "cta": "Nous joindre",
         "imageAlt": "Quatre écrans de Parkwize Booking : formulaire de réservation, prix, minuterie de séjour et laissez-passer QR"
       },
       "problem": {
@@ -1191,7 +1191,7 @@
         "eyebrow": "Parkwize Enforcement",
         "title": "Chaque session sous contrôle. *Sans barrière.*",
         "lead": "Une solution connectée, sans billet, qui suit chaque véhicule, automatise la surveillance et donne aux exploitants une visibilité totale, sans ralentir les conducteurs.",
-        "cta": "Réserver une démo",
+        "cta": "Nous joindre",
         "imageAlt": "Une agente de contrôle scanne la plaque d'un véhicule avec son téléphone"
       },
       "problem": {
@@ -1297,7 +1297,7 @@
         "eyebrow": "Suivi connecté",
         "title": "Chaque étape, *au même endroit.*",
         "lead": "De la lecture de plaques à la validation des paiements et au traitement des infractions, vos équipes disposent d'un historique numérique continu pour chaque véhicule.",
-        "cta": "Réserver une démo",
+        "cta": "Nous joindre",
         "imageAlt": "Un agent de contrôle vérifie les sessions de stationnement sur sa tablette",
         "timelineLabel": "Historique numérique d'un véhicule",
         "events": [
@@ -1396,7 +1396,7 @@
         "logoLabel": "Process Kiosk",
         "title": "Du matériel industriel, *intelligent par nature.*",
         "lead": "Parkwize s'intègre nativement à Process Kiosk : barrières, terminaux, capteurs et contrôle d'accès conçus pour la nouvelle génération du stationnement.",
-        "cta": "Réserver une démo",
+        "cta": "Nous joindre",
         "imageAlt": "Une borne de paiement de stationnement Process en acier inoxydable"
       },
       "about": {
@@ -1599,7 +1599,7 @@
         "logoAlt": "ParkAid",
         "title": "Toujours là pour *vos usagers.*",
         "lead": "ParkAid relie chaque interphone de votre stationnement (bornes d'entrée, de sortie et de paiement) à un assistant vocal IA et à des agents humains disponibles 24/7.",
-        "cta": "Réserver une démo",
+        "cta": "Nous joindre",
         "imageAlt": "L'équipe du centre d'appels ParkAid au travail"
       },
       "focus": {
@@ -1957,14 +1957,10 @@
       "eyebrow": "Nous sommes là pour vous",
       "title": "Besoin d'aide avec votre *technologie* et vos *opérations* de stationnement ?",
       "lead": "Une question sur un site, une intégration, les tarifs ou un déploiement ? Envoyez-nous les détails et la bonne personne de notre équipe s'en occupera.",
-      "exploreTitle": "Vous préférez regarder d'abord ?",
-      "exploreBody": "Ouvrez la démo en direct ou vérifiez l'état de la plateforme avant d'écrire.",
-      "liveDemo": "Explorer la démo en direct",
-      "liveDemoBody": "Le vrai Dashboard Manager, avec des données fictives",
+      "exploreTitle": "Avant d'écrire",
+      "exploreBody": "Consultez l'état en direct de chaque service Parkwize.",
       "status": "État des systèmes",
       "statusBody": "La disponibilité en direct de chaque service Parkwize",
-      "demoPrompt": "Vous voulez une présentation construite autour de vos sites ?",
-      "demoLink": "Réserver une démo",
       "newTab": "s'ouvre dans un nouvel onglet",
       "madeIn": "Fièrement canadien"
     },

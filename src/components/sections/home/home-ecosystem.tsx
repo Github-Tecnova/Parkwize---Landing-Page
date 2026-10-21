@@ -10,7 +10,7 @@ import { ProductIndex } from "@/components/sections/product-index";
 import { ButtonLink } from "@/components/ui/button-link";
 import { HomeDictionary, ProductCardsDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
-import { DEMO_HREF, PRODUCT_LINKS } from "@/lib/navigation";
+import { CONTACT_HREF, PRODUCT_LINKS } from "@/lib/navigation";
 import { PRODUCT_VISUALS } from "@/lib/product-media";
 import { OrbitRow } from "./orbit-row";
 
@@ -52,7 +52,7 @@ export function HomeEcosystem({ locale, dict, cards }: HomeEcosystemProps) {
           <ProductIndex locale={locale} label={dict.indexLabel} items={cards} />
         </Reveal>
         <div className="mt-11 flex justify-center">
-          <ButtonLink href={DEMO_HREF} locale={locale} withArrow>
+          <ButtonLink href={CONTACT_HREF} locale={locale} withArrow>
             {dict.cta}
           </ButtonLink>
         </div>
