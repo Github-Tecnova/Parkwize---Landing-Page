@@ -24,8 +24,8 @@ import { GaragePalette } from "@/components/sections/home/os-garage/garage-palet
 import { GarageDeviceKey } from "@/lib/os-garage";
 import { JourneyFrame } from "@/lib/os-garage-journey";
 
-const FIT = { width: 21.5, height: 16.5 };
-const LOOK_AT = new Vector3(0, 0.7, 0.2);
+const FIT = { width: 19.5, height: 17.8 };
+const LOOK_AT = new Vector3(0, 0.8, 0);
 
 export function CameraFit() {
   const camera = useThree((state) => state.camera);
@@ -63,7 +63,7 @@ export function renderDevice(
     case "booking":
       return <ReservedPedestal palette={palette} journey={journey} />;
     case "kiosks":
-      return <KioskTower palette={palette} />;
+      return <KioskTower palette={palette} still={still} />;
     case "payment":
       return <PaymentTerminal palette={palette} journey={journey} />;
     case "callCenter":
@@ -75,21 +75,31 @@ export function renderDevice(
   }
 }
 
-const placedMarkers = new WeakMap<HTMLElement, string>();
+const placedPins = new WeakMap<HTMLElement, string>();
 
-export function placeMarker(
-  marker: HTMLElement | null,
-  point: Vector3,
-  size: { width: number; height: number },
+type ScreenSize = { width: number; height: number };
+
+function toScreen(point: Vector3, size: ScreenSize) {
+  return {
+    x: Math.round(((point.x + 1) / 2) * size.width),
+    y: Math.round(((1 - point.y) / 2) * size.height),
+  };
+}
+
+export function placePin(
+  pin: HTMLElement | null,
+  head: Vector3,
+  foot: Vector3,
+  size: ScreenSize,
   appear: number,
 ) {
-  if (!marker) return;
-  const x = Math.round(((point.x + 1) / 2) * size.width);
-  const y = Math.round(((1 - point.y) / 2) * size.height);
-  const placement = `${x} ${y} ${appear.toFixed(2)}`;
-  if (placedMarkers.get(marker) === placement) return;
-  placedMarkers.set(marker, placement);
-  marker.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
-  marker.style.setProperty("--appear", String(appear));
-  marker.style.visibility = appear > 0 ? "visible" : "hidden";
+  if (!pin) return;
+  const top = toScreen(head, size);
+  const leader = Math.max(toScreen(foot, size).y - top.y, 0);
+  const placement = `${top.x} ${top.y} ${leader} ${appear.toFixed(2)}`;
+  if (placedPins.get(pin) === placement) return;
+  placedPins.set(pin, placement);
+  pin.style.transform = `translate3d(${top.x}px, ${top.y}px, 0)`;
+  pin.style.setProperty("--leader", `${leader}px`);
+  pin.style.setProperty("--appear", String(appear));
 }

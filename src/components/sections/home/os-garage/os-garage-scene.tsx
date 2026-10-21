@@ -24,10 +24,11 @@ import {
   readPalette,
   readType,
 } from "@/components/sections/home/os-garage/garage-palette";
+import { Pedestrian } from "@/components/sections/home/os-garage/garage-figures";
 import { GaragePulses } from "@/components/sections/home/os-garage/garage-pulses";
 import {
   CameraFit,
-  placeMarker,
+  placePin,
   renderDevice,
 } from "@/components/sections/home/os-garage/garage-stage";
 import {
@@ -42,33 +43,51 @@ import {
   buildSchedule,
   GARAGE_DEVICES,
   GarageDeviceKey,
+  PIN_LIFT,
 } from "@/lib/os-garage";
 import {
   createJourneyFrame,
   JOURNEY_REST,
   journeyAt,
-  JourneyPhase,
   LIVE_DEVICES,
   patrolAt,
+  pedestrianAt,
+  storyAt,
+  streetCarAt,
 } from "@/lib/os-garage-journey";
 
 const DRIFT = 0.05;
 const SCREEN_TICK = 2.4;
 const FREE_RANGE: [number, number] = [12, 38];
 const DRIVER_PRIORITY = -1;
+const PIN_FOOT = 0.25;
 
 export type OsGarageSceneProps = {
   active: boolean;
   reducedMotion: boolean;
   compact: boolean;
   highlight: GarageDeviceKey | null;
-  markers: RefObject<(HTMLElement | null)[]>;
+  playing: boolean;
+  pins: RefObject<(HTMLElement | null)[]>;
   rows: RefObject<(HTMLElement | null)[]>;
+  progress: RefObject<HTMLDivElement | null>;
   localeTag: string;
+  onStep: (step: number) => void;
   onReady: () => void;
 };
 
 type GarageWorldProps = Omit<OsGarageSceneProps, "active" | "onReady">;
+
+function liveDevices(
+  phase: keyof typeof LIVE_DEVICES,
+  time: number,
+): GarageDeviceKey[] {
+  return [
+    ...LIVE_DEVICES[phase],
+    ...(patrolAt(time).scanning ? (["enforcement"] as const) : []),
+    ...(pedestrianAt(time).paying ? (["kiosks"] as const) : []),
+  ];
+}
 
 function markLive(elements: (HTMLElement | null)[], live: GarageDeviceKey[]) {
   GARAGE_DEVICES.forEach((device, index) =>
@@ -83,9 +102,12 @@ function GarageWorld({
   reducedMotion,
   compact,
   highlight,
-  markers,
+  playing,
+  pins,
   rows,
+  progress,
   localeTag,
+  onStep,
 }: GarageWorldProps) {
   const schedule = useMemo(() => buildSchedule(), []);
   const palette = useMemo(() => readPalette(document.documentElement), []);
@@ -101,13 +123,16 @@ function GarageWorld({
   const build = useRef(reducedMotion ? schedule.total : 0);
   const journey = useRef(createJourneyFrame());
   const journeyTime = useRef(0);
-  const phase = useRef<JourneyPhase | null>(null);
+  const street = useRef(createJourneyFrame());
+  const live = useRef("");
+  const step = useRef(-1);
   const series = useRef(initialChartSeries());
   const free = useRef(FREE_RANGE[1] - 9);
   const shown = useRef(-1);
   const tick = useRef(0);
   const world = useRef<Group>(null);
-  const point = useMemo(() => new Vector3(), []);
+  const head = useMemo(() => new Vector3(), []);
+  const foot = useMemo(() => new Vector3(), []);
 
   useEffect(() => {
     textures.screen.paint(series.current);
@@ -129,8 +154,9 @@ function GarageWorld({
     if (reducedMotion) {
       journeyAt(JOURNEY_REST, journey.current);
     } else if (built) {
-      journeyTime.current += delta;
+      if (playing) journeyTime.current += delta;
       journeyAt(journeyTime.current, journey.current);
+      streetCarAt(journeyTime.current, street.current);
       const target = Math.max(-1, Math.min(1, pointer.x)) * DRIFT;
       node.rotation.y += (target - node.rotation.y) * Math.min(delta * 2, 1);
       tick.current += delta;
@@ -152,26 +178,43 @@ function GarageWorld({
       textures.sign.paint(available);
     }
 
-    if (journey.current.phase !== phase.current) {
-      phase.current = journey.current.phase;
-      const live = reducedMotion ? [] : LIVE_DEVICES[phase.current];
-      markLive(rows.current, live);
-      markLive(markers.current, live);
+    const time = reducedMotion ? 0 : clock.elapsedTime;
+    const story = storyAt(reducedMotion ? JOURNEY_REST : journeyTime.current);
+    if (story.index !== step.current) {
+      step.current = story.index;
+      onStep(story.index);
+    }
+    if (progress.current) {
+      const amount = built && !reducedMotion ? story.progress : 0;
+      progress.current.style.transform = `scaleX(${amount.toFixed(3)})`;
     }
 
-    const time = reducedMotion ? 0 : clock.elapsedTime;
+    const active =
+      reducedMotion || !built ? [] : liveDevices(journey.current.phase, time);
+    const activeKey = active.join();
+    if (activeKey !== live.current) {
+      live.current = activeKey;
+      markLive(rows.current, active);
+      markLive(pins.current, active);
+    }
+
     node.updateMatrixWorld();
     GARAGE_DEVICES.forEach((device, index) => {
       const [x, y, z] = device.parts[0].position;
       const markerX = device.key === "enforcement" ? patrolAt(time).x : x;
-      point
-        .set(markerX, y + device.marker, z)
+      head
+        .set(markerX, y + device.marker + PIN_LIFT, z)
+        .applyMatrix4(node.matrixWorld)
+        .project(camera);
+      foot
+        .set(markerX, y + device.marker - PIN_FOOT, z)
         .applyMatrix4(node.matrixWorld)
         .project(camera);
       const at = schedule.devices.get(device.key) ?? 0;
-      placeMarker(
-        markers.current[index],
-        point,
+      placePin(
+        pins.current[index],
+        head,
+        foot,
         size,
         appearAmount(build.current, at + BUILD_TIMING.marker),
       );
@@ -219,6 +262,13 @@ function GarageWorld({
         journey={journey}
         color={palette.accent}
       />
+      <JourneyCar
+        palette={palette}
+        shadow={textures.shadow}
+        journey={street}
+        color={palette.deck}
+      />
+      <Pedestrian palette={palette} still={reducedMotion} />
       {!compact && (
         <GaragePulses
           palette={palette}

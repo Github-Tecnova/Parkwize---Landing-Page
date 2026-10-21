@@ -66,8 +66,14 @@ export function GaragePulses({
     const time = still ? 0 : clock.elapsedTime;
     const frame = journey.current;
     const active = EVENTS.find((event) => event.phase === frame.phase);
-    const source = highlight ?? active?.device ?? null;
-    const progress = highlight ? (time * HIGHLIGHT_SPEED) % 1 : frame.progress;
+    const patrol = patrolAt(time);
+    const scan = !active && patrol.scanning;
+    const source = highlight ?? active?.device ?? (scan ? "enforcement" : null);
+    const progress = highlight
+      ? (time * HIGHLIGHT_SPEED) % 1
+      : scan
+        ? patrol.scan
+        : frame.progress;
 
     TRAIL.forEach((lag, index) => {
       const dot = dots.current[index];

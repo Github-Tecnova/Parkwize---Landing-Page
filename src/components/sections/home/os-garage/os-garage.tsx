@@ -7,11 +7,13 @@
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { motion, useInView, useReducedMotion } from "motion/react";
+import { GaragePins } from "@/components/sections/home/os-garage/garage-pins";
+import { OsGarageCaption } from "@/components/sections/home/os-garage/os-garage-caption";
 import { OsGarageSystems } from "@/components/sections/home/os-garage/os-garage-systems";
 import { HomeDictionary } from "@/content/dictionary";
 import { Locale, LOCALE_TAGS } from "@/lib/i18n";
 import { DRAW_BASE } from "@/lib/motion";
-import { GARAGE_DEVICES, GarageDeviceKey } from "@/lib/os-garage";
+import { GarageDeviceKey } from "@/lib/os-garage";
 import { cn } from "@/lib/utils";
 
 const loadScene = () =>
@@ -77,8 +79,11 @@ export function OsGarage({ locale, dict }: OsGarageProps) {
   const [hovered, setHovered] = useState<GarageDeviceKey | null>(null);
   const [pinned, setPinned] = useState<GarageDeviceKey | null>(null);
   const highlight = hovered ?? pinned;
-  const markers = useRef<(HTMLElement | null)[]>([]);
+  const [paused, setPaused] = useState(false);
+  const [step, setStep] = useState(0);
+  const pins = useRef<(HTMLElement | null)[]>([]);
   const rows = useRef<(HTMLElement | null)[]>([]);
+  const progress = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -95,44 +100,40 @@ export function OsGarage({ locale, dict }: OsGarageProps) {
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_18.5rem] lg:items-center lg:gap-8">
-      <div
-        ref={stage}
-        className={cn(
-          "relative aspect-[4/3] w-full sm:aspect-[16/11]",
-          failed && "hidden",
-        )}
-      >
-        {!ready && <GaragePlaceholder />}
-        {near && !failed && (
-          <div className="absolute inset-0">
-            <OsGarageScene
-              active={inView}
-              reducedMotion={reducedMotion}
-              compact={compact}
-              highlight={highlight}
-              markers={markers}
-              rows={rows}
-              localeTag={LOCALE_TAGS[locale]}
-              onReady={() => setReady(true)}
-            />
-          </div>
-        )}
-        <div aria-hidden className="pointer-events-none absolute inset-0">
-          {GARAGE_DEVICES.map((device, index) => (
-            <span
-              key={device.key}
-              ref={(node) => {
-                markers.current[index] = node;
-              }}
-              data-active={highlight === device.key}
-              data-dim={highlight !== null && highlight !== device.key}
-              data-live="false"
-              className="invisible absolute left-0 top-0 grid size-5 place-items-center rounded-full bg-surface text-[0.625rem] font-semibold text-ink shadow-media ring-1 ring-hairline transition-colors [opacity:var(--appear,0)] data-[active=true]:bg-deck data-[active=true]:text-brand-foreground data-[live=true]:ring-2 data-[live=true]:ring-success data-[dim=true]:[opacity:calc(var(--appear,0)*0.35)] sm:size-6 sm:text-[0.6875rem]"
-            >
-              {index + 1}
-            </span>
-          ))}
+      <div className={cn("relative", failed && "hidden")}>
+        <div ref={stage} className="relative aspect-[6/5] w-full">
+          {!ready && <GaragePlaceholder />}
+          {near && !failed && (
+            <div className="absolute inset-0">
+              <OsGarageScene
+                active={inView}
+                reducedMotion={reducedMotion}
+                compact={compact}
+                highlight={highlight}
+                playing={!paused && highlight === null}
+                pins={pins}
+                rows={rows}
+                progress={progress}
+                localeTag={LOCALE_TAGS[locale]}
+                onReady={() => setReady(true)}
+                onStep={setStep}
+              />
+            </div>
+          )}
+          <GaragePins nodes={dict.nodes} highlight={highlight} pins={pins} />
         </div>
+        <OsGarageCaption
+          story={dict.story}
+          step={step}
+          paused={paused}
+          still={reducedMotion}
+          progress={progress}
+          onToggle={() => setPaused((current) => !current)}
+          className={cn(
+            "mt-3 transition-opacity duration-500 sm:absolute sm:right-0 sm:top-0 sm:mt-0 sm:w-[18rem]",
+            !ready && "opacity-0",
+          )}
+        />
       </div>
 
       <OsGarageSystems

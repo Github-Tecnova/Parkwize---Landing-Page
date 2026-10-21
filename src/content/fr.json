@@ -193,6 +193,37 @@
         "coreDescription": "Tous les systèmes, en direct dans un seul tableau de bord.",
         "listLabel": "Systèmes Parkwize dans le stationnement",
         "showInScene": "Afficher {name} dans la scène",
+        "story": {
+          "stepLabel": "Étape {current}/{total}",
+          "pause": "Mettre l'histoire en pause",
+          "play": "Reprendre l'histoire",
+          "steps": {
+            "arrive": {
+              "title": "Les disponibilités à la vue",
+              "body": "Le panneau affiche les places libres en direct avant l'entrée."
+            },
+            "identify": {
+              "title": "Plaque reconnue",
+              "body": "La caméra lit la plaque, retrouve la réservation et ouvre la barrière."
+            },
+            "park": {
+              "title": "Guidé jusqu'à sa place",
+              "body": "La place réservée attend ce conducteur : plus besoin de tourner en rond."
+            },
+            "monitor": {
+              "title": "Tout au même endroit",
+              "body": "Occupation, revenus et prévisions de l'IA se mettent à jour au contrôle central."
+            },
+            "pay": {
+              "title": "Payer et repartir",
+              "body": "Le terminal de sortie encaisse en quelques secondes, sans billet."
+            },
+            "exit": {
+              "title": "La barrière se lève",
+              "body": "La voiture repart et le panneau rajoute la place libérée."
+            }
+          }
+        },
         "nodes": {
           "display": {
             "name": "Affichage dynamique",

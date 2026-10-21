@@ -193,6 +193,37 @@
         "coreDescription": "Every system, live in one dashboard.",
         "listLabel": "Parkwize systems in the lot",
         "showInScene": "Show {name} in the scene",
+        "story": {
+          "stepLabel": "Step {current}/{total}",
+          "pause": "Pause the story",
+          "play": "Play the story",
+          "steps": {
+            "arrive": {
+              "title": "Drivers see availability",
+              "body": "The street sign shows live free spaces before drivers turn in."
+            },
+            "identify": {
+              "title": "Plate recognized",
+              "body": "The camera reads the plate, matches the booking and opens the gate."
+            },
+            "park": {
+              "title": "Guided to the spot",
+              "body": "The reserved bay is held for this driver, so there is no circling."
+            },
+            "monitor": {
+              "title": "Everything in one place",
+              "body": "Occupancy, revenue and AI forecasts update live in central control."
+            },
+            "pay": {
+              "title": "Tap and go",
+              "body": "The exit terminal takes payment in seconds, no ticket needed."
+            },
+            "exit": {
+              "title": "Gate opens, spot freed",
+              "body": "The exit barrier lifts and the sign adds the space back."
+            }
+          }
+        },
         "nodes": {
           "display": {
             "name": "Digital displays",

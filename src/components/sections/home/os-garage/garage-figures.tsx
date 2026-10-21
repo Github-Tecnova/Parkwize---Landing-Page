@@ -4,19 +4,47 @@
 
 "use client";
 
-import { useRef } from "react";
+import { ReactNode, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Group, Mesh } from "three";
+import { Color, Group, Mesh, MeshBasicMaterial } from "three";
 import { GaragePalette } from "@/components/sections/home/os-garage/garage-palette";
-import { patrolAt } from "@/lib/os-garage-journey";
+import { patrolAt, pedestrianAt } from "@/lib/os-garage-journey";
 
 type FigureProps = { palette: GaragePalette; still: boolean };
 
 const STEP_RATE = 9;
 const STEP_HEIGHT = 0.04;
+const SCAN_RATE = 18;
+
+type PersonProps = {
+  palette: GaragePalette;
+  body: Color;
+  children?: ReactNode;
+};
+
+function Person({ palette, body, children }: PersonProps) {
+  return (
+    <>
+      <mesh position={[0, 0.44, 0]}>
+        <capsuleGeometry args={[0.15, 0.42, 4, 10]} />
+        <meshStandardMaterial color={body} />
+      </mesh>
+      <mesh position={[0, 0.88, 0]}>
+        <sphereGeometry args={[0.12, 14, 10]} />
+        <meshStandardMaterial color={palette.surface} />
+      </mesh>
+      {children}
+    </>
+  );
+}
+
+function stepBob(time: number, stride: number) {
+  return Math.abs(Math.sin(time * STEP_RATE)) * STEP_HEIGHT * stride;
+}
 
 export function PatrolOfficer({ palette, still }: FigureProps) {
   const officer = useRef<Group>(null);
+  const scanner = useRef<MeshBasicMaterial>(null);
 
   useFrame(({ clock }) => {
     const node = officer.current;
@@ -25,28 +53,43 @@ export function PatrolOfficer({ palette, still }: FigureProps) {
     const patrol = patrolAt(time);
     node.position.x = patrol.x;
     node.rotation.y = patrol.heading;
-    node.position.y =
-      Math.abs(Math.sin(time * STEP_RATE)) * STEP_HEIGHT * patrol.stride;
+    node.position.y = stepBob(time, patrol.stride);
+    const flash = patrol.scanning && Math.sin(time * SCAN_RATE) > 0;
+    scanner.current?.color.copy(flash ? palette.success : palette.accent);
   });
 
   return (
     <group ref={officer}>
-      <mesh position={[0, 0.44, 0]}>
-        <capsuleGeometry args={[0.15, 0.42, 4, 10]} />
-        <meshStandardMaterial color={palette.deck} />
-      </mesh>
-      <mesh position={[0, 0.88, 0]}>
-        <sphereGeometry args={[0.12, 14, 10]} />
-        <meshStandardMaterial color={palette.surface} />
-      </mesh>
-      <mesh position={[0, 0.98, 0]}>
-        <cylinderGeometry args={[0.13, 0.13, 0.05, 14]} />
-        <meshStandardMaterial color={palette.raised} />
-      </mesh>
-      <mesh position={[0.17, 0.52, 0]}>
-        <boxGeometry args={[0.1, 0.16, 0.05]} />
-        <meshBasicMaterial color={palette.accent} />
-      </mesh>
+      <Person palette={palette} body={palette.deck}>
+        <mesh position={[0, 0.98, 0]}>
+          <cylinderGeometry args={[0.13, 0.13, 0.05, 14]} />
+          <meshStandardMaterial color={palette.raised} />
+        </mesh>
+        <mesh position={[0.17, 0.52, 0]}>
+          <boxGeometry args={[0.1, 0.16, 0.05]} />
+          <meshBasicMaterial ref={scanner} color={palette.accent} />
+        </mesh>
+      </Person>
+    </group>
+  );
+}
+
+export function Pedestrian({ palette, still }: FigureProps) {
+  const walker = useRef<Group>(null);
+
+  useFrame(({ clock }) => {
+    const node = walker.current;
+    if (!node) return;
+    const time = still ? 0 : clock.elapsedTime;
+    const step = pedestrianAt(time);
+    node.visible = step.visible && !still;
+    node.position.set(step.x, stepBob(time, step.stride), step.z);
+    node.rotation.y = step.heading;
+  });
+
+  return (
+    <group ref={walker} visible={false}>
+      <Person palette={palette} body={palette.muted} />
     </group>
   );
 }

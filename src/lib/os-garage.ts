@@ -64,7 +64,15 @@ export const OFFICE = {
   screen: [-7.25, 2.2, -5.25] as Vec3,
 };
 
-export const PATROL = { from: 1.9, to: 4.9, z: 4.1, seconds: 11 };
+export const PATROL = {
+  from: 1.9,
+  to: 4.9,
+  z: 4.1,
+  seconds: 11,
+  pause: 1.4,
+};
+
+export const PIN_LIFT = 1.3;
 
 export const GARAGE_DEVICES: GarageDevice[] = [
   {

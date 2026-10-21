@@ -16,7 +16,11 @@ import {
 } from "three";
 import { approach } from "@/components/sections/home/os-garage/garage-build";
 import { GaragePalette } from "@/components/sections/home/os-garage/garage-palette";
-import { JourneyFrame, JourneyPhase } from "@/lib/os-garage-journey";
+import {
+  JourneyFrame,
+  JourneyPhase,
+  pedestrianAt,
+} from "@/lib/os-garage-journey";
 
 type PaletteProps = { palette: GaragePalette };
 type JourneyProps = PaletteProps & { journey: RefObject<JourneyFrame> };
@@ -26,19 +30,26 @@ const ARM_OPEN = 1.35;
 const SCAN_TARGET = new Vector3(1.4, -1.8, -0.75);
 
 function useStatusScreen(
-  journey: RefObject<JourneyFrame>,
   palette: GaragePalette,
-  phases: JourneyPhase[],
+  isActive: (time: number) => boolean,
 ) {
   const material = useRef<MeshBasicMaterial>(null);
 
-  useFrame(() => {
+  useFrame(({ clock }) => {
     material.current?.color.copy(
-      phases.includes(journey.current.phase) ? palette.success : palette.accent,
+      isActive(clock.elapsedTime) ? palette.success : palette.accent,
     );
   });
 
   return material;
+}
+
+function usePhaseScreen(
+  journey: RefObject<JourneyFrame>,
+  palette: GaragePalette,
+  phases: JourneyPhase[],
+) {
+  return useStatusScreen(palette, () => phases.includes(journey.current.phase));
 }
 
 export function Barrier({
@@ -179,7 +190,7 @@ export function DisplaySign({
 }
 
 export function ReservedPedestal({ palette, journey }: JourneyProps) {
-  const screen = useStatusScreen(journey, palette, [
+  const screen = usePhaseScreen(journey, palette, [
     "read",
     "open",
     "enter",
@@ -206,7 +217,15 @@ export function ReservedPedestal({ palette, journey }: JourneyProps) {
   );
 }
 
-export function KioskTower({ palette }: PaletteProps) {
+export function KioskTower({
+  palette,
+  still,
+}: PaletteProps & { still: boolean }) {
+  const screen = useStatusScreen(
+    palette,
+    (time) => !still && pedestrianAt(time).paying,
+  );
+
   return (
     <group>
       <mesh position={[0, 0.75, 0]}>
@@ -215,7 +234,7 @@ export function KioskTower({ palette }: PaletteProps) {
       </mesh>
       <mesh position={[0, 1.08, 0.211]}>
         <planeGeometry args={[0.4, 0.46]} />
-        <meshBasicMaterial color={palette.accent} />
+        <meshBasicMaterial ref={screen} color={palette.accent} />
       </mesh>
       <mesh position={[0, 0.62, 0.211]}>
         <planeGeometry args={[0.26, 0.07]} />
@@ -230,7 +249,7 @@ export function KioskTower({ palette }: PaletteProps) {
 }
 
 export function PaymentTerminal({ palette, journey }: JourneyProps) {
-  const screen = useStatusScreen(journey, palette, ["pay", "exit"]);
+  const screen = usePhaseScreen(journey, palette, ["pay", "exit"]);
 
   return (
     <group>
