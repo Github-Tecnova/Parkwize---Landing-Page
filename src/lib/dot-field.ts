@@ -6,186 +6,192 @@ export type Point = { x: number; y: number };
 
 export type Rgb = [number, number, number];
 
-export type Dot = {
-  originX: number;
-  originY: number;
-  x: number;
-  y: number;
-  velocityX: number;
-  velocityY: number;
-  heat: number;
-};
-
-export type DotFieldMetrics = {
-  width: number;
-  height: number;
-  spacing: number;
-  radius: number;
-  influence: number;
-};
-
 export type DotFieldShape = {
   paths: readonly string[];
   width: number;
   height: number;
 };
 
-export type PointerState = {
-  position: Point | null;
-  velocity: Point;
+export type DotField = {
+  width: number;
+  height: number;
+  dots: Float32Array;
+  count: number;
 };
 
-const PADDING = { x: 2, top: 7, bottom: 2 };
-const STIFFNESS = 0.085;
-const DAMPING = 0.86;
-const PUSH_STRENGTH = 0.5;
-const SPEED_BOOST = 0.04;
-const HEAT_EASING = 0.16;
-const STRETCH_PER_SPEED = 0.07;
-const MAX_STRETCH = 2.6;
-const SQUASH_EXPONENT = 0.35;
-const REST_THRESHOLD = 0.02;
-const ALPHA_THRESHOLD = 128;
+export type Shockwave = Point & { startedAt: number };
+
+export type DotFieldColors = { ink: Rgb; warm: Rgb };
+
+const MARK_OVERSCAN = 1.02;
+const MARK_CROP = 0.17;
+const HEADROOM = 0.22;
+const DOT_GAP = 6;
+const DOT_GAP_COMPACT = 4.5;
+const COMPACT_WIDTH = 720;
+const COVERAGE_SAMPLES = 3;
+const MIN_COVERAGE = 0.06;
+const RADIUS_PER_GAP = 0.56;
+const STRIDE = 7;
+const PUSH_RADIUS = 80;
+const PUSH_FORCE = 2.6;
+const STIFFNESS = 0.05;
+const DAMPING = 0.84;
+const WARM_SPAN = 28;
+const SHOCK_DURATION = 900;
+const SHOCK_SPEED = 0.9;
+const SHOCK_BAND = 26;
+const SHOCK_FORCE = 3.2;
+const REST_VELOCITY = 0.02;
+const REST_OFFSET = 0.05;
+const GRAIN_SIZE = 256;
+const GRAIN_ALPHA = 0.045;
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);
 }
 
+function getMarkHeightRatio(shape: DotFieldShape) {
+  return (shape.height / shape.width) * MARK_OVERSCAN;
+}
+
 export function getDotFieldAspectRatio(shape: DotFieldShape) {
-  return (
-    (shape.width + PADDING.x * 2) /
-    (shape.height + PADDING.top + PADDING.bottom)
-  );
+  return 1 / (getMarkHeightRatio(shape) * (1 - MARK_CROP + HEADROOM));
 }
 
-export function getDotFieldMetrics(
-  width: number,
-  shape: DotFieldShape,
-): DotFieldMetrics {
-  const spacing = clamp(width / 220, 3.5, 7);
+export function createDotField(shape: DotFieldShape, width: number): DotField {
+  const markWidth = width * MARK_OVERSCAN;
+  const markHeight = width * getMarkHeightRatio(shape);
+  const height = Math.round(width / getDotFieldAspectRatio(shape));
+  const empty = { width, height, dots: new Float32Array(0), count: 0 };
 
-  return {
-    width,
-    height: width / getDotFieldAspectRatio(shape),
-    spacing,
-    radius: spacing * 0.36,
-    influence: clamp(width * 0.09, 60, 140),
-  };
-}
+  const mask = document.createElement("canvas");
+  mask.width = width;
+  mask.height = height;
+  const context = mask.getContext("2d", { willReadFrequently: true });
+  if (!context) return empty;
 
-export function sampleDots(
-  shape: DotFieldShape,
-  metrics: DotFieldMetrics,
-): Dot[] {
-  const canvas = document.createElement("canvas");
-  canvas.width = Math.ceil(metrics.width);
-  canvas.height = Math.ceil(metrics.height);
-
-  const context = canvas.getContext("2d", { willReadFrequently: true });
-  if (!context) return [];
-
-  const scale = metrics.width / (shape.width + PADDING.x * 2);
+  const scale = markWidth / shape.width;
   context.setTransform(
     scale,
     0,
     0,
     scale,
-    PADDING.x * scale,
-    PADDING.top * scale,
+    (width - markWidth) / 2,
+    markHeight * HEADROOM,
   );
   shape.paths.forEach((path) => context.fill(new Path2D(path)));
+  const { data } = context.getImageData(0, 0, width, height);
 
-  const { data } = context.getImageData(0, 0, canvas.width, canvas.height);
-  const dots: Dot[] = [];
+  const gap = width < COMPACT_WIDTH ? DOT_GAP_COMPACT : DOT_GAP;
+  const columns = Math.ceil(width / gap);
+  const rows = Math.ceil(height / gap);
+  const values: number[] = [];
 
-  for (let y = metrics.spacing / 2; y < canvas.height; y += metrics.spacing) {
-    for (let x = metrics.spacing / 2; x < canvas.width; x += metrics.spacing) {
-      const alpha =
-        data[(Math.floor(y) * canvas.width + Math.floor(x)) * 4 + 3];
-      if (alpha > ALPHA_THRESHOLD) {
-        dots.push({
-          originX: x,
-          originY: y,
-          x,
-          y,
-          velocityX: 0,
-          velocityY: 0,
-          heat: 0,
-        });
+  for (let row = 0; row < rows; row++) {
+    for (let column = 0; column < columns; column++) {
+      let alpha = 0;
+      for (let sampleY = 0; sampleY < COVERAGE_SAMPLES; sampleY++) {
+        for (let sampleX = 0; sampleX < COVERAGE_SAMPLES; sampleX++) {
+          const x = Math.min(
+            width - 1,
+            Math.floor(
+              column * gap + ((sampleX + 0.5) * gap) / COVERAGE_SAMPLES,
+            ),
+          );
+          const y = Math.min(
+            height - 1,
+            Math.floor(row * gap + ((sampleY + 0.5) * gap) / COVERAGE_SAMPLES),
+          );
+          alpha += data[(y * width + x) * 4 + 3];
+        }
       }
+
+      const coverage = alpha / (COVERAGE_SAMPLES ** 2 * 255);
+      if (coverage < MIN_COVERAGE) continue;
+
+      const homeX = column * gap + gap / 2;
+      const homeY = row * gap + gap / 2;
+      const radius = Math.sqrt(clamp(coverage, 0, 1)) * gap * RADIUS_PER_GAP;
+      values.push(homeX, homeY, 0, 0, homeX, homeY, radius);
     }
   }
 
-  return dots;
+  return {
+    width,
+    height,
+    dots: new Float32Array(values),
+    count: values.length / STRIDE,
+  };
 }
 
-export function stepDots(
-  dots: Dot[],
-  pointer: PointerState,
-  metrics: DotFieldMetrics,
+export function stepDotField(
+  field: DotField,
+  pointer: Point | null,
+  shockwave: Shockwave | null,
+  now: number,
 ): boolean {
-  const { position, velocity } = pointer;
-  const speed = Math.hypot(velocity.x, velocity.y);
-  const pushScale = PUSH_STRENGTH * (1 + Math.min(speed * SPEED_BOOST, 1));
-  const stretch = Math.min(1 + speed * STRETCH_PER_SPEED, MAX_STRETCH);
-  const squash = stretch ** SQUASH_EXPONENT;
-  const directionX = speed > REST_THRESHOLD ? velocity.x / speed : 1;
-  const directionY = speed > REST_THRESHOLD ? velocity.y / speed : 0;
-  const inMotion = speed > REST_THRESHOLD;
-  let moving = inMotion;
+  const { dots } = field;
+  const shockAge = shockwave ? now - shockwave.startedAt : Infinity;
+  const shockActive = shockAge < SHOCK_DURATION;
+  const shockRadius = shockAge * SHOCK_SPEED;
+  let moving = shockActive || pointer !== null;
 
-  for (const dot of dots) {
-    let targetX = dot.originX;
-    let targetY = dot.originY;
-    let targetHeat = 0;
+  for (let index = 0; index < field.count; index++) {
+    const offset = index * STRIDE;
+    let x = dots[offset];
+    let y = dots[offset + 1];
+    let velocityX = dots[offset + 2];
+    let velocityY = dots[offset + 3];
+    const homeX = dots[offset + 4];
+    const homeY = dots[offset + 5];
 
-    if (position) {
-      const deltaX = dot.originX - position.x;
-      const deltaY = dot.originY - position.y;
-      const distance = Math.hypot(deltaX, deltaY) || 1;
-      const along = deltaX * directionX + deltaY * directionY;
-      const across = deltaY * directionX - deltaX * directionY;
-      const behind = along < 0;
-      const reach = Math.hypot(
-        behind ? along / stretch : along,
-        across * squash,
-      );
-
-      if (reach < metrics.influence) {
-        const falloff = (1 - reach / metrics.influence) ** 2;
-        const push = falloff * metrics.influence * pushScale;
-        let pushX = deltaX / distance;
-        let pushY = deltaY / distance;
-
-        if (behind && inMotion) {
-          const wake = Math.min(-along / (metrics.influence * stretch), 1);
-          const side = Math.sign(across) || 1;
-          pushX = pushX * (1 - wake) - directionY * side * wake;
-          pushY = pushY * (1 - wake) + directionX * side * wake;
-          const length = Math.hypot(pushX, pushY) || 1;
-          pushX /= length;
-          pushY /= length;
-        }
-
-        targetX += pushX * push;
-        targetY += pushY * push;
-        targetHeat = falloff;
+    if (shockwave && shockActive) {
+      const deltaX = homeX - shockwave.x;
+      const deltaY = homeY - shockwave.y;
+      const distance = Math.hypot(deltaX, deltaY) + 0.001;
+      const band =
+        1 - Math.min(1, Math.abs(distance - shockRadius) / SHOCK_BAND);
+      if (band > 0) {
+        const force = band * SHOCK_FORCE * (1 - shockAge / SHOCK_DURATION);
+        velocityX += (deltaX / distance) * force;
+        velocityY += (deltaY / distance) * force;
       }
     }
 
-    dot.velocityX = (dot.velocityX + (targetX - dot.x) * STIFFNESS) * DAMPING;
-    dot.velocityY = (dot.velocityY + (targetY - dot.y) * STIFFNESS) * DAMPING;
-    dot.x += dot.velocityX;
-    dot.y += dot.velocityY;
-    dot.heat += (targetHeat - dot.heat) * HEAT_EASING;
+    if (pointer) {
+      const deltaX = x - pointer.x;
+      const deltaY = y - pointer.y;
+      const distance = Math.hypot(deltaX, deltaY) + 0.001;
+      if (distance < PUSH_RADIUS) {
+        const force = (1 - distance / PUSH_RADIUS) * PUSH_FORCE;
+        velocityX += (deltaX / distance) * force;
+        velocityY += (deltaY / distance) * force;
+      }
+    }
 
-    if (
-      Math.abs(dot.x - targetX) > REST_THRESHOLD ||
-      Math.abs(dot.y - targetY) > REST_THRESHOLD ||
-      Math.abs(dot.heat - targetHeat) > REST_THRESHOLD
-    ) {
+    velocityX = (velocityX + (homeX - x) * STIFFNESS) * DAMPING;
+    velocityY = (velocityY + (homeY - y) * STIFFNESS) * DAMPING;
+    x += velocityX;
+    y += velocityY;
+
+    const settled =
+      Math.abs(velocityX) + Math.abs(velocityY) <= REST_VELOCITY &&
+      Math.abs(x - homeX) + Math.abs(y - homeY) <= REST_OFFSET;
+
+    if (settled) {
+      x = homeX;
+      y = homeY;
+      velocityX = 0;
+      velocityY = 0;
+    } else {
       moving = true;
     }
+
+    dots[offset] = x;
+    dots[offset + 1] = y;
+    dots[offset + 2] = velocityX;
+    dots[offset + 3] = velocityY;
   }
 
   return moving;
@@ -197,39 +203,70 @@ function mixColor(from: Rgb, to: Rgb, amount: number) {
   return `rgb(${channel(0)}, ${channel(1)}, ${channel(2)})`;
 }
 
-export function drawDots(
+export function createGrain() {
+  const tile = document.createElement("canvas");
+  tile.width = GRAIN_SIZE;
+  tile.height = GRAIN_SIZE;
+  const context = tile.getContext("2d");
+  if (!context) return null;
+
+  const image = context.createImageData(GRAIN_SIZE, GRAIN_SIZE);
+  for (let index = 0; index < image.data.length; index += 4) {
+    const value = Math.random() * 255;
+    image.data[index] = value;
+    image.data[index + 1] = value;
+    image.data[index + 2] = value;
+    image.data[index + 3] = Math.random() < 0.5 ? 0 : 255;
+  }
+  context.putImageData(image, 0, 0);
+  return tile;
+}
+
+export function drawDotField(
   context: CanvasRenderingContext2D,
-  dots: Dot[],
-  metrics: DotFieldMetrics,
-  colors: { base: Rgb; accent: Rgb },
+  field: DotField,
+  colors: DotFieldColors,
+  grain: HTMLCanvasElement | null,
 ) {
-  context.clearRect(0, 0, metrics.width, metrics.height);
+  const { dots } = field;
+  const ink = mixColor(colors.ink, colors.warm, 0);
+  context.clearRect(0, 0, field.width, field.height);
 
   context.beginPath();
-  for (const dot of dots) {
-    if (dot.heat >= REST_THRESHOLD) continue;
-    context.moveTo(dot.x + metrics.radius, dot.y);
-    context.arc(dot.x, dot.y, metrics.radius, 0, Math.PI * 2);
+  for (let index = 0; index < field.count; index++) {
+    const offset = index * STRIDE;
+    const x = dots[offset];
+    const y = dots[offset + 1];
+    if (x !== dots[offset + 4] || y !== dots[offset + 5]) continue;
+    const radius = dots[offset + 6];
+    context.moveTo(x + radius, y);
+    context.arc(x, y, radius, 0, Math.PI * 2);
   }
-  context.fillStyle = mixColor(colors.base, colors.accent, 0);
+  context.fillStyle = ink;
   context.fill();
 
-  for (const dot of dots) {
-    if (dot.heat < REST_THRESHOLD) continue;
+  for (let index = 0; index < field.count; index++) {
+    const offset = index * STRIDE;
+    const x = dots[offset];
+    const y = dots[offset + 1];
+    const homeX = dots[offset + 4];
+    const homeY = dots[offset + 5];
+    if (x === homeX && y === homeY) continue;
+    const warmth = Math.min(1, Math.hypot(x - homeX, y - homeY) / WARM_SPAN);
     context.beginPath();
-    context.arc(
-      dot.x,
-      dot.y,
-      metrics.radius * (1 + dot.heat * 0.35),
-      0,
-      Math.PI * 2,
-    );
-    context.fillStyle = mixColor(
-      colors.base,
-      colors.accent,
-      Math.min(dot.heat * 1.4, 1),
-    );
+    context.arc(x, y, dots[offset + 6], 0, Math.PI * 2);
+    context.fillStyle = mixColor(colors.ink, colors.warm, warmth);
     context.fill();
+  }
+
+  const pattern = grain && context.createPattern(grain, "repeat");
+  if (pattern) {
+    context.globalAlpha = GRAIN_ALPHA;
+    context.globalCompositeOperation = "source-atop";
+    context.fillStyle = pattern;
+    context.fillRect(0, 0, field.width, field.height);
+    context.globalAlpha = 1;
+    context.globalCompositeOperation = "source-over";
   }
 }
 

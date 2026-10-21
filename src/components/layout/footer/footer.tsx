@@ -97,7 +97,7 @@ export function Footer({ locale, dict, pages }: FooterProps) {
         </div>
       </div>
 
-      <DotWordmark className="mt-10 sm:mt-14" />
+      <DotWordmark className="mt-6 sm:mt-10" />
     </footer>
   );
 }
