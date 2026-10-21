@@ -8,22 +8,24 @@ import { RefObject, useEffect } from "react";
 import { useThree } from "@react-three/fiber";
 import { CanvasTexture, OrthographicCamera, Vector3 } from "three";
 import {
-  AiCore,
   Barrier,
-  BookingPhone,
-  BuildIn,
-  CallBooth,
   CameraPole,
   DisplaySign,
+  Intercom,
   KioskTower,
-  PatrolFigure,
   PaymentTerminal,
-} from "@/components/sections/home/os-garage/garage-models";
+  ReservedPedestal,
+} from "@/components/sections/home/os-garage/garage-devices";
+import {
+  PatrolOfficer,
+  RoofAi,
+} from "@/components/sections/home/os-garage/garage-figures";
 import { GaragePalette } from "@/components/sections/home/os-garage/garage-palette";
-import { CORE_POSITION, GarageDeviceKey } from "@/lib/os-garage";
+import { GarageDeviceKey } from "@/lib/os-garage";
+import { JourneyFrame } from "@/lib/os-garage-journey";
 
-const FIT = { width: 19.5, height: 15.5 };
-const LOOK_AT = new Vector3(0.6, 0.4, 0.6);
+const FIT = { width: 21.5, height: 16.5 };
+const LOOK_AT = new Vector3(0, 0.7, 0.2);
 
 export function CameraFit() {
   const camera = useThree((state) => state.camera);
@@ -39,79 +41,55 @@ export function CameraFit() {
   return null;
 }
 
+type DeviceContext = {
+  palette: GaragePalette;
+  journey: RefObject<JourneyFrame>;
+  sign: CanvasTexture;
+  still: boolean;
+};
+
 export function renderDevice(
   key: GarageDeviceKey,
-  palette: GaragePalette,
-  cars: RefObject<Vector3[]>,
-  sign: CanvasTexture,
+  part: number,
+  { palette, journey, sign, still }: DeviceContext,
 ) {
   switch (key) {
-    case "barriers":
-      return <Barrier palette={palette} cars={cars} />;
-    case "payment":
-      return <PaymentTerminal palette={palette} />;
-    case "cameras":
-      return <CameraPole palette={palette} />;
     case "display":
       return <DisplaySign palette={palette} texture={sign} />;
+    case "cameras":
+      return <CameraPole palette={palette} journey={journey} />;
+    case "barriers":
+      return <Barrier palette={palette} journey={journey} exit={part === 1} />;
     case "booking":
-      return <BookingPhone palette={palette} />;
-    case "enforcement":
-      return <PatrolFigure palette={palette} />;
-    case "intelligence":
-      return <AiCore palette={palette} />;
-    case "callCenter":
-      return <CallBooth palette={palette} />;
+      return <ReservedPedestal palette={palette} journey={journey} />;
     case "kiosks":
       return <KioskTower palette={palette} />;
+    case "payment":
+      return <PaymentTerminal palette={palette} journey={journey} />;
+    case "callCenter":
+      return <Intercom palette={palette} />;
+    case "enforcement":
+      return <PatrolOfficer palette={palette} still={still} />;
+    case "intelligence":
+      return <RoofAi palette={palette} still={still} />;
   }
 }
 
-const placedTags = new WeakMap<HTMLElement, string>();
+const placedMarkers = new WeakMap<HTMLElement, string>();
 
-export function placeTag(
-  tag: HTMLElement | null,
+export function placeMarker(
+  marker: HTMLElement | null,
   point: Vector3,
   size: { width: number; height: number },
   appear: number,
 ) {
-  if (!tag) return;
+  if (!marker) return;
   const x = Math.round(((point.x + 1) / 2) * size.width);
   const y = Math.round(((1 - point.y) / 2) * size.height);
   const placement = `${x} ${y} ${appear.toFixed(2)}`;
-  if (placedTags.get(tag) === placement) return;
-  placedTags.set(tag, placement);
-  tag.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -100%)`;
-  tag.style.setProperty("--appear", String(appear));
-  tag.style.visibility = appear > 0 ? "visible" : "hidden";
-}
-
-type CoreScreenProps = {
-  palette: GaragePalette;
-  texture: CanvasTexture;
-  build: RefObject<number>;
-  at: number;
-};
-
-export function CoreScreen({ palette, texture, build, at }: CoreScreenProps) {
-  return (
-    <BuildIn at={at} build={build} drop={1} position={CORE_POSITION}>
-      <group rotation={[0, Math.PI / 4, 0]}>
-        <group rotation={[-0.32, 0, 0]}>
-          <mesh>
-            <boxGeometry args={[3.8, 2.3, 0.12]} />
-            <meshStandardMaterial color={palette.bezel} />
-          </mesh>
-          <mesh position={[0, 0, 0.061]}>
-            <planeGeometry args={[3.6, 2.16]} />
-            <meshBasicMaterial map={texture} toneMapped={false} />
-          </mesh>
-        </group>
-        <mesh position={[0, -2.75, 0]}>
-          <cylinderGeometry args={[0.06, 0.08, 3.1, 8]} />
-          <meshStandardMaterial color={palette.bezel} />
-        </mesh>
-      </group>
-    </BuildIn>
-  );
+  if (placedMarkers.get(marker) === placement) return;
+  placedMarkers.set(marker, placement);
+  marker.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+  marker.style.setProperty("--appear", String(appear));
+  marker.style.visibility = appear > 0 ? "visible" : "hidden";
 }

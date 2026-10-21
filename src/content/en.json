@@ -190,16 +190,46 @@
         "title": "The OS of modern *parking*",
         "lead": "One brain. Nine connected systems, controlled in real time.",
         "core": "Central control",
+        "coreDescription": "Every system, live in one dashboard.",
+        "listLabel": "Parkwize systems in the lot",
+        "showInScene": "Show {name} in the scene",
         "nodes": {
-          "payment": "Payment terminals",
-          "display": "Digital displays",
-          "barriers": "Barriers",
-          "cameras": "Cameras",
-          "booking": "Online booking",
-          "enforcement": "Enforcement",
-          "intelligence": "Parkwize AI",
-          "callCenter": "Call center",
-          "kiosks": "Kiosks"
+          "display": {
+            "name": "Digital displays",
+            "description": "Live availability before drivers turn in."
+          },
+          "cameras": {
+            "name": "Cameras",
+            "description": "Plate recognition at every lane."
+          },
+          "barriers": {
+            "name": "Barriers",
+            "description": "Gates that open for recognized plates."
+          },
+          "booking": {
+            "name": "Online booking",
+            "description": "Reserved spots, booked and paid ahead."
+          },
+          "kiosks": {
+            "name": "Kiosks",
+            "description": "Self-service pay stations for visitors."
+          },
+          "payment": {
+            "name": "Payment terminals",
+            "description": "Tap to pay right in the exit lane."
+          },
+          "callCenter": {
+            "name": "Call center",
+            "description": "Live help at every intercom, 24/7."
+          },
+          "enforcement": {
+            "name": "Enforcement",
+            "description": "Patrols that check plates on the spot."
+          },
+          "intelligence": {
+            "name": "Parkwize AI",
+            "description": "Forecasts demand and sets the right rate."
+          }
         }
       }
     },

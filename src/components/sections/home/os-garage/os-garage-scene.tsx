@@ -4,22 +4,30 @@
 
 "use client";
 
-import { RefObject, useEffect, useMemo, useRef, useState } from "react";
+import { RefObject, useEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { ContactShadows } from "@react-three/drei";
 import { Group, Vector3 } from "three";
+import { DeviceSlot } from "@/components/sections/home/os-garage/garage-build";
 import {
-  BuildIn,
-  DeviceSlot,
-} from "@/components/sections/home/os-garage/garage-models";
+  JourneyCar,
+  ParkedCars,
+} from "@/components/sections/home/os-garage/garage-cars";
+import {
+  createGroundTexture,
+  createShadowTexture,
+} from "@/components/sections/home/os-garage/garage-ground-texture";
+import {
+  ControlOffice,
+  GarageLot,
+} from "@/components/sections/home/os-garage/garage-lot";
 import {
   readPalette,
   readType,
 } from "@/components/sections/home/os-garage/garage-palette";
+import { GaragePulses } from "@/components/sections/home/os-garage/garage-pulses";
 import {
   CameraFit,
-  CoreScreen,
-  placeTag,
+  placeMarker,
   renderDevice,
 } from "@/components/sections/home/os-garage/garage-stage";
 import {
@@ -29,180 +37,194 @@ import {
   nextChartSeries,
 } from "@/components/sections/home/os-garage/garage-textures";
 import {
-  BayLines,
-  DataPackets,
-  MovingCars,
-  ParkedCars,
-} from "@/components/sections/home/os-garage/garage-traffic";
-import {
   appearAmount,
   BUILD_TIMING,
   buildSchedule,
-  CORE_POSITION,
   GARAGE_DEVICES,
   GarageDeviceKey,
-  MOVING_CARS,
-  SLAB,
 } from "@/lib/os-garage";
+import {
+  createJourneyFrame,
+  JOURNEY_REST,
+  journeyAt,
+  JourneyPhase,
+  LIVE_DEVICES,
+  patrolAt,
+} from "@/lib/os-garage-journey";
 
-const DRIFT = 0.08;
+const DRIFT = 0.05;
 const SCREEN_TICK = 2.4;
-const FREE_RANGE: [number, number] = [8, 42];
+const FREE_RANGE: [number, number] = [12, 38];
+const DRIVER_PRIORITY = -1;
 
 export type OsGarageSceneProps = {
   active: boolean;
   reducedMotion: boolean;
   compact: boolean;
-  highlight: GarageDeviceKey[] | null;
-  tags: RefObject<(HTMLElement | null)[]>;
-  coreTag: RefObject<HTMLElement | null>;
+  highlight: GarageDeviceKey | null;
+  markers: RefObject<(HTMLElement | null)[]>;
+  rows: RefObject<(HTMLElement | null)[]>;
   localeTag: string;
   onReady: () => void;
 };
 
 type GarageWorldProps = Omit<OsGarageSceneProps, "active" | "onReady">;
 
+function markLive(elements: (HTMLElement | null)[], live: GarageDeviceKey[]) {
+  GARAGE_DEVICES.forEach((device, index) =>
+    elements[index]?.setAttribute(
+      "data-live",
+      String(live.includes(device.key)),
+    ),
+  );
+}
+
 function GarageWorld({
   reducedMotion,
   compact,
   highlight,
-  tags,
-  coreTag,
+  markers,
+  rows,
   localeTag,
 }: GarageWorldProps) {
   const schedule = useMemo(() => buildSchedule(), []);
   const palette = useMemo(() => readPalette(document.documentElement), []);
-  const painters = useMemo(() => {
+  const textures = useMemo(() => {
     const type = readType(document.documentElement, localeTag);
     return {
       screen: createScreenPainter(palette, type),
       sign: createSignPainter(palette, type),
+      ground: createGroundTexture(palette),
+      shadow: createShadowTexture(palette),
     };
   }, [palette, localeTag]);
   const build = useRef(reducedMotion ? schedule.total : 0);
-  const [built, setBuilt] = useState(reducedMotion);
+  const journey = useRef(createJourneyFrame());
+  const journeyTime = useRef(0);
+  const phase = useRef<JourneyPhase | null>(null);
   const series = useRef(initialChartSeries());
-  const free = useRef(FREE_RANGE[1]);
+  const free = useRef(FREE_RANGE[1] - 9);
+  const shown = useRef(-1);
   const tick = useRef(0);
   const world = useRef<Group>(null);
-  const cars = useRef<Vector3[]>([]);
   const point = useMemo(() => new Vector3(), []);
 
   useEffect(() => {
-    painters.screen.paint(series.current);
-    painters.sign.paint(free.current);
-    return () => {
-      painters.screen.texture.dispose();
-      painters.sign.texture.dispose();
-    };
-  }, [painters]);
+    textures.screen.paint(series.current);
+    return () =>
+      Object.values(textures).forEach((item) =>
+        "texture" in item ? item.texture.dispose() : item.dispose(),
+      );
+  }, [textures]);
 
-  useFrame(({ camera, size, pointer }, delta) => {
+  useFrame(({ camera, size, pointer, clock }, delta) => {
     const node = world.current;
     if (!node) return;
 
     if (build.current < schedule.total) {
       build.current = Math.min(build.current + delta, schedule.total);
-      if (build.current >= schedule.total) setBuilt(true);
     }
+    const built = build.current >= schedule.total;
 
-    if (!reducedMotion) {
+    if (reducedMotion) {
+      journeyAt(JOURNEY_REST, journey.current);
+    } else if (built) {
+      journeyTime.current += delta;
+      journeyAt(journeyTime.current, journey.current);
       const target = Math.max(-1, Math.min(1, pointer.x)) * DRIFT;
       node.rotation.y += (target - node.rotation.y) * Math.min(delta * 2, 1);
       tick.current += delta;
-      if (tick.current > SCREEN_TICK && build.current >= schedule.core) {
+      if (tick.current > SCREEN_TICK) {
         tick.current = 0;
         series.current = nextChartSeries(series.current);
-        painters.screen.paint(series.current);
-        const step = Math.round((Math.random() - 0.55) * 6);
+        textures.screen.paint(series.current);
+        const step = Math.round((Math.random() - 0.5) * 4);
         free.current = Math.min(
           Math.max(free.current + step, FREE_RANGE[0]),
           FREE_RANGE[1],
         );
-        painters.sign.paint(free.current);
       }
     }
 
+    const available = free.current - (journey.current.occupied ? 1 : 0);
+    if (available !== shown.current) {
+      shown.current = available;
+      textures.sign.paint(available);
+    }
+
+    if (journey.current.phase !== phase.current) {
+      phase.current = journey.current.phase;
+      const live = reducedMotion ? [] : LIVE_DEVICES[phase.current];
+      markLive(rows.current, live);
+      markLive(markers.current, live);
+    }
+
+    const time = reducedMotion ? 0 : clock.elapsedTime;
     node.updateMatrixWorld();
     GARAGE_DEVICES.forEach((device, index) => {
-      const [x, y, z] = device.position;
+      const [x, y, z] = device.parts[0].position;
+      const markerX = device.key === "enforcement" ? patrolAt(time).x : x;
       point
-        .set(x, y + device.tagHeight, z)
+        .set(markerX, y + device.marker, z)
         .applyMatrix4(node.matrixWorld)
         .project(camera);
       const at = schedule.devices.get(device.key) ?? 0;
-      placeTag(
-        tags.current[index],
+      placeMarker(
+        markers.current[index],
         point,
         size,
-        appearAmount(build.current, at + 0.15),
+        appearAmount(build.current, at + BUILD_TIMING.marker),
       );
     });
-    point
-      .set(CORE_POSITION[0], CORE_POSITION[1] + 1.55, CORE_POSITION[2])
-      .applyMatrix4(node.matrixWorld)
-      .project(camera);
-    placeTag(
-      coreTag.current,
-      point,
-      size,
-      appearAmount(build.current, schedule.core + 0.2),
-    );
-  });
+  }, DRIVER_PRIORITY);
+
+  const context = {
+    palette,
+    journey,
+    sign: textures.sign.texture,
+    still: reducedMotion,
+  };
 
   return (
     <group ref={world}>
-      <hemisphereLight args={[palette.surface, palette.slab, 1.7]} />
-      <directionalLight position={[6, 12, 5]} intensity={1.3} />
-      <BuildIn at={0} build={build}>
-        <mesh position={[0, -0.16, 0]}>
-          <boxGeometry args={[SLAB.width, 0.3, SLAB.depth]} />
-          <meshStandardMaterial color={palette.slab} roughness={0.9} />
-        </mesh>
-        <mesh position={[0, -0.34, 0]}>
-          <boxGeometry args={[SLAB.width + 0.3, 0.08, SLAB.depth + 0.3]} />
-          <meshBasicMaterial color={palette.line} />
-        </mesh>
-      </BuildIn>
-      <BuildIn at={BUILD_TIMING.slab} build={build}>
-        <BayLines palette={palette} />
-      </BuildIn>
+      <hemisphereLight args={[palette.surface, palette.slab, 1.6]} />
+      <directionalLight position={[6, 12, 5]} intensity={1.4} />
+      <GarageLot palette={palette} ground={textures.ground} build={build} />
+      <ControlOffice
+        palette={palette}
+        screen={textures.screen.texture}
+        build={build}
+      />
       {GARAGE_DEVICES.map((device) => (
         <DeviceSlot
           key={device.key}
           device={device}
           at={schedule.devices.get(device.key) ?? 0}
           build={build}
-          highlighted={highlight?.length === 1 && highlight[0] === device.key}
-          dimmed={highlight !== null && !highlight.includes(device.key)}
-        >
-          {renderDevice(device.key, palette, cars, painters.sign.texture)}
-        </DeviceSlot>
+          highlighted={highlight === device.key}
+          dimmed={highlight !== null && highlight !== device.key}
+          instant={reducedMotion}
+          render={(part) => renderDevice(device.key, part, context)}
+        />
       ))}
-      <CoreScreen
+      <ParkedCars
         palette={palette}
-        texture={painters.screen.texture}
+        shadow={textures.shadow}
         build={build}
-        at={schedule.core}
+        at={schedule.cars}
       />
-      <ParkedCars palette={palette} build={build} at={schedule.traffic} />
-      <MovingCars
+      <JourneyCar
         palette={palette}
-        count={compact ? MOVING_CARS.compact : MOVING_CARS.desktop}
-        positions={cars}
-        build={build}
-        at={schedule.traffic}
+        shadow={textures.shadow}
+        journey={journey}
+        color={palette.accent}
       />
-      <DataPackets palette={palette} build={build} at={schedule.traffic} />
-      {built && !compact && (
-        <ContactShadows
-          position={[0, 0.01, 0]}
-          scale={[SLAB.width, SLAB.depth]}
-          blur={2.4}
-          opacity={0.3}
-          far={3}
-          resolution={512}
-          frames={1}
+      {!compact && (
+        <GaragePulses
+          palette={palette}
+          journey={journey}
+          highlight={highlight}
+          still={reducedMotion}
         />
       )}
     </group>

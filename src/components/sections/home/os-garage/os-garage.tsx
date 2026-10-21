@@ -7,7 +7,7 @@
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { motion, useInView, useReducedMotion } from "motion/react";
-import { Link } from "@/components/navigation/link";
+import { OsGarageSystems } from "@/components/sections/home/os-garage/os-garage-systems";
 import { HomeDictionary } from "@/content/dictionary";
 import { Locale, LOCALE_TAGS } from "@/lib/i18n";
 import { DRAW_BASE } from "@/lib/motion";
@@ -75,9 +75,10 @@ export function OsGarage({ locale, dict }: OsGarageProps) {
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
   const [hovered, setHovered] = useState<GarageDeviceKey | null>(null);
-  const highlight = hovered ? [hovered] : null;
-  const tags = useRef<(HTMLElement | null)[]>([]);
-  const coreTag = useRef<HTMLElement | null>(null);
+  const [pinned, setPinned] = useState<GarageDeviceKey | null>(null);
+  const highlight = hovered ?? pinned;
+  const markers = useRef<(HTMLElement | null)[]>([]);
+  const rows = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -92,47 +93,12 @@ export function OsGarage({ locale, dict }: OsGarageProps) {
     return () => window.clearTimeout(timer);
   }, [near, ready]);
 
-  const placed = ready && !failed;
-
-  const links = GARAGE_DEVICES.map((device, index) => (
-    <li
-      key={device.key}
-      ref={(node) => {
-        tags.current[index] = node;
-      }}
-      data-dim={highlight !== null && !highlight.includes(device.key)}
-      className={cn(
-        !failed &&
-          "absolute left-0 top-0 transition-[--dim] [--dim:1] [opacity:calc(var(--appear,0)*var(--dim))] data-[dim=true]:[--dim:0.3]",
-        !failed && !placed && "invisible",
-      )}
-    >
-      <Link
-        href={`/${device.slug}`}
-        lang={locale}
-        onPointerEnter={() => setHovered(device.key)}
-        onPointerLeave={() => setHovered(null)}
-        onFocus={() => setHovered(device.key)}
-        onBlur={() => setHovered(null)}
-        className={cn(
-          "pointer-events-auto relative inline-flex min-h-8 items-center gap-1.5 whitespace-nowrap rounded-full px-3 text-[0.6875rem] font-semibold shadow-media ring-1 transition-colors after:absolute after:-inset-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:text-xs",
-          device.key === "intelligence"
-            ? "bg-deck text-brand-foreground ring-deck"
-            : "bg-surface text-ink ring-hairline hover:bg-deck hover:text-brand-foreground",
-        )}
-      >
-        <span aria-hidden className="size-1.5 rounded-full bg-deck-bright" />
-        {dict.nodes[device.key]}
-      </Link>
-    </li>
-  ));
-
   return (
-    <div>
+    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_18.5rem] lg:items-center lg:gap-8">
       <div
         ref={stage}
         className={cn(
-          "relative aspect-[4/5] w-full sm:aspect-[16/11] lg:aspect-[16/10]",
+          "relative aspect-[4/3] w-full sm:aspect-[16/11]",
           failed && "hidden",
         )}
       >
@@ -144,32 +110,40 @@ export function OsGarage({ locale, dict }: OsGarageProps) {
               reducedMotion={reducedMotion}
               compact={compact}
               highlight={highlight}
-              tags={tags}
-              coreTag={coreTag}
+              markers={markers}
+              rows={rows}
               localeTag={LOCALE_TAGS[locale]}
               onReady={() => setReady(true)}
             />
           </div>
         )}
-        <span
-          ref={coreTag}
-          aria-hidden
-          className={cn(
-            "pointer-events-none absolute left-0 top-0 inline-flex items-center gap-1.5 rounded-full bg-deck px-3 py-1 text-[0.6875rem] font-semibold text-brand-foreground shadow-media [opacity:var(--appear,0)] sm:text-xs",
-            !placed && "invisible",
-          )}
-        >
-          <span className="size-1.5 rounded-full bg-success motion-safe:animate-blink" />
-          {dict.core}
-        </span>
-        {!failed && (
-          <ul className="pointer-events-none absolute inset-0">{links}</ul>
-        )}
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          {GARAGE_DEVICES.map((device, index) => (
+            <span
+              key={device.key}
+              ref={(node) => {
+                markers.current[index] = node;
+              }}
+              data-active={highlight === device.key}
+              data-dim={highlight !== null && highlight !== device.key}
+              data-live="false"
+              className="invisible absolute left-0 top-0 grid size-5 place-items-center rounded-full bg-surface text-[0.625rem] font-semibold text-ink shadow-media ring-1 ring-hairline transition-colors [opacity:var(--appear,0)] data-[active=true]:bg-deck data-[active=true]:text-brand-foreground data-[live=true]:ring-2 data-[live=true]:ring-success data-[dim=true]:[opacity:calc(var(--appear,0)*0.35)] sm:size-6 sm:text-[0.6875rem]"
+            >
+              {index + 1}
+            </span>
+          ))}
+        </div>
       </div>
 
-      {failed && (
-        <ul className="flex flex-wrap justify-center gap-2">{links}</ul>
-      )}
+      <OsGarageSystems
+        locale={locale}
+        dict={dict}
+        highlight={highlight}
+        pinned={pinned}
+        rows={rows}
+        onHover={setHovered}
+        onPin={(key) => setPinned((current) => (current === key ? null : key))}
+      />
     </div>
   );
 }

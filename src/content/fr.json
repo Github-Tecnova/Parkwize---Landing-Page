@@ -190,16 +190,46 @@
         "title": "Le système d'exploitation du *stationnement* moderne",
         "lead": "Un seul cerveau. Neuf systèmes connectés, pilotés en temps réel.",
         "core": "Contrôle central",
+        "coreDescription": "Tous les systèmes, en direct dans un seul tableau de bord.",
+        "listLabel": "Systèmes Parkwize dans le stationnement",
+        "showInScene": "Afficher {name} dans la scène",
         "nodes": {
-          "payment": "Terminaux de paiement",
-          "display": "Affichage dynamique",
-          "barriers": "Barrières",
-          "cameras": "Caméras",
-          "booking": "Réservation en ligne",
-          "enforcement": "Contrôle",
-          "intelligence": "Parkwize IA",
-          "callCenter": "Centre d'appels",
-          "kiosks": "Bornes"
+          "display": {
+            "name": "Affichage dynamique",
+            "description": "Les places libres, affichées avant l'entrée."
+          },
+          "cameras": {
+            "name": "Caméras",
+            "description": "Lecture des plaques à chaque voie."
+          },
+          "barriers": {
+            "name": "Barrières",
+            "description": "Elles s'ouvrent pour les plaques reconnues."
+          },
+          "booking": {
+            "name": "Réservation en ligne",
+            "description": "Places réservées et payées d'avance."
+          },
+          "kiosks": {
+            "name": "Bornes",
+            "description": "Bornes de paiement en libre-service."
+          },
+          "payment": {
+            "name": "Terminaux de paiement",
+            "description": "Paiement sans contact à la voie de sortie."
+          },
+          "callCenter": {
+            "name": "Centre d'appels",
+            "description": "Assistance en direct à chaque interphone, 24 h/24."
+          },
+          "enforcement": {
+            "name": "Contrôle",
+            "description": "Des patrouilles qui vérifient les plaques sur place."
+          },
+          "intelligence": {
+            "name": "Parkwize IA",
+            "description": "Prévoit la demande et fixe le bon tarif."
+          }
         }
       }
     },

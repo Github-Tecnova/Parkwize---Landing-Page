@@ -7,6 +7,7 @@ import { resolveCssColor } from "@/lib/dot-field";
 
 export type GaragePalette = {
   slab: Color;
+  asphalt: Color;
   line: Color;
   navy: Color;
   raised: Color;
@@ -27,6 +28,7 @@ export function readPalette(element: HTMLElement): GaragePalette {
 
   return {
     slab: pick("--surface-muted"),
+    asphalt: pick("--surface-border"),
     line: pick("--hairline"),
     navy: pick("--navy"),
     raised: pick("--navy-raised"),
