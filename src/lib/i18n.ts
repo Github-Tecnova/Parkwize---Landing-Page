@@ -41,3 +41,8 @@ export function localizedPath(href: string, locale: Locale): string {
 export function stripLocale(pathname: string): string {
   return pathname.replace(LOCALE_PREFIX, "") || "/";
 }
+
+export const LOCALE_TAGS: Record<Locale, string> = {
+  en: "en-CA",
+  fr: "fr-CA",
+};

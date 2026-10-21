@@ -13,7 +13,7 @@ import { PageFade } from "@/components/motion/page-fade";
 import { RouteProgress } from "@/components/navigation/route-progress";
 import { TopBar } from "@/components/layout/top-bar/top-bar";
 import { getDictionary } from "@/content/dictionary";
-import { isLocale, LOCALES, resolveLocale } from "@/lib/i18n";
+import { isLocale, LOCALE_TAGS, LOCALES, resolveLocale } from "@/lib/i18n";
 import "lenis/dist/lenis.css";
 import "@/app/globals.css";
 
@@ -81,7 +81,7 @@ export default async function LangLayout({
 
   return (
     <html
-      lang={lang === "fr" ? "fr-CA" : "en-CA"}
+      lang={LOCALE_TAGS[resolveLocale(lang)]}
       className={`${inter.variable} ${poppins.variable} ${jetBrainsMono.variable}`}
     >
       <body className={`${inter.className} min-h-svh bg-surface antialiased`}>

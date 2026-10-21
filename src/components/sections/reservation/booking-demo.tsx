@@ -34,7 +34,7 @@ export function BookingDemo({ dict }: BookingDemoProps) {
   const progress = ((minutes * 60 + seconds) / TARGET_SECONDS) * 100;
 
   return (
-    <section className="bg-bay-grid bg-surface py-14 sm:py-20">
+    <section className="relative isolate py-14 sm:py-20">
       <Container>
         <SectionHeader
           eyebrow={dict.eyebrow}

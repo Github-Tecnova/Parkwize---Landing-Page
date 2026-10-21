@@ -22,7 +22,7 @@ export function LegalPage({ locale, dict, document }: LegalPageProps) {
 
   return (
     <>
-      <section className="under-top-bar relative isolate overflow-hidden bg-surface pb-10 sm:pb-14">
+      <section className="under-top-bar relative isolate overflow-hidden pb-10 sm:pb-14">
         <div
           aria-hidden
           className="bg-hero-fade absolute inset-x-0 top-0 -z-10 h-[56rem]"
@@ -40,7 +40,7 @@ export function LegalPage({ locale, dict, document }: LegalPageProps) {
           </p>
         </Container>
       </section>
-      <section className="bg-surface pb-14 sm:pb-20">
+      <section className="pb-14 sm:pb-20">
         <Container className="grid gap-8 border-t border-hairline pt-8 sm:pt-12 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-16">
           <nav
             aria-label={dict.tocLabel}

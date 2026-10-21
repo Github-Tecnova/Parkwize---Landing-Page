@@ -75,7 +75,6 @@
     --copy: #3f4b5b;
     --hairline: #cfd9e3;
     --parking-line: rgba(0, 47, 183, 0.09);
-    --bay-grid-line: rgba(18, 71, 191, 0.1);
     --panel-deep: #020b2e;
     --panel-mid: #0a2a8a;
     --panel-bright: #0b4bdc;
@@ -203,10 +202,10 @@
       var(--parking-blue) 7%,
       color-mix(in oklab, var(--parking-blue) 62%, var(--surface)) 14%,
       color-mix(in oklab, var(--parking-blue) 30%, var(--surface)) 22%,
-      color-mix(in oklab, var(--parking-blue) 12%, var(--surface)) 32%,
-      color-mix(in oklab, var(--parking-blue) 4%, var(--surface)) 42%,
-      var(--surface) 52%,
-      var(--surface) 100%
+      color-mix(in oklab, var(--parking-blue) 12%, transparent) 32%,
+      color-mix(in oklab, var(--parking-blue) 4%, transparent) 42%,
+      transparent 52%,
+      transparent 100%
     );
   }
 
@@ -219,23 +218,12 @@
     background-size: 26px 26px;
   }
 
-  .bg-dot-grid-sm {
-    background-image: radial-gradient(
-      circle at center,
-      var(--parking-line) 1px,
-      transparent 1.5px
-    );
-    background-size: 24px 24px;
-  }
-
-  .bg-bay-lines,
-  .bg-bay-grid {
+  .bg-bay-lines {
     position: relative;
     isolation: isolate;
   }
 
-  .bg-bay-lines::before,
-  .bg-bay-grid::before {
+  .bg-bay-lines::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -259,35 +247,6 @@
     );
   }
 
-  .bg-bay-grid {
-    overflow: clip;
-  }
-
-  .bg-bay-grid::before {
-    background-image:
-      repeating-linear-gradient(
-        90deg,
-        transparent 0 144px,
-        var(--bay-grid-line) 144px 146px,
-        transparent 146px 288px
-      ),
-      repeating-linear-gradient(
-        0deg,
-        transparent 0 218px,
-        var(--bay-grid-line) 218px 220px,
-        transparent 220px 440px
-      );
-    transform: skewY(-7deg) scale(1.2);
-    opacity: 0.4;
-    mask-image: linear-gradient(
-      to bottom,
-      transparent 5%,
-      black 35%,
-      black 70%,
-      transparent 95%
-    );
-  }
-
   .pointer-spot {
     position: absolute;
     inset: 0;
@@ -300,50 +259,6 @@
       transparent 100%
     );
     transition: opacity 0.35s ease;
-  }
-
-  .hub-line {
-    fill: none;
-    stroke: color-mix(in oklab, var(--deck-blue) 22%, transparent);
-    stroke-width: 1.5;
-  }
-
-  .hub-flow {
-    fill: none;
-    stroke: var(--deck-blue);
-    stroke-width: 2.5;
-    stroke-linecap: round;
-    stroke-dasharray: 4 46;
-    filter: drop-shadow(0 0 3px var(--deck-blue));
-  }
-
-  .hub-ring {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 112%;
-    aspect-ratio: 1;
-    border-radius: 9999px;
-    border: 1px solid color-mix(in oklab, var(--deck-blue) 30%, transparent);
-    background: radial-gradient(
-      circle,
-      color-mix(in oklab, var(--deck-blue) 12%, transparent),
-      transparent 62%
-    );
-    transform: translate(-50%, -50%);
-  }
-
-  .hub-dot {
-    box-shadow: 0 0 0 4px color-mix(in oklab, var(--success) 30%, transparent);
-  }
-
-  .hub-label {
-    border: 1px solid color-mix(in oklab, var(--deck-blue) 25%, transparent);
-    box-shadow: 0 6px 16px color-mix(in oklab, var(--ink) 7%, transparent);
-  }
-
-  .hub-tick {
-    background: linear-gradient(var(--deck-blue), transparent);
   }
 
   .shadow-deck {

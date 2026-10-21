@@ -9,7 +9,7 @@ import { ModeSplit } from "@/components/sections/mode-split";
 import { AccentText } from "@/components/typography/accent-text";
 import { HomeDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
-import { OsHub } from "./os-hub";
+import { OsGarage } from "@/components/sections/home/os-garage/os-garage";
 
 type HomeOsProps = {
   locale: Locale;
@@ -20,7 +20,7 @@ export function HomeOs({ locale, dict }: HomeOsProps) {
   return (
     <section
       id="ours-or-yours"
-      className="bg-dot-grid bg-bay-grid bg-surface py-16 sm:py-24 lg:py-28"
+      className="relative isolate py-16 sm:py-24 lg:py-28"
     >
       <Container>
         <SectionHeader
@@ -46,7 +46,7 @@ export function HomeOs({ locale, dict }: HomeOsProps) {
             <p className="mt-3 text-copy">{dict.hub.lead}</p>
           </Reveal>
           <div className="mx-auto mt-6 max-w-6xl py-2 lg:py-6">
-            <OsHub locale={locale} dict={dict.hub} />
+            <OsGarage locale={locale} dict={dict.hub} />
           </div>
         </div>
       </Container>

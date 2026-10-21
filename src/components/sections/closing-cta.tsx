@@ -23,11 +23,7 @@ export function ClosingCta({ locale, dict, showCta = true }: ClosingCtaProps) {
   const { pMark, porsche911 } = MEDIA.brand;
 
   return (
-    <section className="bg-dot-grid-sm relative isolate z-[2] bg-surface pb-[clamp(9.75rem,21vw,17.75rem)] pt-20 text-center sm:pt-24">
-      <span
-        aria-hidden
-        className="bg-bay-grid pointer-events-none absolute inset-0 -z-10"
-      />
+    <section className="relative isolate z-[2] pb-[clamp(9.75rem,21vw,17.75rem)] pt-20 text-center sm:pt-24">
       <Container className="relative z-[2]">
         <Reveal className="flex flex-col items-center">
           <Image

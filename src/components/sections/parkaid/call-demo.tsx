@@ -41,7 +41,7 @@ export function CallDemo({ dict }: CallDemoProps) {
   const content = dict.steps[step];
 
   return (
-    <section className="bg-bay-grid bg-surface py-14 sm:py-20">
+    <section className="relative isolate py-14 sm:py-20">
       <Container>
         <SectionHeader
           eyebrow={dict.eyebrow}

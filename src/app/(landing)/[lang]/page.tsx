@@ -10,6 +10,7 @@ import { HomeEcosystem } from "@/components/sections/home/home-ecosystem";
 import { HomeHero } from "@/components/sections/home/home-hero";
 import { HomeLot } from "@/components/sections/home/home-lot";
 import { HomeOs } from "@/components/sections/home/home-os";
+import { HomeRoad } from "@/components/sections/home/home-road";
 import { HomeStats } from "@/components/sections/home/home-stats";
 import { MarqueeBand } from "@/components/sections/home/marquee-band";
 import { getDictionary } from "@/content/dictionary";
@@ -41,15 +42,21 @@ export default async function HomePage({ params }: HomePageProps) {
     <>
       <HomeHero locale={locale} dict={home.hero} />
       <HomeStats dict={home.stats} />
-      <HomeLot dict={home.lot} />
-      <HomeEcosystem
-        locale={locale}
-        dict={home.ecosystem}
-        cards={dict.productCards}
-      />
-      <HomeOs locale={locale} dict={home.os} />
-      <HomeAi locale={locale} dict={home.ai} />
-      <HomeBooking locale={locale} dict={home.booking} sectors={home.sectors} />
+      <HomeRoad>
+        <HomeLot dict={home.lot} />
+        <HomeEcosystem
+          locale={locale}
+          dict={home.ecosystem}
+          cards={dict.productCards}
+        />
+        <HomeOs locale={locale} dict={home.os} />
+        <HomeAi locale={locale} dict={home.ai} />
+        <HomeBooking
+          locale={locale}
+          dict={home.booking}
+          sectors={home.sectors}
+        />
+      </HomeRoad>
       <MarqueeBand words={dict.marquee} />
       <ClosingCta locale={locale} dict={dict.closingCta} />
     </>

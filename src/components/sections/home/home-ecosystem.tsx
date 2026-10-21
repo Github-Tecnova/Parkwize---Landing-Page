@@ -30,7 +30,7 @@ export function HomeEcosystem({ locale, dict, cards }: HomeEcosystemProps) {
   return (
     <section
       id="ecosystem"
-      className="bg-bay-grid bg-surface pb-16 pt-14 sm:pb-20 sm:pt-20"
+      className="relative isolate pb-16 pt-14 sm:pb-20 sm:pt-20"
     >
       <PointerSpotlight />
       <OrbitRow

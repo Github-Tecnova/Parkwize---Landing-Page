@@ -74,7 +74,7 @@ export function AiForecastDemo({ dict }: AiForecastDemoProps) {
     `${value > 0 ? "+" : ""}${value}${dict.percentSuffix}`;
 
   return (
-    <section className="bg-dot-grid bg-surface py-14 sm:py-20">
+    <section className="py-14 sm:py-20">
       <Container>
         <SectionHeader eyebrow={dict.eyebrow} title={dict.title} />
 

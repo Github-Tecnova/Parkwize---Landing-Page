@@ -25,7 +25,7 @@ export function LeadHero({
   children,
 }: LeadHeroProps) {
   return (
-    <section className="under-top-bar bg-bay-lines relative isolate bg-surface pb-16 lg:pb-24">
+    <section className="under-top-bar bg-bay-lines relative isolate pb-16 lg:pb-24">
       <div
         aria-hidden
         className="bg-hero-fade absolute inset-x-0 top-0 -z-10 h-[56rem]"

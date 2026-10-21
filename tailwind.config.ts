@@ -92,20 +92,6 @@ export default {
         },
       },
       keyframes: {
-        "hub-flow": {
-          from: { strokeDashoffset: "50" },
-          to: { strokeDashoffset: "0" },
-        },
-        "hub-pulse": {
-          "0%": {
-            transform: "translate(-50%, -50%) scale(0.7)",
-            opacity: "0.9",
-          },
-          "100%": {
-            transform: "translate(-50%, -50%) scale(1.15)",
-            opacity: "0",
-          },
-        },
         blink: {
           "50%": { opacity: "0.35" },
         },
@@ -114,8 +100,6 @@ export default {
         },
       },
       animation: {
-        "hub-flow": "hub-flow 3.2s linear infinite",
-        "hub-pulse": "hub-pulse 3.6s ease-out infinite",
         blink: "blink 1.6s ease-in-out infinite",
         marquee: "marquee 40s linear infinite",
       },

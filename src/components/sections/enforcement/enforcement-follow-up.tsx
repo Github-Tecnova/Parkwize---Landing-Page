@@ -26,7 +26,7 @@ export function EnforcementFollowUp({
   const lastIndex = dict.events.length - 1;
 
   return (
-    <section className="bg-surface py-14 sm:py-20">
+    <section className="py-14 sm:py-20">
       <Container className="grid items-center gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
         <SectionHeader
           eyebrow={dict.eyebrow}

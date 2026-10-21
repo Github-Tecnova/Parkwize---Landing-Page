@@ -58,3 +58,14 @@ export const LOT_PLAYBACK: Transition = {
   duration: 7,
   ease: "linear",
 };
+
+export const CHART_MORPH: Transition = {
+  duration: 1.2,
+  ease: EASE_OUT_EXPO,
+};
+
+export const ROAD_SPRING: SpringOptions = {
+  stiffness: 55,
+  damping: 18,
+  mass: 1,
+};

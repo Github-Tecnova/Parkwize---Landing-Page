@@ -20,7 +20,7 @@ type ProcessHardwareProps = {
 
 export function ProcessHardware({ dict }: ProcessHardwareProps) {
   return (
-    <section className="bg-surface py-14 sm:py-20">
+    <section className="py-14 sm:py-20">
       <Container>
         <SectionHeader eyebrow={dict.eyebrow} title={dict.title} />
         <ul className="mt-10 grid gap-6 md:grid-cols-2">

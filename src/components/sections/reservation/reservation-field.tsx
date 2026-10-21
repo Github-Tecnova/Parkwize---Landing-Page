@@ -15,7 +15,7 @@ type ReservationFieldProps = {
 
 export function ReservationField({ dict }: ReservationFieldProps) {
   return (
-    <section className="bg-surface py-14 sm:py-20">
+    <section className="py-14 sm:py-20">
       <Container className="grid items-center gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-16">
         <Reveal>
           <SectionHeader

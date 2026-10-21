@@ -18,7 +18,7 @@ export function ParkAidFocus({ dict }: ParkAidFocusProps) {
   const { agentCall } = MEDIA.parkaid;
 
   return (
-    <section className="bg-dot-grid bg-surface py-14 sm:py-20">
+    <section className="py-14 sm:py-20">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16">
           <SectionHeader

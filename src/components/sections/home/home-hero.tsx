@@ -5,6 +5,8 @@
 import Image from "next/image";
 import { Container } from "@/components/layout/section/container";
 import { AmbientVideo } from "@/components/media/ambient-video";
+import { PointerTilt } from "@/components/motion/pointer-tilt";
+import { HeroScreen } from "@/components/sections/home/hero-screen";
 import { ButtonLink } from "@/components/ui/button-link";
 import { HomeDictionary } from "@/content/dictionary";
 import { Locale } from "@/lib/i18n";
@@ -48,23 +50,26 @@ export function HomeHero({ locale, dict }: HomeHeroProps) {
           </ButtonLink>
         </div>
 
-        <div className="relative mx-auto aspect-[543/506] w-full max-w-xl lg:max-w-none">
+        <PointerTilt className="relative mx-auto aspect-[543/506] w-full max-w-xl lg:max-w-none">
           <AmbientVideo
             sources={VIDEOS.heroBanner}
             poster={MEDIA.people.heroTeam.src}
             label={dict.videoLabel}
             className="absolute right-0 top-0 h-1/2 w-[86%] rounded-2xl object-cover shadow-media [object-position:60%_42%]"
           />
-          <Image
-            src={heroLaptop.src}
-            width={heroLaptop.width}
-            height={heroLaptop.height}
-            alt={dict.dashboardAlt}
-            priority
-            sizes="(min-width: 1024px) 500px, 92vw"
-            className="absolute bottom-0 left-0 z-[2] w-[92%] drop-shadow-media"
-          />
-        </div>
+          <div className="absolute bottom-0 left-0 z-[2] w-[92%]">
+            <Image
+              src={heroLaptop.src}
+              width={heroLaptop.width}
+              height={heroLaptop.height}
+              alt={dict.dashboardAlt}
+              priority
+              sizes="(min-width: 1024px) 500px, 92vw"
+              className="w-full drop-shadow-media"
+            />
+            <HeroScreen locale={locale} dict={dict.screen} />
+          </div>
+        </PointerTilt>
       </Container>
     </section>
   );

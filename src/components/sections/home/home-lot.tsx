@@ -96,7 +96,7 @@ export function HomeLot({ dict }: HomeLotProps) {
   const reducedMotion = useReducedMotion();
 
   return (
-    <section className="bg-dot-grid relative bg-surface">
+    <section className="relative">
       {reducedMotion ? <StaticLot dict={dict} /> : <AutoplayLot dict={dict} />}
     </section>
   );

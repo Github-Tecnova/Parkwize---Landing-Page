@@ -20,7 +20,7 @@ type ProductProblemProps = {
 
 export function ProductProblem({ dict, icons }: ProductProblemProps) {
   return (
-    <section className="bg-dot-grid bg-surface py-14 sm:py-20">
+    <section className="py-14 sm:py-20">
       <Container className="grid items-start gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
         <SectionHeader
           eyebrow={dict.eyebrow}

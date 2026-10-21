@@ -21,7 +21,7 @@ type ProductResultsProps = {
 
 export function ProductResults({ eyebrow, title, items }: ProductResultsProps) {
   return (
-    <section className="bg-dot-grid bg-surface py-14 sm:py-20">
+    <section className="py-14 sm:py-20">
       <Container>
         <SectionHeader eyebrow={eyebrow} title={title} />
         <Reveal className="mt-10">

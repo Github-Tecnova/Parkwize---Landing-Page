@@ -24,7 +24,7 @@ export function HomeBooking({ locale, dict, sectors }: HomeBookingProps) {
   const { deckBooking } = MEDIA.product;
 
   return (
-    <section className="bg-dot-grid bg-surface py-14 sm:py-20 lg:py-24">
+    <section className="py-14 sm:py-20 lg:py-24">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-[4.375rem]">
           <Reveal className="flex flex-col items-center text-center lg:items-start lg:text-left">

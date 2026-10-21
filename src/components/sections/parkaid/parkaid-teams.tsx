@@ -15,7 +15,7 @@ type ParkAidTeamsProps = {
 
 export function ParkAidTeams({ dict }: ParkAidTeamsProps) {
   return (
-    <section className="bg-dot-grid bg-surface py-14 sm:py-20">
+    <section className="py-14 sm:py-20">
       <Container>
         <SectionHeader
           eyebrow={dict.eyebrow}

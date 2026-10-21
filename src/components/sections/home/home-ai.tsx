@@ -55,7 +55,7 @@ export function HomeAi({ locale, dict, showCta = true }: HomeAiProps) {
   const { parkwizeAiBlack, parkwizeAiWhite } = MEDIA.brand;
 
   return (
-    <section id="parkwize-ai" className="bg-surface py-14 sm:py-20 lg:py-24">
+    <section id="parkwize-ai" className="py-14 sm:py-20 lg:py-24">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-[4.375rem]">
           <Reveal className="flex flex-col items-center text-center lg:items-start lg:text-left">

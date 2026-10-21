@@ -21,7 +21,7 @@ type ProductFeaturesProps = {
 
 export function ProductFeatures({ dict, media }: ProductFeaturesProps) {
   return (
-    <section className="bg-surface py-14 sm:py-20">
+    <section className="py-14 sm:py-20">
       <Container>
         <SectionHeader eyebrow={dict.eyebrow} title={dict.title} />
         <div className="mt-10 grid items-start gap-9 lg:mt-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-16">

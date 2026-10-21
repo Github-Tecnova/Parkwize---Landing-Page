@@ -100,7 +100,24 @@
       "lead": "Le premier écosystème d'intelligence du stationnement entièrement propulsé par l'IA. Modernisez vos opérations, votre tarification, votre affichage, vos réservations et plus encore, depuis une seule plateforme.",
       "cta": "Nous joindre",
       "videoLabel": "Des gestionnaires de stationnement consultent des données en direct",
-      "dashboardAlt": "Le Dashboard Manager de Parkwize sur un ordinateur portable"
+      "dashboardAlt": "Le Dashboard Manager de Parkwize sur un ordinateur portable",
+      "screen": {
+        "overview": "Vue d’ensemble",
+        "period": "Aujourd’hui",
+        "occupancy": "Occupation",
+        "revenue": "Revenus",
+        "events": "Événements",
+        "chart": "Sources de revenus",
+        "feed": "En direct",
+        "feedItems": [
+          "Entrée à la barrière B",
+          "Billet payé",
+          "Réservation confirmée",
+          "Sortie à la barrière A",
+          "Tarif ajusté par l’IA",
+          "Permis validé"
+        ]
+      }
     },
     "stats": {
       "label": "Parkwize en chiffres",
@@ -173,7 +190,6 @@
         "title": "Le système d'exploitation du *stationnement* moderne",
         "lead": "Un seul cerveau. Neuf systèmes connectés, pilotés en temps réel.",
         "core": "Contrôle central",
-        "coreAlt": "Le Dashboard Manager de Parkwize, contrôle central de tous les systèmes connectés",
         "nodes": {
           "payment": "Terminaux de paiement",
           "display": "Affichage dynamique",

@@ -74,14 +74,14 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 - Small uppercase mono labels (column titles, eyebrows, meta text): the `eyebrow` class from `globals.css`.
 - Link lists: `FooterColumn` from `@/components/layout/footer/footer-column` handles internal (localized) and external links.
 - Site URLs and page lists (`SIGN_IN_URL`, `DEMO_URL`, `BOOK_CALL_HREF`, `PRODUCT_LINKS`, `LEGAL_LINKS`): `@/lib/navigation`. Never hardcode them in components.
-- Page sections: a `<section>` with `bg-surface` and `py-14 sm:py-20`, wrapping a `Container` from `@/components/layout/section/container`. Headings: `SectionHeader` (eyebrow, title, lead, actions, `tone="inverse"` on dark).
+- Page sections: a transparent `<section>` with `py-14 sm:py-20`, wrapping a `Container` from `@/components/layout/section/container`. Headings: `SectionHeader` (eyebrow, title, lead, actions, `tone="inverse"` on dark).
 - Accented words in titles: wrap them in `*asterisks*` in the dictionary and render with `AccentText`. Never split titles into separate keys for styling.
 - CTAs as links: `ButtonLink` from `@/components/ui/button-link` (localized internal links, plain external links, optional arrow).
 - Scroll-in animation: `Reveal` from `@/components/motion/reveal`. Animated numbers: `CountUp`. Never animate whole pages with global scripts.
 - Images: reference them through `MEDIA` in `@/lib/media` (typed `src`, `width`, `height`) and always pass `sizes`. New images go in `public/images/<group>/` as optimized WebP. Product visuals per product: `PRODUCT_VISUALS` in `@/lib/product-media`. Product lists: `ProductIndex`.
 - Closing call to action at the end of every page: `ClosingCta` (P mark, Proudly Canadian, Porsche parked on the footer edge).
 - Section kickers: the `kicker` class (bold uppercase sans, `text-deck`). `eyebrow` (mono) is for footer and meta labels only.
-- Section textures (Lovable look): `bg-dot-grid` / `bg-dot-grid-sm`, `bg-bay-grid` (skewed parking bays), `bg-bay-lines` (hero verticals), `bg-hero-fade` (hero gradient), plus `PointerSpotlight` inside a positioned section. Sections stay white; texture carries the rhythm.
+- Background: light sections are transparent over the white page (`body` is `bg-surface`); no section textures. Navy sections, cards, hero fades and the footer stay opaque, and hero gradients (`bg-hero-fade`) fade to transparent. `bg-bay-lines` (hero verticals) and `PointerSpotlight` remain available.
 - Looping videos: `AmbientVideo` with `VIDEOS` from `@/lib/media` (WebM first, MP4 fallback, poster, plays only in view). Long-running animations must pause off screen and under reduced motion.
 - A hero that sits under the glass top bar uses the `under-top-bar` class.
 - Step-by-step product demos: `StepRail` from `@/components/sections/step-rail` with `useStepCycle` from `@/hooks/use-step-cycle` (auto-advances only in view, stops on click and under reduced motion).
@@ -103,6 +103,9 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 - Product lists: `ProductIndex` includes `ProductIndexPreview`, a cursor-following preview (fine pointers only) fed by `PRODUCT_PREVIEWS` in `@/lib/product-media`.
 - Vector vehicles: `CarRear` (with `CAR_REAR_PLATE` for overlaying a plate) and `CarTop` from `@/components/media`. Token fills only.
 - Scroll-linked motion is reserved for `DashboardWalkthrough` (Dashboard Manager): it pins with `useScroll` on `lg` and up and autoplays in view below `lg`. `HomeLot` (home, scene math in `@/lib/lot-scene`) autoplays in view at every width and loops. Both show a static final state under reduced motion.
+- 3D: "The OS of modern parking" is `OsGarage` (`@/components/sections/home/os-garage`), a React Three Fiber scene of coded low-poly meshes in the token palette (`readPalette`). It builds itself step by step (`GARAGE_CHAPTERS` order, `buildSchedule` in `@/lib/os-garage`) the first time it is in view; hovering a device tag highlights that device and dims the rest. three.js loads only through `next/dynamic` (`ssr: false`), prefetched shortly after load; `frameloop` is `never` off screen and `demand` under reduced motion (built at once). Device tags are real localized links outside the canvas, positioned and faded in by projecting device positions each frame. Never import three outside these files.
+- Home hero: `HeroScreen` is a coded live dashboard laid over the laptop screen (percent box measured on `hero-laptop.webp`, sized with container query units); `PointerTilt` tilts it with the cursor on fine pointers.
+- Home road: `HomeRoad` wraps the home sections from `HomeLot` to `HomeBooking` and draws a road in the side gutters at `xl` and up (geometry in `@/lib/road-path`). It changes lanes only in the empty gap between two sections, using the measured section padding for a long, gentle S-curve. The car follows the viewport through `ROAD_SPRING`, so lane changes glide; "P" markers light up as it passes. Full-bleed elements fade at their edges on `xl` (see `OrbitRow`) so the road never covers them.
 - If the same markup appears twice, make it a component.
 
 ## 5. Design tokens
@@ -155,7 +158,7 @@ Mobile-first: base classes target phones, then `sm`, `md`, `lg`, `xl`, `2xl` add
 ## 9. Motion
 
 - Use `motion/react` only.
-- Use the presets in `@/lib/motion` for durations, springs and easings; do not invent new timings per component. Presets include `REVEAL_BASE`, `WORD_STAGGER`, `DRAW_BASE`, `CAMERA_MOVE`, `LOT_PLAYBACK`, and the `useSpring` configs `SCROLL_SPRING` and `CURSOR_SPRING`.
+- Use the presets in `@/lib/motion` for durations, springs and easings; do not invent new timings per component. Presets include `REVEAL_BASE`, `WORD_STAGGER`, `DRAW_BASE`, `CAMERA_MOVE`, `LOT_PLAYBACK`, `CHART_MORPH`, and the `useSpring` configs `SCROLL_SPRING`, `CURSOR_SPRING` and `ROAD_SPRING`.
 - Animate `transform` and `opacity` where possible. Keep animations short and purposeful.
 
 ## 10. Quality gate

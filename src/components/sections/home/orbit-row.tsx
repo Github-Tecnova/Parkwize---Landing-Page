@@ -131,7 +131,10 @@ export function OrbitRow({
   return (
     <div
       ref={ref}
-      className={cn("relative overflow-hidden", className)}
+      className={cn(
+        "relative overflow-hidden xl:[mask-image:linear-gradient(90deg,transparent,black_7%,black_93%,transparent)]",
+        className,
+      )}
       style={{ containerType: "size", ...style }}
       {...props}
     >

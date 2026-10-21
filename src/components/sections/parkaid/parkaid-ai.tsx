@@ -14,7 +14,7 @@ type ParkAidAiProps = {
 
 export function ParkAidAi({ dict }: ParkAidAiProps) {
   return (
-    <section className="bg-surface py-14 sm:py-20">
+    <section className="py-14 sm:py-20">
       <Container>
         <Reveal className="ai-panel rounded-3xl px-5 py-10 text-brand-foreground sm:p-[clamp(2.5rem,6vw,4.5rem)]">
           <SectionHeader

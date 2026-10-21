@@ -100,7 +100,24 @@
       "lead": "The first fully AI-powered parking intelligence ecosystem. Modernize operations, pricing, displays, booking, and more, all from one platform.",
       "cta": "Get in touch",
       "videoLabel": "Parking operators reviewing live data together",
-      "dashboardAlt": "The Parkwize Dashboard Manager on a laptop"
+      "dashboardAlt": "The Parkwize Dashboard Manager on a laptop",
+      "screen": {
+        "overview": "Overview",
+        "period": "Today",
+        "occupancy": "Occupancy",
+        "revenue": "Revenue",
+        "events": "Live events",
+        "chart": "Revenue streams",
+        "feed": "Live feed",
+        "feedItems": [
+          "Entry at Gate B",
+          "Ticket paid",
+          "Booking confirmed",
+          "Exit at Gate A",
+          "Rate adjusted by AI",
+          "Permit validated"
+        ]
+      }
     },
     "stats": {
       "label": "Parkwize in numbers",
@@ -173,7 +190,6 @@
         "title": "The OS of modern *parking*",
         "lead": "One brain. Nine connected systems, controlled in real time.",
         "core": "Central control",
-        "coreAlt": "Parkwize Dashboard Manager, the central control of every connected system",
         "nodes": {
           "payment": "Payment terminals",
           "display": "Digital displays",

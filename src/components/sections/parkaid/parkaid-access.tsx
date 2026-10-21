@@ -18,7 +18,7 @@ type ParkAidAccessProps = {
 
 export function ParkAidAccess({ dict }: ParkAidAccessProps) {
   return (
-    <section className="bg-surface py-14 sm:py-20">
+    <section className="py-14 sm:py-20">
       <Container>
         <SectionHeader eyebrow={dict.eyebrow} title={dict.title} />
         <ul className="mt-10 grid gap-6 lg:grid-cols-2">

@@ -18,7 +18,7 @@ export function ProcessCloud({ dict }: ProcessCloudProps) {
   const { processPhoneMenu } = MEDIA.product;
 
   return (
-    <section className="bg-surface py-14 sm:py-20">
+    <section className="py-14 sm:py-20">
       <Container className="grid items-center gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-16">
         <Reveal className="order-last flex justify-center rounded-3xl bg-deck-tint px-6 pt-10 lg:order-first">
           <Image
