@@ -67,6 +67,8 @@ export function renderDevice(
   }
 }
 
+const placedTags = new WeakMap<HTMLElement, string>();
+
 export function placeTag(
   tag: HTMLElement | null,
   point: Vector3,
@@ -74,8 +76,11 @@ export function placeTag(
   appear: number,
 ) {
   if (!tag) return;
-  const x = ((point.x + 1) / 2) * size.width;
-  const y = ((1 - point.y) / 2) * size.height;
+  const x = Math.round(((point.x + 1) / 2) * size.width);
+  const y = Math.round(((1 - point.y) / 2) * size.height);
+  const placement = `${x} ${y} ${appear.toFixed(2)}`;
+  if (placedTags.get(tag) === placement) return;
+  placedTags.set(tag, placement);
   tag.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -100%)`;
   tag.style.setProperty("--appear", String(appear));
   tag.style.visibility = appear > 0 ? "visible" : "hidden";

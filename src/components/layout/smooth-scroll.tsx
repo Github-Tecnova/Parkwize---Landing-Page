@@ -13,6 +13,7 @@ const SCROLL_DURATION = 1.1;
 export function SmoothScroll() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if ("GestureEvent" in window) return;
 
     const lenis = new Lenis({
       duration: SCROLL_DURATION,

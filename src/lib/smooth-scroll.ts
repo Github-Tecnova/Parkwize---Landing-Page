@@ -23,7 +23,7 @@ export function scrollToTop() {
     instance.scrollTo(0);
     return;
   }
-  window.scrollTo({ top: 0 });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 export function scrollToPosition(top: number) {

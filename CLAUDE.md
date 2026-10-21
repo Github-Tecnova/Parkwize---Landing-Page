@@ -105,7 +105,6 @@ Before writing markup, check `components/ui`, `components/layout` and `component
 - Scroll-linked motion is reserved for `DashboardWalkthrough` (Dashboard Manager): it pins with `useScroll` on `lg` and up and autoplays in view below `lg`. `HomeLot` (home, scene math in `@/lib/lot-scene`) autoplays in view at every width and loops. Both show a static final state under reduced motion.
 - 3D: "The OS of modern parking" is `OsGarage` (`@/components/sections/home/os-garage`), a React Three Fiber scene of coded low-poly meshes in the token palette (`readPalette`). It builds itself step by step (`GARAGE_CHAPTERS` order, `buildSchedule` in `@/lib/os-garage`) the first time it is in view; hovering a device tag highlights that device and dims the rest. three.js loads only through `next/dynamic` (`ssr: false`), prefetched shortly after load; `frameloop` is `never` off screen and `demand` under reduced motion (built at once). Device tags are real localized links outside the canvas, positioned and faded in by projecting device positions each frame. Never import three outside these files.
 - Home hero: `HeroScreen` is a coded live dashboard laid over the laptop screen (percent box measured on `hero-laptop.webp`, sized with container query units); `PointerTilt` tilts it with the cursor on fine pointers.
-- Home road: `HomeRoad` wraps the home sections from `HomeLot` to `HomeBooking` and draws a road in the side gutters at `xl` and up (geometry in `@/lib/road-path`). It changes lanes only in the empty gap between two sections, using the measured section padding for a long, gentle S-curve. The car follows the viewport through `ROAD_SPRING`, so lane changes glide; "P" markers light up as it passes. Full-bleed elements fade at their edges on `xl` (see `OrbitRow`) so the road never covers them.
 - If the same markup appears twice, make it a component.
 
 ## 5. Design tokens
@@ -158,7 +157,7 @@ Mobile-first: base classes target phones, then `sm`, `md`, `lg`, `xl`, `2xl` add
 ## 9. Motion
 
 - Use `motion/react` only.
-- Use the presets in `@/lib/motion` for durations, springs and easings; do not invent new timings per component. Presets include `REVEAL_BASE`, `WORD_STAGGER`, `DRAW_BASE`, `CAMERA_MOVE`, `LOT_PLAYBACK`, `CHART_MORPH`, and the `useSpring` configs `SCROLL_SPRING`, `CURSOR_SPRING` and `ROAD_SPRING`.
+- Use the presets in `@/lib/motion` for durations, springs and easings; do not invent new timings per component. Presets include `REVEAL_BASE`, `WORD_STAGGER`, `DRAW_BASE`, `CAMERA_MOVE`, `LOT_PLAYBACK`, `CHART_MORPH`, and the `useSpring` configs `SCROLL_SPRING` and `CURSOR_SPRING`.
 - Animate `transform` and `opacity` where possible. Keep animations short and purposeful.
 
 ## 10. Quality gate

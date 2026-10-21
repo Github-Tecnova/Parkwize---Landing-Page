@@ -226,7 +226,7 @@ export function OsGarageScene({
       flat
       camera={{ position: [11, 17, 11], zoom: 40, near: 0.1, far: 140 }}
       frameloop={frameloop}
-      dpr={[1, 1.75]}
+      dpr={[1, 1.5]}
       gl={{ antialias: true, alpha: true }}
       onCreated={onReady}
       aria-hidden
