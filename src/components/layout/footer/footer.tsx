@@ -2,6 +2,7 @@
  * Copyright (c) 2025-2026. Tecnova
  */
 
+import { MapleLeaf } from "@/components/brand/maple-leaf";
 import { ParkwizeLogo } from "@/components/brand/parkwize-logo";
 import { Link } from "@/components/navigation/link";
 import { FooterDictionary, PagesDictionary } from "@/content/dictionary";
@@ -89,7 +90,7 @@ export function Footer({ locale, dict, pages }: FooterProps) {
           </p>
           <div className="flex items-center justify-between gap-8">
             <p className="eyebrow flex items-center gap-2 text-inverse-muted">
-              <span aria-hidden>🍁</span>
+              <MapleLeaf className="h-[13px] w-3 text-maple" />
               {dict.madeIn}
             </p>
             <BackToTop label={dict.backToTop} />
